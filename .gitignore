@@ -1,0 +1,32 @@
+#Template from
+# https://github.com/github/gitignore/blob/master/Autotools.gitignore
+# http://www.gnu.org/software/automake
+Makefile.in
+
+# http://www.gnu.org/software/autoconf
+/autom4te.cache
+/aclocal.m4
+/compile
+/config.guess
+/config.h.in
+/config.sub
+/configure
+/depcomp
+/install-sh
+/missing
+/stamp-h1
+
+# https://www.gnu.org/software/libtool/
+/ltmain.sh
+
+# Repo specific items
+/*.o
+/config.h
+/config.log
+/config.status
+/checkstop_app
+/elog-errors.hpp
+/Makefile
+*-libtool
+/.deps
+
