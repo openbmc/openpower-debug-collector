@@ -1,0 +1,2 @@
+- name: Checkstop
+  description: Checkstop asserted, log error and collect FFDC
