@@ -19,7 +19,7 @@ namespace Host
 {
 namespace Error
 {
-    struct Checkstop;
+    struct Termination;
 } // namespace Error
 } // namespace Host
 } // namespace open_power
@@ -39,16 +39,16 @@ namespace open_power
 {
 namespace Host
 {
-namespace _Checkstop
+namespace _Termination
 {
 
 
-}  // namespace _Checkstop
+}  // namespace _Termination
 
-struct Checkstop : public sdbusplus::exception_t
+struct Termination : public sdbusplus::exception_t
 {
-    static constexpr auto errName = "org.open_power.Host.Checkstop";
-    static constexpr auto errDesc = "Checkstop asserted, log error and collect FFDC";
+    static constexpr auto errName = "org.open_power.Host.Termination";
+    static constexpr auto errDesc = "Host termination condition detected";
     static constexpr auto L = level::ERR;
     using metadata_types = std::tuple<>;
 
@@ -77,9 +77,9 @@ namespace details
 {
 
 template <>
-struct map_exception_type<sdbusplus::org::open_power::Host::Error::Checkstop>
+struct map_exception_type<sdbusplus::org::open_power::Host::Error::Termination>
 {
-    using type = org::open_power::Host::Checkstop;
+    using type = org::open_power::Host::Termination;
 };
 
 }

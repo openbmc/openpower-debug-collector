@@ -28,20 +28,6 @@ AX_PKG_CHECK_MODULES([SYSTEMD], [], [libsystemd >= 221], [],
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus],, [AC_MSG_ERROR([Could not find sdbusplus...openbmc/sdbusplus package required])])
 PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],, [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 
-# Check for header files.
-AC_CHECK_HEADER(phosphor-logging/log.hpp, ,[AC_MSG_ERROR([Could not find phosphor-logging/log.hpp...openbmc/phosphor-logging package required])])
-AC_CHECK_HEADER(phosphor-logging/elog.hpp, ,[AC_MSG_ERROR([Could not find phosphor-logging/elog.hpp...openbmc/phosphor-logging package required])])
-
-# Handling configuration files
-AC_ARG_VAR(YAML_DIR, [The path to the yaml error files.])
-AS_IF([test "x$YAML_DIR" == "x"], \
-    [YAML_DIR="${srcdir}"])
-
-# Compile error metadata handlers if we're asked to do so.
-AC_ARG_ENABLE([metadata-processing],
-    AS_HELP_STRING([--enable-metadata-processing], [Compile metadata handlers]),
-        [AX_APPEND_COMPILE_FLAGS([-DPROCESS_META], [CXXFLAGS])]
-)
 
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
