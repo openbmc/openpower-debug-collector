@@ -1,0 +1,5 @@
+- name: Checkstop 
+  level: ERR
+  meta:
+    - str: STRING=%s
+      type: string
