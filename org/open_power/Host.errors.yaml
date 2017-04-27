@@ -1,0 +1,2 @@
+- name: Checkstop
+  description: Host checkstop condition detected
