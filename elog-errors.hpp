@@ -7,6 +7,7 @@
 #include <type_traits>
 #include <sdbusplus/exception.hpp>
 #include <phosphor-logging/log.hpp>
+#include <phosphor-logging/elog.hpp>
 
 namespace sdbusplus
 {
@@ -19,6 +20,23 @@ namespace Host
 namespace Error
 {
     struct Checkstop;
+} // namespace Error
+} // namespace Host
+} // namespace open_power
+} // namespace org
+} // namespace sdbusplus
+
+namespace sdbusplus
+{
+namespace org
+{
+namespace open_power
+{
+namespace Host
+{
+namespace Error
+{
+    struct WatchdogTimedOut;
 } // namespace Error
 } // namespace Host
 } // namespace open_power
@@ -44,27 +62,11 @@ namespace _Checkstop
 
 }  // namespace _Checkstop
 
-struct Checkstop : public sdbusplus::exception_t
+struct Checkstop
 {
-    static constexpr auto errName = "org.open_power.Host.Checkstop";
-    static constexpr auto errDesc = "Checkstop condition detected";
     static constexpr auto L = level::ERR;
     using metadata_types = std::tuple<>;
 
-    const char* name() const noexcept
-    {
-        return errName;
-    }
-
-    const char* description() const noexcept
-    {
-        return errDesc;
-    }
-
-    const char* what() const noexcept
-    {
-        return errName;
-    }
 };
 
 } // namespace Host
@@ -83,6 +85,40 @@ struct map_exception_type<sdbusplus::org::open_power::Host::Error::Checkstop>
 
 }
 
+namespace org
+{
+namespace open_power
+{
+namespace Host
+{
+namespace _WatchdogTimedOut
+{
+
+
+}  // namespace _WatchdogTimedOut
+
+struct WatchdogTimedOut
+{
+    static constexpr auto L = level::ERR;
+    using metadata_types = std::tuple<>;
+
+};
+
+} // namespace Host
+} // namespace open_power
+} // namespace org
+
+
+namespace details
+{
+
+template <>
+struct map_exception_type<sdbusplus::org::open_power::Host::Error::WatchdogTimedOut>
+{
+    using type = org::open_power::Host::WatchdogTimedOut;
+};
+
+}
 
 } // namespace logging
 
