@@ -1,4 +1,6 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
+
+if WANT_DEBUG_COLLECTOR_APP
 sbin_PROGRAMS = checkstop_app \
                 watchdog_timeout
 
@@ -39,3 +41,8 @@ org/open_power/Host/error.cpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-cpp org.open_power.Host > $@
 
+endif
+
+yamldir = ${datadir}/phosphor-dbus-yaml/yaml
+nobase_yaml_DATA = \
+	org/open_power/Host.errors.yaml
