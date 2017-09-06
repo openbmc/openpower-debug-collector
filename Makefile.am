@@ -31,6 +31,10 @@ watchdog_timeout_LDFLAGS  = ${generic_ldflags}
 checkstop_app_CXXFLAGS  = ${generic_cxxflags}
 watchdog_timeout_CXXFLAGS  = ${generic_cxxflags}
 
+yamldir = ${datadir}/phosphor-dbus-yaml/yaml
+nobase_yaml_DATA = \
+	org/open_power/Host.errors.yaml
+
 org/open_power/Host/error.hpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-header org.open_power.Host > $@
