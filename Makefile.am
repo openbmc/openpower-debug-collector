@@ -1,4 +1,6 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
+
+if WANT_DEBUG_COLLECTOR_APP
 sbin_PROGRAMS = checkstop_app \
                 watchdog_timeout
 
@@ -39,3 +41,15 @@ org/open_power/Host/error.cpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-cpp org.open_power.Host > $@
 
+phosphor-logging/elog-errors.hpp: $(REQ_FILES_TO_GEN)
+	@mkdir -p `dirname $@`
+	$(AM_V_at)$(PYTHON) ${abs_srcdir}/tools/elog-gen.py -y ${YAML_DIR} -u ${YAML_DIR_TEST} -t ${ELOG_TEMPLATE_DIR} -m $(ELOG_MAKO) -o $@
+
+pkgconfiglibdir = ${libdir}/pkgconfig
+pkgconfiglib_DATA = openpower-debug-collector.pc
+
+endif
+yamldir = ${datadir}/phosphor-dbus-yaml/yaml
+nobase_yaml_DATA = \
+	org/open_power/Host.errors.yaml
+SUBDIRS = . tools
