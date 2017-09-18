@@ -26,6 +26,10 @@ Makefile.in
 /config.status
 /checkstop_app
 /Makefile
+/openpower-debug-collector.pc
+/tools/Makefile
+/tools/setup.py
+
 *-libtool
 /.deps
 
