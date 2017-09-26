@@ -1,6 +1,5 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
 
-# For target build
 if !INSTALL_ERROR_YAML
 sbin_PROGRAMS = checkstop_app \
                 watchdog_timeout
@@ -11,6 +10,10 @@ nobase_nodist_include_HEADERS = \
 BUILT_SOURCES = \
             org/open_power/Host/error.cpp \
             org/open_power/Host/error.hpp
+
+if GEN_ERRORS
+BUILT_SOURCES += phosphor-logging/elog-errors.hpp
+endif
 
 CLEANFILES = ${BUILT_SOURCES}
 
@@ -41,10 +44,21 @@ org/open_power/Host/error.hpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 org/open_power/Host/error.cpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-cpp org.open_power.Host > $@
-else
-# For native build
+
+endif
 # Export error YAML to shared location
 yamldir = ${datadir}/phosphor-dbus-yaml/yaml
 nobase_yaml_DATA = \
 	org/open_power/Host.errors.yaml
-endif #INSTALL_ERROR_YAML
+
+# Generate phosphor-logging/elog-errors.hpp
+if GEN_ERRORS
+ELOG_MAKO ?= elog-gen-template.mako.hpp
+ELOG_DIR ?= ${datadir}/phosphor-logging/elog
+ELOG_GEN_DIR ?= ${ELOG_DIR}/tools/
+ELOG_MAKO_DIR ?= ${ELOG_DIR}/tools/phosphor-logging/templates/
+YAML_DIR ?= ${datadir}/phosphor-dbus-yaml/yaml
+phosphor-logging/elog-errors.hpp:
+	@mkdir -p `dirname $@`
+	$(AM_V_at)$(PYTHON) $(ELOG_GEN_DIR)/elog-gen.py -y ${YAML_DIR} -t ${ELOG_MAKO_DIR} -m ${ELOG_MAKO} -o $@
+endif
