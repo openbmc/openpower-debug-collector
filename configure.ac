@@ -11,6 +11,13 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
+# Generate elog-errors.hpp for local repository build
+# Disable for bitbake build
+AC_ARG_ENABLE([gen_errors],
+    AS_HELP_STRING([--enable-gen_errors], [Enable elog-errors.hpp generation ]),
+    [],[gen_errors=yes])
+AM_CONDITIONAL([GEN_ERRORS], [test "x$enable_gen_errors" != "xno"])
+
 # Perform checks for packages only during target build.
 # For native build do not perform the checks as the packages
 # are not present in the host machine.
@@ -40,6 +47,7 @@ AS_IF([test "x$enable_install_error" != "xyes"], [
     PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
         [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 ])
+
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
 AC_OUTPUT
