@@ -10,9 +10,13 @@ AM_SILENT_RULES([yes])
 AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
+
+AC_ARG_ENABLE([elogheader],
+    AS_HELP_STRING([--disable-elogheader], [Disable elog error header generation]))
+AM_CONDITIONAL([WANT_ELOG_HEADER], [test "x$enable_elogheader" != "xno"])
+
 AC_ARG_ENABLE([debug_collector],
     AS_HELP_STRING([--disable-debug_collector], [Disable debug_collector]))
-
 AM_CONDITIONAL([WANT_DEBUG_COLLECTOR], [test "x$enable_debug_collector" != "xno"])
 AS_IF([test "x$enable_debug_collector" != "xno"], [
     # Checks for typedefs, structures, and compiler characteristics.
@@ -34,6 +38,7 @@ AS_IF([test "x$enable_debug_collector" != "xno"], [
     PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
         [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 ])
+
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
 AC_OUTPUT
