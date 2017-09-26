@@ -11,25 +11,31 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
-# Checks for typedefs, structures, and compiler characteristics.
-AX_CXX_COMPILE_STDCXX_14([noext])
-AX_APPEND_COMPILE_FLAGS([-Wall -Werror], [CXXFLAGS])
+#Perform checks only when --enable-debug-collector flag is set
+#for native build --disable-debug_collector flag is set
+AC_ARG_ENABLE([debug_collector],
+    AS_HELP_STRING([--enable-debug_collector], [Enable debug_collector]))
+AM_CONDITIONAL([WANT_DEBUG_COLLECTOR], [test "x$enable_debug_collector" != "xno"])
+AS_IF([test "x$enable_debug_collector" != "xno"], [
+    # Checks for typedefs, structures, and compiler characteristics.
+    AX_CXX_COMPILE_STDCXX_14([noext])
+    AX_APPEND_COMPILE_FLAGS([-Wall -Werror], [CXXFLAGS])
 
-# Check for sdbus++
-AC_PATH_PROG([SDBUSPLUSPLUS], [sdbus++])
-AS_IF([test "x$SDBUSPLUSPLUS" == "x"],
-    AC_MSG_ERROR(["Requires sdbus++"]))
+    # Check for sdbus++
+    AC_PATH_PROG([SDBUSPLUSPLUS], [sdbus++])
+    AS_IF([test "x$SDBUSPLUSPLUS" == "x"],
+        AC_MSG_ERROR(["Requires sdbus++"]))
 
-LT_INIT
+    LT_INIT
 
-# Checks for libraries.
-AX_PKG_CHECK_MODULES([SYSTEMD], [], [libsystemd >= 221], [],
-[AC_MSG_ERROR(["systemd required and not found."])])
+    # Checks for libraries.
+    AX_PKG_CHECK_MODULES([SYSTEMD], [], [libsystemd >= 221], [],
+        [AC_MSG_ERROR(["systemd required and not found."])])
 
-# Checks for modules
-PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
- [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
-
+    # Checks for modules
+    PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
+        [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
+])
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
 AC_OUTPUT
