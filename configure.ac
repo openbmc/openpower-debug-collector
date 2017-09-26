@@ -11,9 +11,14 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
-# Check for compiler, packages only during target build.
-# As the packages are not available on the host do not
-# perform checks during native build.
+# Generate elog-errors.hpp if gen_errors optional feature is enabled
+AC_ARG_ENABLE([gen_errors],
+    AS_HELP_STRING([--enable-gen_errors], [Enable elog-errors.hpp generation ]),
+    [],[gen_errors=yes])
+AM_CONDITIONAL([GEN_ERRORS], [test "x$enable_gen_errors" != "xno"])
+
+# Check for compiler, packages only when install_error_yaml optional feature
+# is disabled
 AC_ARG_ENABLE([install_error_yaml],
     AS_HELP_STRING([--enable-install_error_yaml], [Enable installing error yaml file]),
     [], [install_error_yaml=no])
@@ -38,6 +43,7 @@ AS_IF([test "x$enable_install_error_yaml" != "xyes"], [
     PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
         [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 ])
+
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
 AC_OUTPUT
