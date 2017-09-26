@@ -1,5 +1,5 @@
 #include <phosphor-logging/elog.hpp>
-#include "elog-errors.hpp"
+#include "phosphor-logging/elog-errors.hpp"
 #include "org/open_power/Host/error.hpp"
 
 int main(int argc, char* argv[])
