@@ -1,4 +1,7 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
+
+# For non native recipe build
+if WANT_DEBUG_COLLECTOR
 sbin_PROGRAMS = checkstop_app \
                 watchdog_timeout
 
@@ -38,4 +41,10 @@ org/open_power/Host/error.hpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 org/open_power/Host/error.cpp: ${top_srcdir}/org/open_power/Host.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-cpp org.open_power.Host > $@
-
+else
+# For native build
+# Export error YAML to shared location
+yamldir = ${datadir}/phosphor-dbus-yaml/yaml
+nobase_yaml_DATA = \
+	org/open_power/Host.errors.yaml
+endif
