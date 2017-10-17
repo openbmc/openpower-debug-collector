@@ -64,7 +64,7 @@ namespace _Checkstop
 
 struct Checkstop
 {
-    static constexpr auto L = level::ERR;
+    static constexpr auto L = level::INFO;
     using metadata_types = std::tuple<>;
 
 };
