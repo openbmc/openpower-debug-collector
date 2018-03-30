@@ -6,7 +6,7 @@ To build this package, do the following steps:
     2. ./configure ${CONFIGURE_FLAGS} --prefix=/usr
     3. make
 
-To full clean the repository again run `./bootstrap.sh clean`.
+To clean the repository run `./bootstrap.sh clean`.
 ```
 
 ```
