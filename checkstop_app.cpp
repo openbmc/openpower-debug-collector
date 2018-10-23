@@ -1,6 +1,7 @@
-#include <phosphor-logging/elog.hpp>
-#include "phosphor-logging/elog-errors.hpp"
 #include "org/open_power/Host/Boot/error.hpp"
+#include "phosphor-logging/elog-errors.hpp"
+
+#include <phosphor-logging/elog.hpp>
 
 int main(int argc, char* argv[])
 {
@@ -10,4 +11,3 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-
