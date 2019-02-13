@@ -36,12 +36,10 @@ AS_IF([test "x$enable_install_error_yaml" != "xyes"], [
     LT_INIT
 
     # Checks for libraries.
-    PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 221], [],
-        [AC_MSG_ERROR(["systemd required and not found."])])
+    PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 221])
 
     # Checks for modules
-    PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
-        [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
+    PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging])
 ])
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
