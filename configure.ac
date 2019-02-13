@@ -36,7 +36,7 @@ AS_IF([test "x$enable_install_error_yaml" != "xyes"], [
     LT_INIT
 
     # Checks for libraries.
-    AX_PKG_CHECK_MODULES([SYSTEMD], [], [libsystemd >= 221], [],
+    PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 221], [],
         [AC_MSG_ERROR(["systemd required and not found."])])
 
     # Checks for modules
