@@ -1,7 +1,7 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
 
 if !INSTALL_ERROR_YAML
-sbin_PROGRAMS = checkstop_app \
+bin_PROGRAMS = checkstop_app \
                 watchdog_timeout
 
 nobase_nodist_include_HEADERS = \
