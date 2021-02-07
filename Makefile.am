@@ -2,7 +2,8 @@ AM_DEFAULT_SOURCE_EXT = .cpp
 
 if !INSTALL_ERROR_YAML
 sbin_PROGRAMS = checkstop_app \
-                watchdog_timeout
+                watchdog_timeout \
+                openpower_dump_collector
 
 nobase_nodist_include_HEADERS = \
             org/open_power/Host/Boot/error.hpp
@@ -28,9 +29,14 @@ checkstop_app_SOURCES = checkstop_app.cpp \
 watchdog_timeout_SOURCES = watchdog_timeout.cpp \
                            org/open_power/Host/Boot/error.cpp
 
+openpower_dump_collector_SOURCES = dump_manager.cpp \
+                                   dump_manager_main.cpp \
+                                   utils.cpp
+
 generic_ldflags = \
                  $(PHOSPHOR_LOGGING_LIBS) \
-                 $(SDBUSPLUS_LIBS)
+                 $(SDBUSPLUS_LIBS) \
+                 -lpdbg
 
 generic_cxxflags = \
                   $(PHOSPHOR_LOGGING_CFLAGS) \
@@ -38,9 +44,11 @@ generic_cxxflags = \
 
 checkstop_app_LDFLAGS  = ${generic_ldflags}
 watchdog_timeout_LDFLAGS  = ${generic_ldflags}
+openpower_dump_collector_LDFLAGS  = ${generic_ldflags}
 
 checkstop_app_CXXFLAGS  = ${generic_cxxflags}
 watchdog_timeout_CXXFLAGS  = ${generic_cxxflags}
+openpower_dump_collector_CXXFLAGS  = ${generic_cxxflags}
 
 org/open_power/Host/Boot/error.hpp: ${top_srcdir}/org/open_power/Host/Boot.errors.yaml
 	@mkdir -p `dirname $@`

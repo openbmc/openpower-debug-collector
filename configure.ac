@@ -11,6 +11,8 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
+AC_CHECK_LIB([pdbg])
+
 # Generate elog-errors.hpp if gen_errors optional feature is enabled
 AC_ARG_ENABLE([gen_errors],
     AS_HELP_STRING([--enable-gen_errors], [Enable elog-errors.hpp generation ]),
