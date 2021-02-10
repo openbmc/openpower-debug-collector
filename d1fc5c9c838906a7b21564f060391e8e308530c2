@@ -2,6 +2,109 @@
   "comments": [
     {
       "key": {
+        "uuid": "c86c8979_ede52d58",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "CI Failure need to fix.",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8747c0ee_fd7b0e1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "dump from each sbe?",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "443a803c_cf23f7cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "please rephrase. Are you saying phosphor dump manager creates dump based on request from ? please elaborate the scope of this function her. it will help reviewers.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a39cdafc_0e7d1b14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Please innclude the  temporary path info",
+      "range": {
+        "startLine": 13,
+        "startChar": 5,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "504b7dc7_8b0b2c43",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Since this new code in openpower-debug-colletector include unit tests.",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "74c33233_de9fc697",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -71,6 +174,160 @@
     },
     {
       "key": {
+        "uuid": "08ea83fb_ac19c091",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Handle  filesystem_errors, like failed to create directory.",
+      "range": {
+        "startLine": 160,
+        "startChar": 3,
+        "endLine": 160,
+        "endChar": 50
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b983c73_1e770ad8",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Hostboot dump request is required only for master processor ? any specific reason here to iterate on all processors?",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef42ef89_542b0292",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Should be using HWAS state  of parent processor here , instead of pdbg level functional state.",
+      "range": {
+        "startLine": 196,
+        "startChar": 12,
+        "endLine": 196,
+        "endChar": 65
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1421b8b_63f6dfa3",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Can you document the dump collection flow or point some documntaion related to this here, this will help reviewers.?\nQuestion : incase of failure here ,noticed below code , skipping dump colleftion. if you are using that strategy why you are continuing to collect dump for other clock states and processor",
+      "range": {
+        "startLine": 207,
+        "startChar": 15,
+        "endLine": 207,
+        "endChar": 30
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1a94f81_5068b4bc",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "// Host dumps are governed by dump policy. Where is the dump policy and manufacturing policy specific check is included?",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81ace8c3_fabc11cc",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "where is the code associated  max number/ allowed dump size policy check  ? What is the maximum allowed size or numbers for hostboot dump.?",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2032613f_b3233082",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Incase of MPIPL, Host dump collections is allowed?",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8eedcce_04cb0e51",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "Openpower- debug-collectror repository used to for host debug function support repository. Please keep the dump specific functions dump specific p[ath, /dump/hostboot. this will help to support various dumps. or  are you planing to use openpower::dump::manager as genric class to support all types of hostboot dumps infuture?",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba42ee27_3eb5fde6",
         "filename": "dump_manager.hpp",
         "patchSetId": 7
@@ -87,6 +344,29 @@
         "startChar": 0,
         "endLine": 2,
         "endChar": 20
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d58ea963_2de382d0",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "This value is based chip-op spec? please move this definition as part of chip-op specific header file , that will help track exeternal spc specific constatndt at common place.",
+      "range": {
+        "startLine": 16,
+        "startChar": 15,
+        "endLine": 16,
+        "endChar": 44
       },
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
@@ -140,6 +420,29 @@
     },
     {
       "key": {
+        "uuid": "5ce32c12_599a67c0",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "typo.",
+      "range": {
+        "startLine": 24,
+        "startChar": 25,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c3725fc_81277461",
         "filename": "dump_manager.hpp",
         "patchSetId": 7
@@ -173,6 +476,29 @@
         "startChar": 34,
         "endLine": 47,
         "endChar": 44
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7eaa7a50_daf2da06",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-10T03:28:01Z",
+      "side": 1,
+      "message": "pdbg_target for processor target",
+      "range": {
+        "startLine": 61,
+        "startChar": 26,
+        "endLine": 61,
+        "endChar": 53
       },
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
