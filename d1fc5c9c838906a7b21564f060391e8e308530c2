@@ -355,6 +355,30 @@
     },
     {
       "key": {
+        "uuid": "8cf364cd_b0944d6f",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-02-11T02:52:32Z",
+      "side": 1,
+      "message": "CFAM register 2809 , used to check SBE status , Also Hostboot also maintains the Istep status in the oe of the CFAM register. \nAdd API to check SBE state in pdbg , and application start using this helper function to check sbe state. Extend the same logic for hostboot state check if required . or use hostboot ipl progress status for the same.",
+      "parentUuid": "e9c90572_d8f0fc2c",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 75
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "418d1b4a_f779398d",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
