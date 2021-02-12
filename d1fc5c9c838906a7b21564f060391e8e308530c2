@@ -260,6 +260,23 @@
     },
     {
       "key": {
+        "uuid": "f3bb1491_058c680a",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "this isMasterProc could throw exception and if it is thrown to the caller through D-Bus it might core dump, do veriy this path",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6628672_8c62a5ec",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -403,6 +420,29 @@
     },
     {
       "key": {
+        "uuid": "c31467dd_6fc10367",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "this being D-bus method throwing this error might core dump, do test this path",
+      "range": {
+        "startLine": 93,
+        "startChar": 5,
+        "endLine": 93,
+        "endChar": 31
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "418d1b4a_f779398d",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -495,6 +535,46 @@
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "332d7d45_7bb797e1",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "need to catpure e.what()",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d06c913a_d749754b",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "should this be INFO?",
+      "range": {
+        "startLine": 152,
+        "startChar": 22,
+        "endLine": 152,
+        "endChar": 32
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     },
     {
       "key": {
@@ -674,6 +754,23 @@
     },
     {
       "key": {
+        "uuid": "f6fc5229_b839268b",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "what if dump collection passed and failed for few targets do we still consider fail",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d1a94f81_5068b4bc",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -773,6 +870,91 @@
       "side": 1,
       "message": "no",
       "parentUuid": "2032613f_b3233082",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8543e255_f7ecd6aa",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "need log trace here",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8e2a1a4_35b6ea94",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "capture e.what() in the traces as it has the actual error info",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "480774ec_7d93417b",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "can\u0027t we throw the same exception like throw e;",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29aa3fd6_42ca82ba",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26582b2a_dd4ec205",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-02-12T05:53:42Z",
+      "side": 1,
+      "message": "log error trace",
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
