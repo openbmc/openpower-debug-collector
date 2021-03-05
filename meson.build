@@ -106,6 +106,10 @@ deps = [
     extra_deps
 ]
 
+if get_option('dump-collection').enabled()
+    subdir('dump')
+endif
+
 executable('watchdog_timeout',
     'watchdog_timeout.cpp',
     configure_file(output: 'config.h', configuration: conf_data),
