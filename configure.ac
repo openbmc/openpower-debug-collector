@@ -11,6 +11,20 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
+AC_ARG_ENABLE([enable-dump-collection],
+        [
+AS_HELP_STRING([--enable-dump-collection],
+                [To specify whether dump offload is enabled])])
+AM_CONDITIONAL([ENABLE_DUMP_COLLECTION], [test "x$enable_dump_collection" == "xyes"])
+AS_IF([test "x$enable_dump_collection" = "xyes"], [
+    AC_CHECK_LIB([pdbg], [sbe_dump])
+
+    PKG_CHECK_MODULES([LIBDT_API], [libdt-api])
+    LIBS="$LIBS $LIBDT_API_LIBS"
+    CFLAGS="$CFLAGS $LIBDT_API_CFLAGS"
+])
+
+PKG_CHECK_MODULES([SDEVENTPLUS], [sdeventplus])
 # Generate elog-errors.hpp if gen_errors optional feature is enabled
 AC_ARG_ENABLE([gen_errors],
     AS_HELP_STRING([--enable-gen_errors], [Enable elog-errors.hpp generation ]),
