@@ -42,6 +42,8 @@ watchdog_timeout_LDFLAGS  = ${generic_ldflags}
 checkstop_app_CXXFLAGS  = ${generic_cxxflags}
 watchdog_timeout_CXXFLAGS  = ${generic_cxxflags}
 
+include dump/dump.mk
+
 org/open_power/Host/Boot/error.hpp: ${top_srcdir}/org/open_power/Host/Boot.errors.yaml
 	@mkdir -p `dirname $@`
 	$(SDBUSPLUSPLUS) -r $(srcdir) error exception-header org.open_power.Host.Boot> $@
