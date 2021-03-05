@@ -184,7 +184,8 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* proc,
 
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;
-    uint8_t collectFastArray = 0;
+    uint8_t collectFastArray =
+        checkFastarrayCollectionNeeded(clockState, type, failingUnit, chipPos);
 
     try
     {
@@ -259,6 +260,17 @@ void SbeDumpCollector::writeDumpFile(const std::filesystem::path& path,
         // Just return here so dumps collected from other SBEs can be
         // packaged.
     }
+}
+
+uint8_t SbeDumpCollector::checkFastarrayCollectionNeeded(
+    const uint8_t clockState, const uint8_t type, uint64_t failingUnit,
+    const uint8_t chipPos)
+{
+    return (clockState == SBE_CLOCK_OFF &&
+            (type == SBE_DUMP_TYPE_HOSTBOOT ||
+             (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
+               ? 1
+               : 0;
 }
 
 } // namespace sbe_chipop

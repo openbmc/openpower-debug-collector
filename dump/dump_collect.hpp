@@ -139,6 +139,10 @@ class SbeDumpCollector
     void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
                               uint32_t id, uint8_t type, uint8_t clockState,
                               uint64_t chipPos);
+    uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
+                                           const uint8_t type,
+                                           uint64_t failingUnit,
+                                           const uint8_t chipPos);
 };
 
 } // namespace sbe_chipop
