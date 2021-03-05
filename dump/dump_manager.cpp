@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "dump_manager.hpp"
 
 #include "dump_utils.hpp"
@@ -39,7 +41,10 @@ struct DumpTypeInfo
     std::string dumpCollectionPath; // Path were dumps are stored
 };
 /* Map of dump type to the basic info of the dumps */
-std::map<uint8_t, DumpTypeInfo> dumpInfo = {};
+std::unordered_map<uint8_t, DumpTypeInfo> dumpInfo = {
+    {SBE::SBE_DUMP_TYPE_HOSTBOOT,
+     {HB_DUMP_DBUS_OBJPATH, HB_DUMP_COLLECTION_PATH}},
+};
 
 std::unordered_map<std::string, uint8_t> dumpTypeMap = {
     {"com.ibm.Dump.Create.DumpType.Hostboot", SBE::SBE_DUMP_TYPE_HOSTBOOT},
