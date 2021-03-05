@@ -73,6 +73,10 @@ foreach g : generated_sources generated_others
     endforeach
 endforeach
 
+if get_option('dump-collection').enabled()
+    subdir('dump')
+endif
+
 executable('watchdog_timeout',
     'watchdog_timeout.cpp',
     generated_sources,
