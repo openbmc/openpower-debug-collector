@@ -15,6 +15,15 @@ option('OP_DUMP_BUSNAME', type : 'string',
         value : 'org.open_power.Dump.Manager',
         description : 'The bus name of openpower-dump-collector')
 
+# hostboot dump values
+option('HB_DUMP_DBUS_OBJPATH', type : 'string',
+        value : '/xyz/openbmc_project/dump/hostboot',
+        description : 'The hostboot dump manager path')
+
+option('HB_DUMP_COLLECTION_PATH', type : 'string',
+        value : '/tmp/openpower-dumps/hostboot',
+        description : 'The path to store collected hostboot dump files')
+
 # Feature to enable the dump collection
 option('dump-collection', type: 'feature',
        value : 'disabled',
