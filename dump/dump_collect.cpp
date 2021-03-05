@@ -101,6 +101,24 @@ void collectDumpFromSBE(struct pdbg_target* proc,
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;
     uint8_t collectFastArray = 0;
+    if ((clockState == SBE::SBE_CLOCK_OFF) &&
+        (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+    {
+        collectFastArray = 1;
+    }
+
+    auto primaryProc = false;
+    try
+    {
+        primaryProc = openpower::phal::pdbg::isPrimaryProc(proc);
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(
+            fmt::format("Error checking for primary proc error({})", e.what())
+                .c_str());
+        // Attempt to collect the dump
+    }
 
     try
     {
@@ -138,6 +156,12 @@ void collectDumpFromSBE(struct pdbg_target* proc,
 
         openpower::dump::pel::createSbeErrorPEL(event, sbeError,
                                                 pelAdditionalData);
+        if ((primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        {
+            log<level::ERR>("Hostboot dump collection failed on primary, "
+                            "aborting colllection");
+            throw;
+        }
         return;
     }
     writeDumpFile(path, id, clockState, chipPos, dataPtr, len);

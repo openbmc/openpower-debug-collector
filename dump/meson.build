@@ -30,6 +30,10 @@ dump_conf_data.set_quoted('OP_DUMP_OBJPATH', get_option('OP_DUMP_OBJPATH'),
                      description : 'The D-Bus root of openpower-dump-collector')
 dump_conf_data.set_quoted('OP_DUMP_BUSNAME', get_option('OP_DUMP_BUSNAME'),
                      description : 'The bus name of openpower-dump-collector')
+dump_conf_data.set_quoted('HB_DUMP_DBUS_OBJPATH', get_option('HB_DUMP_DBUS_OBJPATH'),
+                     description : 'The hostboot dump manager path')
+dump_conf_data.set_quoted('HB_DUMP_COLLECTION_PATH', get_option('HB_DUMP_COLLECTION_PATH'),
+                     description : 'The path to store collected hostboot dump files')
 configure_file(configuration : dump_conf_data,
                output : 'config.h')
 
