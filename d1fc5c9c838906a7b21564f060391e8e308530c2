@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "107e351f_7e9c7948",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c86c8979_ede52d58",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8747c0ee_fd7b0e1d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -213,6 +231,60 @@
     },
     {
       "key": {
+        "uuid": "9c54a1bc_9563a634",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "480774ec_7d93417b",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66472ed9_dd572612",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29aa3fd6_42ca82ba",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "75cbd7de_681b664a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26582b2a_dd4ec205",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "74c33233_de9fc697",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -271,6 +343,24 @@
       "writtenOn": "2021-02-12T05:53:42Z",
       "side": 1,
       "message": "this isMasterProc could throw exception and if it is thrown to the caller through D-Bus it might core dump, do veriy this path",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0312757_4cd642a1",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "only the child will fail, handled  the crash",
+      "parentUuid": "f3bb1491_058c680a",
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -443,6 +533,30 @@
     },
     {
       "key": {
+        "uuid": "decfe7e1_ed72fa15",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Only the child will crash",
+      "parentUuid": "c31467dd_6fc10367",
+      "range": {
+        "startLine": 93,
+        "startChar": 5,
+        "endLine": 93,
+        "endChar": 31
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "418d1b4a_f779398d",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -538,6 +652,30 @@
     },
     {
       "key": {
+        "uuid": "3a33d047_8cc32a6f",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "collection will reach here only if the SBE is ready now, so throwing error if the chip-op failed, but skipping if the data length is 0 from a slave and that is expected",
+      "parentUuid": "9dcdb20f_a25fa6b9",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 51
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "332d7d45_7bb797e1",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -552,6 +690,24 @@
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bddaf6f7_d9773367",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "oe.what is captured",
+      "parentUuid": "332d7d45_7bb797e1",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -575,6 +731,30 @@
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aac607bf_18cdfa3b",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d06c913a_d749754b",
+      "range": {
+        "startLine": 152,
+        "startChar": 22,
+        "endLine": 152,
+        "endChar": 32
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -771,6 +951,24 @@
     },
     {
       "key": {
+        "uuid": "ba759cd7_64dc0bb6",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "no the exception will be thrown only if the chip-op failed for slaves, if no data recieved also considered as pass",
+      "parentUuid": "f6fc5229_b839268b",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d1a94f81_5068b4bc",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -893,6 +1091,24 @@
     },
     {
       "key": {
+        "uuid": "9c7f1d5f_7c22ab8a",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8543e255_f7ecd6aa",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d8e2a1a4_35b6ea94",
         "filename": "dump_manager.cpp",
         "patchSetId": 7
@@ -907,6 +1123,24 @@
       "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f4b535e_2f4d6570",
+        "filename": "dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8e2a1a4_35b6ea94",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -996,6 +1230,24 @@
     },
     {
       "key": {
+        "uuid": "d2bb43f3_c447ef66",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc55d1ef_40794b16",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba42ee27_3eb5fde6",
         "filename": "dump_manager.hpp",
         "patchSetId": 7
@@ -1031,6 +1283,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "ba42ee27_3eb5fde6",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdf49cff_221858e1",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "need for pdbg target",
+      "parentUuid": "f03bda55_41ec1214",
       "range": {
         "startLine": 2,
         "startChar": 0,
@@ -1454,6 +1730,30 @@
     },
     {
       "key": {
+        "uuid": "1b0dc144_0ff39742",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "cant make const since internal callers are not using const",
+      "parentUuid": "b6ef1def_3bad41a9",
+      "range": {
+        "startLine": 82,
+        "startChar": 28,
+        "endLine": 82,
+        "endChar": 51
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5e93bdee_4fbccfab",
         "filename": "dump_manager.hpp",
         "patchSetId": 7
@@ -1489,6 +1789,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "5e93bdee_4fbccfab",
+      "range": {
+        "startLine": 83,
+        "startChar": 28,
+        "endLine": 83,
+        "endChar": 59
+      },
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e892506e_e38eb403",
+        "filename": "dump_manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-08T04:58:15Z",
+      "side": 1,
+      "message": "modified",
+      "parentUuid": "4be76e74_b727ae5b",
       "range": {
         "startLine": 83,
         "startChar": 28,
