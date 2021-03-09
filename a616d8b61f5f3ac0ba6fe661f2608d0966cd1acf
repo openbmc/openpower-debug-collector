@@ -1,0 +1,509 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8107e7aa_36a88abc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Do not end the subject line with a period",
+      "range": {
+        "startLine": 7,
+        "startChar": 30,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1564d421_1e34ac97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Please include the design direction used for collection, is it for all SBE\u0027s or any sbe state based collection etc.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a93fdb8_d674fbb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 12,
+        "startChar": 27,
+        "endLine": 12,
+        "endChar": 36
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "932e2644_2297c341",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "391e3f7a_e1e94a76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1ebac00_28428beb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 39
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e1ac7f3_e0f58f54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 21
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c4d36d0_fa12a348",
+        "filename": "configure.ac",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "AC_CHECK_LIB (library, function.. ) . please add function you want to specifically you are looking here.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f26950d_6ce8b8ef",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "There is already HWP to check SBE state , refer https://github.ibm.com/phal/ipl/blob/master/libipl/p10/common.C#L114.",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f91d1076_f0751e2c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Recomenation is to libdt_api based interfaces to avoid hard coding attriubute size and types.\nrefer https://github.ibm.com/phal/pdata/pull/43/commits/de3545da0fb71c32d8d6f566c97586f3532c7dff.  serch ### libdt-api",
+      "range": {
+        "startLine": 104,
+        "startChar": 4,
+        "endLine": 104,
+        "endChar": 69
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d804ce82_299fcb9c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "this function throwning exception. based on the current design direction used here , should be caoturing the exception and skip the dump collection specific to processor.",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5771f8f_feb3f066",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Need to address patch set 7 comments.",
+      "range": {
+        "startLine": 123,
+        "startChar": 12,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2365bcb_dfd4b53a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "this is specific to master processor right? better update the log message accordingly.",
+      "range": {
+        "startLine": 128,
+        "startChar": 24,
+        "endLine": 128,
+        "endChar": 69
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1db3b62c_dfb64c20",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "This is required for slave processor also , like contradicting design direction used earlier.Like ignore slave processor.",
+      "range": {
+        "startLine": 142,
+        "startChar": 8,
+        "endLine": 142,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b72186e_084ca50c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Adress patch set 7 comments",
+      "range": {
+        "startLine": 176,
+        "startChar": 4,
+        "endLine": 176,
+        "endChar": 34
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d1f8768_b048031b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Required BMC dump here to debug this failure?",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8d383cf_052df2d3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "why this check required , HWAS_STATE update is based on pdbg target state. In summary you should probe target .",
+      "range": {
+        "startLine": 229,
+        "startChar": 12,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6482362c_b31d9860",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "refer the commnets related attribute read.",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4469d1be_887c466f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "do you want to check present or functional here? In the slave processor error path Hostboot triggerd dumpafter decconfigure is valid case ?",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65d41482_adb1dad9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Noticed , incase slave processor helper function failure case also throwing execption. i think the design direction iused is to continue dump collection for slave processor failure. please reveist the error handling code and follow the same direction, and incase you want to deviate please add comments. this will help reveiers to understand the flow.",
+      "range": {
+        "startLine": 265,
+        "startChar": 12,
+        "endLine": 272,
+        "endChar": 18
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "409f0a81_583d17d2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Address  patchset 7 review comments",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b116f18a_6a72c042",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "pdbg_target.",
+      "range": {
+        "startLine": 76,
+        "startChar": 26,
+        "endLine": 76,
+        "endChar": 37
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c8a0d60_4a47f08e",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Missing function description",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 47
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}

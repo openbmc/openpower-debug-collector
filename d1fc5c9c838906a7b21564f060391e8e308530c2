@@ -231,6 +231,42 @@
     },
     {
       "key": {
+        "uuid": "05f78eb8_29c96e21",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Is this check is happening prior to dump collection? or aftre packaging? incase no space  available to package this dump why , need to initiate dump collection? \nDesign should be return error for create request. incase insufficient space.",
+      "parentUuid": "3d861006_fd02340d",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51120d0d_b0ecc911",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-09T05:25:57Z",
+      "side": 1,
+      "message": "Any hardware limitation just a policy here?",
+      "parentUuid": "bf86afec_806c8581",
+      "revId": "d1fc5c9c838906a7b21564f060391e8e308530c2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9c54a1bc_9563a634",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 7
