@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dcba6434_1259d32f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8107e7aa_36a88abc",
+      "range": {
+        "startLine": 7,
+        "startChar": 30,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1564d421_1e34ac97",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2021-03-09T05:25:57Z",
       "side": 1,
       "message": "Please include the design direction used for collection, is it for all SBE\u0027s or any sbe state based collection etc.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee93bc38_e7c937b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "If the collection failed on any of the slaves, will continue with available dumps, if there are other errors like writing to file etc an internal error will be logged to collect the BMC dump.",
+      "parentUuid": "1564d421_1e34ac97",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ac9cf874_50aa1937",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a93fdb8_d674fbb6",
+      "range": {
+        "startLine": 12,
+        "startChar": 27,
+        "endLine": 12,
+        "endChar": 36
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "932e2644_2297c341",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -91,6 +163,30 @@
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ad83011_27e711ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "932e2644_2297c341",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "2f04b37d_2814de9f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "391e3f7a_e1e94a76",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c1ebac00_28428beb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -137,6 +257,30 @@
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f61b9afd_943e4e86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1ebac00_28428beb",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 39
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "0841c0af_7280f8cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1ac7f3_e0f58f54",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 21
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c4d36d0_fa12a348",
         "filename": "configure.ac",
         "patchSetId": 10
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "81a72cfb_55a9a81d",
+        "filename": "configure.ac",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c4d36d0_fa12a348",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f26950d_6ce8b8ef",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -197,6 +389,24 @@
       "writtenOn": "2021-03-09T05:25:57Z",
       "side": 1,
       "message": "There is already HWP to check SBE state , refer https://github.ibm.com/phal/ipl/blob/master/libipl/p10/common.C#L114.",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f36de7d5_0cfc243f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "There are issues when calling the HWP directly, will look at whether the IPL function to check whether sbe booted can be used",
+      "parentUuid": "3f26950d_6ce8b8ef",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -226,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "b8b6ffb5_fec3008b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f91d1076_f0751e2c",
+      "range": {
+        "startLine": 104,
+        "startChar": 4,
+        "endLine": 104,
+        "endChar": 69
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d804ce82_299fcb9c",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -237,6 +471,30 @@
       "writtenOn": "2021-03-09T05:25:57Z",
       "side": 1,
       "message": "this function throwning exception. based on the current design direction used here , should be caoturing the exception and skip the dump collection specific to processor.",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0730fc59_2d172df2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "will log an internal error to capture the BMC dump in this exception",
+      "parentUuid": "d804ce82_299fcb9c",
       "range": {
         "startLine": 121,
         "startChar": 14,
@@ -272,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "622fc58a_8a8f00cb",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5771f8f_feb3f066",
+      "range": {
+        "startLine": 123,
+        "startChar": 12,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2365bcb_dfd4b53a",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -295,6 +577,30 @@
     },
     {
       "key": {
+        "uuid": "27cc3680_e56a9249",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2365bcb_dfd4b53a",
+      "range": {
+        "startLine": 128,
+        "startChar": 24,
+        "endLine": 128,
+        "endChar": 69
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1db3b62c_dfb64c20",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -306,6 +612,30 @@
       "writtenOn": "2021-03-09T05:25:57Z",
       "side": 1,
       "message": "This is required for slave processor also , like contradicting design direction used earlier.Like ignore slave processor.",
+      "range": {
+        "startLine": 142,
+        "startChar": 8,
+        "endLine": 142,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab55916f_acd7ceb5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "the design is to continue only in the case of SBE collection error.",
+      "parentUuid": "1db3b62c_dfb64c20",
       "range": {
         "startLine": 142,
         "startChar": 8,
@@ -341,6 +671,30 @@
     },
     {
       "key": {
+        "uuid": "c4ca938a_662c53e3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b72186e_084ca50c",
+      "range": {
+        "startLine": 176,
+        "startChar": 4,
+        "endLine": 176,
+        "endChar": 34
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d1f8768_b048031b",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -352,6 +706,30 @@
       "writtenOn": "2021-03-09T05:25:57Z",
       "side": 1,
       "message": "Required BMC dump here to debug this failure?",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5c092af_525c82b4",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Yes this is an internal BMC issue",
+      "parentUuid": "2d1f8768_b048031b",
       "range": {
         "startLine": 192,
         "startChar": 8,
@@ -387,6 +765,30 @@
     },
     {
       "key": {
+        "uuid": "c20c4540_235c6f99",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "if the target is not enabled skip that target.",
+      "parentUuid": "a8d383cf_052df2d3",
+      "range": {
+        "startLine": 229,
+        "startChar": 12,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6482362c_b31d9860",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -404,6 +806,24 @@
     },
     {
       "key": {
+        "uuid": "10f405b6_017b0b34",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6482362c_b31d9860",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4469d1be_887c466f",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -415,6 +835,24 @@
       "writtenOn": "2021-03-09T05:25:57Z",
       "side": 1,
       "message": "do you want to check present or functional here? In the slave processor error path Hostboot triggerd dumpafter decconfigure is valid case ?",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "637dd490_c62748d3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "In no case a processor will get deconfigured after a poweron, so this is safe",
+      "parentUuid": "4469d1be_887c466f",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -444,6 +882,30 @@
     },
     {
       "key": {
+        "uuid": "a29a065b_38efaccf",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Exceptions wont be thrown in the case of slave SBE collection failure, but only if there are other errors like file handling, will handle file errors here and report an internal failure.",
+      "parentUuid": "65d41482_adb1dad9",
+      "range": {
+        "startLine": 265,
+        "startChar": 12,
+        "endLine": 272,
+        "endChar": 18
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "409f0a81_583d17d2",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -458,6 +920,24 @@
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0522c42_37291c4f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "409f0a81_583d17d2",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -484,6 +964,30 @@
     },
     {
       "key": {
+        "uuid": "e76cdeaf_278a63b1",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b116f18a_6a72c042",
+      "range": {
+        "startLine": 76,
+        "startChar": 26,
+        "endLine": 76,
+        "endChar": 37
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c8a0d60_4a47f08e",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 10
@@ -504,6 +1008,30 @@
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52e296b1_6589e8bb",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-11T16:03:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c8a0d60_4a47f08e",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 47
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
