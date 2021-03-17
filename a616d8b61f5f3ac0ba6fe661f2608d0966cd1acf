@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "03edd93b_9cf0727f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-17T05:01:39Z",
+      "side": 1,
+      "message": "internal error creates BMC dump . please make sure this is not causing any side effect, like requetsing dump during another dump request . Better avoid internal errors in the dump code.",
+      "parentUuid": "ee93bc38_e7c937b9",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5a93fdb8_d674fbb6",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -413,6 +437,24 @@
     },
     {
       "key": {
+        "uuid": "7aae276f_56616ee3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-17T05:01:39Z",
+      "side": 1,
+      "message": "better to move this function libpdbg. This will be commonly used by other app also.",
+      "parentUuid": "f36de7d5_0cfc243f",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f91d1076_f0751e2c",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -495,6 +537,30 @@
       "side": 1,
       "message": "will log an internal error to capture the BMC dump in this exception",
       "parentUuid": "d804ce82_299fcb9c",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8d39d60_a14e1d50",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-17T05:01:39Z",
+      "side": 1,
+      "message": "please see the commit message related to internal failure error usage.",
+      "parentUuid": "0730fc59_2d172df2",
       "range": {
         "startLine": 121,
         "startChar": 14,
@@ -742,6 +808,30 @@
     },
     {
       "key": {
+        "uuid": "f6e71ddc_c4b1f9c2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-17T05:01:39Z",
+      "side": 1,
+      "message": "please see the comments in commit message related to this.",
+      "parentUuid": "d5c092af_525c82b4",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a8d383cf_052df2d3",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -777,6 +867,30 @@
       "side": 1,
       "message": "if the target is not enabled skip that target.",
       "parentUuid": "a8d383cf_052df2d3",
+      "range": {
+        "startLine": 229,
+        "startChar": 12,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aadf9180_b0be9681",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-03-17T05:01:39Z",
+      "side": 1,
+      "message": "HWAS_STATE is based on PDBG_TARGET_ENABLED status. IPL time the HWAS_STATE attribute would be updated with correct status in the dev tree. not required , only probe is fine.",
+      "parentUuid": "c20c4540_235c6f99",
       "range": {
         "startLine": 229,
         "startChar": 12,
