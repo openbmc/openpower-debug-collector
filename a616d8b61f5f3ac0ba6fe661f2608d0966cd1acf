@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "d11a4d21_a329af7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-31T16:50:23Z",
+      "side": 1,
+      "message": "Will use internal errors if there is a BMC internal issue",
+      "parentUuid": "03edd93b_9cf0727f",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5a93fdb8_d674fbb6",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -573,6 +597,30 @@
     },
     {
       "key": {
+        "uuid": "29b400ea_8eccf659",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-31T16:50:23Z",
+      "side": 1,
+      "message": "Internal errors needs to logged when there are internal inconstancy in the BMC",
+      "parentUuid": "e8d39d60_a14e1d50",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d5771f8f_feb3f066",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -832,6 +880,30 @@
     },
     {
       "key": {
+        "uuid": "865d670a_a2676ab8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-31T16:50:23Z",
+      "side": 1,
+      "message": "filesystem malfunctioning is an internal error",
+      "parentUuid": "f6e71ddc_c4b1f9c2",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a8d383cf_052df2d3",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -900,6 +972,30 @@
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2372495b_42e8923c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-31T16:50:23Z",
+      "side": 1,
+      "message": "The comment is not clear, should keep the HWAS state checking or this probe?",
+      "parentUuid": "aadf9180_b0be9681",
+      "range": {
+        "startLine": 229,
+        "startChar": 12,
+        "endLine": 232,
+        "endChar": 13
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1137,6 +1233,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "1c8a0d60_4a47f08e",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 47
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5dfd421b_6b9e3d29",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-03-31T16:50:23Z",
+      "side": 1,
+      "message": "Removed as we should use libipl function",
+      "parentUuid": "52e296b1_6589e8bb",
       "range": {
         "startLine": 86,
         "startChar": 4,
