@@ -52,6 +52,7 @@ org/open_power/Host/Boot/error.cpp: ${top_srcdir}/org/open_power/Host/Boot.error
 
 endif
 # Export error YAML to shared location
+datadir = /usr/share
 yamldir = ${datadir}/phosphor-dbus-yaml/yaml
 nobase_yaml_DATA = \
 	org/open_power/Host/Boot.errors.yaml
