@@ -1,0 +1,502 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f46b9e2_01be5633",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Need to fix CI failure.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0301dff_e03ee5e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Collect hostboot dump from each SBE ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fa4b32b_1b328d57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "typo.",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5129b29c_5773cd48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 18,
+        "startChar": 32,
+        "endLine": 18,
+        "endChar": 37
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07045c5c_f23ac0f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Camel case.",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 19,
+        "endChar": 10
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f8da45_bc7e20c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 37
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f32a2ea_0963f44c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "ignored means no informational log associate to failure?",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0af8e28_8d5b378d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Here Dump size is in the range for 80MB ( for master processor). Need test summary related performance aspect. like no side effect related to power-off path",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 6
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ef21629_93e4b840",
+        "filename": "Makefile.am",
+        "patchSetId": 13
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "remove this empty line.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bca89b27_3c9e5f08",
+        "filename": "configure.ac",
+        "patchSetId": 13
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "better to align this portion, like other places in the code.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 37
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aeda18a4_992270d5",
+        "filename": "dump/dump.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "it is better to follow the directory structure  /dumpextensions/\u003cdump type\u003e . this will help future features addition cleanly.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26c23cc2_d7382533",
+        "filename": "dump/dump.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Use tab consistently.  Not sure my browser issue or not some line tab is missing.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "451a3708_17fc52b7",
+        "filename": "dump/dump.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "remove space.",
+      "range": {
+        "startLine": 17,
+        "startChar": 21,
+        "endLine": 17,
+        "endChar": 22
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56604c4c_c3ffe257",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "DBus APi?",
+      "range": {
+        "startLine": 27,
+        "startChar": 46,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f60491f1_74478b7d",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Missing event parameter. description.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afab609f_b6b9265c",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Missing parameter description",
+      "range": {
+        "startLine": 52,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 6
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e72f596_b9e3dc55",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Missing description.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "940a4b18_d28fe35c",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Need to restructure code with sdbusplus::exception::SdBusError\u0026 based exception handling.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a44821a0_527fa3fa",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "you can pass both path, intf in same append function.",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 21,
+        "endChar": 52
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7289d1ce_c2b9f91e",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "issue 851 is already closed.",
+      "range": {
+        "startLine": 27,
+        "startChar": 7,
+        "endLine": 27,
+        "endChar": 36
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db667625_4a073605",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Closed issue.",
+      "range": {
+        "startLine": 37,
+        "startChar": 7,
+        "endLine": 37,
+        "endChar": 37
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "052f4d62_c70a6d1b",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "This is header file. description is confusing.\nBetter keep this function under util name space.",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "646ba78d_4c9a88a2",
+        "filename": "sbe_consts.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "add SBE speciic name space. will help for tracjking sbe specific consts.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7e9fc3e_6c595b76",
+        "filename": "sbe_consts.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T05:06:10Z",
+      "side": 1,
+      "message": "Add refernce point to SBE spec / code for these definition.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
