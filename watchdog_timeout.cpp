@@ -1,5 +1,5 @@
 #include "org/open_power/Host/Boot/error.hpp"
-#include "phosphor-logging/elog-errors.hpp"
+#include <phosphor-logging/elog-errors.hpp>
 
 #include <phosphor-logging/elog.hpp>
 

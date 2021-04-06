@@ -15,7 +15,7 @@ AC_PROG_MAKE_SET
 AC_ARG_ENABLE([gen_errors],
     AS_HELP_STRING([--enable-gen_errors], [Enable elog-errors.hpp generation ]),
     [],[gen_errors=yes])
-AM_CONDITIONAL([GEN_ERRORS], [test "x$enable_gen_errors" != "xno"])
+AM_CONDITIONAL([GEN_ERRORS], [test "x$enable_gen_errors" == "xyes"])
 
 # Check for compiler, packages only when install_error_yaml optional feature
 # is disabled
