@@ -565,6 +565,365 @@
     },
     {
       "key": {
+        "uuid": "f6fb5975_de0017e0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Missing definition.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc4692b1_dc26bcd4",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Move this definition in common place. Multiple function using the same.",
+      "range": {
+        "startLine": 51,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 38
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57525951_d50ef96e",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Rephrase primary/backup.",
+      "range": {
+        "startLine": 53,
+        "startChar": 27,
+        "endLine": 53,
+        "endChar": 47
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a191eff_444d1f70",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "replace with primary",
+      "range": {
+        "startLine": 61,
+        "startChar": 40,
+        "endLine": 61,
+        "endChar": 47
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65d07899_71075b2d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Make const variable",
+      "range": {
+        "startLine": 71,
+        "startChar": 32,
+        "endLine": 72,
+        "endChar": 51
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f210332_1a052a67",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Move this definition in common place. Multiple function using the same.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abcba6fd_c2f0b027",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Please add comment- dump file name format",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6aa03239_bef3e80a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Max size of data is in the range 80mb . pdbg maintain any timeout? \nOr where is the data transfer ( full size) timeout handles.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be67f4c2_37e27bda",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Function scope : As per pdbg documentaion , should relase the memory by use. need to handle this.  all fail /exit uuse case.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "745447fe_0a50b819",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Move this definition in common place. Multiple function using the same.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17289e6f_31a941e1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Descrion updates \"Error creating Dump directories\", will help for deugging.",
+      "range": {
+        "startLine": 209,
+        "startChar": 38,
+        "endLine": 209,
+        "endChar": 45
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6373483_a00ebd64",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "It will be good to add informational log and collect dump for master processor non-functional case . This  state mess-up can happen due to some attribute sync or the crash durng attribute sync . In this case to debug the problem need  hostboot dump.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e6e0f57_61aa6e1d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "How the timeout related failure handled?",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d57a4566_ecd0effc",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Is there any policy check required to block new hostbootdump request incase data collection in progress. Like  dump request from  watchdog app and same time attn triggers dump due to hw issue .",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5c27768_89804acc",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Move this definition in common place. Multiple function using the same.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7fe5514_02345638",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "need to handle nullptr case here.",
+      "range": {
+        "startLine": 355,
+        "startChar": 55,
+        "endLine": 355,
+        "endChar": 71
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0f241ad_05b52bf1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "General comment -- Need to revisit the error strategy. this error is going to trigger another dump. and is it really required here . also make sure the d-bu interface definition got this error added.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eae0f635_d9062aac",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "Add comments related to the path format. This will help reviewers.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "222c0b9c_b4a643d6",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:26:15Z",
+      "side": 1,
+      "message": "If the collectdump failed , who will be updating the dump entry object status with failing status or removing the entry itself?",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "56604c4c_c3ffe257",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 13
