@@ -742,6 +742,23 @@
     },
     {
       "key": {
+        "uuid": "ef184031_f1a621e7",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-06T14:33:34Z",
+      "side": 1,
+      "message": "Please make sure that data is good for parser tool. Basically BMC is little endia and host is big endian. . just want to make sure endianess mismatch is not causing any data packing issues.",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "745447fe_0a50b819",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 13
