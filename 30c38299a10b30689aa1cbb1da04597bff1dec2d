@@ -752,6 +752,30 @@
     },
     {
       "key": {
+        "uuid": "6af45532_f5c6074a",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-06T09:06:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e30ac6ac_d90b7f0d",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 60
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ec9cc15_6ceffbd5",
         "filename": "dump/dump_manager_main.cpp",
         "patchSetId": 13
@@ -763,6 +787,30 @@
       "writtenOn": "2021-04-06T06:03:07Z",
       "side": 1,
       "message": "Need to fix this.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 6
+      },
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d8baf7f_66b8fb3f",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-06T09:06:44Z",
+      "side": 1,
+      "message": "not needed",
+      "parentUuid": "7ec9cc15_6ceffbd5",
       "range": {
         "startLine": 25,
         "startChar": 0,
