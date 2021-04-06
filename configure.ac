@@ -22,7 +22,7 @@ AM_CONDITIONAL([GEN_ERRORS], [test "x$enable_gen_errors" != "xno"])
 AC_ARG_ENABLE([install_error_yaml],
     AS_HELP_STRING([--enable-install_error_yaml], [Enable installing error yaml file]),
     [], [install_error_yaml=no])
-AM_CONDITIONAL([INSTALL_ERROR_YAML], [test "x$enable_install_error_yaml" = "xyes"])
+AM_CONDITIONAL([INSTALL_ERROR_YAML], [test "x$enable_install_error_yaml" == "xyes"])
 AS_IF([test "x$enable_install_error_yaml" != "xyes"], [
     # Checks for typedefs, structures, and compiler characteristics.
     AX_CXX_COMPILE_STDCXX_17([noext])
