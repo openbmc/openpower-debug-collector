@@ -953,6 +953,24 @@
     },
     {
       "key": {
+        "uuid": "26d03180_5cfac6ed",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-07T06:03:03Z",
+      "side": 1,
+      "message": "Key point need to look here is . if the Hostbootdump triggerd in re-ipl path , state manager should wait dump collection completion before issuing reset request.  Need to make sure the timeout related error couldn\u0027t creating any issue with state management flow.",
+      "parentUuid": "2b3ff56e_7aa0e6b4",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "be67f4c2_37e27bda",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 13
