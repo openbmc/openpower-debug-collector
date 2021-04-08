@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "6edbe3eb_1096260b",
+        "filename": "dump/dump.mk",
+        "patchSetId": 22
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T18:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5017872d_75442152",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 25
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "468d1996_cd0d2696",
         "filename": "dump/dump.mk",
         "patchSetId": 22
@@ -115,6 +139,30 @@
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60d45a8c_a04a6af9",
+        "filename": "dump/dump.mk",
+        "patchSetId": 22
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T18:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "468d1996_cd0d2696",
+      "range": {
+        "startLine": 17,
+        "startChar": 5,
+        "endLine": 17,
+        "endChar": 21
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -271,6 +319,24 @@
       "writtenOn": "2021-04-08T12:44:57Z",
       "side": 1,
       "message": "do we need to log error here",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34015b48_c39dee3c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T18:43:57Z",
+      "side": 1,
+      "message": "An internal error?",
+      "parentUuid": "275ccc50_a4b8a5f9",
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
