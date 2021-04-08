@@ -2,6 +2,86 @@
   "comments": [
     {
       "key": {
+        "uuid": "f977eea3_d91d2ad9",
+        "filename": "configure.ac",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "is this name correct usualy busnames will have . i.e org.openpower.dump",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2d9f372_f292d693",
+        "filename": "configure.ac",
+        "patchSetId": 22
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "should this be HB_DUMP_DBUS_OBJPATH",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5017872d_75442152",
+        "filename": "dump/dump.mk",
+        "patchSetId": 22
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "assume we have corresponding bb changes",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 25
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "468d1996_cd0d2696",
+        "filename": "dump/dump.mk",
+        "patchSetId": 22
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "this needs to be SDEVENTPLUS_CFLAGS",
+      "range": {
+        "startLine": 17,
+        "startChar": 5,
+        "endLine": 17,
+        "endChar": 21
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0e70e4fe_d759b351",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -49,6 +129,93 @@
     },
     {
       "key": {
+        "uuid": "9182ee5d_7bff06fc",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "struct DumpPtr\n{\n   public:\n    DumpPtr()\n    {   \n        std::cout \u003c\u003c \"came to constructor \" \u003c\u003cstd::endl;\n    }   \n    ~DumpPtr()\n    {   \n        std::cout \u003c\u003c \"came to destructor \" \u003c\u003cstd::endl;\n        free(mPtr);\n    }   \n    int** getPtr()\n    {   \n        return \u0026mPtr;\n    }   \n    int* getData()\n    {   \n        return mPtr;\n    }   \n   private:\n    int* mPtr \u003d NULL;\n};\nvoid sbe_dump(int **temp)\n{\n    *temp \u003d (int*)malloc(sizeof(int)*10);\n}\nint main()\n{\n    int* ptr \u003d NULL;\n    DumpPtr dump;\n    sbe_dump(dump.getPtr());\n    return 0;\n}\n\n\nwhen you want to access data you can call getData() method",
+      "parentUuid": "6da37058_8adc99ac",
+      "range": {
+        "startLine": 81,
+        "startChar": 3,
+        "endLine": 81,
+        "endChar": 25
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c155faec_95386d1e",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "these 3 lines should be before line 118",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 21
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "275ccc50_a4b8a5f9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "do we need to log error here",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5bbedf5_177ca185",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "move before 155",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 25
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8565dde_a41255fb",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -78,6 +245,23 @@
       "side": 1,
       "message": "I am not understanding how timeout is preventing a reboot",
       "parentUuid": "d8565dde_a41255fb",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "819d019a_ac41edd6",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T12:44:57Z",
+      "side": 1,
+      "message": "is this requierd in header file?",
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
