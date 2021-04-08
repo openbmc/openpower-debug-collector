@@ -399,6 +399,30 @@
     },
     {
       "key": {
+        "uuid": "23cbf0e3_0ec9f91a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "since there is no real error from underlying layers will change this to runtime_error",
+      "parentUuid": "01110836_f250dda5",
+      "range": {
+        "startLine": 151,
+        "startChar": 32,
+        "endLine": 151,
+        "endChar": 38
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "789ecd1d_d8b1c117",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -416,6 +440,24 @@
     },
     {
       "key": {
+        "uuid": "3b61bfd1_1db3d436",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "e.code is not defined here, this errorlog is expecting errno",
+      "parentUuid": "789ecd1d_d8b1c117",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a7574eca_428f5fb7",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -427,6 +469,30 @@
       "writtenOn": "2021-04-08T16:53:27Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 186,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 25
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9db273f_aa608453",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "here the error is expecting errno",
+      "parentUuid": "a7574eca_428f5fb7",
       "range": {
         "startLine": 186,
         "startChar": 8,
@@ -462,6 +528,30 @@
     },
     {
       "key": {
+        "uuid": "66b4221d_a7535e51",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "yes we cant continue if the directory creation failed, so will report internal error and exit",
+      "parentUuid": "099d2f7e_7193a383",
+      "range": {
+        "startLine": 221,
+        "startChar": 7,
+        "endLine": 221,
+        "endChar": 32
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "67a3ca66_0a63596a",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -479,6 +569,24 @@
     },
     {
       "key": {
+        "uuid": "368fd497_49f24965",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "here ec.code will be used",
+      "parentUuid": "67a3ca66_0a63596a",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "62390568_6065a17a",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -490,6 +598,24 @@
       "writtenOn": "2021-04-08T16:53:27Z",
       "side": 1,
       "message": "error \u003d errno before this line",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ac33cd2_23573056",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "will change to std::runtime_error",
+      "parentUuid": "62390568_6065a17a",
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -519,6 +645,30 @@
     },
     {
       "key": {
+        "uuid": "af1bdd89_a27b4919",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "will move the waitpid inside clock state loop so that will get serialized",
+      "parentUuid": "4657a8bb_4b40482a",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 305,
+        "endChar": 73
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cc4df248_6df3e0fa",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -536,6 +686,24 @@
     },
     {
       "key": {
+        "uuid": "031b9136_e95e5db5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "It will exit with error code",
+      "parentUuid": "cc4df248_6df3e0fa",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "39a5a1f6_622e92e9",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 22
@@ -547,6 +715,30 @@
       "writtenOn": "2021-04-08T16:53:27Z",
       "side": 1,
       "message": "as this method is internally using fork for long running dump collection, there is no need of fork here",
+      "range": {
+        "startLine": 428,
+        "startChar": 7,
+        "endLine": 428,
+        "endChar": 38
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e34daea_1b3faf7a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "Now we need fork because we are going to clock on and off serially, otherwise dbus call will have to wait",
+      "parentUuid": "39a5a1f6_622e92e9",
       "range": {
         "startLine": 428,
         "startChar": 7,
@@ -614,6 +806,30 @@
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea3e6a62_fae99914",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-08T17:28:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a01fc0c5_f2e52fca",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
