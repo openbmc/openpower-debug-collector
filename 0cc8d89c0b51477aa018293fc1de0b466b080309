@@ -359,6 +359,206 @@
     },
     {
       "key": {
+        "uuid": "bb12cd6e_8e8c4fcc",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "good choice of using system_error",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01110836_f250dda5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "you need to use e.code here not errno and for message e.code.what()\nhttps://en.cppreference.com/w/cpp/error/system_error",
+      "range": {
+        "startLine": 151,
+        "startChar": 32,
+        "endLine": 151,
+        "endChar": 38
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "789ecd1d_d8b1c117",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "same as above use e.code",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7574eca_428f5fb7",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 186,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 25
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "099d2f7e_7193a383",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "you want to crash the application here? can\u0027t we throw exception? If this is not a long running application we can do so but do we need to commit an error here? or create a PEL before crash?",
+      "range": {
+        "startLine": 221,
+        "startChar": 7,
+        "endLine": 221,
+        "endChar": 32
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67a3ca66_0a63596a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62390568_6065a17a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "error \u003d errno before this line",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4657a8bb_4b40482a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "As per my understanding in hwsv collect dump from SBE for the same proc cannot go in parallel i.e both clock on and colck off should go in serial",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 305,
+        "endChar": 73
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc4df248_6df3e0fa",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "here the parent application will crash is it expected?",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39a5a1f6_622e92e9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "as this method is internally using fork for long running dump collection, there is no need of fork here",
+      "range": {
+        "startLine": 428,
+        "startChar": 7,
+        "endLine": 428,
+        "endChar": 38
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "819d019a_ac41edd6",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 22
@@ -391,6 +591,29 @@
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a01fc0c5_f2e52fca",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-08T16:53:27Z",
+      "side": 1,
+      "message": "? required",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     },
     {
       "key": {
