@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8c251906_f3b43e15",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-09T05:40:09Z",
+      "side": 1,
+      "message": "PDBG maintains one FFDC per SBE or maintain one for all SBEs?\nif it is maintaining only one FFDC across SBEs why such a limitation?",
+      "parentUuid": "35c5da91_e1ee0be0",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9e3c2ac1_cadac073",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2021-04-09T05:15:38Z",
       "side": 1,
       "message": "what is the max size memory allocates for each chi-op requests. other reveiw i noticed primary processor 80MB and alt primary less. since the interfcae deisn\u0027t take any size parameter. memory allocation is going to be 4 proc config - 4*2*max size and also consider the more processor config systems. Need to look the impact on this memory allocation. \nGod test is that  cerate hostboot dump after step 16 ( that is time Host collects max size data) and see the any impcat is there or not.\nAlso same fsi bus is used for clock on/off path dump data collection am not sure you are really getting any performace boot here ( am not fsi expert). Considering devender\u0027s comments. am not sure processor level parlleisation really helps here until you have strong reason to implement this and solving other issues mentioned above. @devender.",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f34e7a6_54703a63",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-09T05:40:09Z",
+      "side": 1,
+      "message": "now there is no parallelization across clock on and clock off, first all clock on will complete then only the clock off will start. \nI have tested multiple times after step16\nWe will change this call once the pdbg updates the API",
+      "parentUuid": "9e3c2ac1_cadac073",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
