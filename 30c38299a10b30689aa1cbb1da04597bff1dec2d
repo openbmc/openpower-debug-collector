@@ -1007,6 +1007,24 @@
     },
     {
       "key": {
+        "uuid": "efef7abe_336a2b7a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-04-09T00:30:43Z",
+      "side": 1,
+      "message": "It will be up to the calling app to control the timeout. It will probably be whatever you guys tell us. Ben will do the PRD path and I\u0027ll be doing the host watchdog path. We\u0027ll wait a certain amount of time, and then yeah, either way, we will continue the reboot (just log an error if we never see the new dump event). There is no state management timers in this path.",
+      "parentUuid": "922bc850_2d8b33ae",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "be67f4c2_37e27bda",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 13
