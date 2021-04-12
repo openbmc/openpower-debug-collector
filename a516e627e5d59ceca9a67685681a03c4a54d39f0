@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5037e00f_46926900",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-12T07:37:27Z",
+      "side": 1,
+      "message": "this can move to 255. based on the new code structure varible scope is limeited to for loop right?",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "35c5da91_e1ee0be0",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 24
@@ -66,6 +83,70 @@
       "side": 1,
       "message": "now there is no parallelization across clock on and clock off, first all clock on will complete then only the clock off will start. \nI have tested multiple times after step16\nWe will change this call once the pdbg updates the API",
       "parentUuid": "9e3c2ac1_cadac073",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c7c6571_ac6c2772",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-12T07:37:27Z",
+      "side": 1,
+      "message": "Did you check with Kernel team, whether fsi supports parallel transaction?  Sice BMC supports only one fsi bus , this will add performance advantage only if kernel supports.",
+      "parentUuid": "9f34e7a6_54703a63",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "064aba39_78bc3995",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-12T07:37:27Z",
+      "side": 1,
+      "message": "it will be good to print status value , good for debug.",
+      "range": {
+        "startLine": 319,
+        "startChar": 15,
+        "endLine": 319,
+        "endChar": 58
+      },
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94925f13_d87a6519",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-04-12T07:37:27Z",
+      "side": 1,
+      "message": "Info ?",
+      "range": {
+        "startLine": 322,
+        "startChar": 12,
+        "endLine": 322,
+        "endChar": 27
+      },
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
