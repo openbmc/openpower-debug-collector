@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fb44ff94_eabeb4a8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-12T08:29:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5037e00f_46926900",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "35c5da91_e1ee0be0",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 24
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "0ae8d62b_e7e0585e",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-12T08:29:45Z",
+      "side": 1,
+      "message": "we had a discussion on this during mpipl chip-ops, the conclusion was the commands will  get pushed over FSI bus, that is why the wait part worked in enter mpipl",
+      "parentUuid": "9c7c6571_ac6c2772",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "064aba39_78bc3995",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 24
@@ -130,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "88337647_60de59ab",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-12T08:29:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "064aba39_78bc3995",
+      "range": {
+        "startLine": 319,
+        "startChar": 15,
+        "endLine": 319,
+        "endChar": 58
+      },
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "94925f13_d87a6519",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 24
@@ -150,6 +210,30 @@
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77ff844f_b0080d8b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-04-12T08:29:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94925f13_d87a6519",
+      "range": {
+        "startLine": 322,
+        "startChar": 12,
+        "endLine": 322,
+        "endChar": 27
+      },
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
