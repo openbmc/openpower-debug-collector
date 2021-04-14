@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b29374ad_b43cf9b8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-04-14T04:08:02Z",
+      "side": 1,
+      "message": "this looks wrong to me, now every thing will go in serial. \nfor loop\n{\nfork process\npush to vector\nwaitpid\n}\n\nthe waitpid will block and will not go the next item in the loop, also it will waitpid again and again on the processes that are already completed",
+      "revId": "fb327cd1aca7fe853a2a7db4581f3b4bf40b9771",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
