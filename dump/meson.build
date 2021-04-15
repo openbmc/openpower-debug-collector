@@ -4,8 +4,9 @@ cxx = meson.get_compiler('cpp')
 
 sdeventplus_dep = dependency('sdeventplus')
 
+systemd_dep = dependency('systemd')
 dump_deps = [
-    systemd,
+    systemd_dep,
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
     sdeventplus_dep,
@@ -56,3 +57,5 @@ executable('dump-collect',
     implicit_include_directories: true,
     install: true
 )
+
+subdir('dist')
