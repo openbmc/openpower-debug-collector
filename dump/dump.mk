@@ -1,6 +1,8 @@
 if DUMP_COLLECTION
 sbin_PROGRAMS += openpower-dump-manager
-
+systemdsystemunit_DATA = \
+	dump/org.open_power.Dump.Manager.service
+	
 openpower_dump_manager_SOURCES = dump/dump_manager.cpp \
 				dump/dump_manager_main.cpp \
 				dump/dump_utils.cpp
