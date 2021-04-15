@@ -1,0 +1,18 @@
+[Unit]
+Description=OpenPOWER Dump Manager Host
+Wants=obmc-host-start-pre@0.target
+Before=obmc-host-start-pre@0.target
+Wants=xyz.openbmc_project.Dump.Manager.service
+After=xyz.openbmc_project.Dump.Manager.service
+Before=mapper-wait@-org-open_power-dump-manager@0.service
+Conflicts=obmc-chassis-poweroff@0.target
+
+[Service]
+Environment="PDBG_DTB=/var/lib/phosphor-software-manager/pnor/rw/DEVTREE"
+ExecStart=/usr/bin/openpower-dump-manager
+Restart=always
+Type=dbus
+BusName=org.open_power.Dump.Manager
+
+[Install]
+WantedBy=obmc-host-startmin@0.target
