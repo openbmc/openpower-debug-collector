@@ -50,6 +50,7 @@ AS_IF([test "x$enable_dump_collection" == "xyes"], [
     LIBS="$LIBS $LIBDT_API_LIBS"
     CFLAGS="$CFLAGS $LIBDT_API_CFLAGS"
     PKG_CHECK_MODULES([SDEVENTPLUS], [sdeventplus])
+    AC_CONFIG_FILES([dump/org.open_power.Dump.Manager.service])
 ])
 
 # Generate elog-errors.hpp if gen_errors optional feature is enabled
@@ -84,6 +85,22 @@ AS_IF([test "x$enable_install_error_yaml" != "xyes"], [
     PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,
         [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 ])
+
+PKG_PROG_PKG_CONFIG
+AC_ARG_WITH([systemdsystemunitdir],
+     [AS_HELP_STRING([--with-systemdsystemunitdir=DIR], [Directory for systemd service files])],,
+     [with_systemdsystemunitdir=auto])
+AS_IF([test "x$with_systemdsystemunitdir" = "xyes" -o "x$with_systemdsystemunitdir" = "xauto"], [
+     def_systemdsystemunitdir=$($PKG_CONFIG --variable=systemdsystemunitdir systemd)
+
+     AS_IF([test "x$def_systemdsystemunitdir" = "x"],
+   [AS_IF([test "x$with_systemdsystemunitdir" = "xyes"],
+    [AC_MSG_ERROR([systemd support requested but pkg-config unable to query systemd package])])
+    with_systemdsystemunitdir=no],
+   [with_systemdsystemunitdir="$def_systemdsystemunitdir"])])
+AS_IF([test "x$with_systemdsystemunitdir" != "xno"],
+      [AC_SUBST([systemdsystemunitdir], [$with_systemdsystemunitdir])])
+
 # Create configured output
 AC_CONFIG_FILES([Makefile ])
 AC_OUTPUT
