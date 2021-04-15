@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: Apache-2.0
 
+unit_files += {'input':'dump/org.open_power.Dump.Manager.service',
+         'output':'org.open_power.Dump.Manager.service'}
+
 cxx = meson.get_compiler('cpp')
 
 dump_deps = [
