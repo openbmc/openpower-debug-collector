@@ -1,0 +1,20 @@
+[Unit]
+Description=OpenPOWER Dump Manager
+After=obmc-host-start-pre@0.target
+Before=obmc-host-starting@0.target
+Before=obmc-host-started@0.target
+Wants=obmc-power-on@0.target
+After=obmc-power-on@0.target
+Wants="xyz.openbmc_project.Dump.Manager.service"
+After="xyz.openbmc_project.Dump.Manager.service"
+Conflicts=obmc-host-stop@0.target
+
+[Service]
+ExecStart=/usr/sbin/openpower-dump-manager
+SyslogIdentifier=openpower-dump-manager
+Restart=always
+Type=dbus
+BusName={BUSNAME}
+
+[Install]
+WantedBy=obmc-host-startmin@0.target
