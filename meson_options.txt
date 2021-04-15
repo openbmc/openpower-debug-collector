@@ -3,3 +3,8 @@ option('hostboot-dump-collection',
        type: 'feature',
        value: 'disabled',
        description : 'Enables hostboot dump collection')
+
+# Feature to enable the dump collection
+option('dump-collection', type: 'feature',
+       value : 'disabled',
+       description : 'Enables dump collection')
