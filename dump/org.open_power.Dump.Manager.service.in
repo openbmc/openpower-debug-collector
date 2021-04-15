@@ -1,0 +1,18 @@
+[Unit]
+Description=Phosphor Dump Manager on host%i
+After=obmc-host-start-pre@%i.target
+Before=obmc-host-starting@%i.target
+Before=obmc-host-started@%i.target
+Wants=obmc-power-on@%i.target
+After=obmc-power-on@%i.target
+Conflicts=obmc-host-stop@%i.target
+
+[Service]
+ExecStart=/usr/sbin/openpower-dump-manager
+SyslogIdentifier=openpower-dump-manager
+Restart=always
+Type=dbus
+BusName={BUSNAME}
+
+[Install]
+WantedBy=obmc-host-startmin@%i.target
