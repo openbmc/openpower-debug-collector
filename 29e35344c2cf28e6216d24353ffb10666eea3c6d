@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83243c79_5aef20bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-04-16T06:33:38Z",
+      "side": 1,
+      "message": "Please add related service link creation patch info in this commit message.",
+      "revId": "29e35344c2cf28e6216d24353ffb10666eea3c6d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "237be595_1812b8e3",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-04-16T06:33:38Z",
+      "side": 1,
+      "message": "openpower dump manager ?",
+      "revId": "29e35344c2cf28e6216d24353ffb10666eea3c6d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c49ab101_52e3040b",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-04-16T06:33:38Z",
+      "side": 1,
+      "message": "Do you need `Wants` ?\nsame as below.",
+      "revId": "29e35344c2cf28e6216d24353ffb10666eea3c6d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16fb46a7_3cbb45c3",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-04-16T06:33:38Z",
+      "side": 1,
+      "message": "I am not familiar with state mgmt, I would like to review by some experts on this.",
+      "revId": "29e35344c2cf28e6216d24353ffb10666eea3c6d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c40a70a6_6e2b566d",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-04-16T06:33:38Z",
+      "side": 1,
+      "message": "is there any dependency with phosphor-debug-collector ? I mean do we need to make sure any service files which are present in phosphor-debug-collector dependent with this service file ? If so, do you need `After` or `Before`?",
+      "revId": "29e35344c2cf28e6216d24353ffb10666eea3c6d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
