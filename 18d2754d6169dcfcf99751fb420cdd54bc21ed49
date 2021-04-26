@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac06c97_61bd3583",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-04-26T15:54:45Z",
+      "side": 1,
+      "message": "start_host@.service (i.e. sbe start) is run within obmc-host-starting@0.target so if we need to ensure this service runs after it, you\u0027ll need an explicit After\u003d clause:\nAfter\u003dstart_host@0.service\n\nOne confusing thing though is that Jayanth stated we need this to run after start SBE but before hostboot starts. We have no control over that. Once you start the SBE, hostboot will automatically be started within 30 seconds. I\u0027m sure this service will be up and running before that though so probably not an issue.",
+      "revId": "18d2754d6169dcfcf99751fb420cdd54bc21ed49",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52b1c176_7887e467",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-04-26T15:54:45Z",
+      "side": 1,
+      "message": "This should be removed, it\u0027s redundant since it will always run after \"obmc-host-starting\"",
+      "revId": "18d2754d6169dcfcf99751fb420cdd54bc21ed49",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "943b3450_0ef24254",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-04-26T15:54:45Z",
+      "side": 1,
+      "message": "These (lines 6 and 7) are also redundant since for the host to be started, the power has to be on.",
+      "revId": "18d2754d6169dcfcf99751fb420cdd54bc21ed49",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02990f99_c7c21a10",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-04-26T15:54:45Z",
+      "side": 1,
+      "message": "I would also add this to ensure mapper has introspected your service before officially being started:\nBefore\u003dmapper-wait@-org-open_power-dump-manager.service",
+      "revId": "18d2754d6169dcfcf99751fb420cdd54bc21ed49",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fef7e58e_3a135c75",
+        "filename": "dump/org.open_power.Dump.Manager.service.in",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-04-26T15:54:45Z",
+      "side": 1,
+      "message": "This isn\u0027t needed anymore since we have the full path in ExecStart now",
+      "revId": "18d2754d6169dcfcf99751fb420cdd54bc21ed49",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
