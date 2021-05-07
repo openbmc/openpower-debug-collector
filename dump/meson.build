@@ -34,6 +34,10 @@ dump_conf_data.set_quoted('HB_DUMP_DBUS_OBJPATH', get_option('HB_DUMP_DBUS_OBJPA
                      description : 'The hostboot dump manager path')
 dump_conf_data.set_quoted('HB_DUMP_COLLECTION_PATH', get_option('HB_DUMP_COLLECTION_PATH'),
                      description : 'The path to store collected hostboot dump files')
+dump_conf_data.set_quoted('HW_DUMP_DBUS_OBJPATH', get_option('HW_DUMP_DBUS_OBJPATH'),
+                     description : 'The hardware dump manager path')
+dump_conf_data.set_quoted('HW_DUMP_COLLECTION_PATH', get_option('HW_DUMP_COLLECTION_PATH'),
+                     description : 'The path to store collected hardware dump files')
 configure_file(configuration : dump_conf_data,
                output : 'config.h')
 
