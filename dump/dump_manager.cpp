@@ -19,6 +19,7 @@
 
 #include <chrono>
 #include <fstream>
+#include <string>
 #include <system_error>
 #include <vector>
 
@@ -35,6 +36,7 @@ constexpr auto DUMP_NOTIFY_IFACE = "xyz.openbmc_project.Dump.NewDump";
 constexpr auto DUMP_PROGRESS_IFACE = "xyz.openbmc_project.Common.Progress";
 constexpr auto STATUS_PROP = "Status";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
+constexpr auto INVALID_FAILING_UNIT = 0xFF;
 
 /* @struct DumpTypeInfo
  * @brief to store basic info about different dump types
@@ -49,7 +51,8 @@ struct DumpTypeInfo
 std::map<uint8_t, DumpTypeInfo> dumpInfo = {
     {SBE::SBE_DUMP_TYPE_HOSTBOOT,
      {HB_DUMP_DBUS_OBJPATH, HB_DUMP_COLLECTION_PATH}},
-};
+    {SBE::SBE_DUMP_TYPE_HARDWARE,
+     {HW_DUMP_DBUS_OBJPATH, HW_DUMP_COLLECTION_PATH}}};
 
 bool Manager::isMasterProc(struct pdbg_target* proc) const
 {
@@ -188,7 +191,8 @@ void Manager::collectDumpFromSBE(struct pdbg_target* proc,
     log<level::INFO>("Hostboot dump collected");
 }
 
-void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
+void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId,
+                          const uint8_t failingUnit)
 {
     struct pdbg_target* target;
     bool failed = false;
@@ -286,10 +290,17 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
             }
 
             uint8_t collectFastArray = 0;
-            if ((cstate == SBE::SBE_CLOCK_OFF) &&
-                (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+            if (cstate == SBE::SBE_CLOCK_OFF)
             {
-                collectFastArray = 1;
+                if (type == SBE::SBE_DUMP_TYPE_HOSTBOOT)
+                {
+                    collectFastArray = 1;
+                }
+                if ((type == SBE::SBE_DUMP_TYPE_HARDWARE) &&
+                    (chipPos == failingUnit))
+                {
+                    collectFastArray = 1;
+                }
             }
 
             pid_t pid = fork();
@@ -411,16 +422,41 @@ sdbusplus::message::object_path
     elogId = ss.str();
 
     uint8_t type = 0;
+    uint8_t failingUnit = INVALID_FAILING_UNIT;
 
     if (dumpType == "com.ibm.Dump.Create.DumpType.Hostboot")
     {
         type = SBE::SBE_DUMP_TYPE_HOSTBOOT;
+    }
+    if (dumpType == "com.ibm.Dump.Create.DumpType.Hardware")
+    {
+        type = SBE::SBE_DUMP_TYPE_HARDWARE;
     }
     else
     {
         log<level::ERR>("Invalid dump type passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("DUMP_TYPE"),
                               Argument::ARGUMENT_VALUE(dumpType.c_str()));
+    }
+
+    if (type == SBE::SBE_DUMP_TYPE_HARDWARE)
+    {
+        try
+        {
+            std::string failingUnitStr =
+                params.at(sdbusplus::com::ibm::Dump::server::Create::
+                              convertCreateParametersToString(
+                                  CreateParameters::FailingUnit));
+
+            failingUnit = std::stoi(failingUnitStr);
+        }
+        catch (const std::out_of_range& e)
+        {
+            log<level::ERR>("Required argument, failing unit id is not passed",
+                            entry("ERROR=%s", e.what()));
+            elog<InvalidArgument>(Argument::ARGUMENT_NAME("FAILING_UNIT_ID"),
+                                  Argument::ARGUMENT_VALUE("MISSING"));
+        }
     }
 
     try
@@ -441,7 +477,7 @@ sdbusplus::message::object_path
         elog<InternalFailure>();
     }
 
-    // DUMP Path format /xyz/openbmc_project/dump/hostboot/entry/<id>
+    // DUMP Path format /xyz/openbmc_project/dump/<dump_type>/entry/<id>
     std::string pathStr = newDumpPath;
     auto pos = pathStr.rfind("/");
     if (pos == std::string::npos)
@@ -456,7 +492,7 @@ sdbusplus::message::object_path
     pid_t pid = fork();
     if (pid == 0)
     {
-        collectDump(type, id, elogId);
+        collectDump(type, id, elogId, failingUnit);
         std::exit(EXIT_SUCCESS);
     }
     else if (pid < 0)
