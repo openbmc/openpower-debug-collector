@@ -101,10 +101,13 @@ void collectDumpFromSBE(struct pdbg_target* proc,
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;
     uint8_t collectFastArray = 0;
-    if ((clockState == SBE::SBE_CLOCK_OFF) &&
-        (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+    if (clockState == SBE::SBE_CLOCK_OFF)
     {
-        collectFastArray = 1;
+        if ((type == SBE::SBE_DUMP_TYPE_HOSTBOOT) ||
+            ((type == SBE::SBE_DUMP_TYPE_HARDWARE) && (chipPos == failingUnit)))
+        {
+            collectFastArray = 1;
+        }
     }
 
     auto primaryProc = false;
