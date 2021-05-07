@@ -44,7 +44,8 @@ struct DumpTypeInfo
 std::unordered_map<uint8_t, DumpTypeInfo> dumpInfo = {
     {SBE::SBE_DUMP_TYPE_HOSTBOOT,
      {HB_DUMP_DBUS_OBJPATH, HB_DUMP_COLLECTION_PATH}},
-};
+    {SBE::SBE_DUMP_TYPE_HARDWARE,
+     {HW_DUMP_DBUS_OBJPATH, HW_DUMP_COLLECTION_PATH}}};
 
 std::unordered_map<std::string, uint8_t> dumpTypeMap = {
     {"com.ibm.Dump.Create.DumpType.Hostboot", SBE::SBE_DUMP_TYPE_HOSTBOOT},
