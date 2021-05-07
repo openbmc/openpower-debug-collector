@@ -46,6 +46,21 @@ AS_IF([test "x$enable_dump_collection" == "xyes"], [
                         ["$HB_DUMP_COLLECTION_PATH"],
                           [The path to store collected hostboot dump files])
 
+    AC_ARG_VAR(HW_DUMP_DBUS_OBJPATH, [The hostboot dump manager path])
+    AS_IF([test "x$HW_DUMP_DBUS_OBJPATH" == "x"],
+           [HW_DUMP_DBUS_OBJPATH="/xyz/openbmc_project/dump/hardware"])
+    AC_DEFINE_UNQUOTED([HW_DUMP_DBUS_OBJPATH],
+                        ["$HW_DUMP_DBUS_OBJPATH"],
+                         [The hardware dump manager path])
+
+    AC_ARG_VAR(HW_DUMP_COLLECTION_PATH,
+               [The path to store collected hardware dump files])
+    AS_IF([test "x$HW_DUMP_COLLECTION_PATH" == "x"],
+           [HW_DUMP_COLLECTION_PATH="/tmp/openpower-dumps/hardware"])
+    AC_DEFINE_UNQUOTED([HW_DUMP_COLLECTION_PATH],
+                        ["$HW_DUMP_COLLECTION_PATH"],
+                          [The path to store collected hardware dump files])
+
     PKG_CHECK_MODULES([LIBDT_API], [libdt-api])
     LIBS="$LIBS $LIBDT_API_LIBS"
     CFLAGS="$CFLAGS $LIBDT_API_CFLAGS"
