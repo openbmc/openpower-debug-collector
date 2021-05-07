@@ -115,8 +115,10 @@ class Manager : public CreateIface
      *  @param type - Type of the dump
      *  @param id - A unique id assigned to dump to be collected
      *  @param errorLogId - Id of the error log associated with this collection
+     *  @param failingUnit - Chip position of the failing unit
      */
-    void collectDump(uint8_t type, uint32_t id, std::string errorLogId);
+    void collectDump(uint8_t type, uint32_t id, std::string errorLogId,
+                     const uint64_t failingUnit);
 
     /** @brief The function to collect dump from SBE
      *  @param[in] proc - pdbg_target of the proc conating SBE to collect the
