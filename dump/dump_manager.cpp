@@ -387,6 +387,20 @@ sdbusplus::message::object_path
         elogId = params.at(
             sdbusplus::com::ibm::Dump::server::Create::
                 convertCreateParametersToString(CreateParameters::ErrorLogId));
+        if (elogId.find("0x") == 0)
+        {
+            elogId.erase(0, 2);
+        }
+        if (elogId.length() > 8)
+        {
+            log<level::ERR>(
+                "Length of Errolog id exceeds maximum length, setting as 0",
+                entry("ERROR_LOG_ID=%s", elogId.c_str()),
+                entry("LENGTH=%d", elogId.length()));
+            report<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+                                    Argument::ARGUMENT_VALUE(elogId));
+            elogId = "00000000";
+        }
     }
     catch (const std::out_of_range& e)
     {
