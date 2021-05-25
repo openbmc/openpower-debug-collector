@@ -386,6 +386,28 @@ sdbusplus::message::object_path
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
 
+    // Convert error log id to number
+    uint32_t errorId = 0;
+    try
+    {
+        errorId = std::stol(elogId);
+    }
+    catch (std::exception& e)
+    {
+        // Exception will be raised if the input doesnt fit to a long or
+        // an invalid number in the input string.
+        log<level::ERR>("An ivalid error log id is passed, setting as 0",
+                        entry("ERROR_LOG_ID=%s", elogId.c_str()),
+                        entry("LENGTH=%d", elogId.length()));
+        report<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+                                Argument::ARGUMENT_VALUE(elogId.c_str()));
+    }
+
+    // Make it 8 char length string.
+    std::stringstream ss;
+    ss << std::setw(8) << std::setfill('0') << std::hex << errorId;
+    elogId = ss.str();
+
     uint8_t type = 0;
 
     if (dumpType == "com.ibm.Dump.Create.DumpType.Hostboot")
