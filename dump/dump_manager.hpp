@@ -16,6 +16,8 @@ namespace openpower
 namespace dump
 {
 
+using DumpCreateParams =
+    std::map<std::string, std::variant<std::string, uint64_t>>;
 using CreateIface = sdbusplus::server::object::object<
     sdbusplus::com::ibm::Dump::server::Create,
     sdbusplus::xyz::openbmc_project::Dump::server::Create>;
@@ -88,7 +90,7 @@ class Manager : public CreateIface
      *  @return object_path - The object path of the new dump entry.
      */
     sdbusplus::message::object_path
-        createDump(std::map<std::string, std::string> params) override;
+        createDump(DumpCreateParams params) override;
 
   private:
     /** @brief sdbusplus DBus bus connection. */
