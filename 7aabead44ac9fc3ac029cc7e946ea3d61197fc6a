@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82e097ce_bf4d1c73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-05-25T09:47:02Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "7aabead44ac9fc3ac029cc7e946ea3d61197fc6a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0120d6b6_4dd07780",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-05-25T09:47:02Z",
+      "side": 1,
+      "message": "Add test details",
+      "revId": "7aabead44ac9fc3ac029cc7e946ea3d61197fc6a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4584e773_0c6d5cb2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-05-25T09:47:02Z",
+      "side": 1,
+      "message": "d-bus documentation just say\u0027s \"The id of the log associated with action which triggered the\ndump\". Not specifying data length or format. I think we should add documentation update in d-bus documentaion to avoid confusion from user. Add respective check here.  \n\nAvoid hard coding instead that use meaningful constexpr from readability.",
+      "revId": "7aabead44ac9fc3ac029cc7e946ea3d61197fc6a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
