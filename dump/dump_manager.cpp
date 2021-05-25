@@ -357,34 +357,52 @@ sdbusplus::message::object_path
         sdbusplus::com::ibm::Dump::server::Create::CreateParameters;
     using Argument = xyz::openbmc_project::Common::InvalidArgument;
 
-    std::string dumpType;
-    std::string elogId;
-    try
+    auto iter = params.find(
+        sdbusplus::com::ibm::Dump::server::Create::
+            convertCreateParametersToString(CreateParameters::DumpType));
+    if (iter == params.end())
     {
-        dumpType = params.at(
-            sdbusplus::com::ibm::Dump::server::Create::
-                convertCreateParametersToString(CreateParameters::DumpType));
-    }
-    catch (const std::out_of_range& e)
-    {
-        log<level::ERR>("Required argument, dump type is not passed",
-                        entry("ERROR=%s", e.what()));
+        log<level::ERR>("Required argument, dump type is not passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("DUMP_TYPE"),
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
-    try
+    std::string dumpType = iter->second;
+
+    iter = params.find(
+        sdbusplus::com::ibm::Dump::server::Create::
+            convertCreateParametersToString(CreateParameters::ErrorLogId));
+    if (iter == params.end())
     {
-        elogId = params.at(
-            sdbusplus::com::ibm::Dump::server::Create::
-                convertCreateParametersToString(CreateParameters::ErrorLogId));
-    }
-    catch (const std::out_of_range& e)
-    {
-        log<level::ERR>("Required argument, error log id is not passed",
-                        entry("ERROR=%s", e.what()));
+        log<level::ERR>("Required argument, error log id is not passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
+    std::string elogId = iter->second;
+
+    // Convert error log id to number
+    uint32_t errorId = 0;
+    try
+    {
+        errorId = std::stol(elogId);
+    }
+    catch (std::exception& e)
+    {
+        // Exception will be raised if the input doesnt fit to a long or
+        // an invalid number in the input string.
+        auto err = errno;
+        log<level::ERR>("An ivalid error log id is passed, setting as 0",
+                        entry("ERROR_LOG_ID=%s", elogId.c_str()),
+                        entry("LENGTH=%d", elogId.length()),
+                        entry("ERRNO=%d", err),
+                        entry("ERROR=%s", strerror(err)));
+        report<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+                                Argument::ARGUMENT_VALUE(elogId.c_str()));
+    }
+
+    // Make it 8 char length string.
+    std::stringstream ss;
+    ss << std::setw(8) << std::setfill('0') << std::hex << errorId;
+    elogId = ss.str();
 
     uint8_t type = 0;
 
