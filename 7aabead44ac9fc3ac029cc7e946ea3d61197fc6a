@@ -56,6 +56,24 @@
       "revId": "7aabead44ac9fc3ac029cc7e946ea3d61197fc6a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8320475f_1dae8be3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-05-25T09:58:00Z",
+      "side": 1,
+      "message": "On DBus side there wont be a restriction, restriction is only on this specific implementation side.\n\nwill change to constexpr",
+      "parentUuid": "4584e773_0c6d5cb2",
+      "revId": "7aabead44ac9fc3ac029cc7e946ea3d61197fc6a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
