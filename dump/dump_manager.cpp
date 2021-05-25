@@ -19,7 +19,9 @@
 
 #include <chrono>
 #include <fstream>
+#include <string>
 #include <system_error>
+#include <variant>
 #include <vector>
 
 namespace openpower
@@ -35,6 +37,8 @@ constexpr auto DUMP_NOTIFY_IFACE = "xyz.openbmc_project.Dump.NewDump";
 constexpr auto DUMP_PROGRESS_IFACE = "xyz.openbmc_project.Common.Progress";
 constexpr auto STATUS_PROP = "Status";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
+constexpr auto MAX_ERROR_LOG_ID = 0xFFFFFFFF;
+constexpr auto INVALID_FAILING_UNIT = 0xFF;
 
 /* @struct DumpTypeInfo
  * @brief to store basic info about different dump types
@@ -49,7 +53,8 @@ struct DumpTypeInfo
 std::map<uint8_t, DumpTypeInfo> dumpInfo = {
     {SBE::SBE_DUMP_TYPE_HOSTBOOT,
      {HB_DUMP_DBUS_OBJPATH, HB_DUMP_COLLECTION_PATH}},
-};
+    {SBE::SBE_DUMP_TYPE_HARDWARE,
+     {HW_DUMP_DBUS_OBJPATH, HW_DUMP_COLLECTION_PATH}}};
 
 bool Manager::isMasterProc(struct pdbg_target* proc) const
 {
@@ -188,7 +193,8 @@ void Manager::collectDumpFromSBE(struct pdbg_target* proc,
     log<level::INFO>("Hostboot dump collected");
 }
 
-void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
+void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId,
+                          const uint8_t failingUnit)
 {
     struct pdbg_target* target;
     bool failed = false;
@@ -286,10 +292,17 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
             }
 
             uint8_t collectFastArray = 0;
-            if ((cstate == SBE::SBE_CLOCK_OFF) &&
-                (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+            if (cstate == SBE::SBE_CLOCK_OFF)
             {
-                collectFastArray = 1;
+                if (type == SBE::SBE_DUMP_TYPE_HOSTBOOT)
+                {
+                    collectFastArray = 1;
+                }
+                if ((type == SBE::SBE_DUMP_TYPE_HARDWARE) &&
+                    (chipPos == failingUnit))
+                {
+                    collectFastArray = 1;
+                }
             }
 
             pid_t pid = fork();
@@ -357,46 +370,97 @@ sdbusplus::message::object_path
         sdbusplus::com::ibm::Dump::server::Create::CreateParameters;
     using Argument = xyz::openbmc_project::Common::InvalidArgument;
 
-    std::string dumpType;
-    std::string elogId;
-    try
+    auto iter = params.find(
+        sdbusplus::com::ibm::Dump::server::Create::
+            convertCreateParametersToString(CreateParameters::DumpType));
+    if (iter == params.end())
     {
-        dumpType = params.at(
-            sdbusplus::com::ibm::Dump::server::Create::
-                convertCreateParametersToString(CreateParameters::DumpType));
-    }
-    catch (const std::out_of_range& e)
-    {
-        log<level::ERR>("Required argument, dump type is not passed",
-                        entry("ERROR=%s", e.what()));
+        log<level::ERR>("Required argument, dump type is not passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("DUMP_TYPE"),
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
-    try
+    std::string dumpType = iter->second;
+
+    iter = params.find(
+        sdbusplus::com::ibm::Dump::server::Create::
+            convertCreateParametersToString(CreateParameters::ErrorLogId));
+    if (iter == params.end())
     {
-        elogId = params.at(
-            sdbusplus::com::ibm::Dump::server::Create::
-                convertCreateParametersToString(CreateParameters::ErrorLogId));
-    }
-    catch (const std::out_of_range& e)
-    {
-        log<level::ERR>("Required argument, error log id is not passed",
-                        entry("ERROR=%s", e.what()));
+        log<level::ERR>("Required argument, error log id is not passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
 
+    // get error log id
+    uint64_t errorId = 0;
+    try
+    {
+        errorId = std::get<uint64_t>(iter->second);
+    }
+    catch (const std::bad_variant_access& e)
+    {
+        // Exception will be raised if the input is not uint64
+        auto err = errno;
+        log<level::ERR>("An ivalid error log id is passed, setting as 0",
+                        entry("DETAILS=%s", e.what()), entry("ERRNO=%d", err),
+                        entry("ERROR=%s", strerror(err)));
+        report<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+                                Argument::ARGUMENT_VALUE("INVALID INPUT"));
+    }
+
+    if (errorId > MAX_ERROR_LOG_ID)
+    {
+        // Exception will be raised if the error log id is larger than maximum
+        // value
+        log<level::ERR>(
+            "Error log id is greater than maximum length, setting as 0",
+            entry("errorid=%ull", errorId));
+        report<InvalidArgument>(
+            Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+            Argument::ARGUMENT_VALUE(std::to_string(errorId).c_str()));
+    }
+
+    // Make it 8 char length string.
+    std::stringstream ss;
+    ss << std::setw(8) << std::setfill('0') << std::hex << errorId;
+    std::string elogId = ss.str();
+
     uint8_t type = 0;
+    uint8_t failingUnit = INVALID_FAILING_UNIT;
 
     if (dumpType == "com.ibm.Dump.Create.DumpType.Hostboot")
     {
         type = SBE::SBE_DUMP_TYPE_HOSTBOOT;
+    }
+    if (dumpType == "com.ibm.Dump.Create.DumpType.Hardware")
+    {
+        type = SBE::SBE_DUMP_TYPE_HARDWARE;
     }
     else
     {
         log<level::ERR>("Invalid dump type passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("DUMP_TYPE"),
                               Argument::ARGUMENT_VALUE(dumpType.c_str()));
+    }
+
+    if (type == SBE::SBE_DUMP_TYPE_HARDWARE)
+    {
+        try
+        {
+            std::string failingUnitStr =
+                params.at(sdbusplus::com::ibm::Dump::server::Create::
+                              convertCreateParametersToString(
+                                  CreateParameters::FailingUnit));
+
+            failingUnit = std::stoi(failingUnitStr);
+        }
+        catch (const std::out_of_range& e)
+        {
+            log<level::ERR>("Required argument, failing unit id is not passed",
+                            entry("ERROR=%s", e.what()));
+            elog<InvalidArgument>(Argument::ARGUMENT_NAME("FAILING_UNIT_ID"),
+                                  Argument::ARGUMENT_VALUE("MISSING"));
+        }
     }
 
     try
@@ -417,7 +481,7 @@ sdbusplus::message::object_path
         elog<InternalFailure>();
     }
 
-    // DUMP Path format /xyz/openbmc_project/dump/hostboot/entry/<id>
+    // DUMP Path format /xyz/openbmc_project/dump/<dump_type>/entry/<id>
     std::string pathStr = newDumpPath;
     auto pos = pathStr.rfind("/");
     if (pos == std::string::npos)
@@ -432,7 +496,7 @@ sdbusplus::message::object_path
     pid_t pid = fork();
     if (pid == 0)
     {
-        collectDump(type, id, elogId);
+        collectDump(type, id, elogId, failingUnit);
         std::exit(EXIT_SUCCESS);
     }
     else if (pid < 0)
