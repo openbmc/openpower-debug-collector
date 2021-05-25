@@ -37,6 +37,7 @@ constexpr auto DUMP_PROGRESS_IFACE = "xyz.openbmc_project.Common.Progress";
 constexpr auto STATUS_PROP = "Status";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
 constexpr auto INVALID_FAILING_UNIT = 0xFF;
+constexpr auto ERROR_LOG_ID_LENGTH = 8;
 
 /* @struct DumpTypeInfo
  * @brief to store basic info about different dump types
@@ -387,6 +388,21 @@ sdbusplus::message::object_path
         elogId = params.at(
             sdbusplus::com::ibm::Dump::server::Create::
                 convertCreateParametersToString(CreateParameters::ErrorLogId));
+        // Reomove any leading hex indicator prefix.
+        if (elogId.find("0x") == 0)
+        {
+            elogId.erase(0, 2);
+        }
+        if (elogId.length() != ERROR_LOG_ID_LENGTH)
+        {
+            log<level::ERR>(
+                "Length of Errolog id exceeds maximum length, setting as 0",
+                entry("ERROR_LOG_ID=%s", elogId.c_str()),
+                entry("LENGTH=%d", elogId.length()));
+            report<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+                                    Argument::ARGUMENT_VALUE(elogId.c_str()));
+            elogId = "00000000";
+        }
     }
     catch (const std::out_of_range& e)
     {
