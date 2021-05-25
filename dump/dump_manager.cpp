@@ -24,6 +24,7 @@ extern "C"
 #include <chrono>
 #include <fstream>
 #include <system_error>
+#include <variant>
 #include <vector>
 
 namespace openpower
@@ -39,6 +40,7 @@ constexpr auto DUMP_NOTIFY_IFACE = "xyz.openbmc_project.Dump.NewDump";
 constexpr auto DUMP_PROGRESS_IFACE = "xyz.openbmc_project.Common.Progress";
 constexpr auto STATUS_PROP = "Status";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
+constexpr auto MAX_ERROR_LOG_ID = 0xFFFFFFFF;
 
 /* @struct DumpTypeInfo
  * @brief to store basic info about different dump types
@@ -349,11 +351,10 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
     }
 }
 
-sdbusplus::message::object_path
-    Manager::createDump(std::map<std::string, std::string> params)
+sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
 {
     using namespace phosphor::logging;
-    std::vector<std::pair<std::string, std::string>> createDumpParams;
+    DumpCreateParams createDumpParams;
     sdbusplus::message::object_path newDumpPath;
     using InvalidArgument =
         sdbusplus::xyz::openbmc_project::Common::Error::InvalidArgument;
@@ -361,34 +362,60 @@ sdbusplus::message::object_path
         sdbusplus::com::ibm::Dump::server::Create::CreateParameters;
     using Argument = xyz::openbmc_project::Common::InvalidArgument;
 
-    std::string dumpType;
-    std::string elogId;
-    try
+    auto iter = params.find(
+        sdbusplus::com::ibm::Dump::server::Create::
+            convertCreateParametersToString(CreateParameters::DumpType));
+    if (iter == params.end())
     {
-        dumpType = params.at(
-            sdbusplus::com::ibm::Dump::server::Create::
-                convertCreateParametersToString(CreateParameters::DumpType));
-    }
-    catch (const std::out_of_range& e)
-    {
-        log<level::ERR>("Required argument, dump type is not passed",
-                        entry("ERROR=%s", e.what()));
+        log<level::ERR>("Required argument, dump type is not passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("DUMP_TYPE"),
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
-    try
+    std::string dumpType = std::get<std::string>(iter->second);
+
+    iter = params.find(
+        sdbusplus::com::ibm::Dump::server::Create::
+            convertCreateParametersToString(CreateParameters::ErrorLogId));
+    if (iter == params.end())
     {
-        elogId = params.at(
-            sdbusplus::com::ibm::Dump::server::Create::
-                convertCreateParametersToString(CreateParameters::ErrorLogId));
-    }
-    catch (const std::out_of_range& e)
-    {
-        log<level::ERR>("Required argument, error log id is not passed",
-                        entry("ERROR=%s", e.what()));
+        log<level::ERR>("Required argument, error log id is not passed");
         elog<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
                               Argument::ARGUMENT_VALUE("MISSING"));
     }
+
+    // get error log id
+    uint64_t errorId = 0;
+    try
+    {
+        errorId = std::get<uint64_t>(iter->second);
+    }
+    catch (const std::bad_variant_access& e)
+    {
+        // Exception will be raised if the input is not uint64
+        auto err = errno;
+        log<level::ERR>("An ivalid error log id is passed, setting as 0",
+                        entry("DETAILS=%s", e.what()), entry("ERRNO=%d", err),
+                        entry("ERROR=%s", strerror(err)));
+        report<InvalidArgument>(Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+                                Argument::ARGUMENT_VALUE("INVALID INPUT"));
+    }
+
+    if (errorId > MAX_ERROR_LOG_ID)
+    {
+        // Exception will be raised if the error log id is larger than maximum
+        // value
+        log<level::ERR>(
+            "Error log id is greater than maximum length, setting as 0",
+            entry("errorid=%ull", errorId));
+        report<InvalidArgument>(
+            Argument::ARGUMENT_NAME("ERROR_LOG_ID"),
+            Argument::ARGUMENT_VALUE(std::to_string(errorId).c_str()));
+    }
+
+    // Make it 8 char length string.
+    std::stringstream ss;
+    ss << std::setw(8) << std::setfill('0') << std::hex << errorId;
+    std::string elogId = ss.str();
 
     uint8_t type = 0;
 
