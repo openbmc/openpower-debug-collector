@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "28e34a54_e20704ae",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-05-26T13:01:04Z",
+      "side": 1,
+      "message": "This is for removing any leading hex identifier",
+      "parentUuid": "0f6d3754_d46ec36f",
+      "range": {
+        "startLine": 391,
+        "startChar": 8,
+        "endLine": 391,
+        "endChar": 35
+      },
+      "revId": "7caec442fd2ba717defce6fabb7dfa8c36226cf3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "00a7c955_a18f9159",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2021-05-26T12:01:49Z",
       "side": 1,
       "message": "Are you assuming 0x is alway\u0027s going to be first , if that is the case you need to change logic in line 391. Otherwise this logic is broken incase 0x is come in between.\n\nI will continue review after seeing the documentation update or adding proper commnet here.",
+      "range": {
+        "startLine": 393,
+        "startChar": 11,
+        "endLine": 393,
+        "endChar": 31
+      },
+      "revId": "7caec442fd2ba717defce6fabb7dfa8c36226cf3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4ffaa04_e6426971",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-05-26T13:01:04Z",
+      "side": 1,
+      "message": "0x always comes in the first as hex indicator",
+      "parentUuid": "00a7c955_a18f9159",
       "range": {
         "startLine": 393,
         "startChar": 11,
