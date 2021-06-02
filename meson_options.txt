@@ -1,0 +1,9 @@
+option('gen_errors',
+        type: 'feature',
+        value: 'enabled',
+        description: 'Enable elog-errors.hpp generation')
+
+option('install_error_yaml',
+        type: 'feature',
+        value: 'disabled',
+        description: 'Enable installing error yaml file')
