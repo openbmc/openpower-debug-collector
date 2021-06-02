@@ -1,0 +1,4 @@
+option('gen_errors',
+        type: 'boolean',
+        value: true, 
+        description: 'Enable elog-errors.hpp generation')
