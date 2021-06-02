@@ -3,7 +3,7 @@
 
 #include <phosphor-logging/elog.hpp>
 
-int main(int argc, char* argv[])
+int main()
 {
     using namespace phosphor::logging;
     using error = sdbusplus::org::open_power::Host::Boot::Error::Checkstop;
