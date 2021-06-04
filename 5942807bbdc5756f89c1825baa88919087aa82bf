@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3786e57a_4c97eee9",
+        "filename": "checkstop_app.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-04T02:19:52Z",
+      "side": 1,
+      "message": "can we change it like \n\nint main(int /*argc*/, char** /*argv*/) \n\nAnd also this pathset is doing more than just meson migration, please mention that in the commit message.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 10
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f58b7f27_3c87367c",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-04T02:19:52Z",
+      "side": 1,
+      "message": "we generally use the regenerate tool from sdbusplus repo, rather than using a custom target for generating cpp \u0026 hpp files from the yaml files. check below link for more info.\n\nhttps://github.com/openbmc/phosphor-led-manager/blob/master/meson.build#L78",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 34
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a28902f2_dbd34682",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-04T02:19:52Z",
+      "side": 1,
+      "message": "trailing space ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a902fe6a_7a54fbc4",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-04T02:19:52Z",
+      "side": 1,
+      "message": "I dont see this option being used anywhere in the meson files ? should this go inside the conf.h",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 27
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "893d03c6_b27023e7",
+        "filename": "phosphor-logging/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-04T02:19:52Z",
+      "side": 1,
+      "message": "I am confused , is this just doing a copy of a file from source dir to the build directory ?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66ede23f_31d050c7",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-04T02:19:52Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 10
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
