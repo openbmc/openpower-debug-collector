@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a7361306_8e831d4e",
+        "filename": "checkstop_app.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-04T05:37:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3786e57a_4c97eee9",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 10
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f58b7f27_3c87367c",
         "filename": "meson.build",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2021-06-04T02:19:52Z",
       "side": 1,
       "message": "we generally use the regenerate tool from sdbusplus repo, rather than using a custom target for generating cpp \u0026 hpp files from the yaml files. check below link for more info.\n\nhttps://github.com/openbmc/phosphor-led-manager/blob/master/meson.build#L78",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 34
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e32a7825_951394d7",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-04T05:37:55Z",
+      "side": 1,
+      "message": "I followed other repos doing this way. Thanks for providing the link. Will take a look.",
+      "parentUuid": "f58b7f27_3c87367c",
       "range": {
         "startLine": 24,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7b92e02c_7e74c1e1",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-04T05:37:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a28902f2_dbd34682",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a902fe6a_7a54fbc4",
         "filename": "meson_options.txt",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2021-06-04T02:19:52Z",
       "side": 1,
       "message": "I dont see this option being used anywhere in the meson files ? should this go inside the conf.h",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 27
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a76496f_73f4f797",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-04T05:37:55Z",
+      "side": 1,
+      "message": "I was planning on using this option earlier. I don\u0027t think we need this option. Will remove.",
+      "parentUuid": "a902fe6a_7a54fbc4",
       "range": {
         "startLine": 6,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "53d1ae8e_3c4e14c0",
+        "filename": "phosphor-logging/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-04T05:37:55Z",
+      "side": 1,
+      "message": "Yes, it is. \n\nelog-errors.hpp was manually generated using elog-gen.py and meko template files. This script and the templates are neither in SDK nor getting installed in docker - there is an existing issue in phosphor-logging repo. The file was checked-in to the source directory after generating. I\u0027ve seen other repos like for example /openbmc/phosphor-bmc-code-mgmt/elog-errors.hpp checked-in this file in the source directory. Just followed that.\n\nIf there is a better way to handle this, please let me know so that I can incorporate that.",
+      "parentUuid": "893d03c6_b27023e7",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "66ede23f_31d050c7",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 2
@@ -137,6 +257,30 @@
       "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b4bda0c_f291c02a",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-04T05:37:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66ede23f_31d050c7",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 10
+      },
+      "revId": "5942807bbdc5756f89c1825baa88919087aa82bf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
