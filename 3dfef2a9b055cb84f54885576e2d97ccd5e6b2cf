@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ed4a1bf_ed2a8204",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-08T01:49:25Z",
+      "side": 1,
+      "message": "AM_CONDITIONAL([INSTALL_ERROR_YAML], [test \"x$enable_install_error_yaml\" \u003d \"xyes\"])\nAS_IF([test \"x$enable_install_error_yaml\" !\u003d \"xyes\"], [\n    # Checks for typedefs, structures, and compiler characteristics.\n    AX_CXX_COMPILE_STDCXX_17([noext])\n    AX_APPEND_COMPILE_FLAGS([-Wall -Werror], [CXXFLAGS])\n    # Check for sdbus++\n    AC_PATH_PROG([SDBUSPLUSPLUS], [sdbus++])\n    AS_IF([test \"x$SDBUSPLUSPLUS\" \u003d\u003d \"x\"],\n        AC_MSG_ERROR([\"Requires sdbus++\"]))\n    LT_INIT\n    # Checks for libraries.\n    AX_PKG_CHECK_MODULES([SYSTEMD], [], [libsystemd \u003e\u003d 221], [],\n        [AC_MSG_ERROR([\"systemd required and not found.\"])])\n    # Checks for modules\n    PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],,\n        [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])\n])\n\nI think we need to check for these dependencies only when the install_error_yaml option is enabled right ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "3dfef2a9b055cb84f54885576e2d97ccd5e6b2cf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "654d9632_7e95a30d",
+        "filename": "meson_options.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-06-08T01:49:25Z",
+      "side": 1,
+      "message": "trailing space ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "3dfef2a9b055cb84f54885576e2d97ccd5e6b2cf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
