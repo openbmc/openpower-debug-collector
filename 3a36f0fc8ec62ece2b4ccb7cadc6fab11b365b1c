@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "ede4768a_dc116c10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-15T04:59:21Z",
+      "side": 1,
+      "message": "Please include test details.",
+      "revId": "3a36f0fc8ec62ece2b4ccb7cadc6fab11b365b1c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8011b8ef_15921188",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-15T04:59:21Z",
+      "side": 1,
+      "message": "are you planing separate commit for this support. or planing to use the autogenrated version. ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 5
+      },
+      "revId": "3a36f0fc8ec62ece2b4ccb7cadc6fab11b365b1c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "47d38857_84cf6ff7",
         "filename": "meson.build",
         "patchSetId": 5
@@ -13,6 +53,30 @@
       "writtenOn": "2021-06-09T07:06:04Z",
       "side": 1,
       "message": "if this is enabled, we basically dont build anything. This looks the same even in autotools, i am not sure if we need this meson option at all in the first place.\n\nBut i would leave it to the maintainers of this repo to decide.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "3a36f0fc8ec62ece2b4ccb7cadc6fab11b365b1c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cdd5b5f2_3a7f1274",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-15T04:59:21Z",
+      "side": 1,
+      "message": "@matt Can you comment on this?",
+      "parentUuid": "47d38857_84cf6ff7",
       "range": {
         "startLine": 18,
         "startChar": 0,
