@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "b81d9612_59210814",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-06-15T19:15:48Z",
+      "side": 1,
+      "message": "I think I would say that since you already have elog-errors.hpp checked in, just go with that instead of creating it every compilation.  If the Boot.errors.yaml ever changes it would need to be regenerated with elog-gen.py, but I don\u0027t think that will happen much if ever.",
+      "parentUuid": "0d74715b_09f475fb",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 5
+      },
+      "revId": "3a36f0fc8ec62ece2b4ccb7cadc6fab11b365b1c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "47d38857_84cf6ff7",
         "filename": "meson.build",
         "patchSetId": 5
@@ -119,6 +143,30 @@
       "side": 1,
       "message": "@matt Can you comment on this?",
       "parentUuid": "47d38857_84cf6ff7",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "3a36f0fc8ec62ece2b4ccb7cadc6fab11b365b1c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26867d97_6f43670e",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-06-15T19:15:48Z",
+      "side": 1,
+      "message": "this was so that in an SDK and in the native step the Boot.errors.yaml would get copied out to phosphor-logging so it could include the errors in the global elog-errors.hpp. \n\nYou couldn\u0027t skip this if:\n* the errors contained metadata, which they don\u0027t.  Then phosphor-logging wouldn\u0027t include it in the error.\n* you wanted to log errors from the global elog-errors.hpp in the same file as you wanted to log these.  This isn\u0027t the case either.\n* Some other code wanted to create these errors, which they don\u0027t.\n\nSo I would say go ahead and just remove the install_error_yaml. You\u0027ll need to remove it from the recipe as well.",
+      "parentUuid": "cdd5b5f2_3a7f1274",
       "range": {
         "startLine": 18,
         "startChar": 0,
