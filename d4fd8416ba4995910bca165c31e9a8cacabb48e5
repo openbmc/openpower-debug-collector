@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "086b20c7_6a1af6d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-16T13:45:03Z",
+      "side": 1,
+      "message": "sbe_dump is the name of the chip op",
+      "parentUuid": "9aadf1a7_b6df4e14",
+      "range": {
+        "startLine": 7,
+        "startChar": 16,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2ca3060f_0e3906c1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3cdedd1d_cdb01236",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-16T13:45:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ca3060f_0e3906c1",
+      "range": {
+        "startLine": 9,
+        "startChar": 24,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed84db0_adaa68ed",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 2
@@ -59,6 +107,24 @@
       "writtenOn": "2021-06-16T10:55:32Z",
       "side": 1,
       "message": "Better to define structure specific to sbe chip required data and fill , that way function definition is going to be simple..",
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "819ca11f_d9d7b5c9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-16T13:45:03Z",
+      "side": 1,
+      "message": "there are only few parameters and function signatures are easy to read",
+      "parentUuid": "aed84db0_adaa68ed",
       "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -93,6 +159,30 @@
       "writtenOn": "2021-06-16T10:55:32Z",
       "side": 1,
       "message": "0 or 1 mean boolean is good , ?",
+      "range": {
+        "startLine": 125,
+        "startChar": 7,
+        "endLine": 125,
+        "endChar": 78
+      },
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fb34308_83c59ad6",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-16T13:45:03Z",
+      "side": 1,
+      "message": "aligned to the chipop input",
+      "parentUuid": "598bef6c_0e9b20e5",
       "range": {
         "startLine": 125,
         "startChar": 7,
