@@ -16,6 +16,24 @@
       "revId": "222131cc18135fe80c76aba1c7c91d9c5a80d9c9",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "280ce92c_eb2d78d1",
+        "filename": "meson.build",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-16T22:18:00Z",
+      "side": 1,
+      "message": "I have checked-in elog-error.hpp like in any other repos. To generate this we needed to have elog-gen.py.\n\nThe following code generates two files: error.hpp and error.cpp, and requires sdbus++. These are generated during build time. Are you saying we don\u0027t need these two files or simply check-in those files? Other repos do similar to what is being done here.",
+      "parentUuid": "fc60b017_4ce352bc",
+      "revId": "222131cc18135fe80c76aba1c7c91d9c5a80d9c9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
