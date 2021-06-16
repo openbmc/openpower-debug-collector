@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc60b017_4ce352bc",
+        "filename": "meson.build",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-06-16T21:01:15Z",
+      "side": 1,
+      "message": "now that you don\u0027t need to run sdbus++ during the build, I don\u0027t think you need this, or any of the code below that refers to generating files.\n\nIn fact, you don\u0027t need any of the new files you put in the \u0027gen\u0027 dir.",
+      "revId": "222131cc18135fe80c76aba1c7c91d9c5a80d9c9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
