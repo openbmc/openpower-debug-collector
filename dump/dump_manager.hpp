@@ -121,10 +121,15 @@ class Manager : public CreateIface
      *  @param[in] id - Id of the dump
      *  @param[in] type - Type of the dump
      *  @param[in] clockState - State of the clock while collecting.
+     *  @param[in] chipPos - Position of the chip
+     *  @param[in] collectFastArray - 0: skip fast array collection 1: collect
+     * fast array
      */
     void collectDumpFromSBE(struct pdbg_target* proc,
                             std::filesystem::path& dumpPath, uint32_t id,
-                            uint8_t type, uint8_t clockState);
+                            uint8_t type, uint8_t clockState,
+                            const uint8_t chipPos,
+                            const uint8_t collectFastArray);
 };
 
 } // namespace dump
