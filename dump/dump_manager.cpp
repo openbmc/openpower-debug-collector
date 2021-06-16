@@ -41,7 +41,6 @@ constexpr auto OP_SBE_FILES_PATH = "plat_dump";
  */
 struct DumpTypeInfo
 {
-    std::string dumpPrefix;         // Prefix to dump files
     std::string dumpPath;           // D-Bus path of the dump
     std::string dumpCollectionPath; // Path were dumps are stored
 };
@@ -49,7 +48,7 @@ struct DumpTypeInfo
 /* Map of dump type to the basic info of the dumps */
 std::map<uint8_t, DumpTypeInfo> dumpInfo = {
     {SBE::SBE_DUMP_TYPE_HOSTBOOT,
-     {HB_DUMP_FILE_PREFIX, HB_DUMP_DBUS_OBJPATH, HB_DUMP_COLLECTION_PATH}},
+     {HB_DUMP_DBUS_OBJPATH, HB_DUMP_COLLECTION_PATH}},
 };
 
 bool Manager::isMasterProc(struct pdbg_target* proc) const
@@ -74,7 +73,9 @@ bool Manager::isMasterProc(struct pdbg_target* proc) const
 void Manager::collectDumpFromSBE(struct pdbg_target* proc,
                                  std::filesystem::path& dumpPath,
                                  const uint32_t id, const uint8_t type,
-                                 const uint8_t clockState)
+                                 const uint8_t clockState,
+                                 const uint8_t chipPos,
+                                 const uint8_t collectFastArray)
 {
     using namespace sdbusplus::xyz::openbmc_project::Common::Error;
     namespace fileError = sdbusplus::xyz::openbmc_project::Common::File::Error;
@@ -99,18 +100,12 @@ void Manager::collectDumpFromSBE(struct pdbg_target* proc,
         throw std::runtime_error("No valid pib target found");
     }
 
-    uint32_t chipPos = 0;
-    if (DT_GET_PROP(ATTR_FAPI_POS, proc, chipPos))
-    {
-        log<level::ERR>("Attribute [ATTR_FAPI_POS] get failed");
-        throw std::runtime_error("Attribute [ATTR_FAPI_POS] get failed");
-    }
-
     int error = 0;
     DumpDataPtr dataPtr;
     uint32_t len = 0;
 
-    if ((error = sbe_dump(pib, type, clockState, dataPtr.getPtr(), &len)) < 0)
+    if ((error = sbe_dump(pib, type, clockState, collectFastArray,
+                          dataPtr.getPtr(), &len)) < 0)
     {
         // Add a trace if the failure is on the secondary.
         if ((!isMasterProc(proc)) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
@@ -281,6 +276,22 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
                 continue;
             }
 
+            uint32_t chipPos = 0;
+            if (DT_GET_PROP(ATTR_FAPI_POS, target, chipPos))
+            {
+                log<level::ERR>("Attribute [ATTR_FAPI_POS] get failed");
+                throw std::runtime_error(
+                    "Attribute [ATTR_FAPI_POS] get failed");
+                continue;
+            }
+
+            uint8_t collectFastArray = 0;
+            if ((cstate == SBE::SBE_CLOCK_OFF) &&
+                (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+            {
+                collectFastArray = 1;
+            }
+
             pid_t pid = fork();
 
             if (pid < 0)
@@ -295,7 +306,8 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId)
             {
                 try
                 {
-                    collectDumpFromSBE(target, sbeFilePath, id, type, cstate);
+                    collectDumpFromSBE(target, sbeFilePath, id, type, cstate,
+                                       chipPos, collectFastArray);
                 }
                 catch (const std::runtime_error& error)
                 {
