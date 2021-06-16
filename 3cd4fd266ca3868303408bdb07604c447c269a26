@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a74a3c1a_e88dc04c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1000369
+      },
+      "writtenOn": "2021-06-16T12:40:23Z",
+      "side": 1,
+      "message": "Could be more than 8 characters it is a decimal representation - will throw if it does not fit into a long.",
+      "range": {
+        "startLine": 396,
+        "startChar": 8,
+        "endLine": 396,
+        "endChar": 70
+      },
+      "revId": "3cd4fd266ca3868303408bdb07604c447c269a26",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
