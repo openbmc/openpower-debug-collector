@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aadf1a7_b6df4e14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-16T10:55:32Z",
+      "side": 1,
+      "message": "Little confusing this is related dump chip-op not sbe dump-chipop.\nPlease rephrase.\nIs this commit is specific for hostboot dump ? better add as scope. for this.",
+      "range": {
+        "startLine": 7,
+        "startChar": 16,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ca3060f_0e3906c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-16T10:55:32Z",
+      "side": 1,
+      "message": "to",
+      "range": {
+        "startLine": 9,
+        "startChar": 24,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aed84db0_adaa68ed",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-16T10:55:32Z",
+      "side": 1,
+      "message": "Better to define structure specific to sbe chip required data and fill , that way function definition is going to be simple..",
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "920c2316_75aa91b0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-16T10:55:32Z",
+      "side": 1,
+      "message": "this is going to trigger anothre dump , avoid using internal dump, repalce with std::exceptioon",
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "598bef6c_0e9b20e5",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-16T10:55:32Z",
+      "side": 1,
+      "message": "0 or 1 mean boolean is good , ?",
+      "range": {
+        "startLine": 125,
+        "startChar": 7,
+        "endLine": 125,
+        "endChar": 78
+      },
+      "revId": "d4fd8416ba4995910bca165c31e9a8cacabb48e5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
