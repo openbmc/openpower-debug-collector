@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b110c72d_be2a79ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T07:40:23Z",
+      "side": 1,
+      "message": "name of the an additional parameter to collected from the chip-op",
+      "parentUuid": "c7926b2d_07f5016f",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "7060c4ab1cbddd23c50dc6156431de3fd32291c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "336c932e_d0e65926",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -59,6 +83,30 @@
       "writtenOn": "2021-06-21T07:37:31Z",
       "side": 1,
       "message": "ATTR_FAPI_POS is used for global index, are you need to use global index or dcm level index ?",
+      "range": {
+        "startLine": 280,
+        "startChar": 28,
+        "endLine": 280,
+        "endChar": 41
+      },
+      "revId": "7060c4ab1cbddd23c50dc6156431de3fd32291c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "121f6c3f_f683e414",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T07:40:23Z",
+      "side": 1,
+      "message": "global index",
+      "parentUuid": "f8c1873b_ee6eaca1",
       "range": {
         "startLine": 280,
         "startChar": 28,
