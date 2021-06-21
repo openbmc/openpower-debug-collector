@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "35d43c4d_bd4743d7",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T10:14:38Z",
+      "side": 1,
+      "message": "the idea is if nothing is provided, that is not a valid command so throw error. but if an invalid number is passed create the dump with an error log",
+      "parentUuid": "e236eeba_819f4d00",
+      "range": {
+        "startLine": 393,
+        "startChar": 7,
+        "endLine": 393,
+        "endChar": 36
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b5b62380_de44637b",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -95,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8cb60569_cc443360",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T10:14:38Z",
+      "side": 1,
+      "message": "it throws out of range with setting the error no.\nsince log() can have system calls to be safe assigning to a variable",
+      "parentUuid": "b5b62380_de44637b",
+      "range": {
+        "startLine": 399,
+        "startChar": 8,
+        "endLine": 399,
+        "endChar": 25
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d389f4a7_eef43707",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -118,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "c5825f33_cb80deb1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T10:14:38Z",
+      "side": 1,
+      "message": "this should be fine.. already the inputs are documented",
+      "parentUuid": "d389f4a7_eef43707",
+      "range": {
+        "startLine": 403,
+        "startChar": 31,
+        "endLine": 403,
+        "endChar": 36
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "33365bf1_5350116d",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -129,6 +201,30 @@
       "writtenOn": "2021-06-21T09:49:49Z",
       "side": 1,
       "message": "I am not seeing any documentation on this i.e you are converting into hex irrespective of the given value is in hex format or not.\n\nis anywhere you mentioned like error log id must be non-hex format? if so, please point me.",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 410,
+        "endChar": 55
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f10134_5cbf7ff7",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T10:14:38Z",
+      "side": 1,
+      "message": "I am not explicitly specifying hex, then the general assumption it should be a decimal number.",
+      "parentUuid": "33365bf1_5350116d",
       "range": {
         "startLine": 410,
         "startChar": 47,
