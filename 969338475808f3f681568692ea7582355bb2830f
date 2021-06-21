@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a13e9646_ee003ddf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-21T07:24:16Z",
+      "side": 1,
+      "message": "I think you are refering create d-bus interface below parameter.\n - name: \u0027ErrorLogId\u0027\n     description: \u003e\n              The id of the log associated with action which triggered the  dump.\nSince this is com/bm interface , can we enforce user to pass hexa decimal string directly based on IBM spec requirement. That will help to avoid this conversion. \n\nAlso please include Readme or d-b us documentation update.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 52
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8735afb4_32de5d56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-21T07:24:16Z",
+      "side": 1,
+      "message": "error log id",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b657f78c_8abe9f7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-21T07:24:16Z",
+      "side": 1,
+      "message": "and continue creating dump?",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31794fab_0cf3dab4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-06-21T07:24:16Z",
+      "side": 1,
+      "message": "Include verification results.",
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
