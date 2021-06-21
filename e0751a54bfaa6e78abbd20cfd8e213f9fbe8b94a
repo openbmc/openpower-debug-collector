@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f810504_d69b94e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T08:43:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78dca0e1_1ae763aa",
+      "revId": "e0751a54bfaa6e78abbd20cfd8e213f9fbe8b94a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23b4cbdf_ffb70e64",
         "filename": "README.md",
         "patchSetId": 9
@@ -30,6 +48,30 @@
       "writtenOn": "2021-06-21T08:33:00Z",
       "side": 1,
       "message": "ERROR LOG ID : 32 bit number in hex format?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 53
+      },
+      "revId": "e0751a54bfaa6e78abbd20cfd8e213f9fbe8b94a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c6e6c39_3001ee4f",
+        "filename": "README.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T08:43:20Z",
+      "side": 1,
+      "message": "not in hex format",
+      "parentUuid": "23b4cbdf_ffb70e64",
       "range": {
         "startLine": 43,
         "startChar": 0,
