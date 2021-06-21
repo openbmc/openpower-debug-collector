@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64b1d452_1378afe3",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-21T09:49:49Z",
+      "side": 1,
+      "message": "In code, you are converting into hex by default so please add that point here i.e consumer of this interface must use non-hex value.",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 34
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e236eeba_819f4d00",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-21T09:49:49Z",
+      "side": 1,
+      "message": "Why not this line can not go into above try {} and catch {} block ? since you are decoding given error log id in that block ?",
+      "range": {
+        "startLine": 393,
+        "startChar": 7,
+        "endLine": 393,
+        "endChar": 36
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5b62380_de44637b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-21T09:49:49Z",
+      "side": 1,
+      "message": "- errno will set for std:stol() ? I am not seeing any document on this (https://www.cplusplus.com/reference/string/stol/) can you point me the reference which one you are looking ?\n- you can use errno directly ? why one more variable here ?",
+      "range": {
+        "startLine": 399,
+        "startChar": 8,
+        "endLine": 399,
+        "endChar": 25
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d389f4a7_eef43707",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-21T09:49:49Z",
+      "side": 1,
+      "message": "Can you add ERRMSG as well i.e strerror(errno) ?",
+      "range": {
+        "startLine": 403,
+        "startChar": 31,
+        "endLine": 403,
+        "endChar": 36
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33365bf1_5350116d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-21T09:49:49Z",
+      "side": 1,
+      "message": "I am not seeing any documentation on this i.e you are converting into hex irrespective of the given value is in hex format or not.\n\nis anywhere you mentioned like error log id must be non-hex format? if so, please point me.",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 410,
+        "endChar": 55
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
