@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "c8a90746_016ed0a2",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T11:19:12Z",
+      "side": 1,
+      "message": "It is general assumption when we say number it is in base10.",
+      "parentUuid": "5de6c278_73148d00",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 34
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e236eeba_819f4d00",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 10
@@ -369,6 +393,30 @@
       "side": 1,
       "message": "I am not sure everyone knows the assumption what you are making here and it will be always good if we documented those assumption to avoid others confusion.",
       "parentUuid": "61f10134_5cbf7ff7",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 410,
+        "endChar": 55
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "713ec949_655c02b4",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T11:19:12Z",
+      "side": 1,
+      "message": "It is very generic that if you dont mention it a decimal number and should explicitly mention if it is not base10",
+      "parentUuid": "b9ab2711_70036874",
       "range": {
         "startLine": 410,
         "startChar": 47,
