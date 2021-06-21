@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "666219ca_d01681bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T07:35:22Z",
+      "side": 1,
+      "message": "that needs xyz.openbmc change to change the variables in the dictionary and the decision was to accept all as list of strings\n\nhttps://github.com/openbmc/phosphor-dbus-interfaces/blob/master/yaml/xyz/openbmc_project/Dump/Create.interface.yaml#L19",
+      "parentUuid": "a13e9646_ee003ddf",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 52
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8735afb4_32de5d56",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "969338475808f3f681568692ea7582355bb2830f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f7c9bef_a70e7d29",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T07:35:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8735afb4_32de5d56",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "41fde7d7_df2faaa0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T07:35:22Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "b657f78c_8abe9f7b",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "31794fab_0cf3dab4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -85,6 +157,24 @@
       "revId": "969338475808f3f681568692ea7582355bb2830f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "031c1c03_b405ef12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T07:35:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31794fab_0cf3dab4",
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
