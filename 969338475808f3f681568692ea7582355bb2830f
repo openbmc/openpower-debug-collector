@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "be11a5b9_4cb80836",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T08:03:45Z",
+      "side": 1,
+      "message": "this is a discussed solution, and the error log id is not internally a string but a number, and the 0xNN.. string is needed only for adding to header. Ideally the conversion should done while adding to the header but that is done in this layer because there is no way to log errors while creating dump headers.",
+      "parentUuid": "28a34ca7_fdf84dbf",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 52
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8735afb4_32de5d56",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -188,6 +212,30 @@
       "revId": "969338475808f3f681568692ea7582355bb2830f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0abff81_ce2bf933",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-21T08:03:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f2e7c7c_82730d85",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "969338475808f3f681568692ea7582355bb2830f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
