@@ -738,6 +738,30 @@
       "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9afb7b89_f0b04a4a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-22T07:15:58Z",
+      "side": 1,
+      "message": "if someone pass 0x4D2 it will fail saying invalid number \nand if someone pass 400 assuming hex.. it get converted to hex again.. I agree to all those but nobody suppose to pass hex unless explicitly mentioned.. otherwise it is a string where you can pass binary, octal or hex, but that is not correct as long as explicitly mentioning binary. octal or hex,",
+      "parentUuid": "bf35306e_f86907f1",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 410,
+        "endChar": 55
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
