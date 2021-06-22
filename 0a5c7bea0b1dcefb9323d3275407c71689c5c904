@@ -904,6 +904,30 @@
       "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "115bf182_2745dce5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-22T10:39:46Z",
+      "side": 1,
+      "message": "\u003e 4D2h \n?? is it acceptable - I know we can use Ox4D2 - tried in some test code with 4D2h but, no luck - can you point me some reference on this? is it portable?\n\nand also it contradicts previous your comments (below)\n\n\u003eif someone pass 0x4D2 it will fail saying invalid number vs if at all someone want to pass a hex number like 4D2 they have to pass 4D2h\n\nI last totally, what are all formats you will accept and not  - since you are using string type so, as a consumer of this dbus interface, I have a free hand to pass anything since no documentation about which format I need to send. \n\nand also, You are not returning any exception on the invalid data if the dbus interface consumer giving the wrong format, just proceeding, then How this dbus interface consumer will get to know that passing invalid format? - What is the intention to pass error log id by a consumer? The consumer no need to bother while proceeding with \"0\" error log id? is conveyed anywhere to the consumer (again I am talking about documentation)?\n\nI am fine if you are throwing an error on this invalid format which you are not expecting - please add those TCs details in the commit message.\n\nStill, I am preferring documentation but, I will agree with your point if you are using type as integer (or relevant data type in dbus interface) but, for string type, I don\u0027t think we can consider the assumption (I am not saying consider assumption while talking about interface which is going to use by a consumer - interface must be well documented with require info which is needed to considered by a consumer).",
+      "parentUuid": "7d5f1053_ff228193",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 410,
+        "endChar": 55
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
