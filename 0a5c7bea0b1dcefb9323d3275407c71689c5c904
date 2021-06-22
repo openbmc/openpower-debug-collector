@@ -714,6 +714,30 @@
       "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf35306e_f86907f1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-22T07:05:21Z",
+      "side": 1,
+      "message": "What happens if I give error id like below\n\n1234 vs 0x4D2",
+      "parentUuid": "f0997167_23442d41",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 410,
+        "endChar": 55
+      },
+      "revId": "0a5c7bea0b1dcefb9323d3275407c71689c5c904",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
