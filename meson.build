@@ -73,10 +73,23 @@ foreach g : generated_sources generated_others
     endforeach
 endforeach
 
+watchdog_libs = []
+conf_data = configuration_data()
+if get_option('hostboot-dump-collection').enabled()
+    conf_data.set('HOSTBOOT_DUMP_COLLECTION', true)
+
+    subdir('watchdog')
+    watchdog_libs += watchdog_lib
+else
+    conf_data.set('HOSTBOOT_DUMP_COLLECTION', false)
+endif
+
 executable('watchdog_timeout',
     'watchdog_timeout.cpp',
+    configure_file(output: 'config.h', configuration: conf_data),
     generated_sources,
     dependencies: deps,
+    link_with: watchdog_libs,
     include_directories: include_directories('gen'),
     implicit_include_directories: true,
     install: true
