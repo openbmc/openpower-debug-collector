@@ -1,0 +1,44 @@
+#include <unistd.h>
+
+#include <watchdog_dbus.hpp>
+#include <watchdog_handler.hpp>
+#include <watchdog_logging.hpp>
+
+namespace watchdog
+{
+namespace dump
+{
+
+/**
+ * @brief Log an event handled by the dump handler
+ *
+ * @param additional - Additional PEL data
+ * @param timeout - timeout interval in seconds
+ */
+void event(std::map<std::string, std::string>& additional,
+           const uint32_t timeout)
+{
+
+    std::string eventName = "org.open_power.Host.Boot.Error.WatchdogTimeout";
+
+    // CreatePELWithFFDCFiles requires a vector of FFDCTuple.
+    auto emptyFfdc = std::vector<FFDCTuple>{};
+
+    // Create PEL with additional data.
+    auto pelId = createPel(eventName, additional, emptyFfdc);
+
+    requestDump(pelId, timeout); // will not return until dump is complete
+}
+
+void eventWatchdogTimeout(const uint32_t timeout)
+{
+    // Additional data to be added to PEL object
+    // Currently we don't have anything to add
+    // Keeping this for now in case if we have to add
+    // any data corresponding to watchdog timeout
+    std::map<std::string, std::string> additionalData;
+    event(additionalData, timeout);
+}
+
+} // namespace dump
+} // namespace watchdog
