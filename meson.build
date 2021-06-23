@@ -73,10 +73,17 @@ foreach g : generated_sources generated_others
     endforeach
 endforeach
 
+subdir('hbdump')
+
+hostboot_libs = [
+    hbdump_lib,
+]
+
 executable('watchdog_timeout',
     'watchdog_timeout.cpp',
     generated_sources,
     dependencies: deps,
+    link_with: hostboot_libs,
     include_directories: include_directories('gen'),
     implicit_include_directories: true,
     install: true
