@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0147436_abd8a6db",
+        "filename": "README.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-06-23T06:23:55Z",
+      "side": 1,
+      "message": "- Can you make each point a bullet format?\n- following one confusing?\n  - \"error log id is a 32bit decimal number converted to string\" - who needs to do this conversion? consumer of this interface?\n  - \"An error will be logged and dump will be collected with error log id as 0 if an invalid number is passed.\" - Do we need to add a note on this? like, consumers of this interface should take the responsibility of passing the expected format else we will lose the error log id in the dump header, right?\n\nDo you need to update document in respective dbus interfaces as well (if this is a permanent fix) - I think everybody will look at dbus interface documentation instead implemented daemon\nOR \nThis is just a workaround and later you will change the signature for error log id in dbus interfaces? - if it is a workaround please mention that in the commit message and in code as well.",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 45,
+        "endChar": 31
+      },
+      "revId": "34626d5d028b8058b42ec3449cc0e3f02fdbd7a1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
