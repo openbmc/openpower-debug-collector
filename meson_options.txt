@@ -1,0 +1,5 @@
+# Feature to enable hostboot dump collection when watchdog times out
+option('hostboot-dump-collection',
+       type: 'feature',
+       value: 'disabled',
+       description : 'Enables hostboot dump collection')
