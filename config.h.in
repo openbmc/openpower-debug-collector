@@ -1,0 +1,7 @@
+#pragma once
+
+// clang-format off
+constexpr const int hbdumpCollectionEnabled =
+    @HOSTBOOT_DUMP_COLLECTION@;
+
+// clang-format on
