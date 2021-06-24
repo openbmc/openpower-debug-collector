@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "82ffaa84_84d60161",
+        "filename": "meson.build",
+        "patchSetId": 31
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-24T21:31:38Z",
+      "side": 1,
+      "message": "Yes this should be disabled by default(not supported on earlier system releases) and enabled only on systems(eg p10bmc) which supports these dumps,",
+      "parentUuid": "705c5632_89b5a81f",
+      "range": {
+        "startLine": 76,
+        "startChar": 14,
+        "endLine": 76,
+        "endChar": 31
+      },
+      "revId": "dc3f88a129d8f50e82600eee9fd75907e09e57c8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "79113325_fd695479",
         "filename": "meson_options.txt",
         "patchSetId": 31
@@ -36,6 +60,30 @@
       "writtenOn": "2021-06-24T21:03:45Z",
       "side": 1,
       "message": "Is this specific to hostboot dump or any other(?) dump collections? \nIf it is specific to hostboot then may be the description could be \"Enables hostboot dump collection\"?",
+      "range": {
+        "startLine": 24,
+        "startChar": 30,
+        "endLine": 24,
+        "endChar": 34
+      },
+      "revId": "dc3f88a129d8f50e82600eee9fd75907e09e57c8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03f0d9f7_4ab324e6",
+        "filename": "meson_options.txt",
+        "patchSetId": 31
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-06-24T21:31:38Z",
+      "side": 1,
+      "message": "This collection refers to all host dumps(hostboot, hardware, SBE etc) collected on BMC",
+      "parentUuid": "79113325_fd695479",
       "range": {
         "startLine": 24,
         "startChar": 30,
