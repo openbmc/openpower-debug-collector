@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53a48aef_4fd172ca",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-06-24T20:48:27Z",
+      "side": 0,
+      "message": "I still don\u0027t really understand why we had all this complexity with Automake and why we don\u0027t still need it with meson? But if all is good, I\u0027m happy.",
+      "revId": "222131cc18135fe80c76aba1c7c91d9c5a80d9c9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
