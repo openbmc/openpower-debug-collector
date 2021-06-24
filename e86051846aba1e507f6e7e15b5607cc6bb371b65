@@ -16,6 +16,24 @@
       "revId": "e86051846aba1e507f6e7e15b5607cc6bb371b65",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca34b231_a041a174",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-24T17:13:00Z",
+      "side": 1,
+      "message": "Discussed with Dhruv. \nWill make this change per our discussion:\n- change directory name from hbdump to watchdog\n- change namespace dump::hbdump to watchdog::dump\n\nHope it\u0027s OK for everyone!",
+      "parentUuid": "33f5f5b6_02963148",
+      "revId": "e86051846aba1e507f6e7e15b5607cc6bb371b65",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
