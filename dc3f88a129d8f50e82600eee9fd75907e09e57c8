@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "705c5632_89b5a81f",
+        "filename": "meson.build",
+        "patchSetId": 31
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-24T21:03:45Z",
+      "side": 1,
+      "message": "\u0027dump-collection\u0027 collection by default is set to \u0027disabled\u0027 in meson_options.txt, and this will not build dump related binaries unless this option is enabled during build. What is the reason to keep this option disabled by default?",
+      "range": {
+        "startLine": 76,
+        "startChar": 14,
+        "endLine": 76,
+        "endChar": 31
+      },
+      "revId": "dc3f88a129d8f50e82600eee9fd75907e09e57c8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79113325_fd695479",
+        "filename": "meson_options.txt",
+        "patchSetId": 31
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-24T21:03:45Z",
+      "side": 1,
+      "message": "Is this specific to hostboot dump or any other(?) dump collections? \nIf it is specific to hostboot then may be the description could be \"Enables hostboot dump collection\"?",
+      "range": {
+        "startLine": 24,
+        "startChar": 30,
+        "endLine": 24,
+        "endChar": 34
+      },
+      "revId": "dc3f88a129d8f50e82600eee9fd75907e09e57c8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
