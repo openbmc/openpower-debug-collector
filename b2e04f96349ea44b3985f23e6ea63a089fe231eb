@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "2af87e36_02b052e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8dc584e_5f09d8dd",
+      "range": {
+        "startLine": 7,
+        "startChar": 55,
+        "endLine": 7,
+        "endChar": 58
+      },
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e623f0ed_573bba84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35a51d5a_9e379f49",
+      "range": {
+        "startLine": 7,
+        "startChar": 46,
+        "endLine": 7,
+        "endChar": 54
+      },
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "58f72056_560f1394",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -59,6 +107,24 @@
       "writtenOn": "2021-06-24T21:40:06Z",
       "side": 1,
       "message": "nit: these are sub-bullets of the first line (i.e. one test where you verified two things)\nDid you verify system went to quiesce state after the dump was collected?\nWhat about  some error paths? What if host is not running or hostboot dump interface returns error.",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0da5747b_0f41cd0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Not sure how to force dump interface return error to verify...",
+      "parentUuid": "58f72056_560f1394",
       "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -82,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "18f7148f_1b8ec640",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1f267045_a86acfc1",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ae0fd32_c99fb5ce",
         "filename": "watchdog/watchdog_common.cpp",
         "patchSetId": 2
@@ -96,6 +180,24 @@
       "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a97b3e41_d7c21a8f",
+        "filename": "watchdog/watchdog_common.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ae0fd32_c99fb5ce",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -122,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "a4512ad2_adff5746",
+        "filename": "watchdog/watchdog_common.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ad5f3ef_ead9ae57",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0175ff34_8a2b48fb",
         "filename": "watchdog/watchdog_dbus.cpp",
         "patchSetId": 2
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "0d8835cf_c071d97f",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0175ff34_8a2b48fb",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e8cd6900_75bfbd86",
         "filename": "watchdog/watchdog_dbus.cpp",
         "patchSetId": 2
@@ -150,6 +294,24 @@
       "writtenOn": "2021-06-24T21:40:06Z",
       "side": 1,
       "message": "This is more complex then I think you really need. Just call this:\nbusctl get-property xyz.openbmc_project.State.Host /xyz/openbmc_project/state/host0 xyz.openbmc_project.State.Host CurrentHostState\n\nIf it comes back as \"xyz.openbmc_project.State.Host.HostState.Running\" then request the dump.",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d833833_7c1e6f60",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Currently this method is unused, and if the the host is in \u0027Off\u0027 state, the hostboot collection is not initiated by phosphor-debug-collector or dump manager. This method/code is removed.",
+      "parentUuid": "e8cd6900_75bfbd86",
       "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -173,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "3b9000e6_26ab3c7d",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "It is a good idea to have a timeout object that sets inProgress to false if timeout expires, but not sure that should be done by the dump collection requester though. As a requester maybe we can break out of the loop (or throw an exception?) if the difftime(...) exceeds reasonable collection time?",
+      "parentUuid": "4e6e999f_c6ccac3d",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "67e0d3bf_8d2e6c80",
         "filename": "watchdog/watchdog_handler.hpp",
         "patchSetId": 2
@@ -187,6 +367,24 @@
       "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbe2c7d6_2767ed23",
+        "filename": "watchdog/watchdog_handler.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67e0d3bf_8d2e6c80",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -207,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "fbc4f161_c2e1295e",
+        "filename": "watchdog/watchdog_logging.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbc39082_7f968aba",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa3750e1_fa8fa92b",
         "filename": "watchdog/watchdog_main.cpp",
         "patchSetId": 2
@@ -224,6 +440,24 @@
     },
     {
       "key": {
+        "uuid": "f154851c_09580125",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "aa3750e1_fa8fa92b",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "322d4e9d_6377ed4a",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 2
@@ -235,6 +469,24 @@
       "writtenOn": "2021-06-24T21:40:06Z",
       "side": 1,
       "message": "I think this is redundant now? Doesn\u0027t your new code generate and report the error?",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45053ffa_f3a1848f",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-26T04:52:52Z",
+      "side": 1,
+      "message": "I was kind of debating on this, and left it here to get reviewers opinion. We have/create an error reporting PEL object that will have the error info about WatchdogTimeout. I\u0027m not sure whether that is considered as reporting error. If it is considered as error reporting then I can delete this...",
+      "parentUuid": "322d4e9d_6377ed4a",
       "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
