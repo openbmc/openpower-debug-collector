@@ -353,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "384504a8_ebb39a78",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-06-28T17:40:25Z",
+      "side": 1,
+      "message": "I\u0027ve been seeing of late the progress status being stuck in \"InProgress\", and watchdog_timeout just hung there. While I can\u0027t figure-out the hostboot entry number to see whether the one I\u0027m seeing corresponds to watchdog_timeout, but the last one is staying in \"InProgress\". This is something that needs to be addressed sooner or later...\n\n# busctl get-property xyz.openbmc_project.Dump.Manager /xyz/openbmc_project/dump/hostboot/entry/20 xyz.openbmc_project.Common.Progress Status\ns \"xyz.openbmc_project.Common.Progress.OperationStatus.InProgress\"\n\nSome design decision should happen to handle changing \"InProgress\" state...",
+      "parentUuid": "3b9000e6_26ab3c7d",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "67e0d3bf_8d2e6c80",
         "filename": "watchdog/watchdog_handler.hpp",
         "patchSetId": 2
