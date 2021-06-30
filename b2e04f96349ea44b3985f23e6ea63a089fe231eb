@@ -371,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "bb38f22a_9fd571c2",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-06-30T20:20:56Z",
+      "side": 1,
+      "message": "Yeah, if this service hangs, it hangs the whole recovery path so I think we\u0027re going to have to bake a timeout into this code. You can put a TODO in this commit and address in a new patch on top of this one. https://gerrit.openbmc-project.xyz/c/openbmc/pldm/+/41005/40/host-bmc/host_pdr_handler.cpp#515 is an example I saw recently doing this. Just create a timer lambda and if it gets called, you timed out. If you get the dump, you just cancel the timer.",
+      "parentUuid": "384504a8_ebb39a78",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "67e0d3bf_8d2e6c80",
         "filename": "watchdog/watchdog_handler.hpp",
         "patchSetId": 2
@@ -505,6 +523,24 @@
       "side": 1,
       "message": "I was kind of debating on this, and left it here to get reviewers opinion. We have/create an error reporting PEL object that will have the error info about WatchdogTimeout. I\u0027m not sure whether that is considered as reporting error. If it is considered as error reporting then I can delete this...",
       "parentUuid": "322d4e9d_6377ed4a",
+      "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c30c75d_ff056296",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-06-30T20:20:56Z",
+      "side": 1,
+      "message": "Yeah, same thing so you can delete this.",
+      "parentUuid": "45053ffa_f3a1848f",
       "revId": "b2e04f96349ea44b3985f23e6ea63a089fe231eb",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
