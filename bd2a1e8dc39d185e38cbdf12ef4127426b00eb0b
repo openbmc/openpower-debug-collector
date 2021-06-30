@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6b2a75d_9ea23b7a",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000020
+      },
+      "writtenOn": "2021-06-30T01:15:51Z",
+      "side": 1,
+      "message": "I don\u0027t see this in other commits in this repo, e.g. https://gerrit.openbmc-project.xyz/c/openbmc/openpower-debug-collector/+/43228/15/dump/dump_manager.hpp",
+      "range": {
+        "startLine": 18,
+        "startChar": 34,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "bd2a1e8dc39d185e38cbdf12ef4127426b00eb0b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
