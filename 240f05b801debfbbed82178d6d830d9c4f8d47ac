@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "79227684_e14223e6",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-19T19:12:08Z",
+      "side": 1,
+      "message": "No, you can add the [in/out] if you like to signify and input/output parameter but it\u0027s not required.",
+      "parentUuid": "d9071a1d_46ce00e6",
+      "range": {
+        "startLine": 33,
+        "startChar": 3,
+        "endLine": 33,
+        "endChar": 9
+      },
+      "revId": "240f05b801debfbbed82178d6d830d9c4f8d47ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a219397e_8f3b6240",
         "filename": "watchdog/watchdog_handler.cpp",
         "patchSetId": 7
@@ -59,6 +83,30 @@
       "writtenOn": "2021-07-02T23:05:52Z",
       "side": 1,
       "message": "Couldn\u0027t get this piece of code to work - it did not call callback. I plan to delete this if alternative of using SIGALRM is acceptable. If not, I need some help to get it to working...\nJayanth/Andrew: any suggestion?",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 130,
+        "endChar": 6
+      },
+      "revId": "240f05b801debfbbed82178d6d830d9c4f8d47ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4ebea4c_e81137c3",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-19T19:12:08Z",
+      "side": 1,
+      "message": "Patrick provided some background in discord on this, sdeventplus and sdbusplus are two different implementations that do the same thing. sdbusplus is a bit simpler but does not provide timer support like sdeventplus does. You can only use one or the other. Since you need timer support you should use sdeventplus. https://grok.openbmc.org/xref/openbmc/sdeventplus/example/heartbeat_timer.cpp?r\u003d1b49b6f0 is an example of the timer.",
+      "parentUuid": "a219397e_8f3b6240",
       "range": {
         "startLine": 110,
         "startChar": 0,
