@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db48c061_3d74ced0",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-20T19:43:38Z",
+      "side": 1,
+      "message": "nit: this seems a bit overboard? Just standard stuff seems more readable here.\nbool timedOut \u003d false;",
+      "revId": "2df129a35f1e67165555fc960ed26d3497706875",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e8fa67c_c1498b6d",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-20T19:43:38Z",
+      "side": 1,
+      "message": "nit: put logic statements in their own () to make order clear.\nwhile ((true \u003d\u003d inProgress) \u0026\u0026 !timedOut)",
+      "range": {
+        "startLine": 81,
+        "startChar": 11,
+        "endLine": 81,
+        "endChar": 29
+      },
+      "revId": "2df129a35f1e67165555fc960ed26d3497706875",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f8653f2_7e2d02c8",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-20T19:43:38Z",
+      "side": 1,
+      "message": "This isn\u0027t as efficient as having everything running asynchronously with callbacks and timer events but it gets the job done, and realistically the BMC is not doing much else other then waiting for this to complete.",
+      "revId": "2df129a35f1e67165555fc960ed26d3497706875",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d5774c9_fed6e39b",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-20T19:43:38Z",
+      "side": 1,
+      "message": "We may need to revisit this some day. Maybe log an error, maybe make sure we cancel the dump service so it\u0027s not still running when we move the system into a quiesce state. But we can build on this later.",
+      "revId": "2df129a35f1e67165555fc960ed26d3497706875",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
