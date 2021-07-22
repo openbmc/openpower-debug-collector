@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb93ce44_bda08c5d",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-07-22T02:48:17Z",
+      "side": 1,
+      "message": "Changed the wait time from 1 microsecond to 1 second since it is not necessary to check the dump progress status that frequently.",
+      "range": {
+        "startLine": 84,
+        "startChar": 17,
+        "endLine": 84,
+        "endChar": 26
+      },
+      "revId": "50e7b9efe28d71666b374aead2aa414825ebb03e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
