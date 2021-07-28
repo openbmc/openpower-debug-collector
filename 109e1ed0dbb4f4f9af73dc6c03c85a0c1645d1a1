@@ -22,6 +22,30 @@
       "revId": "109e1ed0dbb4f4f9af73dc6c03c85a0c1645d1a1",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8126c140_51dbd882",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-07-28T10:53:13Z",
+      "side": 1,
+      "message": "This is the max supported error log id, max 32bit number",
+      "parentUuid": "5d25f76c_173cfe75",
+      "range": {
+        "startLine": 44,
+        "startChar": 15,
+        "endLine": 44,
+        "endChar": 31
+      },
+      "revId": "109e1ed0dbb4f4f9af73dc6c03c85a0c1645d1a1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
