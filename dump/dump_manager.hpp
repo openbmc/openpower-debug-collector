@@ -130,7 +130,7 @@ class Manager : public CreateIface
      * fast array
      */
     void collectDumpFromSBE(struct pdbg_target* proc,
-                            std::filesystem::path& dumpPath, uint32_t id,
+                            std::filesystem::path dumpPath, uint32_t id,
                             uint8_t type, uint8_t clockState,
                             const uint8_t chipPos,
                             const uint8_t collectFastArray);
