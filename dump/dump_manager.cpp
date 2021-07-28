@@ -420,6 +420,9 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
     using CreateParameters =
         sdbusplus::com::ibm::Dump::server::Create::CreateParameters;
     using Argument = xyz::openbmc_project::Common::InvalidArgument;
+    using NotAllowed =
+        sdbusplus::xyz::openbmc_project::Common::Error::NotAllowed;
+    using Reason = xyz::openbmc_project::Common::NotAllowed::REASON;
 
     auto iter = params.find(
         sdbusplus::com::ibm::Dump::server::Create::
@@ -537,6 +540,17 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
         }
     }
 
+    // Check whether a dump is in progresss or already collected
+    if (checkAndLockDumpCollection())
+    {
+        log<level::ERR>(
+            "A dump is already is in progress or collected in this boot, "
+            "another dump cannot be collected until host reboot");
+        elog<NotAllowed>(
+            Reason("A dump is already is in progress or collected in this "
+                   "boot, another dump cannot be collected until host reboot"));
+    }
+
     try
     {
         auto dumpManager =
@@ -646,6 +660,28 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
     }
     // return object path
     return newDumpPath;
+}
+
+bool Manager::checkAndLockDumpCollection()
+{
+    if (std::filesystem::exists(OP_DUMP_LOCK_FILE))
+    {
+        return true;
+    }
+
+    try
+    {
+        std::ofstream(OP_DUMP_LOCK_FILE);
+    }
+    catch (std::ofstream::failure& e)
+    {
+        log<level::ERR>(
+            fmt::format("Unable to create lock file({}) errorMsg({})",
+                        OP_DUMP_LOCK_FILE, e.what())
+                .c_str());
+        throw std::runtime_error("Unable to create dump lock file");
+    }
+    return false;
 }
 } // namespace dump
 } // namespace openpower
