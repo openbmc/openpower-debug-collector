@@ -84,7 +84,7 @@ bool Manager::isMasterProc(struct pdbg_target* proc) const
 }
 
 void Manager::collectDumpFromSBE(struct pdbg_target* proc,
-                                 std::filesystem::path& dumpPath,
+                                 std::filesystem::path dumpPath,
                                  const uint32_t id, const uint8_t type,
                                  const uint8_t clockState,
                                  const uint8_t chipPos,
@@ -223,7 +223,6 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId,
                           const uint8_t failingUnit)
 {
     struct pdbg_target* target;
-    bool failed = false;
     pdbg_targets_init(NULL);
     pdbg_set_loglevel(PDBG_INFO);
 
@@ -336,59 +335,23 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId,
                 }
             }
 
-            pid_t pid = fork();
-
-            if (pid < 0)
+            try
             {
+                collectDumpFromSBE(target, sbeFilePath, id, type, cstate,
+                                   chipPos, collectFastArray);
+            }
+            catch (const std::runtime_error& error)
+            {
+                // Exit if there is a critical failure and collection cannot
+                // continue
                 log<level::ERR>(
-                    "Fork failed while starting hostboot dump collection");
-                report<InternalFailure>();
-                // Attempt the collection from next SBE.
-                continue;
-            }
-            else if (pid == 0)
-            {
-                try
-                {
-                    collectDumpFromSBE(target, sbeFilePath, id, type, cstate,
-                                       chipPos, collectFastArray);
-                }
-                catch (const std::runtime_error& error)
-                {
-                    log<level::ERR>(
-                        fmt::format(
-                            "Failed to execute collection, errorMsg({})",
-                            error.what())
-                            .c_str());
-                    std::exit(EXIT_FAILURE);
-                }
-                std::exit(EXIT_SUCCESS);
-            }
-            else
-            {
-                pidList.push_back(std::move(pid));
-            }
-        }
-
-        for (auto& p : pidList)
-        {
-            int status = 0;
-            waitpid(p, &status, 0);
-            if (WEXITSTATUS(status))
-            {
-                log<level::ERR>(
-                    fmt::format("Dump collection failed, status({})", status)
+                    fmt::format("Failed to execute collection, errorMsg({})",
+                                error.what())
                         .c_str());
-                failed = true;
+                std::exit(EXIT_FAILURE);
             }
         }
 
-        // Exit if there is a critical failure and collection cannot continue
-        if (failed)
-        {
-            log<level::ERR>("Failed to collect the dump");
-            std::exit(EXIT_FAILURE);
-        }
         log<level::INFO>(
             fmt::format("Dump collection completed for clock_state({})", cstate)
                 .c_str());
