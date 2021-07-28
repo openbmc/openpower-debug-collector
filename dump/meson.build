@@ -2,6 +2,8 @@
 
 unit_files += {'input':'dump/org.open_power.Dump.Manager.service',
          'output':'org.open_power.Dump.Manager.service'}
+unit_files += {'input': 'dump/clear_op_dump_lock.service',
+         'output': 'clear_op_dump_lock.service'} 
 
 cxx = meson.get_compiler('cpp')
 
@@ -29,6 +31,8 @@ dump_conf_data.set_quoted('HW_DUMP_DBUS_OBJPATH', get_option('HW_DUMP_DBUS_OBJPA
                      description : 'The hardware dump manager path')
 dump_conf_data.set_quoted('HW_DUMP_COLLECTION_PATH', get_option('HW_DUMP_COLLECTION_PATH'),
                      description : 'The path to store collected hardware dump files')
+dump_conf_data.set_quoted('OP_DUMP_LOCK_FILE', get_option('OP_DUMP_LOCK_FILE'),
+                     description: 'The lock file for stopping multiple dump collection before host reboot')
 configure_file(configuration : dump_conf_data,
                output : 'config.h')
 
