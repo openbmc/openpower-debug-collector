@@ -33,6 +33,10 @@ option('HW_DUMP_COLLECTION_PATH', type : 'string',
         value : '/tmp/openpower-dumps/hardware',
         description : 'The path to store collected hardware dump files')
 
+option('OP_DUMP_LOCK_FILE', type : 'string',
+        value :'/var/lib/openpower-debug-collector/collection.lock',
+        description : 'The lock file for stopping multiple dump collection before host reboot')
+
 # Feature to enable the dump collection
 option('dump-collection', type: 'feature',
        value : 'disabled',
