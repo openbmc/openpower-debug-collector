@@ -1,0 +1,16 @@
+[Unit]
+Description=Clear OpenPOWER host dump  lock
+After=obmc-host-start-pre@0.target
+After=start_host@0.service
+Wants=org.open_power.Dump.Manager.service
+Before=org.open_power.Dump.Manager.service
+Before=mapper-wait@-org-open_power-dump-manager.service
+Conflicts=obmc-host-stop@0.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/rm {OP_DUMP_LOCK_FILE}
+RemainAfterExit=yes
+
+[Install]
+WantedBy=obmc-host-startmin@0.target
