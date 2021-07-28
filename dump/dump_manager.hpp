@@ -134,6 +134,15 @@ class Manager : public CreateIface
                             uint8_t type, uint8_t clockState,
                             const uint8_t chipPos,
                             const uint8_t collectFastArray);
+
+    /** @brief Check whether a dump is in progress or already collected
+     *  if no dumps are in progress create a lock.
+     *
+     *  @return bool - true : A dump is in progress or already
+     *                 collected in current boot.
+     *                 false: No dump is in progress or collected
+     */
+    bool checkAndLockDumpCollection();
 };
 
 } // namespace dump
