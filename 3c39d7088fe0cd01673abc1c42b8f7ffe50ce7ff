@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41724b90_9df63e5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-07-29T15:01:11Z",
+      "side": 1,
+      "message": "This statement is ot completely correct. attn path hostbootdump is enabled.  this statement is true from watchdump context.please update the statement",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "3c39d7088fe0cd01673abc1c42b8f7ffe50ce7ff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79f70421_eab37203",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-07-29T15:01:11Z",
+      "side": 1,
+      "message": "start using libfmt librarry. this will help to get data in journal logs directly without son-pretty option.",
+      "revId": "3c39d7088fe0cd01673abc1c42b8f7ffe50ce7ff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
