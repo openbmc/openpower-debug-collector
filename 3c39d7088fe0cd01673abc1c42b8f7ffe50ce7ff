@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "da0d8030_bd97d2c0",
+        "filename": "config.h.in",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-29T15:19:01Z",
+      "side": 1,
+      "message": "I\u0027m not a big fan of the config file. It\u0027s pretty non-standard to how other repos have utilized this. I think just a \"#ifdef HOSTBOOT_DUMP_COLLECTION\" in the code is fine vs. all these hoops to try and make a variable.",
+      "revId": "3c39d7088fe0cd01673abc1c42b8f7ffe50ce7ff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "79f70421_eab37203",
         "filename": "watchdog/watchdog_dbus.cpp",
         "patchSetId": 15
@@ -36,6 +53,41 @@
       "writtenOn": "2021-07-29T15:01:11Z",
       "side": 1,
       "message": "start using libfmt librarry. this will help to get data in journal logs directly without son-pretty option.",
+      "revId": "3c39d7088fe0cd01673abc1c42b8f7ffe50ce7ff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2bef793_e551a468",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-29T15:19:01Z",
+      "side": 1,
+      "message": "Patrick has a push going to get rid of the libfmt usage via https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-logging/+/45310 so my vote is we wait for that to settle and then move this repo to the new lg2 interfaces he\u0027s created.",
+      "parentUuid": "79f70421_eab37203",
+      "revId": "3c39d7088fe0cd01673abc1c42b8f7ffe50ce7ff",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "341b0cd8_c03a6293",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-29T15:19:01Z",
+      "side": 1,
+      "message": "See previous comment, I\u0027d just prefer the #ifdef path.",
       "revId": "3c39d7088fe0cd01673abc1c42b8f7ffe50ce7ff",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
