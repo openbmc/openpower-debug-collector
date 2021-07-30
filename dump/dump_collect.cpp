@@ -12,6 +12,7 @@ extern "C"
 #include "sbe_consts.hpp"
 
 #include <fmt/core.h>
+#include <libphal.H>
 #include <sys/wait.h>
 #include <unistd.h>
 
@@ -64,9 +65,29 @@ void collectDumpFromSBE(struct pdbg_target* proc,
         throw std::runtime_error("No valid pib target found");
     }
 
-    // TODO #ibm-openbmc/dev/3039
-    // Check the SBE state before attempt the dump collection
-    // Skip this SBE if the SBE is not in a good state.
+    try
+    {
+        openpower::phal::sbe::validateSBEState(proc);
+    }
+    catch (const openpower::phal::sbeError_t& e)
+    {
+        log<level::ERR>(
+            fmt::format(
+                "SBE Validation failed, cannot be used for collecting dump "
+                "dump type({}), clockstate({}), proc position({}) error({})",
+                type, clockState, chipPos, e.what())
+                .c_str());
+        // For hostboot dump fail dump collection if the SBE on the primary
+        // processor is not in the right state.
+        if ((util::isMasterProc(proc)) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        {
+            log<level::ERR>("Hostboot dump cannot be collected when primary "
+                            "SBE is not in the required state");
+            throw;
+        }
+        // Skip the collection from this SBE
+        return;
+    }
 
     int error = 0;
     util::DumpDataPtr dataPtr;
