@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "410773c1_03fd185a",
+        "filename": "meson.build",
+        "patchSetId": 19
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-30T19:22:26Z",
+      "side": 1,
+      "message": "This is a bit confusing to read. Could we just use watchdog_lib and define it as empty if hostboot-dump-collection is not enabled, otherwise we\u0027ll use what the watchdog subdir sets it to?",
+      "revId": "54d7c6ba771beea4491767076a7ad9c75f5e284b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72577e81_e96746f2",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-30T19:22:26Z",
+      "side": 1,
+      "message": "nit: error? Something a little more generic since it\u0027s not always going to collect a hostboot dump.",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 16,
+        "endChar": 31
+      },
+      "revId": "54d7c6ba771beea4491767076a7ad9c75f5e284b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c741572_18c8943f",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-30T19:22:26Z",
+      "side": 1,
+      "message": "nit: This seems a bit overly complex. Could it just be:\nuint32_t timeoutInterval \u003d 1500;",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 43
+      },
+      "revId": "54d7c6ba771beea4491767076a7ad9c75f5e284b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6471a707_3565d047",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-30T19:22:26Z",
+      "side": 1,
+      "message": "This option is only really relevant for the HOSBOOT_DUMP_COLLECTION path, can we move into that #ifdef?",
+      "revId": "54d7c6ba771beea4491767076a7ad9c75f5e284b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
