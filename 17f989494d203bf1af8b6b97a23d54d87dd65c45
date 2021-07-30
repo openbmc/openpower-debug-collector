@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31ae285a_265da042",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-07-30T05:20:04Z",
+      "side": 1,
+      "message": "any specific reason for adding this repo name . usually add incase you got extension/sub repo sepcific commit s tracking",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "17f989494d203bf1af8b6b97a23d54d87dd65c45",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88e12f29_fae99fa0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-07-30T05:20:04Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 18,
+        "startChar": 31,
+        "endLine": 18,
+        "endChar": 42
+      },
+      "revId": "17f989494d203bf1af8b6b97a23d54d87dd65c45",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c0dd05d_22e74237",
+        "filename": "dump/clear_op_dump_lock.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-07-30T05:20:04Z",
+      "side": 1,
+      "message": "MPIPL/specia;l reboot requested by Host use case is also considered here.? Need to make sure the files are getting deleted in this path.",
+      "revId": "17f989494d203bf1af8b6b97a23d54d87dd65c45",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
