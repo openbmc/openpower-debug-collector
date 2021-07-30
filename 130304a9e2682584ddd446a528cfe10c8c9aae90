@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "615d9fd3_e49f0b2b",
+        "filename": "watchdog/watchdog_common.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-07-30T13:07:33Z",
+      "side": 1,
+      "message": "Instead of all of this, can you just check the config variable in meson and just not add these source files to the watchdog application within the meson.build file if the build option is not set?",
+      "revId": "130304a9e2682584ddd446a528cfe10c8c9aae90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
