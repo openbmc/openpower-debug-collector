@@ -109,9 +109,35 @@ void Manager::collectDumpFromSBE(struct pdbg_target* proc,
         throw std::runtime_error("No valid pib target found");
     }
 
-    // TODO #ibm-openbmc/dev/3039
     // Check the SBE state before attempt the dump collection
     // Skip this SBE if the SBE is not in a good state.
+    sbe_state sbeState;
+    if (sbe_get_state(pib, &sbeState) < 0)
+    {
+        log<level::ERR>(
+            fmt::format("Failed to get state of SBE, position({}), "
+                        "dump_type({}) can't continue with dump collection",
+                        chipPos, type)
+                .c_str());
+        if (isMasterProc(proc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        {
+            log<level::ERR>(
+                "Unable to collect hostboot dump from master processor");
+            throw std::runtime_error(
+                "Unable to collect hostboot dump from master processor");
+        }
+        return;
+    }
+
+    if (sbeState != SBE_STATE_BOOTED)
+    {
+        log<level::ERR>(
+            fmt::format("SBE is booted for position({}), "
+                        "dump_type({}) can't continue with dump collection",
+                        chipPos, type)
+                .c_str());
+        return;
+    }
 
     int error = 0;
     DumpDataPtr dataPtr;
