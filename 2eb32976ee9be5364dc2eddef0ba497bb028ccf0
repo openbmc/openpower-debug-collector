@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef1c716a_463c592e",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-08-09T14:07:20Z",
+      "side": 1,
+      "message": "When this app is going to start , after Hostboot start of after host start traget completion? \nIf this starts early , need to look the window SBE boot or Hostboot boot. by using pdbg interfaces on primarr processor.(  https://github.com/open-power/pdbg/blob/master/libpdbg/libpdbg_sbe.h#L127. ) . And if it is in SBE boot window , should trigger SBE dump ( support still not in place yet) . Please add todo incase this is not considered inthe existing flow",
+      "revId": "2eb32976ee9be5364dc2eddef0ba497bb028ccf0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
