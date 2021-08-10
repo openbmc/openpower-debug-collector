@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47559565_9ceeff99",
+        "filename": "README.md",
+        "patchSetId": 32
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "hardware?",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 8
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05001a12_b278ac17",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "I like to know how we arrived this? and How you are going correlate this with BMC inventory and PHAL device tree if both are involved either in this application or consumer of this interface side.",
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "775a690e_8e9ce328",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "Just question: Do we need to set collectFastArray as \"1\" if clock is OFF? What is the role behind this?",
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f96e744_28e7a6c2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "Who is the consumer of this interface? How they will get processor id (which you are expecting in FailingUnit)? is it from BMC inventory or PHAL device tree? \nIf Inventory, FYI, BMC inventory will going to change as per DCM (There is discussion to model as DCM) package so either this app or consumer of this interface need to correlate that.\nIf PHAL device tree then we need to update the attribute name (which you are expecting, FAPI_POS).",
+      "range": {
+        "startLine": 333,
+        "startChar": 21,
+        "endLine": 333,
+        "endChar": 28
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37edc9f3_bfba65b6",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "Both the cases setting \"collectFastArray\" as \"1\" so, what is different between those two?\n\nOR \n\nCan you simplify condition? Maybe Like below?\n```\nif (cstate \u003d\u003d SBE::SBE_CLOCK_OFF)\n{\n    if ((type \u003d\u003d SBE::SBE_DUMP_TYPE_HOSTBOOT) ||\n        ((type \u003d\u003d SBE::SBE_DUMP_TYPE_HARDWARE) \u0026\u0026 (chipPos \u003d\u003d failingUnit)))\n    {\n        collectFastArray \u003d 1;\n    }\n}\n```\nSeeing any issue with above?",
+      "range": {
+        "startLine": 328,
+        "startChar": 16,
+        "endLine": 336,
+        "endChar": 17
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73565adc_a681280a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "Why not define uint8 in dbus interface and use it here?",
+      "range": {
+        "startLine": 498,
+        "startChar": 35,
+        "endLine": 498,
+        "endChar": 43
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbabe832_d4c0ccb6",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "Please add expected maximum number as well in trace.",
+      "range": {
+        "startLine": 515,
+        "startChar": 66,
+        "endLine": 516,
+        "endChar": 55
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1aabcdcd_b7f2270d",
+        "filename": "dump/sbe_consts.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "Is is documented somewhere? If so, can you add that link here?",
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "248c5196_b6101e40",
+        "filename": "meson_options.txt",
+        "patchSetId": 32
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T11:13:53Z",
+      "side": 1,
+      "message": "What is the purpose of this config parameter?",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 22,
+        "endChar": 28
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
