@@ -1,0 +1,1745 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cef9629_008ea027",
+        "filename": "README.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Hostboot dump?",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "966c3867_812b1993",
+        "filename": "README.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "hostboot dump?",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 13
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a6f4d6d0_d8f969ad",
+        "filename": "README.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "is it IBM system specific dump or OpenPOWER specific dump? I mean why did not prefer to use org.open_power if it is OpenPOWER specific host architecture?",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96448196_d5a6b8e0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "General comment: You no need to use \"c_str()\" for fmt::format() api because, the fmt is C++ library.",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e47c945_97f127c2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "is it plat_dump? Can you help to understand that?",
+      "range": {
+        "startLine": 43,
+        "startChar": 36,
+        "endLine": 43,
+        "endChar": 45
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4b9160b_0605e287",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Please use enum which is defined in \"attributes_info.H\"\n\n```\ntypedef uint8_t ATTR_PROC_MASTER_TYPE_Type;\nenum ATTR_PROC_MASTER_TYPE_Enum\n{\n    ENUM_ATTR_PROC_MASTER_TYPE_ACTING_MASTER \u003d 0,\n    ENUM_ATTR_PROC_MASTER_TYPE_MASTER_CANDIDATE \u003d 1,\n    ENUM_ATTR_PROC_MASTER_TYPE_NOT_MASTER \u003d 2,\n};\n```",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 73,
+        "endChar": 18
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75386aa9_ea6a63fe",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Why you are using probe rather than HWAS_STATE? I think Hostboot will update HWAS_STATE (i.e it does not know about pdbg target state)",
+      "range": {
+        "startLine": 93,
+        "startChar": 12,
+        "endLine": 93,
+        "endChar": 29
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17a2db32_5cf6351f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "are you assuming only one pib will be there for each proc?",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 14
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a6a13d4_405bfa0f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Please add additional info in trace for debug like processor position or (path of processor target), clock state, etc.\n\nThis is general comment so please add wherever we needs to debug.",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 53
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1454bd8_625da278",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "processor position?",
+      "range": {
+        "startLine": 115,
+        "startChar": 63,
+        "endLine": 115,
+        "endChar": 71
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68d7012a_99c616b5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Both case (i.e primary or secondary processor) you are returning from this function if there is failure? So what we are gaining from this check?",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 75
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60c4b457_0bab3a97",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "secondary processor?",
+      "range": {
+        "startLine": 125,
+        "startChar": 41,
+        "endLine": 125,
+        "endChar": 50
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8939828_6dc116b1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Both case (i.e primary or secondary processor) you are returning from this function if there is failure? So what we are gaining from this check?",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 75
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32d1aace_7043e45f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you really need this variable? You can use directly right?",
+      "range": {
+        "startLine": 161,
+        "startChar": 16,
+        "endLine": 161,
+        "endChar": 21
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57a68bdb_5bab3b79",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you really need this variable? You can use directly right?",
+      "range": {
+        "startLine": 163,
+        "startChar": 16,
+        "endLine": 163,
+        "endChar": 24
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "822727aa_1ada9963",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Why hardcording this?\nOR please comment like need to revisit if enabling multi node system.",
+      "range": {
+        "startLine": 165,
+        "startChar": 67,
+        "endLine": 165,
+        "endChar": 72
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef5d65ac_47517824",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "It will throw exception, do you need to handle that?",
+      "range": {
+        "startLine": 166,
+        "startChar": 32,
+        "endLine": 166,
+        "endChar": 41
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d4e857c_e837dbc2",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Looks you defined namespace for this in beginning of this function.",
+      "range": {
+        "startLine": 172,
+        "startChar": 8,
+        "endLine": 172,
+        "endChar": 77
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20457491_509c7c8b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "- You should make sure this API call is success or not\n- I think you are using PHAL (since using some of attributes from phal DEVTREE) so, how you are initializing the DEVTREE or you need to use pdbg default device tree (FYI, pdbg default device won\u0027t contain the attributes which you are interested)?",
+      "range": {
+        "startLine": 220,
+        "startChar": 4,
+        "endLine": 220,
+        "endChar": 21
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6203803e_30de9b18",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "What happens if given type is not found in dumpInfo map?",
+      "range": {
+        "startLine": 223,
+        "startChar": 35,
+        "endLine": 223,
+        "endChar": 49
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bd90c4d_008eb6a5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to continue if there is error?\nIf yes, please add comment about \"why\"",
+      "range": {
+        "startLine": 251,
+        "startChar": 8,
+        "endLine": 251,
+        "endChar": 14
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d668585_369f43e3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to continue if there is error?\nIf yes, please add comment about \"why\"",
+      "range": {
+        "startLine": 273,
+        "startChar": 12,
+        "endLine": 274,
+        "endChar": 60
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "496430de_d470a4c0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Can you use function for this? Looks you are trying to write error log id into new file while trying to collect dump.",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 276,
+        "endChar": 5
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0baa8f63_e00a2a8a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Why you are using probe rather than HWAS_STATE? I think Hostboot will update HWAS_STATE (i.e it does not know about pdbg target state)",
+      "range": {
+        "startLine": 284,
+        "startChar": 16,
+        "endLine": 284,
+        "endChar": 33
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1bd1b5fd_46bb1a0c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you no need to collect dump from other processor via SBE chipops?\nIf no, do you need to exit with failure since it calling from child process?",
+      "range": {
+        "startLine": 293,
+        "startChar": 16,
+        "endLine": 294,
+        "endChar": 62
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "217d2369_fbc8e153",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Can we perform hostboot dump collection without primary (aka master) processor via SBE chipops?",
+      "range": {
+        "startLine": 299,
+        "startChar": 20,
+        "endLine": 299,
+        "endChar": 32
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47270050_59c56b65",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "FAPI_POS is global id within chip module so your intention is also same? If so, why (can you help me to understand on this)?",
+      "range": {
+        "startLine": 308,
+        "startChar": 28,
+        "endLine": 308,
+        "endChar": 41
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86eab5c1_4816ce1f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you no need to collect dump from other processor via SBE chipops?\nIf no, do you need to exit with failure since it calling from child process?",
+      "range": {
+        "startLine": 311,
+        "startChar": 16,
+        "endLine": 312,
+        "endChar": 60
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93eed893_f93f293e",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "I think it is not required since your are throwing exception in above line.",
+      "range": {
+        "startLine": 313,
+        "startChar": 16,
+        "endLine": 313,
+        "endChar": 24
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b40bf680_74e33baa",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "What is Fast Array? I like to know about it so can you help on this?",
+      "range": {
+        "startLine": 320,
+        "startChar": 23,
+        "endLine": 320,
+        "endChar": 32
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "553ba264_760ccecb",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Why grant child to collect dump?\n- 1st child used to initiate dump collection\n  - 2nd child (grant child) used to collect dump for each processor.\n     - Do we need to consider \"Serialization\" if running in parallel?",
+      "range": {
+        "startLine": 333,
+        "startChar": 12,
+        "endLine": 333,
+        "endChar": 30
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2e8b6be_e922cd24",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Please add \"pid\" and other required info as well to debug.",
+      "range": {
+        "startLine": 364,
+        "startChar": 33,
+        "endLine": 364,
+        "endChar": 77
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47721c78_845a14fc",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Please add required info to debug",
+      "range": {
+        "startLine": 373,
+        "startChar": 12,
+        "endLine": 373,
+        "endChar": 58
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ead3162_d6efac85",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "JS: Do you need to move scope of this variable into try block which one consuming this variable?\nLooks you are passing as empty so please add comment about the behavior.",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b748967b_41017b0f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "JS: same as above",
+      "range": {
+        "startLine": 386,
+        "startChar": 36,
+        "endLine": 386,
+        "endChar": 47
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae87ebfa_6495288c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 424,
+        "startChar": 40,
+        "endLine": 424,
+        "endChar": 46
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "115a7e70_38e9b37f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "what it does?",
+      "range": {
+        "startLine": 428,
+        "startChar": 8,
+        "endLine": 428,
+        "endChar": 14
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ed9ab81_badd167a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "why not add uint32_t in dbus interface itself?",
+      "range": {
+        "startLine": 432,
+        "startChar": 8,
+        "endLine": 432,
+        "endChar": 15
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f79113a2_3e762e15",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Add expected maximum value in trace as well.",
+      "range": {
+        "startLine": 436,
+        "startChar": 53,
+        "endLine": 436,
+        "endChar": 73
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62ece3bc_dca87cc9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to continue even if dump type is invalid or unsupported one?\nWhat is the behavior?",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c94af6bf_3ca65c7b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "I think you need to use as \"newDumpPath.str\"",
+      "range": {
+        "startLine": 484,
+        "startChar": 26,
+        "endLine": 484,
+        "endChar": 37
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0155575c_859437b8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Actually you can use \"newDumpPath.filename()\" which will return last component in the returned path.",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baa74e10_0921e896",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to handle exception? else I think application will crash due to implementation of this dbus interface.",
+      "range": {
+        "startLine": 495,
+        "startChar": 14,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "361b4fd5_77484e2e",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "- Who will update the status as completed in created entry object path like setting as \"Failed\" in below else block?\n- How the consumer of this interface can know about the completion of dump collection?",
+      "range": {
+        "startLine": 517,
+        "startChar": 38,
+        "endLine": 517,
+        "endChar": 52
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6ad5b2e_1761743a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Why you are passing as \"0\" rather than collected dump size?",
+      "range": {
+        "startLine": 524,
+        "startChar": 56,
+        "endLine": 524,
+        "endChar": 57
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6ba1365_e0cc202c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to handle exception?",
+      "range": {
+        "startLine": 518,
+        "startChar": 20,
+        "endLine": 525,
+        "endChar": 45
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7eafa90e_503630a0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "JS: I think you can use directly instead of using via variable.",
+      "range": {
+        "startLine": 535,
+        "startChar": 56,
+        "endLine": 535,
+        "endChar": 62
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c28228c9_5c37f0ec",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Your callback can possible to throw SdBusError so, I think you need to handle that.",
+      "range": {
+        "startLine": 565,
+        "startChar": 8,
+        "endLine": 565,
+        "endChar": 40
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34a1045f_abeb66ca",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "RAII?",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "223851bc_6f3a25a2",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 27,
+        "startChar": 27,
+        "endLine": 27,
+        "endChar": 36
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81a4417f_820b5976",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 33,
+        "startChar": 15,
+        "endLine": 33,
+        "endChar": 25
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3cdd28a_2fcc6238",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "You must make sure whether \"dataPtr\" is NULL or not before deleting the memory else application will get segfault.",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 20
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e15d6f3f_647dd5ec",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to use delete instead of free?",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 12
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d99bdb15_0703f36b",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "JS: I think you can move this into above line so that we can avoid more lines",
+      "range": {
+        "startLine": 56,
+        "startChar": 5,
+        "endLine": 56,
+        "endChar": 7
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ecbbf9e_3d7234e0",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Which interface you are implementing in this class? Looks using com.IBM.Dump\nPlease update all if more than one.",
+      "range": {
+        "startLine": 63,
+        "startChar": 4,
+        "endLine": 63,
+        "endChar": 46
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e19ddb77_db4c752f",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "hostboot?",
+      "range": {
+        "startLine": 87,
+        "startChar": 72,
+        "endLine": 87,
+        "endChar": 76
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a49b3d3_b8140963",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "hostboot dump?",
+      "range": {
+        "startLine": 87,
+        "startChar": 28,
+        "endLine": 87,
+        "endChar": 32
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36ad9fa7_abd2f9ad",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Looks you are throwing exception as well. Please document about that.",
+      "range": {
+        "startLine": 108,
+        "startChar": 8,
+        "endLine": 108,
+        "endChar": 59
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f64a987c_568cb1b0",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "What you mean by \"different sources\"?",
+      "range": {
+        "startLine": 112,
+        "startChar": 64,
+        "endLine": 113,
+        "endChar": 15
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77e408bc_4f7f679f",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "confusing, is SBE using pdbg layer?",
+      "range": {
+        "startLine": 121,
+        "startChar": 26,
+        "endLine": 121,
+        "endChar": 48
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ac404a8_d92f99bf",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "I think this class will throw the exception so do you need to handle it or is it fine to crash the application?",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 28
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1801380e_f23200fb",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to return exit status of event loop?\nhttps://github.com/openbmc/sdeventplus/blob/master/src/sdeventplus/event.hpp#L125",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 13
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f298960a_823b9284",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to move inside \"getService()\" API?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 69
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3670945_a573ae7a",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Please add information about given interface and path into trace because it will be helpful for debug.",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 68
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03e178b9_1be7e684",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "JS: Please add what doing? IMO, Generic description wont useful to know when mapper response read failed.",
+      "range": {
+        "startLine": 37,
+        "startChar": 38,
+        "endLine": 37,
+        "endChar": 74
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3692ebba_ef9429a3",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "What will happen if more than one dbus service implementing same object with same interface?",
+      "range": {
+        "startLine": 39,
+        "startChar": 30,
+        "endLine": 39,
+        "endChar": 37
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f943be2d_020c2e31",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "- I think you can use fmt::format (which you enabled) to add entry in journal trace itself instead of adding entry so that we no need to look journal essage entry.\n- This comment is applicable all place if using \"entry()\" api",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67402bbb_bab78e3c",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Mapper call failed to get dbus name?",
+      "range": {
+        "startLine": 47,
+        "startChar": 34,
+        "endLine": 47,
+        "endChar": 52
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "362bd64d_eaabd247",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "- Do you need this under util namespace? Looks no one use apart from \"setProperty()\" so why cannot move inside that function?",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06e38bad_206af3d7",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Actually you can use \"getService\" inside this function so that we can avoid caller to call that API every time when need to set the property.",
+      "range": {
+        "startLine": 39,
+        "startChar": 61,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7a3be31_183fb258",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do you need to use \"const T\u0026 value\" to avoid accidentally update in the given buffer?",
+      "range": {
+        "startLine": 40,
+        "startChar": 43,
+        "endLine": 40,
+        "endChar": 51
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd6e908e_372e9566",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Do we really need variant here? why not use template type directly? is there any limitation in append()?",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 41
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "103ba533_71087366",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "- Do you need handle exception here OR caller need to take care? \n- Please update doxygen document accordingly?",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03937079_fed63ba5",
+        "filename": "dump/meson.build",
+        "patchSetId": 41
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Without PHAL, OpenPOWER dump can be collected?",
+      "range": {
+        "startLine": 12,
+        "startChar": 22,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d190e19a_fef66a37",
+        "filename": "dump/meson.build",
+        "patchSetId": 41
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "dump_config.h? Looks you mentioned the same in LN15.",
+      "range": {
+        "startLine": 26,
+        "startChar": 25,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a8a8df4_3253fb4e",
+        "filename": "meson.build",
+        "patchSetId": 41
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "Without PHAL OpenPOWER host dumps can be collected? I mean, is it possible to use the implemented interface into previous POWER generation (early to p10) system which will use OpenBMC stack?",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69c81919_4c8c2654",
+        "filename": "meson_options.txt",
+        "patchSetId": 41
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T08:55:32Z",
+      "side": 1,
+      "message": "What is the purpose of this config parameter?",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
