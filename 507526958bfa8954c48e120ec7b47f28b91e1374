@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "173a9197_1bab4d8e",
+        "filename": "README.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "host dump",
+      "parentUuid": "6cef9629_008ea027",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "966c3867_812b1993",
         "filename": "README.md",
         "patchSetId": 41
@@ -36,6 +60,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "hostboot dump?",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 13
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b6b6bf0_c63890b1",
+        "filename": "README.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "host dump",
+      "parentUuid": "966c3867_812b1993",
       "range": {
         "startLine": 13,
         "startChar": 4,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "25d6ca36_539d00aa",
+        "filename": "README.md",
+        "patchSetId": 41
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "right now it is only for IBM systems",
+      "parentUuid": "a6f4d6d0_d8f969ad",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "96448196_d5a6b8e0",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "cb85e3a1_d49ab2f8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96448196_d5a6b8e0",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3e47c945_97f127c2",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -99,6 +189,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "is it plat_dump? Can you help to understand that?",
+      "range": {
+        "startLine": 43,
+        "startChar": 36,
+        "endLine": 43,
+        "endChar": 45
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e222682f_055cc0c7",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "that is the expected name of dump folder",
+      "parentUuid": "3e47c945_97f127c2",
       "range": {
         "startLine": 43,
         "startChar": 36,
@@ -134,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "01d64214_d07d4c0a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4b9160b_0605e287",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 73,
+        "endChar": 18
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "75386aa9_ea6a63fe",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "d11aaaad_76d60556",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75386aa9_ea6a63fe",
+      "range": {
+        "startLine": 93,
+        "startChar": 12,
+        "endLine": 93,
+        "endChar": 29
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17a2db32_5cf6351f",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -168,6 +330,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "are you assuming only one pib will be there for each proc?",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 14
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2756a01c_ca0342db",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "17a2db32_5cf6351f",
       "range": {
         "startLine": 97,
         "startChar": 8,
@@ -203,6 +389,30 @@
     },
     {
       "key": {
+        "uuid": "880194bc_4772c911",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6a13d4_405bfa0f",
+      "range": {
+        "startLine": 102,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 53
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f1454bd8_625da278",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -226,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "c6805270_8dfbacaf",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1454bd8_625da278",
+      "range": {
+        "startLine": 115,
+        "startChar": 63,
+        "endLine": 115,
+        "endChar": 71
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "68d7012a_99c616b5",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -237,6 +471,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Both case (i.e primary or secondary processor) you are returning from this function if there is failure? So what we are gaining from this check?",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 75
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8ecf51b_fbfcb220",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "this case now error will be thrown",
+      "parentUuid": "68d7012a_99c616b5",
       "range": {
         "startLine": 122,
         "startChar": 8,
@@ -272,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "2fce202d_633b4cec",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60c4b457_0bab3a97",
+      "range": {
+        "startLine": 125,
+        "startChar": 41,
+        "endLine": 125,
+        "endChar": 50
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b8939828_6dc116b1",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -283,6 +565,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Both case (i.e primary or secondary processor) you are returning from this function if there is failure? So what we are gaining from this check?",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 75
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf29bf2a_d836a24d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "no data from secondary will be ignored",
+      "parentUuid": "b8939828_6dc116b1",
       "range": {
         "startLine": 141,
         "startChar": 8,
@@ -315,6 +621,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20347582_c2accff4",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32d1aace_7043e45f",
+      "range": {
+        "startLine": 161,
+        "startChar": 16,
+        "endLine": 161,
+        "endChar": 21
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -364,6 +694,30 @@
     },
     {
       "key": {
+        "uuid": "64b01900_87fe6482",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "822727aa_1ada9963",
+      "range": {
+        "startLine": 165,
+        "startChar": 67,
+        "endLine": 165,
+        "endChar": 72
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef5d65ac_47517824",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -410,6 +764,30 @@
     },
     {
       "key": {
+        "uuid": "48024d2e_b201baec",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d4e857c_e837dbc2",
+      "range": {
+        "startLine": 172,
+        "startChar": 8,
+        "endLine": 172,
+        "endChar": 77
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "20457491_509c7c8b",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -421,6 +799,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "- You should make sure this API call is success or not\n- I think you are using PHAL (since using some of attributes from phal DEVTREE) so, how you are initializing the DEVTREE or you need to use pdbg default device tree (FYI, pdbg default device won\u0027t contain the attributes which you are interested)?",
+      "range": {
+        "startLine": 220,
+        "startChar": 4,
+        "endLine": 220,
+        "endChar": 21
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a948c18_00c24cda",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "it is in the service",
+      "parentUuid": "20457491_509c7c8b",
       "range": {
         "startLine": 220,
         "startChar": 4,
@@ -456,6 +858,30 @@
     },
     {
       "key": {
+        "uuid": "398e720e_0d78af71",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "the type is already verified, if a dump type is missed then it can crash",
+      "parentUuid": "6203803e_30de9b18",
+      "range": {
+        "startLine": 223,
+        "startChar": 35,
+        "endLine": 223,
+        "endChar": 49
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5bd90c4d_008eb6a5",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -479,6 +905,30 @@
     },
     {
       "key": {
+        "uuid": "4ef7b43a_175e7f54",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "fail only if no usable dump can be collected from any SBEs",
+      "parentUuid": "5bd90c4d_008eb6a5",
+      "range": {
+        "startLine": 251,
+        "startChar": 8,
+        "endLine": 251,
+        "endChar": 14
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6d668585_369f43e3",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -490,6 +940,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Do you need to continue if there is error?\nIf yes, please add comment about \"why\"",
+      "range": {
+        "startLine": 273,
+        "startChar": 12,
+        "endLine": 274,
+        "endChar": 60
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "649d33f7_8e6ef839",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "6d668585_369f43e3",
       "range": {
         "startLine": 273,
         "startChar": 12,
@@ -548,6 +1022,30 @@
     },
     {
       "key": {
+        "uuid": "abf288d0_6dff6d97",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0baa8f63_e00a2a8a",
+      "range": {
+        "startLine": 284,
+        "startChar": 16,
+        "endLine": 284,
+        "endChar": 33
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1bd1b5fd_46bb1a0c",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -559,6 +1057,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Do you no need to collect dump from other processor via SBE chipops?\nIf no, do you need to exit with failure since it calling from child process?",
+      "range": {
+        "startLine": 293,
+        "startChar": 16,
+        "endLine": 294,
+        "endChar": 62
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6adea2f3_b3e1793a",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "yes need to collect from other processors",
+      "parentUuid": "1bd1b5fd_46bb1a0c",
       "range": {
         "startLine": 293,
         "startChar": 16,
@@ -594,6 +1116,30 @@
     },
     {
       "key": {
+        "uuid": "05b796ad_0fa29d39",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "no most of the data is from master.. so there is no point in collecting",
+      "parentUuid": "217d2369_fbc8e153",
+      "range": {
+        "startLine": 299,
+        "startChar": 20,
+        "endLine": 299,
+        "endChar": 32
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "47270050_59c56b65",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -605,6 +1151,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "FAPI_POS is global id within chip module so your intention is also same? If so, why (can you help me to understand on this)?",
+      "range": {
+        "startLine": 308,
+        "startChar": 28,
+        "endLine": 308,
+        "endChar": 41
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e466161_c7bedb29",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "I didnt understand the statement \"global id within chip module\"",
+      "parentUuid": "47270050_59c56b65",
       "range": {
         "startLine": 308,
         "startChar": 28,
@@ -640,6 +1210,30 @@
     },
     {
       "key": {
+        "uuid": "08abd05a_1da3aefb",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "yes need to collect",
+      "parentUuid": "86eab5c1_4816ce1f",
+      "range": {
+        "startLine": 311,
+        "startChar": 16,
+        "endLine": 312,
+        "endChar": 60
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "93eed893_f93f293e",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -663,6 +1257,30 @@
     },
     {
       "key": {
+        "uuid": "244a3dec_10964cd8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93eed893_f93f293e",
+      "range": {
+        "startLine": 313,
+        "startChar": 16,
+        "endLine": 313,
+        "endChar": 24
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b40bf680_74e33baa",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -674,6 +1292,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "What is Fast Array? I like to know about it so can you help on this?",
+      "range": {
+        "startLine": 320,
+        "startChar": 23,
+        "endLine": 320,
+        "endChar": 32
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d115c38b_8d093fae",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "a set of debug registers in processor core",
+      "parentUuid": "b40bf680_74e33baa",
       "range": {
         "startLine": 320,
         "startChar": 23,
@@ -709,6 +1351,30 @@
     },
     {
       "key": {
+        "uuid": "5f62fa2e_8bc1e299",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "1st thread is needed for returning to back to caller without wait\n1ns thread for collecting parallelly from each sbe",
+      "parentUuid": "553ba264_760ccecb",
+      "range": {
+        "startLine": 333,
+        "startChar": 12,
+        "endLine": 333,
+        "endChar": 30
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d2e8b6be_e922cd24",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -732,6 +1398,30 @@
     },
     {
       "key": {
+        "uuid": "af13c360_091e5ea4",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2e8b6be_e922cd24",
+      "range": {
+        "startLine": 364,
+        "startChar": 33,
+        "endLine": 364,
+        "endChar": 77
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "47721c78_845a14fc",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -752,6 +1442,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a35bed0e_dcec30a5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47721c78_845a14fc",
+      "range": {
+        "startLine": 373,
+        "startChar": 12,
+        "endLine": 373,
+        "endChar": 58
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -818,6 +1532,30 @@
     },
     {
       "key": {
+        "uuid": "91de4c4d_ce2bd116",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae87ebfa_6495288c",
+      "range": {
+        "startLine": 424,
+        "startChar": 40,
+        "endLine": 424,
+        "endChar": 46
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "115a7e70_38e9b37f",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -829,6 +1567,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "what it does?",
+      "range": {
+        "startLine": 428,
+        "startChar": 8,
+        "endLine": 428,
+        "endChar": 14
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88dd4f1f_210e28e8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "commit and continue",
+      "parentUuid": "115a7e70_38e9b37f",
       "range": {
         "startLine": 428,
         "startChar": 8,
@@ -864,6 +1626,30 @@
     },
     {
       "key": {
+        "uuid": "1abaf5de_cbb8bb99",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "that is based on the general comment to use the maximum container",
+      "parentUuid": "3ed9ab81_badd167a",
+      "range": {
+        "startLine": 432,
+        "startChar": 8,
+        "endLine": 432,
+        "endChar": 15
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f79113a2_3e762e15",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -887,6 +1673,30 @@
     },
     {
       "key": {
+        "uuid": "9997b4fd_ff153a02",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f79113a2_3e762e15",
+      "range": {
+        "startLine": 436,
+        "startChar": 53,
+        "endLine": 436,
+        "endChar": 73
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "62ece3bc_dca87cc9",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -904,6 +1714,24 @@
     },
     {
       "key": {
+        "uuid": "911d7d14_4d521c48",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "should fail here",
+      "parentUuid": "62ece3bc_dca87cc9",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c94af6bf_3ca65c7b",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -915,6 +1743,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "I think you need to use as \"newDumpPath.str\"",
+      "range": {
+        "startLine": 484,
+        "startChar": 26,
+        "endLine": 484,
+        "endChar": 37
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a549cbee_1ee7b7f3",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "this one is working",
+      "parentUuid": "c94af6bf_3ca65c7b",
       "range": {
         "startLine": 484,
         "startChar": 26,
@@ -973,6 +1825,54 @@
     },
     {
       "key": {
+        "uuid": "9b310e6d_c8394fe9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0155575c_859437b8",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d909dfc_24a7c4d0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa74e10_0921e896",
+      "range": {
+        "startLine": 495,
+        "startChar": 14,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "361b4fd5_77484e2e",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -996,6 +1896,30 @@
     },
     {
       "key": {
+        "uuid": "76ef1170_1083664b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "they should be looking at the progress state on the object path returned",
+      "parentUuid": "361b4fd5_77484e2e",
+      "range": {
+        "startLine": 517,
+        "startChar": 38,
+        "endLine": 517,
+        "endChar": 52
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e6ad5b2e_1761743a",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -1007,6 +1931,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Why you are passing as \"0\" rather than collected dump size?",
+      "range": {
+        "startLine": 524,
+        "startChar": 56,
+        "endLine": 524,
+        "endChar": 57
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1ef7684_7127e354",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "it is unused",
+      "parentUuid": "e6ad5b2e_1761743a",
       "range": {
         "startLine": 524,
         "startChar": 56,
@@ -1065,6 +2013,30 @@
     },
     {
       "key": {
+        "uuid": "8127d0ab_295d9f56",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eafa90e_503630a0",
+      "range": {
+        "startLine": 535,
+        "startChar": 56,
+        "endLine": 535,
+        "endChar": 62
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c28228c9_5c37f0ec",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -1085,6 +2057,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c651a3b_79de8c89",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c28228c9_5c37f0ec",
+      "range": {
+        "startLine": 565,
+        "startChar": 8,
+        "endLine": 565,
+        "endChar": 40
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1134,6 +2130,54 @@
     },
     {
       "key": {
+        "uuid": "a397d0a1_3721e914",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "223851bc_6f3a25a2",
+      "range": {
+        "startLine": 27,
+        "startChar": 27,
+        "endLine": 27,
+        "endChar": 36
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e5bbc57_8b989ec4",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34a1045f_abeb66ca",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "81a4417f_820b5976",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 41
@@ -1154,6 +2198,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a05ed75_b7af7ec0",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81a4417f_820b5976",
+      "range": {
+        "startLine": 33,
+        "startChar": 15,
+        "endLine": 33,
+        "endChar": 25
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1191,6 +2259,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Do you need to use delete instead of free?",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 12
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88b0d823_ce28d14f",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "it is allocated using malloc",
+      "parentUuid": "e15d6f3f_647dd5ec",
       "range": {
         "startLine": 37,
         "startChar": 8,
@@ -1249,6 +2341,30 @@
     },
     {
       "key": {
+        "uuid": "1d6987db_39300933",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "this implements xyz::openbmc_project interface",
+      "parentUuid": "3ecbbf9e_3d7234e0",
+      "range": {
+        "startLine": 63,
+        "startChar": 4,
+        "endLine": 63,
+        "endChar": 46
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e19ddb77_db4c752f",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 41
@@ -1295,6 +2411,54 @@
     },
     {
       "key": {
+        "uuid": "e8816c85_44c0e566",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "error related to host hw or firmare",
+      "parentUuid": "e19ddb77_db4c752f",
+      "range": {
+        "startLine": 87,
+        "startChar": 72,
+        "endLine": 87,
+        "endChar": 76
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acf38664_d30a3e16",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "host dumps, hostboot hw or sbe",
+      "parentUuid": "7a49b3d3_b8140963",
+      "range": {
+        "startLine": 87,
+        "startChar": 28,
+        "endLine": 87,
+        "endChar": 32
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "36ad9fa7_abd2f9ad",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 41
@@ -1318,6 +2482,30 @@
     },
     {
       "key": {
+        "uuid": "3f70307a_d18d4b6a",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36ad9fa7_abd2f9ad",
+      "range": {
+        "startLine": 108,
+        "startChar": 8,
+        "endLine": 108,
+        "endChar": 59
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f64a987c_568cb1b0",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 41
@@ -1329,6 +2517,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "What you mean by \"different sources\"?",
+      "range": {
+        "startLine": 112,
+        "startChar": 64,
+        "endLine": 113,
+        "endChar": 15
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f265af31_9b36057f",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "SBE or hwp",
+      "parentUuid": "f64a987c_568cb1b0",
       "range": {
         "startLine": 112,
         "startChar": 64,
@@ -1364,6 +2576,30 @@
     },
     {
       "key": {
+        "uuid": "4a0a4f25_0c9db095",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "proc containing sbe",
+      "parentUuid": "77e408bc_4f7f679f",
+      "range": {
+        "startLine": 121,
+        "startChar": 26,
+        "endLine": 121,
+        "endChar": 48
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1ac404a8_d92f99bf",
         "filename": "dump/dump_manager_main.cpp",
         "patchSetId": 41
@@ -1384,6 +2620,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b1c0b9c_f9c3fd0b",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac404a8_d92f99bf",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 28
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1410,6 +2670,30 @@
     },
     {
       "key": {
+        "uuid": "b64285b6_9491669e",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1801380e_f23200fb",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 13
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f298960a_823b9284",
         "filename": "dump/dump_utils.cpp",
         "patchSetId": 41
@@ -1430,6 +2714,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbbdb6f3_b465546d",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f298960a_823b9284",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 69
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1456,6 +2764,30 @@
     },
     {
       "key": {
+        "uuid": "779523b6_e7fe27ca",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3670945_a573ae7a",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 68
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03e178b9_1be7e684",
         "filename": "dump/dump_utils.cpp",
         "patchSetId": 41
@@ -1479,6 +2811,30 @@
     },
     {
       "key": {
+        "uuid": "17f428b6_cdac9e89",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03e178b9_1be7e684",
+      "range": {
+        "startLine": 37,
+        "startChar": 38,
+        "endLine": 37,
+        "endChar": 74
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3692ebba_ef9429a3",
         "filename": "dump/dump_utils.cpp",
         "patchSetId": 41
@@ -1490,6 +2846,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "What will happen if more than one dbus service implementing same object with same interface?",
+      "range": {
+        "startLine": 39,
+        "startChar": 30,
+        "endLine": 39,
+        "endChar": 37
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7789e294_dc9de172",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "I think that is restriction followed in openbmc",
+      "parentUuid": "3692ebba_ef9429a3",
       "range": {
         "startLine": 39,
         "startChar": 30,
@@ -1525,6 +2905,30 @@
     },
     {
       "key": {
+        "uuid": "00159999_807385b6",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f943be2d_020c2e31",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 61
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67402bbb_bab78e3c",
         "filename": "dump/dump_utils.cpp",
         "patchSetId": 41
@@ -1548,6 +2952,30 @@
     },
     {
       "key": {
+        "uuid": "5ad14bda_83216b70",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67402bbb_bab78e3c",
+      "range": {
+        "startLine": 47,
+        "startChar": 34,
+        "endLine": 47,
+        "endChar": 52
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "362bd64d_eaabd247",
         "filename": "dump/dump_utils.hpp",
         "patchSetId": 41
@@ -1562,6 +2990,24 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "333bf483_6961b8da",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "362bd64d_eaabd247",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1588,6 +3034,30 @@
     },
     {
       "key": {
+        "uuid": "b340d372_f228ed72",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06e38bad_206af3d7",
+      "range": {
+        "startLine": 39,
+        "startChar": 61,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7a3be31_183fb258",
         "filename": "dump/dump_utils.hpp",
         "patchSetId": 41
@@ -1608,6 +3078,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e981c605_e6dce3ed",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7a3be31_183fb258",
+      "range": {
+        "startLine": 40,
+        "startChar": 43,
+        "endLine": 40,
+        "endChar": 51
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1657,6 +3151,30 @@
     },
     {
       "key": {
+        "uuid": "a17469e5_c7ced6f2",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "caller should take care the exception",
+      "parentUuid": "103ba533_71087366",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "03937079_fed63ba5",
         "filename": "dump/meson.build",
         "patchSetId": 41
@@ -1668,6 +3186,30 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Without PHAL, OpenPOWER dump can be collected?",
+      "range": {
+        "startLine": 12,
+        "startChar": 22,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9ca8329_202cc1cd",
+        "filename": "dump/meson.build",
+        "patchSetId": 41
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "means? libdt-api is needed",
+      "parentUuid": "03937079_fed63ba5",
       "range": {
         "startLine": 12,
         "startChar": 22,
@@ -1703,6 +3245,30 @@
     },
     {
       "key": {
+        "uuid": "a6ed3536_3e57b061",
+        "filename": "dump/meson.build",
+        "patchSetId": 41
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "added this to avoid failure while transitioning to meson.. this can be changed to dump_config.h",
+      "parentUuid": "d190e19a_fef66a37",
+      "range": {
+        "startLine": 26,
+        "startChar": 25,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a8a8df4_3253fb4e",
         "filename": "meson.build",
         "patchSetId": 41
@@ -1714,6 +3280,24 @@
       "writtenOn": "2021-08-10T08:55:32Z",
       "side": 1,
       "message": "Without PHAL OpenPOWER host dumps can be collected? I mean, is it possible to use the implemented interface into previous POWER generation (early to p10) system which will use OpenBMC stack?",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "721aeded_99a36153",
+        "filename": "meson.build",
+        "patchSetId": 41
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "the dump collection is enabled only on P10 systems and it wont work on earlier systems, dependancy is on SBE",
+      "parentUuid": "1a8a8df4_3253fb4e",
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -1740,6 +3324,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a64550a7_054572a5",
+        "filename": "meson_options.txt",
+        "patchSetId": 41
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69c81919_4c8c2654",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
