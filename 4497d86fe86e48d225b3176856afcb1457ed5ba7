@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5771724c_bcd2b572",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "- I wonder why we need file based locking? because you have entry object for respective dump type and that contain \"Status\" property right, so why we cannot query that?\n\n- Do we can keep only one hostboot and hardware dump for every boot? is it true? OR What you mean by \"another usable dump cannot be collected until next host reboot\" Can please elaborate the case which you are trying solve?",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eceaa66c_3f4803a4",
+        "filename": "dump/clear_op_dump_lock.service",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 2,
+        "startChar": 38,
+        "endLine": 2,
+        "endChar": 39
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91efb9d9_bf5d1ded",
+        "filename": "dump/clear_op_dump_lock.service",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "Before? I like to see Andrew comment on this.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 26
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c806bf50_7bb44ccd",
+        "filename": "dump/clear_op_dump_lock.service",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "Do we really need for this service? Looks intention is just remove existing lock file before every host boot right?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 55
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ad08e68_972a3fd0",
+        "filename": "dump/clear_op_dump_lock.service",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "When you need to run this service? Looks you need to run before every host boot right? If so, I am not sure whether you can use `Conflicts` with `obmc-host-stop`",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 33
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76c5a128_402fc289",
+        "filename": "dump/clear_op_dump_lock.service",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "is it required?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dbcb70f_8fa10bd8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "Do you need to make sure whether the given file parent directory is created or not.\nIf not, Do you need to throw error or create the parent directory path?",
+      "range": {
+        "startLine": 659,
+        "startChar": 22,
+        "endLine": 659,
+        "endChar": 39
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eeccd1c8_f332ec98",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "Looks you are creating lock file if it is not there and returning false so, please add that info also here?",
+      "range": {
+        "startLine": 138,
+        "startChar": 15,
+        "endLine": 139,
+        "endChar": 50
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d6adb14_61bd32f2",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "Looks you are throwing exception so please add that info as well.",
+      "range": {
+        "startLine": 141,
+        "startChar": 9,
+        "endLine": 141,
+        "endChar": 15
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cbc5b50_d4e27880",
+        "filename": "dump/meson.build",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-10T12:50:54Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 6,
+        "startChar": 48,
+        "endLine": 6,
+        "endChar": 49
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
