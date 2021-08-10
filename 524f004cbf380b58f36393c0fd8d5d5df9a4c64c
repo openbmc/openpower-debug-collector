@@ -22,6 +22,30 @@
       "revId": "524f004cbf380b58f36393c0fd8d5d5df9a4c64c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8964d95b_92942b44",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 19
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-10T13:30:21Z",
+      "side": 1,
+      "message": "adding check for SBE state once it is ready",
+      "parentUuid": "bf220edc_383e28a2",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 26
+      },
+      "revId": "524f004cbf380b58f36393c0fd8d5d5df9a4c64c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
