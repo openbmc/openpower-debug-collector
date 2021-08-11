@@ -2295,6 +2295,30 @@
     },
     {
       "key": {
+        "uuid": "5c3bbd75_fad72b71",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-11T05:19:29Z",
+      "side": 1,
+      "message": "if the pointer is NULL then free() is no-op",
+      "parentUuid": "c3cdd28a_2fcc6238",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 20
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d99bdb15_0703f36b",
         "filename": "dump/dump_manager.hpp",
         "patchSetId": 41
@@ -2315,6 +2339,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfda42d2_6a42e757",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-11T05:19:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d99bdb15_0703f36b",
+      "range": {
+        "startLine": 56,
+        "startChar": 5,
+        "endLine": 56,
+        "endChar": 7
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
