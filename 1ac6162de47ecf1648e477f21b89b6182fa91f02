@@ -1,0 +1,9 @@
+Ok-To-Test+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+1: Andrew Geissler <geissonator@yahoo.com>
+Code-Review+2: Jayanth Othayoth <ojayanth@gmail.com>
+Submitted-by: Jayanth Othayoth <ojayanth@gmail.com>
+Submitted-at: Wed, 11 Aug 2021 01:13:01 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/c/openbmc/openpower-debug-collector/+/44354
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
