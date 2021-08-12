@@ -241,6 +241,30 @@
     },
     {
       "key": {
+        "uuid": "83d5b4fa_cddb55e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-12T07:03:33Z",
+      "side": 1,
+      "message": "\u003e are you deleting existing hostboot dump entry?\n\nOk I got a answer for above message.\n\n\u003e there may not be a good mechanism to know whether the entry is from this boot earlier boot.\n\nOk, Looks we are trying fix this by using the file which you are created, right?  If so, please mention that in commit message.\n\nand One more question\nSecond hostboot dump request can happen for different reason in the same boot window right? No?\nI am just checking to see if Hostboot or Hardware dump collection adding some traces and that may vary for different dump request in the same boot window.",
+      "parentUuid": "dc83f6df_8981e113",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eceaa66c_3f4803a4",
         "filename": "dump/clear_op_dump_lock.service",
         "patchSetId": 9
