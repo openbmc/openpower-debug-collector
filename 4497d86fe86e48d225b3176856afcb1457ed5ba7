@@ -193,6 +193,30 @@
     },
     {
       "key": {
+        "uuid": "4d03bb8f_62bbd749",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-12T06:34:29Z",
+      "side": 1,
+      "message": "\u003e please provide details , to handle this requirement using offload properties.\n\nI guess, I am suggesting Status and Offload properties instead of the file based lock and Not getting a reason why cannot use that. \n\nI am not the author for this patch and I don\u0027t know the requirement, I got the request to review this patch and asking questions and suggesting other option which I am thinking so, If you seeing difficulty in that suggestion please give the details on that option. \n\nWhat I understood (correct me If I am wrong) from this patch and conversion with this thread is,\n- Creating a file for first hostboot dump request and collecting dump and creating dump dbus entry.\n- Not allowing the second hostboot dump request if the file is present\n\nFrom 1st point the dump entry is created and that contains Status property (https://github.com/openbmc/phosphor-dbus-interfaces/blob/master/yaml/xyz/openbmc_project/Common/Progress.interface.yaml#L10), it will tell the status of dump so my question is why not use that property instead of file (which is created by this patch)?\n\nPlease describe your requirement which you are trying to solve with this patch OR correct me if my understanding is wrong.",
+      "parentUuid": "c722dfae_e482b50c",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eceaa66c_3f4803a4",
         "filename": "dump/clear_op_dump_lock.service",
         "patchSetId": 9
