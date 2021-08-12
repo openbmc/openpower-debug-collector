@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6dc574d3_6ec74d57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-08-12T05:01:31Z",
+      "side": 1,
+      "message": "Status property is going to tell the status of the specific dump. The requirement is to avoid multiple hostboot in same boot flow because same set of data we are going to see.  File based mechanism simplify the design to know any dump is in progress or completed in the specific boot path.",
+      "parentUuid": "5771724c_bcd2b572",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eceaa66c_3f4803a4",
         "filename": "dump/clear_op_dump_lock.service",
         "patchSetId": 9

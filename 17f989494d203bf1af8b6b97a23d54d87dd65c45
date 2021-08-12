@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b80d93a1_524ee268",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-08-12T05:01:31Z",
+      "side": 1,
+      "message": "sugesting for feature specific , like phal etc.",
+      "parentUuid": "d3ddc389_c8cb33c4",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "17f989494d203bf1af8b6b97a23d54d87dd65c45",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88e12f29_fae99fa0",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
