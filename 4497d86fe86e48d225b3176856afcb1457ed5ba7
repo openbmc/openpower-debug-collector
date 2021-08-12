@@ -217,6 +217,30 @@
     },
     {
       "key": {
+        "uuid": "dc83f6df_8981e113",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-08-12T06:37:01Z",
+      "side": 1,
+      "message": "There can be older dumps from earlier boots which is not yet downloaded so we cannot delete earlier dump entries when generating new dump in this boot.. there may not be a good mechanism to know whether the entry is from this boot earlier boot.",
+      "parentUuid": "c722dfae_e482b50c",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eceaa66c_3f4803a4",
         "filename": "dump/clear_op_dump_lock.service",
         "patchSetId": 9
