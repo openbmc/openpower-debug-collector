@@ -145,6 +145,30 @@
     },
     {
       "key": {
+        "uuid": "6fdda3db_7198af02",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000427
+      },
+      "writtenOn": "2021-08-12T05:36:28Z",
+      "side": 1,
+      "message": "Ok\n\n\u003e If you are trying to avoid to create more than one hostboot dump in same boot?\n\u003e Yes\n- are you deleting existing hostboot dump entry? \n\n- When you say \"File based mechanism simplify the design to know any dump is in progress\" - What it will simplify? I did not get that point (commit message did not mention that)\n\n- Why not use the existing hostboot dump entry that contain Status and Offload properties?",
+      "parentUuid": "2024f2a0_23b5eb38",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "4497d86fe86e48d225b3176856afcb1457ed5ba7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "eceaa66c_3f4803a4",
         "filename": "dump/clear_op_dump_lock.service",
         "patchSetId": 9
