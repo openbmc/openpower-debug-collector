@@ -15,11 +15,7 @@ void triggerHostbootDump(const uint32_t timeout)
     // Put system into diagnostic mode
     transitionHost(HOST_STATE_DIAGNOSTIC_MODE);
 
-    // Collect Hostboot dump if auto reboot is enabled
-    if (isAutoRebootEnabled())
-    {
-        eventWatchdogTimeout(timeout);
-    }
+    eventWatchdogTimeout(timeout);
 
     // Put system into quiesce state
     transitionHost(HOST_STATE_QUIESCE_TGT);
