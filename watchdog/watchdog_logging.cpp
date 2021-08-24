@@ -1,5 +1,6 @@
 #include <unistd.h>
 
+#include <watchdog_common.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_handler.hpp>
 #include <watchdog_logging.hpp>
@@ -27,7 +28,11 @@ void event(std::map<std::string, std::string>& additional,
     // Create PEL with additional data.
     auto pelId = createPel(eventName, additional, emptyFfdc);
 
-    requestDump(pelId, timeout); // will not return until dump is complete
+    // Collect Hostboot dump if auto reboot is enabled
+    if (isAutoRebootEnabled())
+    {
+        requestDump(pelId, timeout); // will not return until dump is complete
+    }
 }
 
 void eventWatchdogTimeout(const uint32_t timeout)
