@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e26e6fa4_2bf5be1e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-08-25T01:22:29Z",
+      "side": 1,
+      "message": "Always good to include the \"why\" in your commit message. i.e. Testing brought to light that an error should always be logged when the host watchdog expires.",
+      "revId": "44aae393f7e8727d322eb4cc2311290feda59aaa",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
