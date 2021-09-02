@@ -78,7 +78,7 @@ int dbusMethod(const std::string& path, const std::string& interface,
             log<level::INFO>(traceMsgIface.c_str());
         }
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>("Error in dbusMethod", entry("ERROR=%s", e.what()));
     }
@@ -120,7 +120,7 @@ uint32_t createPel(const std::string& eventType,
             response.read(reply);
             plid = std::get<1>(reply); // platform log id is tuple "second"
         }
-        catch (const sdbusplus::exception::SdBusError& e)
+        catch (const sdbusplus::exception::exception& e)
         {
             log<level::ERR>("Error in createPel CreatePELWithFFDCFiles",
                             entry("ERROR=%s", e.what()));

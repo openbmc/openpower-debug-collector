@@ -54,7 +54,7 @@ bool isAutoRebootEnabled()
         reply.read(result);
         autoReboot = std::get<bool>(result);
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>("Error in AutoReboot Get", entry("ERROR=%s", e.what()));
     }

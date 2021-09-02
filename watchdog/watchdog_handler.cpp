@@ -132,7 +132,7 @@ void requestDump(const uint32_t logId, const uint32_t timeout)
             // monitor dump progress
             monitorDump(reply, timeout);
         }
-        catch (const sdbusplus::exception::SdBusError& e)
+        catch (const sdbusplus::exception::exception& e)
         {
             log<level::ERR>("Error in requestDump",
                             entry("ERROR=%s", e.what()));
