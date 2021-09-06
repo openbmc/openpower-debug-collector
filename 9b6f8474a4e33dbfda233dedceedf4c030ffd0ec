@@ -1,0 +1,10 @@
+Ok-To-Test+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+1: MARRI DEVENDER RAO <devenrao@in.ibm.com>
+Code-Review+2: Jayanth Othayoth <ojayanth@gmail.com>
+Code-Review+1: Dhruvaraj S <dhruvaraj@gmail.com>
+Submitted-by: Patrick Williams <patrick@stwcx.xyz>
+Submitted-at: Mon, 06 Sep 2021 12:42:54 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/c/openbmc/openpower-debug-collector/+/46462
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
