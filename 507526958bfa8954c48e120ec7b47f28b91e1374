@@ -671,6 +671,30 @@
     },
     {
       "key": {
+        "uuid": "028af505_7635fc21",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "better readability",
+      "parentUuid": "57a68bdb_5bab3b79",
+      "range": {
+        "startLine": 163,
+        "startChar": 16,
+        "endLine": 163,
+        "endChar": 24
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "822727aa_1ada9963",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -741,6 +765,30 @@
     },
     {
       "key": {
+        "uuid": "b66a230f_af703d59",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "this is not a user input so if it is wrong it can crash",
+      "parentUuid": "ef5d65ac_47517824",
+      "range": {
+        "startLine": 166,
+        "startChar": 32,
+        "endLine": 166,
+        "endChar": 41
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2d4e857c_e837dbc2",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -776,6 +824,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "2d4e857c_e837dbc2",
+      "range": {
+        "startLine": 172,
+        "startChar": 8,
+        "endLine": 172,
+        "endChar": 77
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51dfe504_07a46a8d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "this one defined only here",
+      "parentUuid": "48024d2e_b201baec",
       "range": {
         "startLine": 172,
         "startChar": 8,
@@ -999,6 +1071,30 @@
     },
     {
       "key": {
+        "uuid": "210ab425_3f4c2396",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "those two actions wont be parallel",
+      "parentUuid": "496430de_d470a4c0",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 276,
+        "endChar": 5
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0baa8f63_e00a2a8a",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -1034,6 +1130,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "0baa8f63_e00a2a8a",
+      "range": {
+        "startLine": 284,
+        "startChar": 16,
+        "endLine": 284,
+        "endChar": 33
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "116b99f1_e2f1ffc1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "HWAS state is checked so this check is not needed?",
+      "parentUuid": "abf288d0_6dff6d97",
       "range": {
         "startLine": 284,
         "startChar": 16,
@@ -1486,6 +1606,24 @@
     },
     {
       "key": {
+        "uuid": "5de75f50_fe4b0d0b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ead3162_d6efac85",
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b748967b_41017b0f",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -1506,6 +1644,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57d32b28_8d74aa43",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b748967b_41017b0f",
+      "range": {
+        "startLine": 386,
+        "startChar": 36,
+        "endLine": 386,
+        "endChar": 47
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -1873,6 +2035,30 @@
     },
     {
       "key": {
+        "uuid": "c8b55f7c_f2b71671",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "yet to make this change.",
+      "parentUuid": "9b310e6d_c8394fe9",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 495,
+        "endChar": 34
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "361b4fd5_77484e2e",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 41
@@ -1987,6 +2173,30 @@
       "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "978c1201_6a8967a9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6ba1365_e0cc202c",
+      "range": {
+        "startLine": 518,
+        "startChar": 20,
+        "endLine": 525,
+        "endChar": 45
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -2695,6 +2905,30 @@
     },
     {
       "key": {
+        "uuid": "deec9cb0_b7623123",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 41
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "crash is fine here right?",
+      "parentUuid": "7b1c0b9c_f9c3fd0b",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 28
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1801380e_f23200fb",
         "filename": "dump/dump_manager_main.cpp",
         "patchSetId": 41
@@ -3387,6 +3621,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "69c81919_4c8c2654",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "507526958bfa8954c48e120ec7b47f28b91e1374",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4be4fbd1_40b630fb",
+        "filename": "meson_options.txt",
+        "patchSetId": 41
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-13T07:06:18Z",
+      "side": 1,
+      "message": "to update the status",
+      "parentUuid": "a64550a7_054572a5",
       "range": {
         "startLine": 13,
         "startChar": 8,
