@@ -1,4 +1,10 @@
 #pragma once
+extern "C"
+{
+#include <libpdbg_sbe.h>
+}
+
+#include "attributes_info.H"
 
 #include <sdbusplus/server.hpp>
 

@@ -235,6 +235,7 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
                 pidList.push_back(std::move(pid));
             }
         }
+
         for (auto& p : pidList)
         {
             int status = 0;
