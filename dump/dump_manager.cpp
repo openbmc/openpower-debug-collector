@@ -231,19 +231,19 @@ void Manager::collectDumpFromSBE(struct pdbg_target* proc,
             .c_str());
 }
 
+void Manager::collectSBEDump(std::filesystem::path& dumpPath, uint32_t id,
+                             const uint8_t chipPos)
+{
+    log<level::INFO>(
+        fmt::format("Collecting SBE dump: path({}), id({}), chip position({})",
+                    dumpPath.string(), id, chipPos)
+            .c_str());
+    std::exit(EXIT_FAILURE);
+}
+
 void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId,
                           const uint64_t failingUnit)
 {
-    struct pdbg_target* target;
-    bool failed = false;
-
-    if (!pdbg_targets_init(NULL))
-    {
-        log<level::ERR>("pdbg_targets_init failed");
-        throw std::runtime_error("pdbg target initialization failed");
-    }
-    pdbg_set_loglevel(PDBG_INFO);
-
     std::filesystem::path dumpPath(dumpInfo[type].dumpCollectionPath);
     dumpPath /= std::to_string(id);
     std::filesystem::path sbeFilePath = dumpPath / OP_SBE_FILES_PATH;
@@ -302,6 +302,22 @@ void Manager::collectDump(uint8_t type, uint32_t id, std::string errorLogId,
                           metadata::PATH(dumpPath.c_str()));
         }
     }
+
+    if (type == SBE::SBE_DUMP_TYPE_SBE)
+    {
+        collectSBEDump(sbeFilePath, id, failingUnit);
+        return;
+    }
+
+    struct pdbg_target* target;
+    bool failed = false;
+
+    if (!pdbg_targets_init(NULL))
+    {
+        log<level::ERR>("pdbg_targets_init failed");
+        throw std::runtime_error("pdbg target initialization failed");
+    }
+    pdbg_set_loglevel(PDBG_INFO);
 
     std::vector<uint8_t> clockStates = {SBE::SBE_CLOCK_ON, SBE::SBE_CLOCK_OFF};
     for (auto cstate : clockStates)
@@ -489,6 +505,10 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
     {
         type = SBE::SBE_DUMP_TYPE_HARDWARE;
     }
+    else if (dumpType == "com.ibm.Dump.Create.DumpType.SBE")
+    {
+        type = SBE::SBE_DUMP_TYPE_SBE;
+    }
     else
     {
         log<level::ERR>(
@@ -499,7 +519,8 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
     }
 
     sdbusplus::message::object_path newDumpPath;
-    if (type == SBE::SBE_DUMP_TYPE_HARDWARE)
+    if ((type == SBE::SBE_DUMP_TYPE_HARDWARE) ||
+        (type == SBE::SBE_DUMP_TYPE_SBE))
     {
         iter = params.find(sdbusplus::com::ibm::Dump::server::Create::
                                convertCreateParametersToString(
