@@ -136,6 +136,14 @@ class Manager : public CreateIface
                             uint8_t type, uint8_t clockState,
                             const uint8_t chipPos,
                             const uint8_t collectFastArray);
+
+    /** @brief The function to collect SBE dump
+     *  @param[in] dumpPath - Path to store the dump
+     *  @param[in] id - Id of the dump
+     *  @param[in] chipPos - Position of the chip contains the SBE to be dumped.
+     */
+    void collectSBEDump(std::filesystem::path& dumpPath, uint32_t id,
+                        const uint8_t chipPos);
 };
 
 } // namespace dump
