@@ -1,5 +1,7 @@
 #pragma once
 
+#include "attributes_info.H"
+
 #include <sdbusplus/server.hpp>
 
 #include <filesystem>
