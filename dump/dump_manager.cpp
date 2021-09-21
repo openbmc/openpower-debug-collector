@@ -21,6 +21,7 @@ extern "C"
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Common/File/error.hpp>
 #include <xyz/openbmc_project/Common/error.hpp>
+#include <xyz/openbmc_project/Dump/Create/error.hpp>
 
 #include <chrono>
 #include <fstream>
@@ -44,6 +45,8 @@ constexpr auto STATUS_PROP = "Status";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
 constexpr auto MAX_ERROR_LOG_ID = 0xFFFFFFFF;
 constexpr auto INVALID_FAILING_UNIT = 0xFF;
+constexpr auto ERROR_DUMP_DISABLED =
+    "xyz.openbmc_project.Dump.Create.Error.Disabled";
 
 // Maximum 32 processors are possible in a system.
 constexpr auto MAX_FAILING_UNIT = 0x20;
@@ -420,6 +423,8 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
     using CreateParameters =
         sdbusplus::com::ibm::Dump::server::Create::CreateParameters;
     using Argument = xyz::openbmc_project::Common::InvalidArgument;
+    using DumpDisabled =
+        sdbusplus::xyz::openbmc_project::Dump::Create::Error::Disabled;
 
     auto iter = params.find(
         sdbusplus::com::ibm::Dump::server::Create::
@@ -560,7 +565,15 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
         log<level::ERR>(
             fmt::format("D-Bus call exception, errorMsg({})", e.what())
                 .c_str());
-        elog<InternalFailure>();
+        if (e.name() == ERROR_DUMP_DISABLED)
+        {
+            elog<DumpDisabled>();
+        }
+        else
+        {
+            // re-throw exception
+            throw;
+        }
     }
 
     // DUMP Path format /xyz/openbmc_project/dump/<dump_type>/entry/<id>
