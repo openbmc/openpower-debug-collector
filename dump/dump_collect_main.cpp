@@ -2,6 +2,8 @@
 #include "dump_collect.hpp"
 #include "sbe_consts.hpp"
 
+#include <libphal.H>
+
 #include <iostream>
 #include <string>
 
@@ -27,7 +29,8 @@ int main(int argc, char** argv)
 
     auto type = std::stoi(typeStr);
     if (!((type == openpower::dump::SBE::SBE_DUMP_TYPE_HOSTBOOT) ||
-          (type == openpower::dump::SBE::SBE_DUMP_TYPE_HARDWARE)))
+          (type == openpower::dump::SBE::SBE_DUMP_TYPE_HARDWARE) ||
+          (type == openpower::dump::SBE::SBE_DUMP_TYPE_SBE)))
     {
         ExitWithError("type specified is invalid.", argv);
     }
@@ -49,7 +52,15 @@ int main(int argc, char** argv)
     auto failingUnit = std::stoi(failingUnitStr);
     try
     {
-        openpower::dump::sbe_chipop::collectDump(type, id, failingUnit, path);
+        if (type == openpower::dump::SBE::SBE_DUMP_TYPE_SBE)
+        {
+            openpower::phal::dump::collectSBEDump(id, failingUnit, path);
+        }
+        else
+        {
+            openpower::dump::sbe_chipop::collectDump(type, id, failingUnit,
+                                                     path);
+        }
     }
     catch (const std::exception& e)
     {

@@ -33,6 +33,15 @@ option('HW_DUMP_COLLECTION_PATH', type : 'string',
         value : '/tmp/openpower-dumps/hardware',
         description : 'The path to store collected hardware dump files')
 
+# SBE dump options
+option('SBE_DUMP_DBUS_OBJPATH', type : 'string',
+        value : '/xyz/openbmc_project/dump/sbe',
+        description : 'The SBE dump manager path')
+
+option('SBE_DUMP_COLLECTION_PATH', type : 'string',
+        value : '/tmp/openpower-dumps/sbe',
+        description : 'The path to store the collected SBE dump files')
+
 # Feature to enable the dump collection
 option('dump-collection', type: 'feature',
        value : 'disabled',
