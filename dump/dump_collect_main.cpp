@@ -1,6 +1,8 @@
 #include "sbe_consts.hpp"
 #include "sbe_dump_collector.hpp"
 
+#include <libphal.H>
+
 #include <CLI/App.hpp>
 #include <CLI/Config.hpp>
 #include <CLI/Formatter.hpp>
@@ -13,6 +15,7 @@ int main(int argc, char** argv)
     using namespace openpower::dump::sbe_chipop;
     using std::filesystem::path;
     using namespace openpower::dump::SBE;
+    using namespace openpower::phal::dump;
 
     CLI::App app{"Dump Collector Application", "dump-collect"};
     app.description(
@@ -27,8 +30,8 @@ int main(int argc, char** argv)
 
     app.add_option("--type, -t", type, "Type of the dump")
         ->required()
-        ->check(
-            CLI::IsMember({SBE_DUMP_TYPE_HARDWARE, SBE_DUMP_TYPE_HOSTBOOT}));
+        ->check(CLI::IsMember({SBE_DUMP_TYPE_HARDWARE, SBE_DUMP_TYPE_HOSTBOOT,
+                               SBE_DUMP_TYPE_SBE}));
 
     app.add_option("--id, -i", id, "ID of the dump")->required();
 
@@ -47,9 +50,11 @@ int main(int argc, char** argv)
         return app.exit(e);
     }
 
-    if (type == SBE_DUMP_TYPE_HARDWARE && !failingUnit.has_value())
+    if (((type == SBE_DUMP_TYPE_HARDWARE) || (type == SBE_DUMP_TYPE_SBE)) &&
+        !failingUnit.has_value())
     {
-        std::cerr << "Failing unit ID is required for Hardware type dumps\n";
+        std::cerr
+            << "Failing unit ID is required for Hardware and SBE type dumps\n";
         return EXIT_FAILURE;
     }
 
@@ -70,7 +75,14 @@ int main(int argc, char** argv)
 
     try
     {
-        dumpCollector.collectDump(type, id, failingUnitId, pathStr);
+        if (type == SBE_DUMP_TYPE_SBE)
+        {
+            collectSBEDump(id, failingUnitId, pathStr, type);
+        }
+        else
+        {
+            dumpCollector.collectDump(type, id, failingUnitId, pathStr);
+        }
     }
     catch (const std::exception& e)
     {
