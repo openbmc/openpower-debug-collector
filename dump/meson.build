@@ -13,6 +13,7 @@ dump_deps = [
     cxx.find_library('sdeventplus'),
     cxx.find_library('pdbg'),
     cxx.find_library('libdt-api'),
+    cxx.find_library('phal'),
 ]
 
 # Configuration header file(dump_config.h) generation
@@ -29,6 +30,10 @@ dump_conf_data.set_quoted('HW_DUMP_DBUS_OBJPATH', get_option('HW_DUMP_DBUS_OBJPA
                      description : 'The hardware dump manager path')
 dump_conf_data.set_quoted('HW_DUMP_COLLECTION_PATH', get_option('HW_DUMP_COLLECTION_PATH'),
                      description : 'The path to store collected hardware dump files')
+dump_conf_data.set_quoted('SBE_DUMP_DBUS_OBJPATH', get_option('SBE_DUMP_DBUS_OBJPATH'),
+                     description : 'The SBE dump manager path')
+dump_conf_data.set_quoted('SBE_DUMP_COLLECTION_PATH', get_option('SBE_DUMP_COLLECTION_PATH'),
+                     description : 'The path to store collected SBE dump files')
 configure_file(configuration : dump_conf_data,
                output : 'config.h')
 
@@ -36,6 +41,7 @@ configure_file(configuration : dump_conf_data,
 dump_src = files(
     'dump_manager.cpp',
     'dump_utils.cpp',
+    'dump_collect.cpp',
     'dump_manager_main.cpp',
 )
 

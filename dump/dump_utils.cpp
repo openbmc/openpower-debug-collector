@@ -51,6 +51,25 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
         throw std::runtime_error("Mapper call failed to get D-Bus name");
     }
 }
+
+bool isMasterProc(struct pdbg_target* proc)
+{
+    ATTR_PROC_MASTER_TYPE_Type type;
+    // Get processor type (Primary or Alt-primary)
+    if (DT_GET_PROP(ATTR_PROC_MASTER_TYPE, proc, type))
+    {
+        log<level::ERR>("Attribute [ATTR_PROC_MASTER_TYPE] get failed");
+        throw std::runtime_error(
+            "Attribute [ATTR_PROC_MASTER_TYPE] get failed");
+    }
+
+    // Attribute value 0 corresponds to primary processor
+    if (type == ENUM_ATTR_PROC_MASTER_TYPE_ACTING_MASTER)
+    {
+        return true;
+    }
+    return false;
+}
 } // namespace util
 } // namespace dump
 } // namespace openpower
