@@ -1,4 +1,10 @@
 #pragma once
+extern "C"
+{
+#include <libpdbg_sbe.h>
+}
+
+#include "attributes_info.H"
 
 #include <sdbusplus/server.hpp>
 
@@ -10,6 +16,41 @@ namespace dump
 {
 namespace util
 {
+
+/** @struct DumpPtr
+ * @brief a structure holding the data pointer
+ * @details This is a RAII container for the dump data
+ * returned by the SBE
+ */
+struct DumpDataPtr
+{
+  public:
+    /** @brief Destructor for the object, free the allocated memory.
+     */
+    ~DumpDataPtr()
+    {
+        // The memory is allocated using malloc
+        free(dataPtr);
+    }
+
+    /** @brief Returns the pointer to the data
+     */
+    uint8_t** getPtr()
+    {
+        return &dataPtr;
+    }
+
+    /** @brief Returns the stored data
+     */
+    uint8_t* getData()
+    {
+        return dataPtr;
+    }
+
+  private:
+    /** The pointer to the data */
+    uint8_t* dataPtr = NULL;
+};
 
 /**
  * @brief Get DBUS service for input interface via mapper call
@@ -45,6 +86,13 @@ void setProperty(const std::string& interface, const std::string& propertyName,
     method.append(interface, propertyName, value);
     auto reply = bus.call(method);
 }
+
+/** @brief Method to find whether a processor is master
+ *  @param[in] proc - pdbg_target for processor target
+ *
+ *  @return bool - true if master processor else false.
+ */
+bool isMasterProc(struct pdbg_target* proc);
 
 } // namespace util
 } // namespace dump
