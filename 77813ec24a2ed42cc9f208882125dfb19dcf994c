@@ -2,6 +2,92 @@
   "comments": [
     {
       "key": {
+        "uuid": "8df5188e_be917fdc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-27T14:20:26Z",
+      "side": 1,
+      "message": "SBE, already got definition at previous line.",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6911ee3f_17c9840f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-27T14:20:26Z",
+      "side": 1,
+      "message": "unresponsive?",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 37
+      },
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "066963a4_2a2fef38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-27T14:20:26Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63a69446_33ecfd54",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-27T14:20:26Z",
+      "side": 1,
+      "message": "ToDO need to add , till the actual collection function is available.",
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ad9a0045_4cb41c8c",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 3
@@ -53,6 +139,24 @@
       "writtenOn": "2021-09-27T07:08:57Z",
       "side": 1,
       "message": "why should the base class know about derived class behavior? shouldn;t polymorphism come into picture and automatically call the related collectDump method?",
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8dc702e_26361166",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-27T14:20:26Z",
+      "side": 1,
+      "message": "Existing code support dumpManager class , which support hwdump and hostboot dump. bothe implmentaion is more or like same , using sbe chip-ops based dump data collection. Looks like the new dump type sbesump , which uses differnt collection mechanism here . good to look resturctre the code to make it cleaner.",
+      "parentUuid": "f4cc16e3_ec93e0d3",
       "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
