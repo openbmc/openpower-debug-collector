@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da69822e_f4a4ac3b",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T10:33:45Z",
+      "side": 1,
+      "message": "continue was for some code analyzer",
+      "parentUuid": "0ce88036_0e6ca78a",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 25
+      },
+      "revId": "cea6cd9783babba7693193b327e0ffb38155805c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c4040189_a2209bdb",
         "filename": "dump/dump_collect.cpp",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2021-09-29T10:20:30Z",
       "side": 1,
       "message": "this comment is not valid here now",
+      "range": {
+        "startLine": 370,
+        "startChar": 0,
+        "endLine": 371,
+        "endChar": 26
+      },
+      "revId": "cea6cd9783babba7693193b327e0ffb38155805c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2ab4276_4d26a1af",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T10:33:45Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "c4040189_a2209bdb",
       "range": {
         "startLine": 370,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3a8b70d0_6743dbef",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T10:33:45Z",
+      "side": 1,
+      "message": "no we should collect the dump even if this failed, and the caller is not verifying it",
+      "parentUuid": "34c1d12c_c10bf0c4",
+      "range": {
+        "startLine": 372,
+        "startChar": 3,
+        "endLine": 372,
+        "endChar": 77
+      },
+      "revId": "cea6cd9783babba7693193b327e0ffb38155805c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "397f5445_9ce78da5",
         "filename": "dump/dump_collect.cpp",
         "patchSetId": 5
@@ -82,6 +154,30 @@
       "writtenOn": "2021-09-29T10:20:30Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 394,
+        "startChar": 0,
+        "endLine": 395,
+        "endChar": 70
+      },
+      "revId": "cea6cd9783babba7693193b327e0ffb38155805c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "973e1629_193f58a7",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T10:33:45Z",
+      "side": 1,
+      "message": "we cannot break collection because of this.. if there is no good error log 0s will be filled",
+      "parentUuid": "397f5445_9ce78da5",
       "range": {
         "startLine": 394,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "aff8d551_1e004885",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T10:33:45Z",
+      "side": 1,
+      "message": "the dump should be collected even if this failed.. the caller wont be taking that decision",
+      "parentUuid": "8c7776bc_36e769c1",
+      "range": {
+        "startLine": 396,
+        "startChar": 0,
+        "endLine": 397,
+        "endChar": 60
+      },
+      "revId": "cea6cd9783babba7693193b327e0ffb38155805c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bc7a556c_69e295a1",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 5
@@ -128,6 +248,30 @@
       "writtenOn": "2021-09-29T10:24:26Z",
       "side": 1,
       "message": "recheck if any of these can be remvoed as lot of code has been moved to dump_collection.hpp.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 0
+      },
+      "revId": "cea6cd9783babba7693193b327e0ffb38155805c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a5a6b05_1911c6d7",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T10:33:45Z",
+      "side": 1,
+      "message": "checked",
+      "parentUuid": "bc7a556c_69e295a1",
       "range": {
         "startLine": 9,
         "startChar": 0,
