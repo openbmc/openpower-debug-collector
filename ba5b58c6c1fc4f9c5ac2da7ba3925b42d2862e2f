@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7d2fff4_69318f24",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-09-29T10:26:21Z",
+      "side": 1,
+      "message": "once we throw exception we cannot continue any further.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 21
+      },
+      "revId": "ba5b58c6c1fc4f9c5ac2da7ba3925b42d2862e2f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
