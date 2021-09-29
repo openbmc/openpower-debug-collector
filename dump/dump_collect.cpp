@@ -42,8 +42,52 @@ void collectDump(uint32_t id, const uint64_t failingUnit,
         fmt::format("Collecting SBE dump: path({}), id({}), chip position({})",
                     sbeFilePath.string(), id, failingUnit)
             .c_str());
-    // TODO Impementation in next commit
-    std::exit(EXIT_FAILURE);
+    pdbg_set_backend(PDBG_BACKEND_KERNEL, NULL);
+
+    if (!pdbg_targets_init(NULL))
+    {
+        log<level::ERR>("pdbg_targets_init failed");
+        throw std::runtime_error("pdbg target initialization failed");
+    }
+    pdbg_set_loglevel(PDBG_INFO);
+
+    struct pdbg_target* target;
+    struct pdbg_target* proc = NULL;
+    pdbg_for_each_class_target("proc", target)
+    {
+        if (pdbg_target_probe(target) != PDBG_TARGET_ENABLED)
+        {
+            continue;
+        }
+
+        uint32_t chipId = 0;
+        if (DT_GET_PROP(ATTR_FAPI_POS, target, chipId))
+        {
+            log<level::ERR>("Attribute [ATTR_FAPI_POS] get failed");
+            throw std::runtime_error("Attribute [ATTR_FAPI_POS] get failed");
+            continue;
+        }
+
+        if (chipId == failingUnit)
+        {
+            proc = target;
+        }
+    }
+    if (proc == NULL)
+    {
+        log<level::ERR>("No Proc target found to execute the dump");
+        std::exit(EXIT_FAILURE);
+    }
+
+    std::stringstream ss;
+    ss << std::setw(8) << std::setfill('0') << id;
+    std::string idStr = ss.str();
+
+    std::string filename =
+        idStr + ".SbeData.node0.proc" + std::to_string(failingUnit);
+    dumpPath /= filename;
+    openpower::phal::dump::collectSBEDump(proc, dumpPath);
+    std::exit(EXIT_SUCCESS);
 }
 } // namespace hwp
 
