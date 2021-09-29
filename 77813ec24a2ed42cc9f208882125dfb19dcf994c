@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "1523dc2e_d1a950bb",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T07:35:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63a69446_33ecfd54",
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad9a0045_4cb41c8c",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 3
@@ -105,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "eec81b25_fe9e03b0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T07:35:59Z",
+      "side": 1,
+      "message": "restructuring code",
+      "parentUuid": "ad9a0045_4cb41c8c",
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d89ad296_8f343b45",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 3
@@ -116,6 +152,30 @@
       "writtenOn": "2021-09-27T07:08:57Z",
       "side": 1,
       "message": "breaking polymorphism shouldn;t the call directly go to the derived class method? why base class need to know about sbe dumps?",
+      "range": {
+        "startLine": 529,
+        "startChar": 0,
+        "endLine": 530,
+        "endChar": 41
+      },
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a60c5160_d4510773",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T07:35:59Z",
+      "side": 1,
+      "message": "Since  dump type is an input to this method it needs to handle it differently",
+      "parentUuid": "d89ad296_8f343b45",
       "range": {
         "startLine": 529,
         "startChar": 0,
@@ -157,6 +217,24 @@
       "side": 1,
       "message": "Existing code support dumpManager class , which support hwdump and hostboot dump. bothe implmentaion is more or like same , using sbe chip-ops based dump data collection. Looks like the new dump type sbesump , which uses differnt collection mechanism here . good to look resturctre the code to make it cleaner.",
       "parentUuid": "f4cc16e3_ec93e0d3",
+      "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ae67785_15983aeb",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-09-29T07:35:59Z",
+      "side": 1,
+      "message": "these functions not really using the Manager properties so moving it outside",
+      "parentUuid": "b8dc702e_26361166",
       "revId": "77813ec24a2ed42cc9f208882125dfb19dcf994c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
