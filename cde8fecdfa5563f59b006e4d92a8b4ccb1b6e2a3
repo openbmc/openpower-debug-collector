@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1445cb52_e0e2d9f9",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-30T08:45:22Z",
+      "side": 1,
+      "message": "is this required?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 20
+      },
+      "revId": "cde8fecdfa5563f59b006e4d92a8b4ccb1b6e2a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27c40d57_ce20f213",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-30T08:45:22Z",
+      "side": 1,
+      "message": "Move to util file.",
+      "revId": "cde8fecdfa5563f59b006e4d92a8b4ccb1b6e2a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eea7e441_8af3fc24",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-30T08:45:22Z",
+      "side": 1,
+      "message": "This should move to util name space./ new file",
+      "range": {
+        "startLine": 17,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 2
+      },
+      "revId": "cde8fecdfa5563f59b006e4d92a8b4ccb1b6e2a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9b6b95a_5ec7d374",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-09-30T08:45:22Z",
+      "side": 1,
+      "message": "This should move to util name space./ new file",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 3
+      },
+      "revId": "cde8fecdfa5563f59b006e4d92a8b4ccb1b6e2a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
