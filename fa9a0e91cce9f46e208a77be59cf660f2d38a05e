@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e05cc795_8cc5a363",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-05T17:28:42Z",
+      "side": 1,
+      "message": "Will take care of extra space at the end of each in the next commit...",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 21
+      },
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da955438_4f5ecd6c",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-05T17:28:42Z",
+      "side": 1,
+      "message": "CI fails for this with the following error message:\nmeson.build:49:0: ERROR: C++ shared or static library \u0027libdt-api\u0027 not found\n\nNeed help!",
+      "range": {
+        "startLine": 55,
+        "startChar": 22,
+        "endLine": 55,
+        "endChar": 31
+      },
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
