@@ -17,11 +17,11 @@ using namespace phosphor::logging;
  *
  * @param msg - dbus message from the dbus match infrastructure
  * @param path - the object path we are monitoring
- * @param inProgress - used to break out of our dbus wait loop
+ * @param progressStatus - dump progress status
  * @return Always non-zero indicating no error, no cascading callbacks
  */
 uint dumpStatusChanged(sdbusplus::message::message& msg, std::string path,
-                       bool& inProgress)
+                       DumpProgressStatus& progressStatus)
 {
     // reply (msg) will be a property change message
     std::string interface;
@@ -40,10 +40,22 @@ uint dumpStatusChanged(sdbusplus::message::message& msg, std::string path,
         if ((nullptr != status) && ("xyz.openbmc_project.Common.Progress."
                                     "OperationStatus.InProgress" != *status))
         {
-            // dump is done, trace some info and change in progress flag
+            // dump is not in InProgress state, trace some info and change in
+            // progress status
             log<level::INFO>(path.c_str());
             log<level::INFO>((*status).c_str());
-            inProgress = false;
+
+            if ("xyz.openbmc_project.Common.Progress.OperationStatus."
+                "Completed" == *status)
+            {
+                // Dump completed successfully
+                progressStatus = DumpProgressStatus::Completed;
+            }
+            else
+            {
+                // Dump Failed
+                progressStatus = DumpProgressStatus::Failed;
+            }
         }
     }
 
@@ -58,7 +70,8 @@ uint dumpStatusChanged(sdbusplus::message::message& msg, std::string path,
  */
 void monitorDump(const std::string& path, const uint32_t timeout)
 {
-    bool inProgress = true; // callback will update this
+    // callback will update progressStatus
+    DumpProgressStatus progressStatus = DumpProgressStatus::InProgress;
 
     // setup the signal match rules and callback
     std::string matchInterface = "xyz.openbmc_project.Common.Progress";
@@ -70,15 +83,15 @@ void monitorDump(const std::string& path, const uint32_t timeout)
             sdbusplus::bus::match::rules::propertiesChanged(
                 path.c_str(), matchInterface.c_str()),
             [&](auto& msg) {
-                return dumpStatusChanged(msg, path, inProgress);
+                return dumpStatusChanged(msg, path, progressStatus);
             });
 
     // wait for dump status to be completed (complete == true)
     // or until timeout interval
-    log<level::INFO>("hbdump requested");
+
     bool timedOut = false;
     uint32_t secondsCount = 0;
-    while ((true == inProgress) && !timedOut)
+    while ((DumpProgressStatus::InProgress == progressStatus) && !timedOut)
     {
         bus.wait(std::chrono::seconds(1));
         bus.process_discard();
@@ -91,16 +104,20 @@ void monitorDump(const std::string& path, const uint32_t timeout)
 
     if (timedOut)
     {
-        log<level::ERR>("hbdump dump progress status did not change to "
+        log<level::ERR>("Dump progress status did not change to "
                         "complete within the timeout interval, exiting...");
+    }
+    else if (DumpProgressStatus::Completed == progressStatus)
+    {
+        log<level::INFO>("dump collection completed");
     }
     else
     {
-        log<level::INFO>("hbdump completed");
+        log<level::INFO>("dump collection failed");
     }
 }
 
-void requestDump(const uint32_t logId, const uint32_t timeout)
+void requestDump(const DumpParameters& dumpParameters)
 {
     constexpr auto path = "/org/openpower/dump";
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
@@ -115,10 +132,24 @@ void requestDump(const uint32_t logId, const uint32_t timeout)
             // dbus call arguments
             std::map<std::string, std::variant<std::string, uint64_t>>
                 createParams;
-            createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
-                "com.ibm.Dump.Create.DumpType.Hostboot";
             createParams["com.ibm.Dump.Create.CreateParameters.ErrorLogId"] =
-                uint64_t(logId);
+                uint64_t(dumpParameters.logId);
+            if (DumpType::Hostboot == dumpParameters.dumpType)
+            {
+                log<level::INFO>("hostboot dump requested");
+                createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
+                    "com.ibm.Dump.Create.DumpType.Hostboot";
+            }
+            else if (DumpType::SBE == dumpParameters.dumpType)
+            {
+                log<level::INFO>("SBE dump requested");
+                createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
+                    "com.ibm.Dump.Create.DumpType.SBE";
+                createParams
+                    ["com.ibm.Dump.Create.CreateParameters.FailingUnitId"] =
+                        dumpParameters.unitId;
+            }
+
             method.append(createParams);
 
             // using system dbus
@@ -130,7 +161,7 @@ void requestDump(const uint32_t logId, const uint32_t timeout)
             response.read(reply);
 
             // monitor dump progress
-            monitorDump(reply, timeout);
+            monitorDump(reply, dumpParameters.timeout);
         }
         catch (const sdbusplus::exception::exception& e)
         {
