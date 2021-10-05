@@ -1,5 +1,3 @@
-#include <libpdbg.h>
-
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/bus.hpp>
 #include <watchdog_common.hpp>

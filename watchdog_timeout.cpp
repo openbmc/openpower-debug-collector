@@ -2,7 +2,19 @@
 
 #include <CLI/CLI.hpp>
 
-#ifdef HOSTBOOT_DUMP_COLLECTION
+#ifdef WATCHDOG_DUMP_COLLECTION
+extern "C"
+{
+#include <libpdbg.h>
+}
+
+#include <fmt/format.h>
+#include <libpdbg_sbe.h>
+#include <libphal.H>
+
+#include <phosphor-logging/log.hpp>
+#include <watchdog/watchdog_common.hpp>
+#include <watchdog/watchdog_dbus.hpp>
 #include <watchdog/watchdog_main.hpp>
 #else
 #include "org/open_power/Host/Boot/error.hpp"
@@ -15,7 +27,7 @@ int main(int argc, char* argv[])
 {
     CLI::App app{"Hostboot dump collector for watchdog timeout"};
 
-#ifdef HOSTBOOT_DUMP_COLLECTION
+#ifdef WATCHDOG_DUMP_COLLECTION
     uint32_t timeoutInterval = 1500; // in seconds
     app.add_option("-t,--timeout", timeoutInterval,
                    "Set timeout interval for watchdog timeout in seconds");
@@ -23,10 +35,53 @@ int main(int argc, char* argv[])
 
     CLI11_PARSE(app, argc, argv);
 
-#ifdef HOSTBOOT_DUMP_COLLECTION
+#ifdef WATCHDOG_DUMP_COLLECTION
+    using namespace phosphor::logging;
     using namespace watchdog::dump;
-    // TODO: trigger SBE dump if in SBE window otherwise hostboot dump
-    triggerHostbootDump(timeoutInterval);
+
+    log<level::INFO>("Host did not respond within watchdog timeout interval");
+    try
+    {
+        using namespace openpower::phal;
+
+        // Initialize pdbg library, default parameters are used for init()
+        pdbg::init();
+
+        // Get Primary Proc
+        struct pdbg_target* procTarget = pdbg::getPrimaryProc();
+
+        // Check Primary IPL done
+        bool primaryIplDone = sbe::isPrimaryIplDone();
+        if (primaryIplDone)
+        {
+            // SBE boot done, Need to collect hostboot dump
+            log<level::INFO>("Handle Hostboot boot failure");
+            triggerHostbootDump(timeoutInterval);
+        }
+        else
+        {
+            // SBE boot window, handle SBE boot failure
+            log<level::INFO>("Handle SBE boot failure");
+            handleSbeBootError(procTarget, timeoutInterval);
+        }
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(
+            fmt::format("isPrimaryIplDone Exception{}", e.what()).c_str());
+        std::string eventType =
+            "org.open_power.Processor.Error.WatchdogTimeout";
+        auto ffdc = std::vector<FFDCTuple>{};
+        std::map<std::string, std::string> additionalData;
+
+        if (!createPel(eventType, additionalData, ffdc))
+        {
+            log<level::ERR>("Failed to create PEL");
+        }
+
+        return EXIT_SUCCESS;
+    }
+
 #else
     using namespace phosphor::logging;
     using error =
@@ -34,5 +89,5 @@ int main(int argc, char* argv[])
     report<error>();
 #endif
 
-    return 0;
+    return EXIT_SUCCESS;
 }
