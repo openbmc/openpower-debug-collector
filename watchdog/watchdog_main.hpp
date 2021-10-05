@@ -19,5 +19,12 @@ namespace dump
  */
 void triggerHostbootDump(const uint32_t timeout);
 
+/**
+ * @brief Initiate captureFFDC, and SBE dump if needed
+ *
+ * @param procTarget - Processor target
+ */
+void triggerCaptureFFDC(struct pdbg_target* procTarget);
+
 } // namespace dump
 } // namespace watchdog

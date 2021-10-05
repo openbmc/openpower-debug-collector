@@ -44,8 +44,17 @@ if not fmt_dep.found()
   fmt_dep = fmt_proj.dependency('fmt')
 endif
 
+cxx = meson.get_compiler('cpp')
+
 deps = [
-    systemd, sdbusplus, phosphorlogging, fmt_dep
+    systemd, 
+    sdbusplus, 
+    phosphorlogging, 
+    fmt_dep, 
+    cxx.find_library('pdbg'),
+    cxx.find_library('libdt-api'),
+    cxx.find_library('ipl'),
+    cxx.find_library('phal')
 ]
 
 realpath_prog = find_program('realpath')
