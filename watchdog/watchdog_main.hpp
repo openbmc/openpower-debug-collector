@@ -19,5 +19,13 @@ namespace dump
  */
 void triggerHostbootDump(const uint32_t timeout);
 
+/**
+ * @brief Handle SBE Boot Error
+ *
+ * @param procTarget - Processor target
+ * @param timeout - timeout interval in seconds
+ */
+void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout);
+
 } // namespace dump
 } // namespace watchdog
