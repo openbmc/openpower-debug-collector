@@ -28,8 +28,15 @@ void event(std::map<std::string, std::string>& additional,
     // Create PEL with additional data.
     auto pelId = createPel(eventName, additional, emptyFfdc);
 
-    // will not return until dump is complete or times out
-    requestDump(pelId, timeout);
+    // Collect Hostboot dump if auto reboot is enabled
+    DumpParameters dumpParameters;
+    dumpParameters.logId = pelId;
+    dumpParameters.unitId = 0; // Not used for Hostboot dump
+    dumpParameters.timeout = timeout;
+    dumpParameters.dumpType = DumpType::Hostboot;
+
+    // will not return until dump is complete or timeout
+    requestDump(dumpParameters);
 }
 
 void eventWatchdogTimeout(const uint32_t timeout)
