@@ -1,0 +1,210 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c154fc1_c118e51d",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "PIB doesn\u0027t support HWAS_SRTATE attribute. You should be iterating the processors.",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 9
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63e118e2_6bf02e43",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "Need to consider the failure case if all the processor\u0027s are not functional.",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 9
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb846495_79249506",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "libphal supports API to check valid SBE state for chip-op . you can enabe this support in separate commit",
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8b88def_ca101951",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "you can use the libphal pdbg::init() API. also need to set devtree back-end.",
+      "range": {
+        "startLine": 194,
+        "startChar": 3,
+        "endLine": 199,
+        "endChar": 33
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f274376_7deb64d2",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "Avoid internal failure , this is is going to trigger another dump and this can slow down the overall dump collection .",
+      "range": {
+        "startLine": 256,
+        "startChar": 16,
+        "endLine": 256,
+        "endChar": 42
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a28f6aa_c04537e1",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "Add extern \"C\"",
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71f4f5f6_0954ed70",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "Any issue in making innput varibale const? like any back-end dependencies?",
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3f50fc6_641259d9",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "Already sbe dump name space , \"path\" is good.",
+      "range": {
+        "startLine": 22,
+        "startChar": 40,
+        "endLine": 22,
+        "endChar": 52
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de1ed4f0_027d4051",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 25,
+        "startChar": 46,
+        "endLine": 25,
+        "endChar": 54
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c67ce2f_0719f7e7",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-05T08:20:03Z",
+      "side": 1,
+      "message": "same comment as line 21",
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
