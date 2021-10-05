@@ -1,4 +1,6 @@
-#include <libpdbg.h>
+#include "attributes_info.H"
+
+#include <fmt/format.h>
 
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/bus.hpp>
@@ -60,6 +62,51 @@ bool isAutoRebootEnabled()
     }
 
     return autoReboot;
+}
+
+bool isPrimaryProc(struct pdbg_target* procTarget)
+{
+    ATTR_PROC_MASTER_TYPE_Type type;
+
+    // Get processor type (Primary or Secondary)
+    if (DT_GET_PROP(ATTR_PROC_MASTER_TYPE, procTarget, type))
+    {
+        log<level::ERR>("Attribute [ATTR_PROC_MASTER_TYPE] get failed");
+        throw std::runtime_error(
+            "Attribute [ATTR_PROC_MASTER_TYPE] get failed");
+    }
+
+    bool primaryProc = false;
+    /* Attribute value 0 corresponds to primary processor */
+    if (type == ENUM_ATTR_PROC_MASTER_TYPE_ACTING_MASTER)
+    {
+        primaryProc = true;
+    }
+    return primaryProc;
+}
+
+struct pdbg_target* getPibTarget(struct pdbg_target* procTarget)
+{
+    char path[16];
+    sprintf(path, "/proc%d/pib", pdbg_target_index(procTarget));
+    struct pdbg_target* pib = pdbg_target_from_path(nullptr, path);
+    if (pib == nullptr)
+    {
+        log<level::ERR>(fmt::format("Failed to get PIB target for: {}",
+                                    pdbg_target_path(procTarget))
+                            .c_str());
+        throw std::runtime_error("Failed to get PIB target");
+    }
+
+    // Probe the target
+    if (pdbg_target_probe(pib) != PDBG_TARGET_ENABLED)
+    {
+        log<level::ERR>(fmt::format("Failed to enable PIB target: {}",
+                                    pdbg_target_path(pib))
+                            .c_str());
+        throw std::runtime_error("Failed to enable PIB target");
+    }
+    return pib;
 }
 
 } // namespace dump

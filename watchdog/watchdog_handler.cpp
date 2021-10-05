@@ -75,7 +75,7 @@ void monitorDump(const std::string& path, const uint32_t timeout)
 
     // wait for dump status to be completed (complete == true)
     // or until timeout interval
-    log<level::INFO>("hbdump requested");
+
     bool timedOut = false;
     uint32_t secondsCount = 0;
     while ((true == inProgress) && !timedOut)
@@ -91,16 +91,16 @@ void monitorDump(const std::string& path, const uint32_t timeout)
 
     if (timedOut)
     {
-        log<level::ERR>("hbdump dump progress status did not change to "
+        log<level::ERR>("Dump progress status did not change to "
                         "complete within the timeout interval, exiting...");
     }
     else
     {
-        log<level::INFO>("hbdump completed");
+        log<level::INFO>("dump collection completed");
     }
 }
 
-void requestDump(const uint32_t logId, const uint32_t timeout)
+void requestDump(const DumpParameters& dumpParameters, const uint32_t timeout)
 {
     constexpr auto path = "/org/openpower/dump";
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
@@ -115,10 +115,24 @@ void requestDump(const uint32_t logId, const uint32_t timeout)
             // dbus call arguments
             std::map<std::string, std::variant<std::string, uint64_t>>
                 createParams;
-            createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
-                "com.ibm.Dump.Create.DumpType.Hostboot";
             createParams["com.ibm.Dump.Create.CreateParameters.ErrorLogId"] =
-                uint64_t(logId);
+                uint64_t(dumpParameters.logId);
+            if (DumpType::Hostboot == dumpParameters.dumpType)
+            {
+                log<level::INFO>("hostboot dump requested");
+                createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
+                    "com.ibm.Dump.Create.DumpType.Hostboot";
+            }
+            else if (DumpType::SBE == dumpParameters.dumpType)
+            {
+                log<level::INFO>("SBE dump requested");
+                createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
+                    "com.ibm.Dump.Create.DumpType.SBE";
+                createParams
+                    ["com.ibm.Dump.Create.CreateParameters.FailingUnitId"] =
+                        dumpParameters.unitId;
+            }
+
             method.append(createParams);
 
             // using system dbus

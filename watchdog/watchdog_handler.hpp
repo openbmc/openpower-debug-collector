@@ -13,17 +13,32 @@ namespace watchdog
 namespace dump
 {
 
+/** @brief Dump types supported by dump request */
+enum class DumpType
+{
+    Hostboot,
+    SBE
+};
+
+/** @brief Structure for dump request parameters */
+struct DumpParameters
+{
+    uint32_t logId;
+    uint32_t unitId;
+    DumpType dumpType;
+};
+
 /**
  * @brief Request a dump from the dump manager
  *
  * Request a dump from the dump manager and register a monitor for observing
  * the dump progress.
  *
- * @param logId - the id of the event log associated with this dump request
+ * @param dumpParameters - parameters for the dump request
  * @param timeout - timeout interval in seconds
  *
  */
-void requestDump(const uint32_t logId, const uint32_t timeout);
+void requestDump(const DumpParameters&, const uint32_t timeout);
 
 } // namespace dump
 } // namespace watchdog
