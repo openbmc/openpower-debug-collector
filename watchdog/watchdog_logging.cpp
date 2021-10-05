@@ -31,7 +31,9 @@ void event(std::map<std::string, std::string>& additional,
     // Collect Hostboot dump if auto reboot is enabled
     if (isAutoRebootEnabled())
     {
-        requestDump(pelId, timeout); // will not return until dump is complete
+        DumpParameters dumpParameters = {pelId, 0, DumpType::Hostboot};
+        // will not return until dump is complete or timeout
+        requestDump(dumpParameters, timeout);
     }
 }
 

@@ -1,6 +1,10 @@
 #pragma once
 
 #include <string>
+extern "C"
+{
+#include <libpdbg.h>
+}
 
 namespace watchdog
 {
@@ -16,6 +20,26 @@ void transitionHost(const std::string& target);
 
 /** @brief Read state of autoreboot property via dbus */
 bool isAutoRebootEnabled();
+
+/**
+ *  @brief  Check if primary processor or not
+ *
+ *  @param procTarget - Processor target to check if primary or not
+ *
+ *  @return True/False
+ */
+bool isPrimaryProc(struct pdbg_target* procTarget);
+
+/**
+ *  @brief  Helper function to find PIB target needed for PIB operations
+ *
+ *  @param[in]  procTarget - Processor target to find the PIB target on
+ *
+ *  @return Valid pointer to PIB target on success
+ *
+ *  Exceptions: runtime_error
+ */
+struct pdbg_target* getPibTarget(struct pdbg_target* procTarget);
 
 } // namespace dump
 } // namespace watchdog
