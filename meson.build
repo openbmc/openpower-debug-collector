@@ -44,8 +44,16 @@ if not fmt_dep.found()
   fmt_dep = fmt_proj.dependency('fmt')
 endif
 
+cxx = meson.get_compiler('cpp')
+
 deps = [
-    systemd, sdbusplus, phosphorlogging, fmt_dep
+    systemd,
+    sdbusplus,
+    phosphorlogging,
+    fmt_dep,
+    cxx.find_library('pdbg'),
+    cxx.find_library('libdt-api'),
+    cxx.find_library('phal')
 ]
 
 realpath_prog = find_program('realpath')
@@ -88,10 +96,10 @@ endforeach
 
 conf_data = configuration_data()
 if get_option('hostboot-dump-collection').enabled()
-    conf_data.set('HOSTBOOT_DUMP_COLLECTION', true)
+    conf_data.set('HOSTBOOT_SBE_DUMP_COLLECTION', true)
     subdir('watchdog')
 else
-    conf_data.set('HOSTBOOT_DUMP_COLLECTION', false)
+    conf_data.set('HOSTBOOT_SBE_DUMP_COLLECTION', false)
     watchdog_lib = []
 endif
 
