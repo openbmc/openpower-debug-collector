@@ -44,10 +44,6 @@ if not fmt_dep.found()
   fmt_dep = fmt_proj.dependency('fmt')
 endif
 
-deps = [
-    systemd, sdbusplus, phosphorlogging, fmt_dep
-]
-
 realpath_prog = find_program('realpath')
 
 selected_subdirs = []
@@ -86,14 +82,29 @@ foreach g : generated_sources generated_others
     endforeach
 endforeach
 
+cxx = meson.get_compiler('cpp')
 conf_data = configuration_data()
 if get_option('hostboot-dump-collection').enabled()
-    conf_data.set('HOSTBOOT_DUMP_COLLECTION', true)
+    conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
+    extra_deps = [
+        cxx.find_library('pdbg'),
+        cxx.find_library('libdt-api'),
+        cxx.find_library('phal')
+    ]
     subdir('watchdog')
 else
-    conf_data.set('HOSTBOOT_DUMP_COLLECTION', false)
+    conf_data.set('WATCHDOG_DUMP_COLLECTION', false)
     watchdog_lib = []
+    extra_deps = []
 endif
+
+deps = [
+    systemd,
+    sdbusplus,
+    phosphorlogging,
+    fmt_dep,
+    extra_deps
+]
 
 executable('watchdog_timeout',
     'watchdog_timeout.cpp',

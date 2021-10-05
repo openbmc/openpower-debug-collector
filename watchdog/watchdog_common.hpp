@@ -1,6 +1,10 @@
 #pragma once
 
 #include <string>
+extern "C"
+{
+#include <libpdbg.h>
+}
 
 namespace watchdog
 {
