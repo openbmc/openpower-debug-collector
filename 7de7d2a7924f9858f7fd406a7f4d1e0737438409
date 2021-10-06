@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "5433c81f_ff3e6839",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-10-06T03:53:52Z",
+      "side": 1,
+      "message": "Device tree is already set in the service file",
+      "parentUuid": "203bdd76_b69aa5e2",
+      "range": {
+        "startLine": 194,
+        "startChar": 3,
+        "endLine": 199,
+        "endChar": 33
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7f274376_7deb64d2",
         "filename": "dump/dump_collect.cpp",
         "patchSetId": 8
