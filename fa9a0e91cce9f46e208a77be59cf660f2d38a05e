@@ -45,6 +45,165 @@
       "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b19a5c4d_8004527c",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "Not required this lib.",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f7f3d47_370a5d96",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "Refer https://gerrit.openbmc-project.xyz/c/openbmc/openpower-proc-control/+/47613/1",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da27fea6_2cca7237",
+        "filename": "watchdog/watchdog_main.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "Change name specific to SBE?",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d09c57f6_fcd7d211",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "This name seems to be not valid now , collecting both hostboot/sbe dumop right?",
+      "range": {
+        "startLine": 38,
+        "startChar": 7,
+        "endLine": 38,
+        "endChar": 31
+      },
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a36b602e_cb91e27a",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "libphal provides api to init pdbg.",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b87ab15_a02b1c60",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "This event type is good only for SBE window.  refer https://gerrit.openbmc-project.xyz/c/openbmc/openpower-proc-control/+/47613",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c27b8a7_df40c6f1",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "make it generic , refer https://gerrit.openbmc-project.xyz/c/openbmc/openpower-proc-control/+/47613",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e34d9719_be487ecc",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "\"Hostboot boot timeout\" ?",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75372082_84a9d162",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-07T14:56:43Z",
+      "side": 1,
+      "message": "SBE Boot timeout?",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
