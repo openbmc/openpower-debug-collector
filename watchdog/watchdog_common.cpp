@@ -30,37 +30,5 @@ void transitionHost(const std::string& target)
     bus.call_noreply(method); // start the service
 }
 
-bool isAutoRebootEnabled()
-{
-    constexpr auto settingsService = "xyz.openbmc_project.Settings";
-    constexpr auto settingsPath =
-        "/xyz/openbmc_project/control/host0/auto_reboot";
-    constexpr auto settingsIntf = "org.freedesktop.DBus.Properties";
-    constexpr auto rebootPolicy =
-        "xyz.openbmc_project.Control.Boot.RebootPolicy";
-
-    auto bus = sdbusplus::bus::new_system();
-    auto method =
-        bus.new_method_call(settingsService, settingsPath, settingsIntf, "Get");
-
-    method.append(rebootPolicy);
-    method.append("AutoReboot");
-
-    bool autoReboot = false;
-    try
-    {
-        auto reply = bus.call(method);
-        std::variant<bool> result;
-        reply.read(result);
-        autoReboot = std::get<bool>(result);
-    }
-    catch (const sdbusplus::exception::exception& e)
-    {
-        log<level::ERR>("Error in AutoReboot Get", entry("ERROR=%s", e.what()));
-    }
-
-    return autoReboot;
-}
-
 } // namespace dump
 } // namespace watchdog
