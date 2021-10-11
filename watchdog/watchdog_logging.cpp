@@ -29,10 +29,7 @@ void event(std::map<std::string, std::string>& additional,
     auto pelId = createPel(eventName, additional, emptyFfdc);
 
     // Collect Hostboot dump if auto reboot is enabled
-    if (isAutoRebootEnabled())
-    {
-        requestDump(pelId, timeout); // will not return until dump is complete
-    }
+    requestDump(pelId, timeout); // will not return until dump is complete
 }
 
 void eventWatchdogTimeout(const uint32_t timeout)

@@ -14,8 +14,5 @@ namespace dump
  */
 void transitionHost(const std::string& target);
 
-/** @brief Read state of autoreboot property via dbus */
-bool isAutoRebootEnabled();
-
 } // namespace dump
 } // namespace watchdog
