@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "54d6b0e3_2a50a530",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e05cc795_8cc5a363",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 21
+      },
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da955438_4f5ecd6c",
         "filename": "meson.build",
         "patchSetId": 1
@@ -65,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9d093c26_51e552ed",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b19a5c4d_8004527c",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8f7f3d47_370a5d96",
         "filename": "watchdog/watchdog_main.cpp",
         "patchSetId": 1
@@ -76,6 +118,24 @@
       "writtenOn": "2021-10-07T14:56:43Z",
       "side": 1,
       "message": "Refer https://gerrit.openbmc-project.xyz/c/openbmc/openpower-proc-control/+/47613/1",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54bf055d_b205331b",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "I\u0027m assuming it is changing the function name, if so it is done.",
+      "parentUuid": "8f7f3d47_370a5d96",
       "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -96,6 +156,24 @@
       "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d2034c5_c8f82c3f",
+        "filename": "watchdog/watchdog_main.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da27fea6_2cca7237",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -122,6 +200,30 @@
     },
     {
       "key": {
+        "uuid": "3eea306f_8a0db531",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d09c57f6_fcd7d211",
+      "range": {
+        "startLine": 38,
+        "startChar": 7,
+        "endLine": 38,
+        "endChar": 31
+      },
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a36b602e_cb91e27a",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 1
@@ -133,6 +235,24 @@
       "writtenOn": "2021-10-07T14:56:43Z",
       "side": 1,
       "message": "libphal provides api to init pdbg.",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "101fd517_2720a8f5",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Still do not have init(...) available in the latest SDK (10/7 built). \n\nMaybe a version bump needed for libphal?",
+      "parentUuid": "a36b602e_cb91e27a",
       "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -156,6 +276,24 @@
     },
     {
       "key": {
+        "uuid": "ac4b3b70_ad2a1b2b",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "WatchdogTimeout error seems more reasonable, so using this. If not, would like to know the generic error/event type to be used.",
+      "parentUuid": "3b87ab15_a02b1c60",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c27b8a7_df40c6f1",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 1
@@ -167,6 +305,24 @@
       "writtenOn": "2021-10-07T14:56:43Z",
       "side": 1,
       "message": "make it generic , refer https://gerrit.openbmc-project.xyz/c/openbmc/openpower-proc-control/+/47613",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d9ef14c_f83b5d5a",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Removed SRC6",
+      "parentUuid": "3c27b8a7_df40c6f1",
       "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -190,6 +346,24 @@
     },
     {
       "key": {
+        "uuid": "538a5f14_442fb229",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e34d9719_be487ecc",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "75372082_84a9d162",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 1
@@ -204,6 +378,24 @@
       "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e19365ad_bf75f2c5",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-11T19:37:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75372082_84a9d162",
+      "revId": "fa9a0e91cce9f46e208a77be59cf660f2d38a05e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
