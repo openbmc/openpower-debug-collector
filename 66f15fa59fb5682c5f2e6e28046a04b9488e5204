@@ -25,6 +25,64 @@
     },
     {
       "key": {
+        "uuid": "b8ce147c_aba109a1",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Not sure I get the question here. It was HOSTBOOT_DUMP_COLLECTION to control whether to build in code that will generate hostboot dump (using phal) on a watchdog timeout. Now he\u0027s added SBE to the compile flag since it will now generate SBE or Hostboot dump.",
+      "parentUuid": "2f449f6c_07e4013b",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4a37ac8_cabb04be",
+        "filename": "watchdog/watchdog_common.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Can throw exception",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5c3df9b_567879c1",
+        "filename": "watchdog/watchdog_handler.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "I see this unitId added for the call of a SBE dump but seems like it\u0027s not set anywhere? What\u0027s it for?",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50144eaf_2704af07",
         "filename": "watchdog/watchdog_handler.hpp",
         "patchSetId": 5
@@ -65,6 +123,23 @@
     },
     {
       "key": {
+        "uuid": "7de86af1_8c68a476",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Lets put some info logs in here (and in next else block). Watchdog timeouts are rare so no need to worry about filling journal. It will be useful to know which path we are taking.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a8b84eeb_ce78117c",
         "filename": "watchdog/watchdog_main.cpp",
         "patchSetId": 5
@@ -76,6 +151,74 @@
       "writtenOn": "2021-10-13T15:34:59Z",
       "side": 1,
       "message": "if sbe vital attention is present , hw diags will be handling , no need of collecting dump \nuse isSbeVitalAttnActive(struct pdbg_target *proc);\nAlso if need to check the SBE state , to see dumop collection is required? bool isDumpAllowed(struct pdbg_target *proc);\nlog an informational message and skip dump collection.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9acf1a3_eb2e2b33",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Init to nullptr and then line 60 is not needed. Inefficient to set it to nullptr every time until you find primary.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35b52fa1_1ce0b0f6",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "This can throw an exception. Not sure if we want to catch. May depend on whether we want to try and continue on error paths (assuming hostboot dump)",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "054d760e_23854327",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Jayanth, if we have a situation where all processors are guarded/deconfigured or some other error path here. Would it be better to just try and get a hostboot dump in this error path? We didn\u0027t need a primary proc for that before right? I\u0027m worried the times we need dumps the most is when we\u0027re going to have issues finding the primary proc.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "356307e2_20b997c6",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Unless we want this service to be restarted, and all this tried again, best to just return a success. We\u0027ve logged the error, there\u0027s nothing else to do. We don\u0027t want to hang up the power off and generate multiple errors.",
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -99,6 +242,40 @@
         "endLine": 77,
         "endChar": 5
       },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "539f495c_f417c96c",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Same comment as above on exiting and appropriate error path.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccf6853d_03849bd2",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T17:50:57Z",
+      "side": 1,
+      "message": "Same comment as above on exiting and appropriate error path.",
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
