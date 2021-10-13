@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2baa783c_561d1194",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 23
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-13T15:19:12Z",
+      "side": 1,
+      "message": "I\u0027m not familiar with the use of {BUSNAME} here. I can\u0027t find any documentation on it. I assume it uses the service name (i.e. org.open_power.Dump.Manager?). Why not just code the specific service like all the other services?",
+      "revId": "0406afae288518836df0aeb23a789516fa344300",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
