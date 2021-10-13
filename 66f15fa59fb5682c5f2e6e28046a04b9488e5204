@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f449f6c_07e4013b",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-13T15:34:59Z",
+      "side": 1,
+      "message": "Build flag name chnaged changed to WATCHDOG_xxx?",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50144eaf_2704af07",
+        "filename": "watchdog/watchdog_handler.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-13T15:34:59Z",
+      "side": 1,
+      "message": "Add timeout parameter here , that wiill simplify",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6278dcd1_cdb1cf04",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-13T15:34:59Z",
+      "side": 1,
+      "message": "This function trigger dump only if there is no FFDC info . Change name to Handle SBE failure?",
+      "range": {
+        "startLine": 38,
+        "startChar": 5,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8b84eeb_ce78117c",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-13T15:34:59Z",
+      "side": 1,
+      "message": "if sbe vital attention is present , hw diags will be handling , no need of collecting dump \nuse isSbeVitalAttnActive(struct pdbg_target *proc);\nAlso if need to check the SBE state , to see dumop collection is required? bool isDumpAllowed(struct pdbg_target *proc);\nlog an informational message and skip dump collection.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ec5bb70_2c755a27",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-13T15:34:59Z",
+      "side": 1,
+      "message": "replace with libphal . struct pdbg_target *getPrimaryProc();",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 5
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3839823d_efb9d864",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-13T15:34:59Z",
+      "side": 1,
+      "message": "replace with bool isIPLDone();",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 5
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
