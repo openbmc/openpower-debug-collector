@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3ed98340_6c18db19",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-14T02:59:15Z",
+      "side": 1,
+      "message": "This is confusing. New watchdog app is developed based on PHAL features supportde systems. right? like in the non-phal based systems , using the existing watchdog app?\nThat is the one reason requested toi use generic build flag name . like old vs new one.",
+      "parentUuid": "b8ce147c_aba109a1",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b4a37ac8_cabb04be",
         "filename": "watchdog/watchdog_common.hpp",
         "patchSetId": 5
@@ -174,6 +198,24 @@
     },
     {
       "key": {
+        "uuid": "e8cdc5e7_fb8c2dcb",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-14T02:59:15Z",
+      "side": 1,
+      "message": "LIne 60 is required , procTarget is updated with processor target in each iteration. . seting nullPtr to indicate not found primary proc.",
+      "parentUuid": "c9acf1a3_eb2e2b33",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "35b52fa1_1ce0b0f6",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 5
@@ -202,6 +244,24 @@
       "writtenOn": "2021-10-13T17:50:57Z",
       "side": 1,
       "message": "Jayanth, if we have a situation where all processors are guarded/deconfigured or some other error path here. Would it be better to just try and get a hostboot dump in this error path? We didn\u0027t need a primary proc for that before right? I\u0027m worried the times we need dumps the most is when we\u0027re going to have issues finding the primary proc.",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23a747e9_4696dac8",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-14T02:59:15Z",
+      "side": 1,
+      "message": "Correct , libphal api already handle this.",
+      "parentUuid": "054d760e_23854327",
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
