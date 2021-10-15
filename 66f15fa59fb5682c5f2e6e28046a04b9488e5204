@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "9a5b633d_99a7edf0",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Using WATCHDOG_DUMP_COLLECTION flag... Hope this is OK. If not, please provide the string to be used!",
+      "parentUuid": "3ed98340_6c18db19",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b4a37ac8_cabb04be",
         "filename": "watchdog/watchdog_common.hpp",
         "patchSetId": 5
@@ -90,6 +114,24 @@
     },
     {
       "key": {
+        "uuid": "14669a5d_a61a1e75",
+        "filename": "watchdog/watchdog_common.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "phal library will be used. Deleted this function",
+      "parentUuid": "b4a37ac8_cabb04be",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5c3df9b_567879c1",
         "filename": "watchdog/watchdog_handler.hpp",
         "patchSetId": 5
@@ -104,6 +146,24 @@
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fe1c4ec_6717be30",
+        "filename": "watchdog/watchdog_handler.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "set in watchdog_main.cpp:L98\nDumpParameters dumpParameters \u003d {pelId, index, DumpType::SBE};\n\nI believe it is a chip position (index), used as failing unit id.\n\nNow initializing explicitly...",
+      "parentUuid": "d5c3df9b_567879c1",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -164,6 +224,24 @@
     },
     {
       "key": {
+        "uuid": "85e00219_097c7d65",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7de86af1_8c68a476",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a8b84eeb_ce78117c",
         "filename": "watchdog/watchdog_main.cpp",
         "patchSetId": 5
@@ -216,6 +294,24 @@
     },
     {
       "key": {
+        "uuid": "4b459cb0_885554e6",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Now using phal API to get procTarget; no longer valid...",
+      "parentUuid": "e8cdc5e7_fb8c2dcb",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "35b52fa1_1ce0b0f6",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 5
@@ -230,6 +326,24 @@
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0b30840_e1e148ca",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "phal library used, comment not valid any more",
+      "parentUuid": "35b52fa1_1ce0b0f6",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -268,6 +382,24 @@
     },
     {
       "key": {
+        "uuid": "3ac6047c_f9648dd1",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "I\u0027m assuming I\u0027ve nothing here for me to address...",
+      "parentUuid": "23a747e9_4696dac8",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "356307e2_20b997c6",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 5
@@ -282,6 +414,24 @@
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aeea4f4b_45cf7872",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "356307e2_20b997c6",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -308,6 +458,30 @@
     },
     {
       "key": {
+        "uuid": "3000ce50_8dd3c160",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ec5bb70_2c755a27",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 5
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "539f495c_f417c96c",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 5
@@ -325,6 +499,24 @@
     },
     {
       "key": {
+        "uuid": "8dc19942_2f32181f",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "not valid any more...",
+      "parentUuid": "539f495c_f417c96c",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ccf6853d_03849bd2",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 5
@@ -339,6 +531,24 @@
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40e1f7e0_4e665a7c",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Using phal library, and returning EXIT_STATUS...",
+      "parentUuid": "ccf6853d_03849bd2",
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -362,6 +572,30 @@
       "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d6df529_938892e9",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-15T03:01:40Z",
+      "side": 1,
+      "message": "Replaced with isPrimaryIplDone()",
+      "parentUuid": "3839823d_efb9d864",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 5
+      },
+      "revId": "66f15fa59fb5682c5f2e6e28046a04b9488e5204",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
