@@ -13,6 +13,8 @@ namespace dump
 namespace util
 {
 
+constexpr auto SBE_DUMP_TIMEOUT = 4 * 60; // Timeout in seconds
+
 using DumpCreateParams =
     std::map<std::string, std::variant<std::string, uint64_t>>;
 
@@ -85,12 +87,16 @@ void setProperty(const std::string& interface, const std::string& propertyName,
     auto reply = bus.call(method);
 }
 
-/** @brief create dump directories and add error log id
- *  @param dumpPath Directory for collecting dump
- *  @errorLogId Error log id associated with dump
+/**
+ * Request SBE dump from the dump manager
+ *
+ * Request SBE dump from the dump manager and register a monitor for observing
+ * the dump progress.
+ *
+ * @param failingUnit The id of the proc containing failed SBE
+ * @param eid Error log id associated with dump
  */
-void prepareCollection(const std::filesystem::path& dumpPath,
-                       const std::string& errorLogId);
+void requestSBEDump(const uint32_t failingUnit, const uint32_t eid);
 
 } // namespace util
 } // namespace dump
