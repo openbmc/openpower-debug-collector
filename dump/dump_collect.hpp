@@ -8,6 +8,8 @@ extern "C"
 
 #include "dump_utils.hpp"
 
+#include <phal_exception.H>
+
 #include <cstdint>
 #include <filesystem>
 #include <future>
@@ -133,6 +135,10 @@ class SbeDumpCollector
     void writeDumpFile(const std::filesystem::path& path, const uint32_t id,
                        const uint8_t clockState, const uint8_t chipPos,
                        util::DumpDataPtr& dataPtr, const uint32_t len);
+
+    void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
+                              uint32_t id, uint8_t type, uint8_t clockState,
+                              uint64_t chipPos);
 };
 
 } // namespace sbe_chipop
