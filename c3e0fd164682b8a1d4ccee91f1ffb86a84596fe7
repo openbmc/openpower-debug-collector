@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5522e3d7_6d9eef55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "Update required : \"Watchdog timoeut support in SBE boot window.\"\nBased on ffdc data , wither collect sbe dump or create PEls. not always collect dump.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 40
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47f097da_80a978c7",
+        "filename": "watchdog/watchdog_handler.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "Need to handle dsiabled case , that is not error . \n constexpr auto ERROR_DUMP_DISABLED \u003d\n            \"xyz.openbmc_project.Dump.Create.Error.Disabled\";\n       if (e.name() \u003d\u003d ERROR_DUMP_DISABLED)\nLog info message instead of error.",
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a77210d_26dad863",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "Not required this condition check here. not amking an\u003dy sbe chipop here.",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 58
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c505990c_ae7f7a72",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "update log message with meaningful message , \"  another collection in progress, skipping  dump collection\"",
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "373b11c3_b141e59a",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "this should be dump specific timeout?",
+      "range": {
+        "startLine": 123,
+        "startChar": 33,
+        "endLine": 123,
+        "endChar": 40
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0915768_da07deb0",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "this is also c file move to line 8",
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0b8e13f_781b6df1",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "better define as a meaningfull name insetad of hard coding.",
+      "range": {
+        "startLine": 31,
+        "startChar": 31,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eee1677b_c818d12b",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-19T12:24:29Z",
+      "side": 1,
+      "message": "exception is not restricted to this function. .update the log message.",
+      "range": {
+        "startLine": 71,
+        "startChar": 25,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
