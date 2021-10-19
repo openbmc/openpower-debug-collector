@@ -19,6 +19,11 @@ constexpr auto SBE_CLOCK_ON = 0x1;
 // Collect the dumps with clock off
 constexpr auto SBE_CLOCK_OFF = 0x2;
 
+// Dump command class
+constexpr auto SBEFIFO_CMD_CLASS_DUMP = 0xAA00;
+
+// Get dump method
+constexpr auto SBEFIFO_CMD_GET_DUMP = 0x01;
 } // namespace SBE
 } // namespace dump
 } // namespace openpower
