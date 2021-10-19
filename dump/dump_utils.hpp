@@ -87,13 +87,6 @@ void setProperty(const std::string& interface, const std::string& propertyName,
     auto reply = bus.call(method);
 }
 
-/** @brief Method to find whether a processor is master
- *  @param[in] proc - pdbg_target for processor target
- *
- *  @return bool - true if master processor else false.
- */
-bool isMasterProc(struct pdbg_target* proc);
-
 } // namespace util
 } // namespace dump
 } // namespace openpower
