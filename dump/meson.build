@@ -43,6 +43,7 @@ dump_src = files(
     'dump_utils.cpp',
     'dump_collect.cpp',
     'dump_manager_main.cpp',
+    'create_pel.cpp',
 )
 
 executable('openpower-dump-manager',
