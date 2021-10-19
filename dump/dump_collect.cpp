@@ -79,7 +79,8 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                 .c_str());
         // For hostboot dump fail dump collection if the SBE on the primary
         // processor is not in the right state.
-        if ((util::isMasterProc(proc)) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        if ((openpower::phal::pdbg::isPrimaryProc(proc)) &&
+            (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>("Hostboot dump cannot be collected when primary "
                             "SBE is not in the required state");
@@ -102,7 +103,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                           dataPtr.getPtr(), &len)) < 0)
     {
         // Add a trace if the failure is on the secondary.
-        if ((!util::isMasterProc(proc)) &&
+        if ((!openpower::phal::pdbg::isPrimaryProc(proc)) &&
             (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>(
@@ -123,7 +124,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
     if (len == 0)
     {
         // Add a trace if no data from secondary
-        if ((!util::isMasterProc(proc)) &&
+        if ((!openpower::phal::pdbg::isPrimaryProc(proc)) &&
             (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::INFO>(
@@ -205,12 +206,8 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
     struct pdbg_target* target;
     bool failed = false;
 
-    if (!pdbg_targets_init(NULL))
-    {
-        log<level::ERR>("pdbg_targets_init failed");
-        throw std::runtime_error("pdbg target initialization failed");
-    }
-    pdbg_set_loglevel(PDBG_INFO);
+    // Initialize PDBG
+    openpower::phal::pdbg::init();
 
     std::vector<uint8_t> clockStates = {SBE::SBE_CLOCK_ON, SBE::SBE_CLOCK_OFF};
     for (auto cstate : clockStates)
@@ -223,17 +220,9 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
                 continue;
             }
 
-            ATTR_HWAS_STATE_Type hwasState;
-            if (DT_GET_PROP(ATTR_HWAS_STATE, target, hwasState))
+            if (!openpower::phal::pdbg::isTgtFunctional(target))
             {
-                log<level::ERR>("Attribute [ATTR_HWAS_STATE] get failed");
-                throw std::runtime_error(
-                    "Attribute [ATTR_HWAS_STATE] get failed");
-            }
-            // If the proc is not functional skip
-            if (!hwasState.functional)
-            {
-                if (util::isMasterProc(target))
+                if (openpower::phal::pdbg::isPrimaryProc(target))
                 {
                     // Primary processor is not functional
                     log<level::INFO>("Primary Processor is not functional");
