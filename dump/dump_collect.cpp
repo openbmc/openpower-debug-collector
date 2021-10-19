@@ -4,12 +4,13 @@ extern "C"
 #include <libpdbg_sbe.h>
 }
 
+#include "create_pel.hpp"
 #include "dump_collect.hpp"
 #include "sbe_consts.hpp"
+#include "sbe_type.hpp"
 
 #include <libphal.H>
-#include <sys/wait.h>
-#include <unistd.h>
+#include <phal_exception.H>
 
 #include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/log.hpp>
@@ -135,6 +136,18 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
     return futures;
 }
 
+void SbeDumpCollector::logErrorAndCreatePEL(
+    const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
+    SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType)
+{
+    std::string event = sbeTypeAttributes[sbeType].chipOpFailure;
+
+    openpower::dump::pel::FFDCData pelAdditionalData = {
+        {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
+
+    openpower::dump::pel::createSbeErrorPEL(event, sbeError, pelAdditionalData);
+}
+
 void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
                                           const std::filesystem::path& path,
                                           uint32_t id, uint8_t type,
@@ -142,10 +155,12 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
                                           uint64_t failingUnit)
 {
     auto chipPos = pdbg_target_index(chip);
+    SBETypes sbeType = getSBEType(chip);
     log<level::INFO>(
-        std::format("Collecting dump from proc({}): path({}) id({}) "
+        std::format("Collecting dump from ({})({}): path({}) id({}) "
                     "type({}) clockState({}) failingUnit({})",
-                    chipPos, path.string(), id, type, clockState, failingUnit)
+                    sbeTypeAttributes[sbeType].chipName, chipPos, path.string(),
+                    id, type, clockState, failingUnit)
             .c_str());
 
     util::DumpDataPtr dataPtr;
@@ -165,22 +180,28 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
         {
             // SBE is not ready to accept chip-ops,
             // Skip the request, no additional error handling required.
-            log<level::INFO>(std::format("Collect dump: Skipping ({}) dump({}) "
-                                         "on proc({}) clock state({})",
-                                         sbeError.what(), type, chipPos,
-                                         clockState)
-                                 .c_str());
+            log<level::INFO>(
+                std::format("Collect dump id({}): Skipping ({}) dump({}) "
+                            "on ({}) ({}) clock state({})",
+                            id, sbeError.what(), type,
+                            sbeTypeAttributes[sbeType].chipName, chipPos,
+                            clockState)
+                    .c_str());
             return;
         }
         log<level::ERR>(
             std::format(
-                "Error in collecting dump dump type({}), clockstate({}), proc "
-                "position({}), collectFastArray({}) error({})",
-                type, clockState, chipPos, collectFastArray, sbeError.what())
+                "Error in collecting dump id({}) type({}), clockstate({}), ({}) "
+                "position({}), error({})",
+                id, type, clockState, sbeTypeAttributes[sbeType].chipName,
+                chipPos, sbeError.what())
                 .c_str());
+        logErrorAndCreatePEL(sbeError, chipPos, SBEFIFO_CMD_CLASS_DUMP,
+                             SBEFIFO_CMD_GET_DUMP);
         return;
     }
-    writeDumpFile(path, id, clockState, 0, "proc", chipPos, dataPtr, len);
+    writeDumpFile(path, id, clockState, 0, sbeTypeAttributes[sbeType].chipName,
+                  chipPos, dataPtr, len);
 }
 
 void SbeDumpCollector::writeDumpFile(
@@ -253,6 +274,11 @@ uint8_t SbeDumpCollector::checkFastarrayCollectionNeeded(
              (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
                ? 1
                : 0;
+}
+
+SBETypes SbeDumpCollector::getSBEType(struct pdbg_target* chip)
+{
+    return SBETypes::PROC;
 }
 
 } // namespace sbe_chipop
