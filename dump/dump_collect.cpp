@@ -2,10 +2,13 @@ extern "C"
 {
 #include <libpdbg_sbe.h>
 }
+
+#include "create_pel.hpp"
 #include "dump_collect.hpp"
 
 #include <fmt/core.h>
 #include <libphal.H>
+#include <phal_exception.H>
 
 #include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/log.hpp>
@@ -124,6 +127,17 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                 "position({}), collectFastArray({}) error({})",
                 type, clockState, chipPos, collectFastArray, sbeError.what())
                 .c_str());
+
+        std::string event = "org.open_power.Processor.Error.SbeChipOpFailure";
+
+        openpower::dump::pel::FFDCData pelAdditionalData;
+        uint32_t cmd = SBE::SBEFIFO_CMD_CLASS_DUMP | SBE::SBEFIFO_CMD_GET_DUMP;
+
+        pelAdditionalData.emplace_back("SRC6",
+                                       std::to_string((chipPos << 16) | cmd));
+
+        openpower::dump::pel::createSbeErrorPEL(event, sbeError,
+                                                pelAdditionalData);
         return;
     }
     writeDumpFile(path, id, clockState, chipPos, dataPtr, len);
