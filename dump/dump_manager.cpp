@@ -69,7 +69,8 @@ std::map<uint8_t, DumpTypeInfo> dumpInfo = {
     {SBE::SBE_DUMP_TYPE_SBE,
      {SBE_DUMP_DBUS_OBJPATH, SBE_DUMP_COLLECTION_PATH}}};
 
-sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
+sdbusplus::message::object_path
+    Manager::createDump(util::DumpCreateParams params)
 {
     using namespace phosphor::logging;
     using InvalidArgument =
@@ -208,7 +209,7 @@ sdbusplus::message::object_path Manager::createDump(DumpCreateParams params)
     {
         // Pass empty create parameters since no additional parameters
         // are needed.
-        DumpCreateParams createDumpParams;
+        util::DumpCreateParams createDumpParams;
         auto dumpManager =
             util::getService(bus, DUMP_CREATE_IFACE, dumpInfo[type].dumpPath);
 
