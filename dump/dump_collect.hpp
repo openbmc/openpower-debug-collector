@@ -7,6 +7,9 @@ extern "C"
 }
 
 #include "dump_utils.hpp"
+#include "sbe_type.hpp"
+
+#include <phal_exception.H>
 
 #include <cstdint>
 #include <filesystem>
@@ -160,6 +163,33 @@ class SbeDumpCollector
                  (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
                    ? 1
                    : 0;
+    }
+
+    /**
+     * Logs an error and creates a PEL for SBE chip-op failures.
+     *
+     * @param sbeError - An error object encapsulating details about the SBE
+     * error.
+     * @param chipPos - The position of the chip where the error occurred.
+     * @param sbeType - The type of SBE, used to determine the event log
+     * message.
+     * @param cmdClass - The command class associated with the SBE operation.
+     * @param cmdType - The specific type of command within the command class.
+     *
+     */
+    void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
+                              uint64_t chipPos, SBETypes sbeType,
+                              uint32_t cmdClass, uint32_t cmdType);
+
+    /**
+     * Determines the type of SBE for a given chip target.
+     *
+     * @param chip - A pointer to a pdbg_target structure representing the chip.
+     * @return The SBE type for the given chip target.
+     */
+    inline SBETypes getSBEType(struct pdbg_target* chip)
+    {
+        return SBETypes::PROC;
     }
 };
 
