@@ -104,13 +104,12 @@ void collectDumpFromSBE(struct pdbg_target* proc,
         openpower::dump::pel::createSbeErrorPEL(event, sbeError,
                                                 pelAdditionalData);
 
-        if (primaryProc) &&
-            (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
-            {
-                log<level::ERR>("Hostboot dump collection failed on primary, "
-                                "aborting colllection");
-                throw;
-            }
+        if ((primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        {
+            log<level::ERR>("Hostboot dump collection failed on primary, "
+                            "aborting colllection");
+            throw;
+        }
         return;
     }
 
