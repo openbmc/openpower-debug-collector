@@ -161,12 +161,36 @@ void SbeDumpCollector::logErrorAndCreatePEL(
             .c_str());
 
     std::string event = "org.open_power.Processor.Error.SbeChipOpFailure";
+    auto dumpIsRequired = false;
+
+    if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
+    {
+        event = "org.open_power.Processor.Error.SbeChipOpTimeout";
+        dumpIsRequired = true;
+    }
 
     openpower::dump::pel::FFDCData pelAdditionalData = {
         {"SRC6", std::to_string((chipPos << 16) | (SBEFIFO_CMD_CLASS_DUMP |
                                                    SBEFIFO_CMD_GET_DUMP))}};
 
-    openpower::dump::pel::createSbeErrorPEL(event, sbeError, pelAdditionalData);
+    auto logId = openpower::dump::pel::createSbeErrorPEL(event, sbeError,
+                                                         pelAdditionalData);
+
+    if (dumpIsRequired)
+    {
+        // Request SBE Dump
+        try
+        {
+            util::requestSBEDump(chipPos, logId);
+        }
+        catch (const std::exception& e)
+        {
+            log<level::ERR>(
+                std::format("SBE Dump request failed, proc({}) error({})",
+                            chipPos, e.what())
+                    .c_str());
+        }
+    }
 }
 
 void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* proc,
