@@ -138,17 +138,38 @@ void SbeDumpCollector::logErrorAndCreatePEL(
     try
     {
         std::string event = sbeTypeAttributes.at(sbeType).chipOpFailure;
+        auto dumpIsRequired = false;
+
+        if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
+        {
+            event = sbeTypeAttributes.at(sbeType).chipOpTimeout;
+            dumpIsRequired = true;
+        }
 
         openpower::dump::pel::FFDCData pelAdditionalData = {
             {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
 
         openpower::dump::pel::createSbeErrorPEL(event, sbeError,
                                                 pelAdditionalData);
+        auto logId = openpower::dump::pel::createSbeErrorPEL(event, sbeError,
+                                                             pelAdditionalData);
+
+        // Request SBE Dump if required
+        if (dumpIsRequired)
+        {
+            util::requestSBEDump(chipPos, logId, sbeType);
+        }
     }
     catch (const std::out_of_range& e)
     {
         lg2::error("Unknown SBE Type({SBETYPE}) ErrorMsg({ERROR})", "SBETYPE",
                    sbeType, "ERROR", e);
+    }
+    catch (const std::exception& e)
+    {
+        lg2::error("SBE Dump request failed, chip position({CHIPPOS}), "
+                   "Error: {ERROR}",
+                   "CHIPPOS", chipPos, "ERROR", e);
     }
 }
 
@@ -192,11 +213,14 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
         }
 
         lg2::error("Error in collecting dump dump type({TYPE}), "
-                   "clockstate({CLOCKSTATE}), proc position({PROC}), "
+                   "clockstate({CLOCKSTATE}), chip type({CHIPTYPE}) "
+                   "position({POSITION}), "
                    "collectFastArray({COLLECTFASTARRAY}) error({ERROR})",
-                   "TYPE", type, "CLOCKSTATE", clockState, "PROC", chipPos,
-                   "COLLECTFASTARRAY", collectFastArray, "ERROR", sbeError);
-
+                   "TYPE", type, "CLOCKSTATE", clockState, "CHIPTYPE", chipName,
+                   "POSITION", chipPos, "COLLECTFASTARRAY", collectFastArray,
+                   "ERROR", sbeError);
+        logErrorAndCreatePEL(sbeError, chipPos, sbeType, SBEFIFO_CMD_CLASS_DUMP,
+                             SBEFIFO_CMD_GET_DUMP);
         return;
     }
     writeDumpFile(path, id, clockState, 0, chipName, chipPos, dataPtr, len);
