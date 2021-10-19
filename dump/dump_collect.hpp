@@ -6,9 +6,8 @@ extern "C"
 #include <libpdbg_sbe.h>
 }
 
-#include "sbe_type.hpp"
-
 #include "dump_utils.hpp"
+#include "sbe_type.hpp"
 
 #include <phal_exception.H>
 
@@ -147,10 +146,10 @@ class SbeDumpCollector
                                            const uint8_t chipPos);
 
     void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
-                              uint64_t chipPos, SBETypes sbeType, uint32_t cmdClass,
-                              uint32_t cmdType)
-    
-    SBETypes getSBEType(struct pdbg_target* chip);
+                              uint64_t chipPos, SBETypes sbeType,
+                              uint32_t cmdClass, uint32_t cmdType)
+
+        SBETypes getSBEType(struct pdbg_target* chip);
 };
 
 } // namespace sbe_chipop
