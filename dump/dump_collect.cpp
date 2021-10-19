@@ -79,7 +79,8 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                 .c_str());
         // For hostboot dump fail dump collection if the SBE on the primary
         // processor is not in the right state.
-        if ((util::isMasterProc(proc)) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        if ((openpower::phal::pdbg::isPrimaryProc(proc)) &&
+            (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>("Hostboot dump cannot be collected when primary "
                             "SBE is not in the required state");
@@ -102,7 +103,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                           dataPtr.getPtr(), &len)) < 0)
     {
         // Add a trace if the failure is on the secondary.
-        if ((!util::isMasterProc(proc)) &&
+        if ((!openpower::phal::pdbg::isPrimaryProc(proc)) &&
             (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>(
@@ -123,7 +124,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
     if (len == 0)
     {
         // Add a trace if no data from secondary
-        if ((!util::isMasterProc(proc)) &&
+        if ((!openpower::phal::pdbg::isPrimaryProc(proc)) &&
             (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::INFO>(
