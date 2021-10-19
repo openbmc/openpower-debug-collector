@@ -150,6 +150,13 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                 .c_str());
 
         std::string event = "org.open_power.Processor.Error.SbeChipOpFailure";
+        auto dumpIsRequired = false;
+
+        if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
+        {
+            event = "org.open_power.Processor.Error.SbeChipOpTimeout";
+            dumpIsRequired = true;
+        }
 
         openpower::dump::pel::FFDCData pelAdditionalData;
         uint32_t cmd = SBE::SBEFIFO_CMD_CLASS_DUMP | SBE::SBEFIFO_CMD_GET_DUMP;
@@ -157,8 +164,25 @@ void collectDumpFromSBE(struct pdbg_target* proc,
         pelAdditionalData.emplace_back("SRC6",
                                        std::to_string((chipPos << 16) | cmd));
 
-        openpower::dump::pel::createSbeErrorPEL(event, sbeError,
-                                                pelAdditionalData);
+        auto logId = openpower::dump::pel::createSbeErrorPEL(event, sbeError,
+                                                             pelAdditionalData);
+
+        if (dumpIsRequired)
+        {
+            // Request SBE Dump
+            try
+            {
+                util::requestSBEDump(chipPos, logId);
+            }
+            catch (const std::exception& e)
+            {
+                log<level::ERR>(
+                    fmt::format("SBE Dump request failed, proc({}) error({})",
+                                chipPos, e.what())
+                        .c_str());
+            }
+        }
+
         if ((primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>("Hostboot dump collection failed on primary, "
