@@ -1,5 +1,7 @@
 #pragma once
 
+#include "sbe_type.hpp"
+
 #include <sdbusplus/server.hpp>
 
 #include <filesystem>
@@ -8,6 +10,8 @@
 #include <variant>
 namespace openpower::dump::util
 {
+
+constexpr auto SBE_DUMP_TIMEOUT = 4 * 60; // Timeout in seconds
 
 using DumpCreateParams =
     std::map<std::string, std::variant<std::string, uint64_t>>;
@@ -80,5 +84,18 @@ void setProperty(const std::string& interface, const std::string& propertyName,
     method.append(interface, propertyName, value);
     auto reply = bus.call(method);
 }
+
+/**
+ * Request SBE dump from the dump manager
+ *
+ * Request SBE dump from the dump manager and register a monitor for observing
+ * the dump progress.
+ *
+ * @param failingUnit The id of the proc containing failed SBE
+ * @param eid Error log id associated with dump
+ * @param sbeType Type of the SBE
+ */
+void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
+                    SBETypes sbeType);
 
 } // namespace openpower::dump::util
