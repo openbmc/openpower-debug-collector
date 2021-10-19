@@ -65,6 +65,19 @@ void collectDumpFromSBE(struct pdbg_target* proc,
         throw std::runtime_error("No valid pib target found");
     }
 
+    bool primaryProc = false;
+    try
+    {
+        primaryProc = openpower::phal::pdbg::isPrimaryProc(proc);
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(
+            fmt::format("Error checking for primary proc error({})", e.what())
+                .c_str());
+        // Attempt to collect the dump
+    }
+
     try
     {
         openpower::phal::sbe::validateSBEState(proc);
@@ -79,7 +92,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                 .c_str());
         // For hostboot dump fail dump collection if the SBE on the primary
         // processor is not in the right state.
-        if ((util::isMasterProc(proc)) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        if ((primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>("Hostboot dump cannot be collected when primary "
                             "SBE is not in the required state");
@@ -102,8 +115,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                           dataPtr.getPtr(), &len)) < 0)
     {
         // Add a trace if the failure is on the secondary.
-        if ((!util::isMasterProc(proc)) &&
-            (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        if ((!primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::ERR>(
                 fmt::format("Error in collecting dump from "
@@ -123,8 +135,7 @@ void collectDumpFromSBE(struct pdbg_target* proc,
     if (len == 0)
     {
         // Add a trace if no data from secondary
-        if ((!util::isMasterProc(proc)) &&
-            (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        if ((!primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
             log<level::INFO>(
                 fmt::format("No hostboot dump recieved from secondary SBE, "
@@ -205,12 +216,17 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
     struct pdbg_target* target;
     bool failed = false;
 
-    if (!pdbg_targets_init(NULL))
+    // Initialize PDBG
+    try
     {
-        log<level::ERR>("pdbg_targets_init failed");
-        throw std::runtime_error("pdbg target initialization failed");
+        openpower::phal::pdbg::init();
     }
-    pdbg_set_loglevel(PDBG_INFO);
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(
+            fmt::format("PDBG init failed error({})", e.what()).c_str());
+        throw;
+    }
 
     std::vector<uint8_t> clockStates = {SBE::SBE_CLOCK_ON, SBE::SBE_CLOCK_OFF};
     for (auto cstate : clockStates)
@@ -223,17 +239,24 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
                 continue;
             }
 
-            ATTR_HWAS_STATE_Type hwasState;
-            if (DT_GET_PROP(ATTR_HWAS_STATE, target, hwasState))
+            bool primaryProc = false;
+            try
             {
-                log<level::ERR>("Attribute [ATTR_HWAS_STATE] get failed");
-                throw std::runtime_error(
-                    "Attribute [ATTR_HWAS_STATE] get failed");
+                primaryProc = openpower::phal::pdbg::isPrimaryProc(target);
             }
-            // If the proc is not functional skip
-            if (!hwasState.functional)
+            catch (const std::exception& e)
             {
-                if (util::isMasterProc(target))
+                log<level::ERR>(
+                    fmt::format(
+                        "Error while checking for primary proc error({})",
+                        e.what())
+                        .c_str());
+                throw;
+            }
+
+            if (!openpower::phal::pdbg::isTgtFunctional(target))
+            {
+                if (primaryProc)
                 {
                     // Primary processor is not functional
                     log<level::INFO>("Primary Processor is not functional");
