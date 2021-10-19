@@ -7,12 +7,14 @@ extern "C"
 
 #include "attributes_info.H"
 
+#include "create_pel.hpp"
 #include "dump_collect.hpp"
 #include "dump_utils.hpp"
 #include "sbe_consts.hpp"
 
 #include <fmt/core.h>
 #include <libphal.H>
+#include <phal_exception.H>
 #include <sys/wait.h>
 #include <unistd.h>
 
@@ -46,25 +48,6 @@ void collectDumpFromSBE(struct pdbg_target* proc,
     using namespace sdbusplus::xyz::openbmc_project::Common::Error;
     namespace fileError = sdbusplus::xyz::openbmc_project::Common::File::Error;
 
-    struct pdbg_target* pib = NULL;
-    pdbg_for_each_target("pib", proc, pib)
-    {
-        if (pdbg_target_probe(pib) != PDBG_TARGET_ENABLED)
-        {
-            continue;
-        }
-        break;
-    }
-
-    if (pib == NULL)
-    {
-        log<level::ERR>(fmt::format("No valid PIB target found dump type({}), "
-                                    "clockstate({}), proc position({}",
-                                    type, clockState, chipPos)
-                            .c_str());
-        throw std::runtime_error("No valid pib target found");
-    }
-
     bool primaryProc = false;
     try
     {
@@ -78,31 +61,6 @@ void collectDumpFromSBE(struct pdbg_target* proc,
         // Attempt to collect the dump
     }
 
-    try
-    {
-        openpower::phal::sbe::validateSBEState(proc);
-    }
-    catch (const openpower::phal::sbeError_t& e)
-    {
-        log<level::ERR>(
-            fmt::format(
-                "SBE Validation failed, cannot be used for collecting dump "
-                "dump type({}), clockstate({}), proc position({}) error({})",
-                type, clockState, chipPos, e.what())
-                .c_str());
-        // For hostboot dump fail dump collection if the SBE on the primary
-        // processor is not in the right state.
-        if ((primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
-        {
-            log<level::ERR>("Hostboot dump cannot be collected when primary "
-                            "SBE is not in the required state");
-            throw;
-        }
-        // Skip the collection from this SBE
-        return;
-    }
-
-    int error = 0;
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;
 
@@ -111,45 +69,49 @@ void collectDumpFromSBE(struct pdbg_target* proc,
             "Collecting dump type({}), clockstate({}), proc position({})", type,
             clockState, chipPos)
             .c_str());
-    if ((error = sbe_dump(pib, type, clockState, collectFastArray,
-                          dataPtr.getPtr(), &len)) < 0)
-    {
-        // Add a trace if the failure is on the secondary.
-        if ((!primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
-        {
-            log<level::ERR>(
-                fmt::format("Error in collecting dump from "
-                            "secondary SBE, chip_position({}) skipping",
-                            chipPos)
-                    .c_str());
-            return;
-        }
-        log<level::ERR>(
-            fmt::format("Failed to collect dump, chip_position({})", chipPos)
-                .c_str());
-        // TODO Create a PEL in the future for this failure case.
-        throw std::system_error(error, std::generic_category(),
-                                "Failed to collect dump from SBE");
-    }
 
-    if (len == 0)
+    try
     {
-        // Add a trace if no data from secondary
-        if ((!primaryProc) && (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+        openpower::phal::sbe::getDump(proc, type, clockState, collectFastArray,
+                                      dataPtr.getPtr(), &len);
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
         {
-            log<level::INFO>(
-                fmt::format("No hostboot dump recieved from secondary SBE, "
-                            "skipping, chip_position({})",
-                            chipPos)
-                    .c_str());
+            // SBE is not ready to accept chip-ops,
+            // Skip the request, no additional error handling required.
+            log<level::INFO>(fmt::format("Collect dump: Skipping ({}) dump({}) "
+                                         "on proc({}) clock state({})",
+                                         sbeError.what(), type, chipPos,
+                                         clockState)
+                                 .c_str());
             return;
         }
         log<level::ERR>(
             fmt::format(
-                "No data returned while collecting the dump chip_position({})",
-                chipPos)
+                "Error in collecting dump dump type({}), clockstate({}), proc "
+                "position({}), collectFastArray({}) error({})",
+                type, clockState, chipPos, collectFastArray, sbeError.what())
                 .c_str());
-        throw std::runtime_error("No data returned while collecting the dump");
+        std::string event = "org.open_power.Processor.Error.SbeChipOpFailure";
+
+        openpower::dump::pel::FFDCData pelAdditionalData;
+        uint32_t cmd = SBE::SBEFIFO_CMD_CLASS_DUMP | SBE::SBEFIFO_CMD_GET_DUMP;
+        pelAdditionalData.emplace_back("SRC6",
+                                       std::to_string((chipPos << 16) | cmd));
+        openpower::dump::pel::createSbeErrorPEL(event, sbeError,
+                                                pelAdditionalData);
+
+        if (primaryProc) &&
+            (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
+            {
+                log<level::ERR>("Hostboot dump collection failed on primary, "
+                                "aborting colllection");
+                throw;
+            }
+        return;
     }
 
     // Filename format: <dump_id>.SbeDataClocks<On/Off>.node0.proc<number>
