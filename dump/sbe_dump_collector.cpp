@@ -4,12 +4,13 @@ extern "C"
 #include <libpdbg_sbe.h>
 }
 
+#include "create_pel.hpp"
 #include "sbe_consts.hpp"
 #include "sbe_dump_collector.hpp"
+#include "sbe_type.hpp"
 
 #include <libphal.H>
-#include <sys/wait.h>
-#include <unistd.h>
+#include <phal_exception.H>
 
 #include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/lg2.hpp>
@@ -130,6 +131,27 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
     return futures;
 }
 
+void SbeDumpCollector::logErrorAndCreatePEL(
+    const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
+    SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType)
+{
+    try
+    {
+        std::string event = sbeTypeAttributes.at(sbeType).chipOpFailure;
+
+        openpower::dump::pel::FFDCData pelAdditionalData = {
+            {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
+
+        openpower::dump::pel::createSbeErrorPEL(event, sbeError,
+                                                pelAdditionalData);
+    }
+    catch (const std::out_of_range& e)
+    {
+        lg2::error("Unknown SBE Type({SBETYPE}) ErrorMsg({ERROR})", "SBETYPE",
+                   sbeType, "ERROR", e);
+    }
+}
+
 void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
                                           const std::filesystem::path& path,
                                           uint32_t id, uint8_t type,
@@ -137,6 +159,8 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
                                           uint64_t failingUnit)
 {
     auto chipPos = pdbg_target_index(chip);
+    SBETypes sbeType = getSBEType(chip);
+    auto chipName = sbeTypeAttributes.at(sbeType).chipName;
     lg2::info(
         "Collecting dump from proc({PROC}): path({PATH}) id({ID}) "
         "type({TYPE}) clockState({CLOCKSTATE}) failingUnit({FAILINGUNIT})",
@@ -175,13 +199,14 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
 
         return;
     }
-    writeDumpFile(path, id, clockState, 0, "proc", chipPos, dataPtr, len);
+    writeDumpFile(path, id, clockState, 0, chipName, chipPos, dataPtr, len);
 }
 
 void SbeDumpCollector::writeDumpFile(
     const std::filesystem::path& path, const uint32_t id,
-    const uint8_t clockState, const uint8_t nodeNum, std::string chipName,
-    const uint8_t chipPos, util::DumpDataPtr& dataPtr, const uint32_t len)
+    const uint8_t clockState, const uint8_t nodeNum,
+    const std::string& chipName, const uint8_t chipPos,
+    util::DumpDataPtr& dataPtr, const uint32_t len)
 {
     using namespace sdbusplus::xyz::openbmc_project::Common::Error;
     namespace fileError = sdbusplus::xyz::openbmc_project::Common::File::Error;

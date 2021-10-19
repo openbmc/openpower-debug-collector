@@ -16,6 +16,8 @@ collect_src = files(
     'sbe_dump_collector.cpp',
     'dump_collect_main.cpp',
     'dump_utils.cpp',
+    'create_pel.cpp',
+    'sbe_type.cpp',
 )
 
 executable('dump-collect',
