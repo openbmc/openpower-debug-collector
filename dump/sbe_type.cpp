@@ -6,8 +6,11 @@ namespace dump
 {
 
 std::map<SBETypes, SBEAttributes> sbeTypeAttributes = {
+
     {SBETypes::PROC,
-     {"proc", "org.open_power.Processor.Error.SbeChipOpFailure"}}};
+     {"proc", "/xyz/openbmc_project/dump/sbe",
+      "org.open_power.Processor.Error.SbeChipOpTimeout",
+      "org.open_power.Processor.Error.SbeChipOpFailure"}}};
 
 } // namespace dump
 } // namespace openpower
