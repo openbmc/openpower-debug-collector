@@ -21,6 +21,12 @@ constexpr auto SBE_CLOCK_OFF = 0x2;
 
 // SBE MSG Register to know whether SBE is booted
 constexpr auto SBE_MSG_REGISTER = 0x2809;
+
+// Dump command class
+constexpr auto SBEFIFO_CMD_CLASS_DUMP = 0xAA00;
+
+// Get dump method
+constexpr auto SBEFIFO_CMD_GET_DUMP = 0x01;
 } // namespace SBE
 } // namespace dump
 } // namespace openpower
