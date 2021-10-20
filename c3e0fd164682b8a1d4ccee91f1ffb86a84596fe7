@@ -309,6 +309,30 @@
     },
     {
       "key": {
+        "uuid": "2683182d_61127f3e",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-20T17:32:46Z",
+      "side": 1,
+      "message": "@andrewg can comment on this , for me looks like this can impact overall ipl time , for sbe failure scenario. The timeout usally happens, due to issue with dump application crashs. I prefer to have shorter timeout for sbe dump collection case.",
+      "parentUuid": "78c8d8f6_4a5772f7",
+      "range": {
+        "startLine": 123,
+        "startChar": 33,
+        "endLine": 123,
+        "endChar": 40
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0915768_da07deb0",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 10
