@@ -155,6 +155,30 @@
     },
     {
       "key": {
+        "uuid": "d4e0c8b4_8674aca1",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-20T16:46:14Z",
+      "side": 1,
+      "message": "Added it back...",
+      "parentUuid": "d1061c89_003769d0",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 58
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c505990c_ae7f7a72",
         "filename": "watchdog/watchdog_main.cpp",
         "patchSetId": 10
@@ -249,6 +273,30 @@
       "side": 1,
       "message": "the value seems to be high 25 minutes , usually sbe dump takes less than minute.",
       "parentUuid": "7d4995be_b1059a51",
+      "range": {
+        "startLine": 123,
+        "startChar": 33,
+        "endLine": 123,
+        "endChar": 40
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78c8d8f6_4a5772f7",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2021-10-20T16:46:14Z",
+      "side": 1,
+      "message": "This timeout value is for both SBE dump and Hostboot dump, and can be passed as command line argument. Per @Dhruv the max timeout value is 20 minutes for Hostboot dump collection. I added another 5 minutes to it to be safe. If SBE dump takes less than a minute, it will come out immediately after the dump is collected - doesn\u0027t wait 25 minutes for every collection. So, I don\u0027t see it as a problem in general unless something really went bad and the status did not change in which case it waits for 25 minutes.\n\nIf you want me to add hardcoded value for SBE specific dump, I can do that. Just let me know how long it should wait for SBE dump collection. \n\nI prefer to leave it the way it is now, but open make the change...",
+      "parentUuid": "4cd6ff7e_ed840c70",
       "range": {
         "startLine": 123,
         "startChar": 33,
