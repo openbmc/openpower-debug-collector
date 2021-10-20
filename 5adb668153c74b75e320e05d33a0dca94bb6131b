@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f94d046e_b3947869",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-20T09:31:38Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "5adb668153c74b75e320e05d33a0dca94bb6131b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a11d485_dd3f8755",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-20T09:31:38Z",
+      "side": 1,
+      "message": "function failure trigger pdbg exception, in this case user gets pdbg error , is this expected?\nsince this function is used mutiple places, beginging of this function you can get processor typoe and resue the type",
+      "range": {
+        "startLine": 82,
+        "startChar": 36,
+        "endLine": 82,
+        "endChar": 49
+      },
+      "revId": "5adb668153c74b75e320e05d33a0dca94bb6131b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "229421c9_d99de109",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2021-10-20T09:31:38Z",
+      "side": 1,
+      "message": "it is better to get some log message for failure case . to just indicates , the failure thrown from his function.",
+      "revId": "5adb668153c74b75e320e05d33a0dca94bb6131b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
