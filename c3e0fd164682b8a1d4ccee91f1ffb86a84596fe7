@@ -333,6 +333,30 @@
     },
     {
       "key": {
+        "uuid": "7020ab56_adabc5c9",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2021-10-20T17:36:02Z",
+      "side": 1,
+      "message": "I prefer big timeouts vs. constantly increasing them as new use cases and new dump content is added. Is there a better number that accounts for all of that Jayanth on SBE dumps? I don\u0027t really mind the IPL hang because we\u0027ve already hit 2 failures, an SBE fail, and a failure collecting the SBE dump.",
+      "parentUuid": "2683182d_61127f3e",
+      "range": {
+        "startLine": 123,
+        "startChar": 33,
+        "endLine": 123,
+        "endChar": 40
+      },
+      "revId": "c3e0fd164682b8a1d4ccee91f1ffb86a84596fe7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a0915768_da07deb0",
         "filename": "watchdog_timeout.cpp",
         "patchSetId": 10
