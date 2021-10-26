@@ -41,13 +41,26 @@ configure_file(configuration : dump_conf_data,
 dump_src = files(
     'dump_manager.cpp',
     'dump_utils.cpp',
-    'dump_collect.cpp',
     'dump_manager_main.cpp',
+)
+
+collect_src = files(
+    'argument.cpp',
+    'dump_utils.cpp',
+    'dump_collect.cpp',
     'create_pel.cpp',
+    'dump_collect_main.cpp',
 )
 
 executable('openpower-dump-manager',
     dump_src,
+    dependencies: dump_deps,
+    implicit_include_directories: true,
+    install: true
+)
+
+executable('dump-collect',
+    collect_src,
     dependencies: dump_deps,
     implicit_include_directories: true,
     install: true
