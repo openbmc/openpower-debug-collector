@@ -230,6 +230,14 @@ sdbusplus::message::object_path
         dumpPath /= std::to_string(dumpParams.id);
         dumpPath /= OP_SBE_FILES_PATH;
         util::prepareCollection(dumpPath, std::to_string(dumpParams.eid));
+        execl("/usr/bin/dump-collect", "dump-collect", "--type",
+              std::to_string(dumpParams.dumpType).c_str(), "--id",
+              std::to_string(dumpParams.id).c_str(), "--path", dumpPath.c_str(),
+              "--failingunit", std::to_string(dumpParams.failingUnit).c_str(),
+              (char*)0);
+        log<level::ERR>(
+            fmt::format("Failed to start collection error({})", errno).c_str());
+        std::exit(EXIT_FAILURE);
     }
     else if (pid < 0)
     {
