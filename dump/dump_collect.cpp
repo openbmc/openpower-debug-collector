@@ -319,7 +319,8 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
         }
 
         // Exit if there is a critical failure and collection cannot continue
-        if (failed)
+        // or if the dump collection folder is empty return failure
+        if ((failed) || (std::filesystem::is_empty(path)))
         {
             log<level::ERR>("Failed to collect the dump");
             std::exit(EXIT_FAILURE);
