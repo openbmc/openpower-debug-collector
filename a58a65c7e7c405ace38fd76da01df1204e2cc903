@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b3f3f26_dd8da756",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-10-26T12:33:50Z",
+      "side": 1,
+      "message": "why are we changing the exception type here?  just re-throw the original?",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 64
+      },
+      "revId": "a58a65c7e7c405ace38fd76da01df1204e2cc903",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c5362c4_b909980d",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-10-26T12:33:50Z",
+      "side": 1,
+      "message": "what is the point of catching this and then rethrowing it?  Just let it propogate?",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 5
+      },
+      "revId": "a58a65c7e7c405ace38fd76da01df1204e2cc903",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
