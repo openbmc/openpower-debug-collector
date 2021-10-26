@@ -260,7 +260,15 @@ sdbusplus::message::object_path
         if ((type == SBE::SBE_DUMP_TYPE_HARDWARE) ||
             (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
-            sbe_chipop::collectDump(type, id, failingUnit, dumpPath);
+            execl("/usr/bin/dump-collect", "dump-collect", "--type",
+                  std::to_string(type).c_str(), "--id",
+                  std::to_string(id).c_str(), "--path", dumpPath.c_str(),
+                  "--failingunit", std::to_string(failingUnit).c_str(),
+                  (char*)0);
+            log<level::ERR>(
+                fmt::format("Failed to start collection error({})", errno)
+                    .c_str());
+            std::exit(EXIT_FAILURE);
         }
         else if ((type == SBE::SBE_DUMP_TYPE_SBE))
         {
