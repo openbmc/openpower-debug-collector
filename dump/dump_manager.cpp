@@ -256,7 +256,7 @@ sdbusplus::message::object_path
         dumpPath /= std::to_string(id);
         dumpPath /= OP_SBE_FILES_PATH;
 
-        prepareCollection(dumpPath, elogId);
+        util::prepareCollection(dumpPath, elogId);
         if ((type == SBE::SBE_DUMP_TYPE_HARDWARE) ||
             (type == SBE::SBE_DUMP_TYPE_HOSTBOOT))
         {
