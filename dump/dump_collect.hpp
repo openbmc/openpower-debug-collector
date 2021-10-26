@@ -40,13 +40,5 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                         const uint8_t type, const uint8_t clockState,
                         const uint8_t chipPos, const uint8_t collectFastArray);
 } // namespace sbe_chipop
-
-/** @brief create dump directories and add error log id
- *  @param dumpPath Directory for collecting dump
- *  @errorLogId Error log id associated with dump
- */
-void prepareCollection(const std::filesystem::path& dumpPath,
-                       const std::string& errorLogId);
-
 } // namespace dump
 } // namespace openpower

@@ -8,7 +8,11 @@ extern "C"
 
 #include <sdbusplus/server.hpp>
 
+#include <chrono>
+#include <filesystem>
+#include <fstream>
 #include <string>
+#include <system_error>
 
 namespace openpower
 {
@@ -102,6 +106,13 @@ void setProperty(const std::string& interface, const std::string& propertyName,
  * @param eid Error log id associated with dump
  */
 void requestSBEDump(const uint32_t failingUnit, const uint32_t eid);
+
+/** @brief create dump directories and add error log id
+ *  @param dumpPath Directory for collecting dump
+ *  @errorLogId Error log id associated with dump
+ */
+void prepareCollection(const std::filesystem::path& dumpPath,
+                       const std::string& errorLogId);
 
 } // namespace util
 } // namespace dump
