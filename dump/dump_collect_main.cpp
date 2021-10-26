@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 
     // Parse arguments
     std::string typeStr = std::move((options)["type"]);
-    if (typeStr == openpower::dump::util::ArgumentParser::empty_string)
+    if (typeStr.empty())
     {
         ExitWithError("type not specified", argv);
     }
@@ -36,14 +36,14 @@ int main(int argc, char** argv)
     }
 
     std::string idStr = std::move((options)["id"]);
-    if (idStr == openpower::dump::util::ArgumentParser::empty_string)
+    if (idStr.empty())
     {
         ExitWithError("Dump id is not provided", argv);
     }
     auto id = std::stoi(idStr);
 
     std::filesystem::path path = std::move((options)["path"]);
-    if (path == openpower::dump::util::ArgumentParser::empty_string)
+    if (path.empty())
     {
         ExitWithError("Collection path not specified.", argv);
     }

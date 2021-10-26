@@ -54,8 +54,8 @@ collect_src = files(
     'argument.cpp',
     'dump_utils.cpp',
     'dump_collect.cpp',
-    'dump_collect_main.cpp',
     'create_pel.cpp',
+    'dump_collect_main.cpp',
 )
 
 

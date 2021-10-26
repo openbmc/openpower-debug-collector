@@ -55,7 +55,7 @@ void ArgumentParser::usage(char** argv)
     std::cerr << "    --help            Print this menu\n";
     std::cerr << "    --type            type of dump\n";
     std::cerr
-        << "                      Valid types:0 - Hardware, 0 - Hostboot \n";
+        << "                      Valid types:0 - Hardware, 5 - Hostboot \n";
     std::cerr << "    --id              Id of the dump\n";
     std::cerr << "    --path            path to store dump\n";
     std::cerr << "    --failingunit     Id of the failing unit\n";
