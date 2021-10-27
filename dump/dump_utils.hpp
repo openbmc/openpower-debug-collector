@@ -2,6 +2,7 @@
 
 #include <sdbusplus/server.hpp>
 
+#include <filesystem>
 #include <map>
 #include <string>
 #include <variant>
@@ -50,6 +51,13 @@ void setProperty(const std::string& interface, const std::string& propertyName,
     method.append(interface, propertyName, value);
     auto reply = bus.call(method);
 }
+
+/** @brief create dump directories and add error log id
+ *  @param dumpPath Directory for collecting dump
+ *  @errorLogId Error log id associated with dump
+ */
+void prepareCollection(const std::filesystem::path& dumpPath,
+                       const std::string& errorLogId);
 
 } // namespace util
 } // namespace dump
