@@ -16,6 +16,39 @@ namespace util
 using DumpCreateParams =
     std::map<std::string, std::variant<std::string, uint64_t>>;
 
+/** @struct DumpPtr
+ * @brief a structure holding the data pointer
+ * @details This is a RAII container for the dump data
+ * returned by the SBE
+ */
+struct DumpDataPtr
+{
+  public:
+    /** @brief Destructor for the object, free the allocated memory.
+     */
+    ~DumpDataPtr()
+    {
+        // The memory is allocated using malloc
+        free(dataPtr);
+    }
+    /** @brief Returns the pointer to the data
+     */
+    uint8_t** getPtr()
+    {
+        return &dataPtr;
+    }
+    /** @brief Returns the stored data
+     */
+    uint8_t* getData()
+    {
+        return dataPtr;
+    }
+
+  private:
+    /** The pointer to the data */
+    uint8_t* dataPtr = nullptr;
+};
+
 /**
  * @brief Get DBUS service for input interface via mapper call
  *
