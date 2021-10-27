@@ -13,6 +13,7 @@ dump_deps = [
     phosphor_dbus_interfaces_dep,
     sdeventplus_dep,
     fmt_dep,
+    phosphorlogging,
 ]
 
 # Configuration header file(dump_config.h) generation
