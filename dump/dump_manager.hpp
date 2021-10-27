@@ -22,6 +22,7 @@ struct DumpParams
     uint8_t dumpType;     // Type of the dump
     uint64_t eid;         // Eid associated with dump
     uint64_t failingUnit; // Unit failed
+    uint32_t id;          // Dump id
 };
 
 using CreateIface = sdbusplus::server::object::object<
@@ -70,6 +71,10 @@ class Manager : public CreateIface
      */
     void getParams(const util::DumpCreateParams& params, DumpParams& dparams);
 
+<<<<<<< HEAD
+=======
+    sdbusplus::message::object_path createDumpEntry(DumpParams& dparams);
+>>>>>>> 7ba2bac... Add support for creating dump entry
     /** @brief sdbusplus DBus bus connection. */
     sdbusplus::bus::bus& bus;
 
