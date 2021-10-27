@@ -11,9 +11,16 @@ extern "C"
 #include <sys/wait.h>
 #include <unistd.h>
 
+#include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/log.hpp>
+#include <sbe_consts.hpp>
+#include <xyz/openbmc_project/Common/File/error.hpp>
+#include <xyz/openbmc_project/Common/error.hpp>
 
+#include <cstdint>
+#include <filesystem>
 #include <format>
+#include <fstream>
 #include <stdexcept>
 
 namespace openpower
@@ -60,7 +67,17 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         // Wait for all asynchronous tasks to complete
         for (auto& future : futures)
         {
-            future.wait();
+            try
+            {
+                future.wait();
+            }
+            catch (const std::exception& e)
+            {
+                log<level::ERR>(
+                    std::format("Failed to collect dump from SBE ErrorMsg({})",
+                                e.what())
+                        .c_str());
+            }
         }
         log<level::INFO>(
             std::format(
@@ -68,7 +85,11 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
                 cstate, type, id, failingUnit, path.string())
                 .c_str());
     }
-
+    if (std::filesystem::is_empty(path))
+    {
+        log<level::ERR>("Failed to collect the dump");
+        throw std::runtime_error("Failed to collect the dump");
+    }
     log<level::INFO>("Dump collection completed");
 }
 
@@ -92,12 +113,21 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
             continue;
         }
 
-        // Launch an asynchronous task instead of forking
         auto future =
             std::async(std::launch::async,
                        [this, target, path, id, type, cstate, failingUnit]() {
-            this->collectDumpFromSBE(target, path, id, type, cstate,
-                                     failingUnit);
+            try
+            {
+                this->collectDumpFromSBE(target, path, id, type, cstate,
+                                         failingUnit);
+            }
+            catch (const std::exception& e)
+            {
+                log<level::ERR>(
+                    std::format("Failed to collect dump from SBE on Proc-({})",
+                                pdbg_target_index(target))
+                        .c_str());
+            }
         });
 
         futures.push_back(std::move(future));
@@ -118,6 +148,112 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
                     "type({}) clockState({}) failingUnit({})",
                     chipPos, path.string(), id, type, clockState, failingUnit)
             .c_str());
+
+    util::DumpDataPtr dataPtr;
+    uint32_t len = 0;
+    uint8_t collectFastArray =
+        checkFastarrayCollectionNeeded(clockState, type, failingUnit, chipPos);
+
+    try
+    {
+        openpower::phal::sbe::getDump(chip, type, clockState, collectFastArray,
+                                      dataPtr.getPtr(), &len);
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            // SBE is not ready to accept chip-ops,
+            // Skip the request, no additional error handling required.
+            log<level::INFO>(std::format("Collect dump: Skipping ({}) dump({}) "
+                                         "on proc({}) clock state({})",
+                                         sbeError.what(), type, chipPos,
+                                         clockState)
+                                 .c_str());
+            return;
+        }
+        log<level::ERR>(
+            std::format(
+                "Error in collecting dump dump type({}), clockstate({}), proc "
+                "position({}), collectFastArray({}) error({})",
+                type, clockState, chipPos, collectFastArray, sbeError.what())
+                .c_str());
+        return;
+    }
+    writeDumpFile(path, id, clockState, 0, "proc", chipPos, dataPtr, len);
+}
+
+void SbeDumpCollector::writeDumpFile(
+    const std::filesystem::path& path, const uint32_t id,
+    const uint8_t clockState, const uint8_t nodeNum, std::string chipName,
+    const uint8_t chipPos, util::DumpDataPtr& dataPtr, const uint32_t len)
+{
+    using namespace sdbusplus::xyz::openbmc_project::Common::Error;
+    namespace fileError = sdbusplus::xyz::openbmc_project::Common::File::Error;
+
+    // Construct the filename
+    std::ostringstream filenameBuilder;
+    filenameBuilder << std::setw(8) << std::setfill('0') << id
+                    << ".SbeDataClocks"
+                    << (clockState == SBE_CLOCK_ON ? "On" : "Off") << ".node"
+                    << static_cast<int>(nodeNum) << "." << chipName
+                    << static_cast<int>(chipPos);
+
+    auto dumpPath = path / filenameBuilder.str();
+
+    // Attempt to open the file
+    std::ofstream outfile(dumpPath, std::ios::out | std::ios::binary);
+    if (!outfile)
+    {
+        using namespace sdbusplus::xyz::openbmc_project::Common::File::Error;
+        using metadata = xyz::openbmc_project::Common::File::Open;
+        // Unable to open the file for writing
+        auto err = errno;
+        log<level::ERR>(
+            std::format(
+                "Error opening file to write dump, errno({}), filepath({})",
+                err, dumpPath.string())
+                .c_str());
+        report<Open>(metadata::ERRNO(err), metadata::PATH(dumpPath.c_str()));
+        // Just return here, so that the dumps collected from other
+        // SBEs can be packaged.
+        return;
+    }
+
+    // Write to the file
+    try
+    {
+        outfile.write(reinterpret_cast<const char*>(dataPtr.getData()), len);
+        log<level::INFO>("Successfully wrote dump file",
+                         entry("PATH=%s", dumpPath.c_str()),
+                         entry("SIZE=%u", len));
+    }
+    catch (const std::ofstream::failure& oe)
+    {
+        using namespace sdbusplus::xyz::openbmc_project::Common::File::Error;
+        using metadata = xyz::openbmc_project::Common::File::Write;
+        log<level::ERR>(std::format("Failed to write to dump file, "
+                                    "errorMsg({}), error({}), filepath({})",
+                                    oe.what(), oe.code().value(),
+                                    dumpPath.string())
+                            .c_str());
+        report<Write>(metadata::ERRNO(oe.code().value()),
+                      metadata::PATH(dumpPath.c_str()));
+        // Just return here so dumps collected from other SBEs can be
+        // packaged.
+    }
+}
+
+uint8_t SbeDumpCollector::checkFastarrayCollectionNeeded(
+    const uint8_t clockState, const uint8_t type, uint64_t failingUnit,
+    const uint8_t chipPos)
+{
+    return (clockState == SBE_CLOCK_OFF &&
+            (type == SBE_DUMP_TYPE_HOSTBOOT ||
+             (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
+               ? 1
+               : 0;
 }
 
 } // namespace sbe_chipop
