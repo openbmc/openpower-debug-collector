@@ -6,6 +6,9 @@ extern "C"
 #include <libpdbg_sbe.h>
 }
 
+#include "dump_utils.hpp"
+#include "sbe_consts.hpp"
+
 #include <cstdint>
 #include <filesystem>
 #include <future>
@@ -114,6 +117,49 @@ class SbeDumpCollector
         uint8_t type, uint32_t id, const std::filesystem::path& path,
         uint64_t failingUnit, uint8_t cstate,
         const std::vector<struct pdbg_target*>& targets);
+
+    /** @brief This function creates the new dump file in dump file name
+     * format and then writes the contents into it.
+     *  @param path - Path to dump file
+     *  @param id - A unique id assigned to dump to be collected
+     *  @param clockState - Clock state, ON or Off
+     *  @param nodeNum - Node containing the chip
+     *  @param chipName - Name of the chip
+     *  @param chipPos - Chip position of the failing unit
+     *  @param dataPtr - Content to write to file
+     *  @param len - Length of the content
+     */
+    void writeDumpFile(const std::filesystem::path& path, const uint32_t id,
+                       const uint8_t clockState, const uint8_t nodeNum,
+                       std::string chipName, const uint8_t chipPos,
+                       util::DumpDataPtr& dataPtr, const uint32_t len);
+
+    /**
+     * @brief Determines if fastarray collection is needed based on dump type
+     * and unit.
+     *
+     * @param clockState The current state of the clock.
+     * @param type The type of the dump being collected.
+     * @param failingUnit The ID of the failing unit.
+     * @param chipPos The position of the chip for which the dump is being
+     * collected.
+     *
+     * @return uint8_t - Returns 1 if fastarray collection is needed, 0
+     * otherwise.
+     */
+    inline uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
+                                                  const uint8_t type,
+                                                  uint64_t failingUnit,
+                                                  const uint8_t chipPos) const
+    {
+        using namespace openpower::dump::SBE;
+
+        return (clockState == SBE_CLOCK_OFF &&
+                (type == SBE_DUMP_TYPE_HOSTBOOT ||
+                 (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
+                   ? 1
+                   : 0;
+    }
 };
 
 } // namespace openpower::dump::sbe_chipop
