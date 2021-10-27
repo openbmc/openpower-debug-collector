@@ -1,5 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+
 # Feature to enable hostboot dump collection when watchdog times out
 option('hostboot-dump-collection',
        type: 'feature',
        value: 'disabled',
        description : 'Enables hostboot dump collection')
+
+# Feature to enable the dump collection
+option('dump-collection', type: 'feature',
+       value : 'disabled',
+       description : 'Enables dump collection')
