@@ -20,6 +20,7 @@ constexpr auto MAX_ERROR_LOG_ID = 0xFFFFFFFF;
 constexpr auto MAX_FAILING_UNIT = 0x20;
 constexpr auto ERROR_DUMP_DISABLED =
     "xyz.openbmc_project.Dump.Create.Error.Disabled";
+constexpr auto OP_SBE_FILES_PATH = "plat_dump";
 
 /* @struct DumpTypeInfo
  * @brief to store basic info about different dump types
@@ -221,6 +222,21 @@ sdbusplus::message::object_path
 
     auto dumpEntry = createDumpEntry(dumpParams);
 
+    pid_t pid = fork();
+    if (pid == 0)
+    {
+        std::filesystem::path dumpPath(
+            dumpInfo[dumpParams.dumpType].dumpCollectionPath);
+        dumpPath /= std::to_string(dumpParams.id);
+        dumpPath /= OP_SBE_FILES_PATH;
+        util::prepareCollection(dumpPath, std::to_string(dumpParams.eid));
+    }
+    else if (pid < 0)
+    {
+        // Fork failed
+        log<level::ERR>("Failure in fork call");
+        throw std::runtime_error("Failure in fork call");
+    }
     return dumpEntry;
 }
 } // namespace dump
