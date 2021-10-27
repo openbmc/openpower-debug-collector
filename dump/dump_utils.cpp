@@ -8,6 +8,8 @@
 #include <xyz/openbmc_project/Common/File/error.hpp>
 
 #include <fstream>
+#include <phosphor-logging/log.hpp>
+
 #include <string>
 
 namespace openpower

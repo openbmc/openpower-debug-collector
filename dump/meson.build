@@ -31,6 +31,7 @@ configure_file(configuration : dump_conf_data,
 # source files
 dump_src = files(
     'dump_manager_main.cpp',
+    'dump_utils.cpp',
 )
 
 collect_src = files(
