@@ -1,5 +1,7 @@
 #pragma once
 
+#include "dump_utils.hpp"
+
 #include <filesystem>
 
 namespace openpower
@@ -9,6 +11,18 @@ namespace dump
 
 namespace sbe_chipop
 {
+/** @brief The function to write dump content to file
+ *  @param path - Path to dump file
+ *  @param id - A unique id assigned to dump to be collected
+ *  @clockState - Clock state, ON or Off
+ *  @param chipPos - Chip position of the failing unit
+ *  @param dataPtr - Content to write to file
+ *  @param len - Length of the content
+ */
+void writeDumpFile(const std::filesystem::path& path, const uint32_t id,
+                   const uint8_t clockState, const uint8_t chipPos,
+                   util::DumpDataPtr& dataPtr, const uint32_t len);
+
 /** @brief The function to orchestrate dump collection from different
  *  SBEs
  *  @param type - Type of the dump
