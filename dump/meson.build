@@ -29,7 +29,8 @@ configure_file(configuration : dump_conf_data,
 dump_src = files(
     'dump_manager_main.cpp',
     'dump_utils.cpp',
-    'dump_manager.cpp'
+    'dump_manager.cpp',
+    'argument.cpp',
 )
 
 executable('openpower-dump-manager',
