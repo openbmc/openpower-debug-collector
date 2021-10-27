@@ -22,6 +22,30 @@
       "revId": "8b5302cf1325317c32aab4a88ba08f7619f506cf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8323f5d_ae6cf659",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-10-27T10:52:41Z",
+      "side": 1,
+      "message": "yes.. to stop the collection",
+      "parentUuid": "e7e1b169_b339a6a7",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 9
+      },
+      "revId": "8b5302cf1325317c32aab4a88ba08f7619f506cf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
