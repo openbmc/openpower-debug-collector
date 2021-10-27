@@ -48,6 +48,10 @@ endif
 
 configure_file(output: 'config.h', configuration: conf_data)
 
+if get_option('dump-collection').enabled()
+    subdir('dump')
+endif
+
 deps = [
     CLI11_dep,
     sdbusplus_dep,
