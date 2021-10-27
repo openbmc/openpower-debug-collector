@@ -11,6 +11,7 @@ dump_deps = [
     phosphor_dbus_interfaces_dep,
     cxx.find_library('sdeventplus'),
     fmt_dep,
+    phosphorlogging,
 ]
 
 # Configuration header file(dump_config.h) generation
