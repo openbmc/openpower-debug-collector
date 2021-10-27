@@ -21,6 +21,9 @@ constexpr auto MAX_FAILING_UNIT = 0x20;
 constexpr auto ERROR_DUMP_DISABLED =
     "xyz.openbmc_project.Dump.Create.Error.Disabled";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
+constexpr auto DUMP_NOTIFY_IFACE = "xyz.openbmc_project.Dump.NewDump";
+constexpr auto DUMP_PROGRESS_IFACE = "xyz.openbmc_project.Common.Progress";
+constexpr auto STATUS_PROP = "Status";
 
 /* @struct DumpTypeInfo
  * @brief to store basic info about different dump types
@@ -237,6 +240,79 @@ sdbusplus::message::object_path
         log<level::ERR>("Failure in fork call");
         throw std::runtime_error("Failure in fork call");
     }
+    else
+    {
+        using InternalFailure =
+            sdbusplus::xyz::openbmc_project::Common::Error::InternalFailure;
+        using namespace sdeventplus::source;
+        Child::Callback callback = [this, dumpParams,
+                                    dumpEntry](Child& eventSource,
+                                               const siginfo_t* si) {
+            eventSource.set_enabled(Enabled::On);
+            if (si->si_status == 0)
+            {
+                log<level::INFO>("Dump collected, initiating packaging");
+                auto dumpManager =
+                    util::getService(bus, DUMP_NOTIFY_IFACE,
+                                     dumpInfo[dumpParams.dumpType].dumpPath);
+                auto method = bus.new_method_call(
+                    dumpManager.c_str(),
+                    dumpInfo[dumpParams.dumpType].dumpPath.c_str(),
+                    DUMP_NOTIFY_IFACE, "Notify");
+                method.append(static_cast<uint32_t>(dumpParams.id),
+                              static_cast<uint64_t>(0));
+                bus.call_noreply(method);
+            }
+            else
+            {
+                log<level::ERR>("Dump collection failed, updating status");
+                util::setProperty(DUMP_PROGRESS_IFACE, STATUS_PROP, dumpEntry,
+                                  bus,
+                                  std::variant<std::string>(
+                                      "xyz.openbmc_project.Common.Progress."
+                                      "OperationStatus.Failed"));
+            }
+        };
+        try
+        {
+            sigset_t ss;
+            if (sigemptyset(&ss) < 0)
+            {
+                log<level::ERR>("Unable to initialize signal set");
+                elog<InternalFailure>();
+            }
+            if (sigaddset(&ss, SIGCHLD) < 0)
+            {
+                log<level::ERR>("Unable to add signal to signal set");
+                elog<InternalFailure>();
+            }
+            // Block SIGCHLD first, so that the event loop can handle it
+            if (sigprocmask(SIG_BLOCK, &ss, NULL) < 0)
+            {
+                log<level::ERR>("Unable to block signal");
+                elog<InternalFailure>();
+            }
+            if (childPtr)
+            {
+                childPtr.reset();
+            }
+            childPtr = std::make_unique<Child>(event, pid, WEXITED | WSTOPPED,
+                                               std::move(callback));
+        }
+        catch (const InternalFailure& e)
+        {
+            commit<InternalFailure>();
+        }
+        catch (const sdbusplus::exception::exception& e)
+        {
+            log<level::ERR>(
+                fmt::format("Unable to update the dump status, errorMsg({})",
+                            e.what())
+                    .c_str());
+            commit<InternalFailure>();
+        }
+    }
+
     return dumpEntry;
 }
 } // namespace dump
