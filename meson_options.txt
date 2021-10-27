@@ -6,6 +6,15 @@ option('hostboot-dump-collection',
        value: 'disabled',
        description : 'Enables hostboot dump collection')
 
+# The options and values for dump collection
+option('OP_DUMP_OBJPATH', type : 'string',
+        value : '/org/openpower/dump',
+        description : 'The D-Bus root of openpower-dump-collector')
+
+option('OP_DUMP_BUSNAME', type : 'string',
+        value : 'org.open_power.Dump.Manager',
+        description : 'The bus name of openpower-dump-collector')
+
 # Feature to enable the dump collection
 option('dump-collection', type: 'feature',
        value : 'disabled',
