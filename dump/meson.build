@@ -10,6 +10,7 @@ dump_deps = [
     sdbusplus_dep,
     phosphor_dbus_interfaces_dep,
     cxx.find_library('sdeventplus'),
+    fmt_dep,
 ]
 
 # Configuration header file(dump_config.h) generation
@@ -24,6 +25,7 @@ configure_file(configuration : dump_conf_data,
 # source files
 dump_src = files(
     'dump_manager_main.cpp',
+    'dump_utils.cpp',
 )
 
 executable('openpower-dump-manager',
