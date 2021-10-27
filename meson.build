@@ -29,6 +29,14 @@ phosphorlogging = dependency(
     ]
 )
 
+phosphor_dbus_interfaces_dep = dependency(
+    'phosphor-dbus-interfaces',
+    fallback: [
+        'phosphor-dbus-interfaces',
+        'phosphor_dbus_interfaces_dep'
+    ],
+)
+
 fmt_dep = dependency('fmt', required: false)
 if not fmt_dep.found()
   fmt_proj = import('cmake').subproject(
