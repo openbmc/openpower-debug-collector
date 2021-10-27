@@ -1,5 +1,6 @@
 #include "dump_manager.hpp"
 
+#include "dump_utils.hpp"
 #include "sbe_consts.hpp"
 
 #include <fmt/core.h>
@@ -15,15 +16,78 @@ namespace openpower
 namespace dump
 {
 
+constexpr auto DUMP_CREATE_IFACE = "xyz.openbmc_project.Dump.Create";
 constexpr auto MAX_ERROR_LOG_ID = 0xFFFFFFFF;
 
 // Maximum possible processors in an OpenPOWER system
 constexpr auto MAX_FAILING_UNIT = 0x20;
+constexpr auto ERROR_DUMP_DISABLED =
+    "xyz.openbmc_project.Dump.Create.Error.Disabled";
+
+/* @struct DumpTypeInfo
+ * @brief to store basic info about different dump types
+ */
+struct DumpTypeInfo
+{
+    std::string dumpPath;           // D-Bus path of the dump
+    std::string dumpCollectionPath; // Path were dumps are stored
+};
+/* Map of dump type to the basic info of the dumps */
+std::map<uint8_t, DumpTypeInfo> dumpInfo = {};
 
 std::unordered_map<std::string, uint8_t> dumpTypeMap = {
     {"com.ibm.Dump.Create.DumpType.Hostboot", SBE::SBE_DUMP_TYPE_HOSTBOOT},
     {"com.ibm.Dump.Create.DumpType.Hardware", SBE::SBE_DUMP_TYPE_HARDWARE},
     {"com.ibm.Dump.Create.DumpType.SBE", SBE::SBE_DUMP_TYPE_SBE}};
+
+sdbusplus::message::object_path Manager::createDumpEntry(DumpParams& dparams)
+{
+    using namespace phosphor::logging;
+    using DumpDisabled =
+        sdbusplus::xyz::openbmc_project::Dump::Create::Error::Disabled;
+    sdbusplus::message::object_path newDumpPath;
+    try
+    {
+        // Pass empty create parameters since no additional parameters
+        // are needed.
+        util::DumpCreateParams createDumpParams;
+        auto dumpManager = util::getService(
+            bus, DUMP_CREATE_IFACE, dumpInfo[dparams.dumpType].dumpPath);
+        auto method = bus.new_method_call(
+            dumpManager.c_str(), dumpInfo[dparams.dumpType].dumpPath.c_str(),
+            DUMP_CREATE_IFACE, "CreateDump");
+        method.append(createDumpParams);
+        auto response = bus.call(method);
+        response.read(newDumpPath);
+
+        // DUMP Path format /xyz/openbmc_project/dump/<dump_type>/entry/<id>
+        dparams.id = std::stoi(newDumpPath.filename());
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>(
+            fmt::format("D-Bus call exception, errorMsg({})", e.what())
+                .c_str());
+        if (e.name() == ERROR_DUMP_DISABLED)
+        {
+            elog<DumpDisabled>();
+        }
+        else
+        {
+            // re-throw exception
+            throw;
+        }
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(
+            fmt::format("Failed to get dump id,invalid dump entry path({})",
+                        std::string(newDumpPath))
+                .c_str());
+        throw;
+    }
+    return newDumpPath;
+}
 
 void Manager::getParams(const DumpCreateParams& params, DumpParams& dparams)
 {
@@ -149,7 +213,7 @@ sdbusplus::message::object_path
             dumpParams.dumpType, dumpParams.eid, dumpParams.failingUnit)
             .c_str());
 
-    return sdbusplus::message::object_path();
+    return createDumpEntry(dumpParams);
 }
 } // namespace dump
 } // namespace openpower
