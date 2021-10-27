@@ -29,6 +29,14 @@ phosphorlogging = dependency(
     ]
 )
 
+phosphor_dbus_interfaces_dep = dependency(
+    'phosphor-dbus-interfaces',
+    fallback: [
+        'phosphor-dbus-interfaces',
+        'phosphor_dbus_interfaces_dep'
+    ],
+)
+
 realpath_prog = find_program('realpath')
 
 conf_data = configuration_data()
