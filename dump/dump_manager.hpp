@@ -2,13 +2,26 @@
 
 #include <com/ibm/Dump/Create/server.hpp>
 #include <sdbusplus/bus.hpp>
+#include <sdeventplus/source/child.hpp>
 #include <sdeventplus/source/event.hpp>
 #include <xyz/openbmc_project/Dump/Create/server.hpp>
+
+#include <map>
 
 namespace openpower
 {
 namespace dump
 {
+/* Need a custom deleter for freeing up sd_event */
+struct EventDeleter
+{
+    void operator()(sd_event* event) const
+    {
+        event = sd_event_unref(event);
+    }
+};
+
+using EventPtr = std::unique_ptr<sd_event, EventDeleter>;
 
 using DumpCreateParams =
     std::map<std::string, std::variant<std::string, uint64_t>>;
@@ -27,6 +40,7 @@ struct DumpParams
 using CreateIface = sdbusplus::server::object::object<
     sdbusplus::com::ibm::Dump::server::Create,
     sdbusplus::xyz::openbmc_project::Dump::server::Create>;
+using ::sdeventplus::source::Child;
 
 /** @class Manager
  *  @brief Dump  manager class
@@ -48,10 +62,8 @@ class Manager : public CreateIface
      *  @param[in] path - Path of the service.
      *  @param[in] event - sd event handler.
      */
-    Manager(sdbusplus::bus::bus& bus, const char* path,
-            sdeventplus::Event& event) :
-        CreateIface(bus, path, true),
-        bus(bus), event(event)
+    Manager(sdbusplus::bus::bus& bus, const char* path, const EventPtr& event) :
+        CreateIface(bus, path, true), bus(bus), eventLoop(event.get())
     {}
 
     /** @brief Implementation for createDump
@@ -81,7 +93,10 @@ class Manager : public CreateIface
     sdbusplus::bus::bus& bus;
 
     /** @brief sdbusplus Dump event loop */
-    sdeventplus::Event& event;
+    EventPtr eventLoop;
+
+    /** @brief map of SDEventPlus child pointer added to event loop */
+    std::map<pid_t, std::unique_ptr<Child>> childPtrMap;
 };
 
 } // namespace dump
