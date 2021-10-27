@@ -17,6 +17,9 @@ dump_deps = [
 collect_deps = [
    fmt_dep,
    phosphorlogging,
+   cxx.find_library('pdbg'),
+   cxx.find_library('libdt-api'),
+   cxx.find_library('phal'),
 ]
 
 # Configuration header file(dump_config.h) generation
