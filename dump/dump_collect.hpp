@@ -6,6 +6,8 @@ extern "C"
 #include <libpdbg_sbe.h>
 }
 
+#include "dump_utils.hpp"
+
 #include <cstdint>
 #include <filesystem>
 #include <future>
@@ -118,6 +120,19 @@ class SbeDumpCollector
         uint8_t type, uint32_t id, const std::filesystem::path& path,
         uint64_t failingUnit, uint8_t cstate,
         const std::vector<struct pdbg_target*>& targets);
+
+    /** @brief This function creates the new dump file in dump file name
+     * format and then writes the contents into it.
+     *  @param path - Path to dump file
+     *  @param id - A unique id assigned to dump to be collected
+     *  @param clockState - Clock state, ON or Off
+     *  @param chipPos - Chip position of the failing unit
+     *  @param dataPtr - Content to write to file
+     *  @param len - Length of the content
+     */
+    void writeDumpFile(const std::filesystem::path& path, const uint32_t id,
+                       const uint8_t clockState, const uint8_t chipPos,
+                       util::DumpDataPtr& dataPtr, const uint32_t len);
 };
 
 } // namespace sbe_chipop
