@@ -94,6 +94,39 @@ void collectDumpFromSBE(struct pdbg_target* proc,
                                  chipPos, path.string(), id, type, clockState,
                                  failingUnit)
                          .c_str());
+
+    util::DumpDataPtr dataPtr;
+    uint32_t len = 0;
+    uint8_t collectFastArray = 0;
+
+    try
+    {
+        openpower::phal::sbe::getDump(proc, type, clockState, collectFastArray,
+                                      dataPtr.getPtr(), &len);
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            // SBE is not ready to accept chip-ops,
+            // Skip the request, no additional error handling required.
+            log<level::INFO>(fmt::format("Collect dump: Skipping ({}) dump({}) "
+                                         "on proc({}) clock state({})",
+                                         sbeError.what(), type, chipPos,
+                                         clockState)
+                                 .c_str());
+            return;
+        }
+        log<level::ERR>(
+            fmt::format(
+                "Error in collecting dump dump type({}), clockstate({}), proc "
+                "position({}), collectFastArray({}) error({})",
+                type, clockState, chipPos, collectFastArray, sbeError.what())
+                .c_str());
+        return;
+    }
+    writeDumpFile(path, id, clockState, chipPos, dataPtr, len);
 }
 
 void collectDump(const uint8_t type, const uint32_t id,
