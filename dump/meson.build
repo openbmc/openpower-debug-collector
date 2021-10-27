@@ -16,6 +16,11 @@ dump_deps = [
     phosphorlogging,
 ]
 
+collect_deps = [
+   fmt_dep,
+   phosphorlogging,
+]
+
 # Configuration header file(dump_config.h) generation
 dump_conf_data = configuration_data()
 dump_conf_data.set_quoted('OP_DUMP_OBJPATH', get_option('OP_DUMP_OBJPATH'),
@@ -30,8 +35,15 @@ dump_src = files(
     'dump_manager_main.cpp',
     'dump_utils.cpp',
     'dump_manager.cpp',
-    'argument.cpp',
 )
+
+collect_src = files(
+    'argument.cpp',
+    'dump_utils.cpp',
+    'dump_collect.cpp',
+    'dump_collect_main.cpp',
+)
+
 
 executable('openpower-dump-manager',
     dump_src,
@@ -40,3 +52,9 @@ executable('openpower-dump-manager',
     install: true
 )
 
+executable('dump-collect',
+    collect_src,
+    dependencies: collect_deps,
+    implicit_include_directories: true,
+    install: true
+)
