@@ -67,7 +67,17 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         // Wait for all asynchronous tasks to complete
         for (auto& future : futures)
         {
-            future.wait();
+            try
+            {
+                future.wait();
+            }
+            catch (const std::exception& e)
+            {
+                log<level::ERR>(
+                    std::format("Failed to collect dump from SBE ErrorMsg({})",
+                                e.what())
+                        .c_str());
+            }
         }
         log<level::INFO>(
             std::format(
@@ -75,7 +85,11 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
                 cstate, type, id, failingUnit, path.string())
                 .c_str());
     }
-
+    if (std::filesystem::is_empty(path))
+    {
+        log<level::ERR>("Failed to collect the dump");
+        throw std::runtime_error("Failed to collect the dump");
+    }
     log<level::INFO>("Dump collection completed");
 }
 
@@ -99,12 +113,21 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
             continue;
         }
 
-        // Launch an asynchronous task instead of forking
         auto future =
             std::async(std::launch::async,
                        [this, target, path, id, type, cstate, failingUnit]() {
-            this->collectDumpFromSBE(target, path, id, type, cstate,
-                                     failingUnit);
+            try
+            {
+                this->collectDumpFromSBE(target, path, id, type, cstate,
+                                         failingUnit);
+            }
+            catch (const std::exception& e)
+            {
+                log<level::ERR>(
+                    std::format("Failed to collect dump from SBE on Proc-({})",
+                                pdbg_target_index(target))
+                        .c_str());
+            }
         });
 
         futures.push_back(std::move(future));
@@ -125,6 +148,39 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* proc,
             "Collecting dump from proc({}): path({}) id({}) type({}) clockState({}) failingUnit({})",
             chipPos, path.string(), id, type, clockState, failingUnit)
             .c_str());
+
+    util::DumpDataPtr dataPtr;
+    uint32_t len = 0;
+    uint8_t collectFastArray = 0;
+
+    try
+    {
+        openpower::phal::sbe::getDump(proc, type, clockState, collectFastArray,
+                                      dataPtr.getPtr(), &len);
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            // SBE is not ready to accept chip-ops,
+            // Skip the request, no additional error handling required.
+            log<level::INFO>(std::format("Collect dump: Skipping ({}) dump({}) "
+                                         "on proc({}) clock state({})",
+                                         sbeError.what(), type, chipPos,
+                                         clockState)
+                                 .c_str());
+            return;
+        }
+        log<level::ERR>(
+            std::format(
+                "Error in collecting dump dump type({}), clockstate({}), proc "
+                "position({}), collectFastArray({}) error({})",
+                type, clockState, chipPos, collectFastArray, sbeError.what())
+                .c_str());
+        return;
+    }
+    writeDumpFile(path, id, clockState, chipPos, dataPtr, len);
 }
 
 void SbeDumpCollector::writeDumpFile(const std::filesystem::path& path,
