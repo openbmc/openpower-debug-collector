@@ -13,6 +13,16 @@ namespace dump
 using DumpCreateParams =
     std::map<std::string, std::variant<std::string, uint64_t>>;
 
+/** @struct DumpParams
+ *  @brief Parameters for dump
+ */
+struct DumpParams
+{
+    uint8_t dumpType;     // Type of the dump
+    uint64_t eid;         // Eid associated with dump
+    uint64_t failingUnit; // Unit failed
+};
+
 using CreateIface = sdbusplus::server::object::object<
     sdbusplus::com::ibm::Dump::server::Create,
     sdbusplus::xyz::openbmc_project::Dump::server::Create>;
@@ -50,12 +60,15 @@ class Manager : public CreateIface
      *
      *  @return object_path - The object path of the new dump entry.
      */
-    sdbusplus::message::object_path createDump(DumpCreateParams) override
-    {
-        return sdbusplus::message::object_path();
-    }
+    sdbusplus::message::object_path createDump(DumpCreateParams) override;
 
   private:
+    /** @brief Get the dump params from arguments
+     *  @param[in] params - Parameters for creating the dump.
+     *  @param[out] dparams - Dump parameter struct with values
+     */
+    void getParams(const DumpCreateParams& params, DumpParams& dparams);
+
     /** @brief sdbusplus DBus bus connection. */
     sdbusplus::bus::bus& bus;
 
