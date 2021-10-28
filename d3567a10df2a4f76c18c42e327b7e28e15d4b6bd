@@ -46,6 +46,30 @@
       "revId": "d3567a10df2a4f76c18c42e327b7e28e15d4b6bd",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4873b5bd_098df314",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2021-10-28T04:46:54Z",
+      "side": 1,
+      "message": "added based on the earlier comment, I think this will give more info why there was a failure",
+      "parentUuid": "9c7fb349_b7045fad",
+      "range": {
+        "startLine": 246,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 13
+      },
+      "revId": "d3567a10df2a4f76c18c42e327b7e28e15d4b6bd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
