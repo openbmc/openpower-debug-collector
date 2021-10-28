@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c29fdd4c_729af4f3",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-10-28T03:59:41Z",
+      "side": 1,
+      "message": "0, 1 as both have 0 values",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 77
+      },
+      "revId": "f74d70adf1eb375325c4edfba3ece4aa517dcbed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c95dd4e4_4e396a29",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-10-28T03:59:41Z",
+      "side": 1,
+      "message": "I guess we could as well initialize them in the header file in c++11, suggestion",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 0
+      },
+      "revId": "f74d70adf1eb375325c4edfba3ece4aa517dcbed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69b749a5_a14d4ab6",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-10-28T03:59:41Z",
+      "side": 1,
+      "message": "idStr.empty() would work no need to define  openpower::dump::util::ArgumentParser::empty_string",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 13
+      },
+      "revId": "f74d70adf1eb375325c4edfba3ece4aa517dcbed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42fd1489_27128979",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-10-28T03:59:41Z",
+      "side": 1,
+      "message": "path.empty()",
+      "range": {
+        "startLine": 43,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 12
+      },
+      "revId": "f74d70adf1eb375325c4edfba3ece4aa517dcbed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf51d883_4bd04804",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2021-10-28T03:59:41Z",
+      "side": 1,
+      "message": "do we need to change this too?",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 13
+      },
+      "revId": "f74d70adf1eb375325c4edfba3ece4aa517dcbed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
