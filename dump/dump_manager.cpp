@@ -27,6 +27,10 @@ constexpr auto MAX_ERROR_LOG_ID = 0xFFFFFFFF;
 constexpr auto MAX_FAILING_UNIT = 0x20;
 constexpr auto ERROR_DUMP_DISABLED =
     "xyz.openbmc_project.Dump.Create.Error.Disabled";
+constexpr auto ERROR_DUMP_QUOTA_EXCEEDED =
+    "xyz.openbmc_project.Dump.Create.Error.QuotaExceeded";
+constexpr auto ERROR_DUMP_NOT_ALLOWED =
+    "xyz.openbmc_project.Common.Error.NotAllowed";
 constexpr auto OP_SBE_FILES_PATH = "plat_dump";
 constexpr auto DUMP_NOTIFY_IFACE = "xyz.openbmc_project.Dump.NewDump";
 constexpr auto DUMP_PROGRESS_IFACE = "xyz.openbmc_project.Common.Progress";
@@ -70,8 +74,6 @@ struct DumpData
 sdbusplus::message::object_path Manager::createDumpEntry(DumpParams& dparams)
 {
     using namespace phosphor::logging;
-    using DumpDisabled =
-        sdbusplus::xyz::openbmc_project::Dump::Create::Error::Disabled;
     sdbusplus::message::object_path newDumpPath;
     try
     {
@@ -97,7 +99,23 @@ sdbusplus::message::object_path Manager::createDumpEntry(DumpParams& dparams)
                 .c_str());
         if (e.name() == ERROR_DUMP_DISABLED)
         {
-            elog<DumpDisabled>();
+            elog<sdbusplus::xyz::openbmc_project::Dump::Create::Error::
+                     Disabled>();
+        }
+        if (e.name() == ERROR_DUMP_QUOTA_EXCEEDED)
+        {
+            using DumpQuotaExceeded = sdbusplus::xyz::openbmc_project::Dump::
+                Create::Error::QuotaExceeded;
+            using Reason =
+                xyz::openbmc_project::Dump::Create::QuotaExceeded::REASON;
+            elog<DumpQuotaExceeded>(Reason(e.description()));
+        }
+        if (e.name() == ERROR_DUMP_NOT_ALLOWED)
+        {
+            using DumpNotAllowed =
+                sdbusplus::xyz::openbmc_project::Common::Error::NotAllowed;
+            using Reason = xyz::openbmc_project::Common::NotAllowed::REASON;
+            elog<DumpNotAllowed>(Reason(e.description()));
         }
         else
         {
