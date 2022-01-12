@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "240533c3_dc9ff0bd",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T07:59:51Z",
+      "side": 1,
+      "message": "duplicate in line 77 too, you can push it to outer scope. or to the begin of the file.",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 22
+      },
+      "revId": "508cbb64dd1db78641daf00b70406fd50d8f0cae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
