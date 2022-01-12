@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaf7ba6e_e7d00d45",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T10:55:00Z",
+      "side": 1,
+      "message": "why 20?",
+      "range": {
+        "startLine": 19,
+        "startChar": 34,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "c689f2ed0392b44d3b524f077e14211990400581",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1e28ebd_965911ae",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T10:55:00Z",
+      "side": 1,
+      "message": "we should check if the value exists in the dumpTypeMap and read rather than relieing on the exception thrown and catching at line 51.",
+      "revId": "c689f2ed0392b44d3b524f077e14211990400581",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37c03cbb_006db440",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T10:55:00Z",
+      "side": 1,
+      "message": "std::holds_alternative\u003cuint64_t\u003e(iter-\u003esecond)\n\nwe could use this to check if alternative exists rather than relying on the exception. suggestion, but i am ok too. but thre are too many try..catch probably we should minimize them, you will not find that many in other code",
+      "revId": "c689f2ed0392b44d3b524f077e14211990400581",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d94bf1be_e6f51d86",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T10:55:00Z",
+      "side": 1,
+      "message": "even with invalid eid we will continue to the next line at 88 as we are using report which will create and commit the error",
+      "revId": "c689f2ed0392b44d3b524f077e14211990400581",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5e01911_7c2fe2b8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T10:55:00Z",
+      "side": 1,
+      "message": "same here coe will continue",
+      "revId": "c689f2ed0392b44d3b524f077e14211990400581",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
