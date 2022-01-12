@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c10f915b_52b45d6e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-01-12T05:13:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8f486d6_b9a0a355",
+      "range": {
+        "startLine": 9,
+        "startChar": 33,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "9fcf9d8e0a454e72e5a157d8a7847573bcd5e23e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e969879_c1f33ef9",
@@ -47,6 +71,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4264b876_6d663a22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-01-12T05:13:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e969879_c1f33ef9",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "9fcf9d8e0a454e72e5a157d8a7847573bcd5e23e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e8d3d45_54e293b4",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-01-12T04:52:58Z",
       "side": 1,
       "message": "change to elog\u003c sdbusplus::xyz::openbmc_project::Dump::Create::Error::Disabled\u003e ?",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 83,
+        "endChar": 33
+      },
+      "revId": "9fcf9d8e0a454e72e5a157d8a7847573bcd5e23e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f666a38_17e85fcb",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-01-12T05:13:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e8d3d45_54e293b4",
       "range": {
         "startLine": 81,
         "startChar": 12,
