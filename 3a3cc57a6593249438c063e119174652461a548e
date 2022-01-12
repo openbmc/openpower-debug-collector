@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b28b289a_b2d08abf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T06:57:47Z",
+      "side": 1,
+      "message": "this is too short",
+      "revId": "3a3cc57a6593249438c063e119174652461a548e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e4b6049_6a24a15c",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T06:57:47Z",
+      "side": 1,
+      "message": "switch to public stdbus::exception\nhttps://gerrit.openbmc-project.xyz/c/openbmc/ipmi-fru-parser/+/46461",
+      "revId": "3a3cc57a6593249438c063e119174652461a548e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4dd7988_064a8638",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-01-12T06:57:47Z",
+      "side": 1,
+      "message": "no description for the method",
+      "revId": "3a3cc57a6593249438c063e119174652461a548e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
