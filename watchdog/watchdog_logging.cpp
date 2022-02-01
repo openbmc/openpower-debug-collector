@@ -1,5 +1,6 @@
 #include <unistd.h>
 
+#include <phosphor-logging/log.hpp>
 #include <watchdog_common.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_handler.hpp>

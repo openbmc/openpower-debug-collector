@@ -1,7 +1,8 @@
 #pragma once
 
+#include "ffdc_file.hpp"
+
 #include <sdbusplus/bus.hpp>
-#include <xyz/openbmc_project/Logging/Create/server.hpp>
 
 #include <string>
 
@@ -16,12 +17,6 @@ enum ReturnCodes
     RC_NOT_HANDLED = 1,
     RC_DBUS_ERROR = 2
 };
-
-using FFDCFormat =
-    sdbusplus::xyz::openbmc_project::Logging::server::Create::FFDCFormat;
-
-using FFDCTuple =
-    std::tuple<FFDCFormat, uint8_t, uint8_t, sdbusplus::message::unix_fd>;
 
 /**
  * @brief Create a dbus method

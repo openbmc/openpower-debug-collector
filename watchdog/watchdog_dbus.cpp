@@ -3,7 +3,6 @@
 #include <phosphor-logging/log.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_logging.hpp>
-#include <xyz/openbmc_project/State/Boot/Progress/server.hpp>
 
 #include <string>
 #include <vector>
