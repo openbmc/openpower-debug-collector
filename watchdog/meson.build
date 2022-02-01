@@ -5,6 +5,8 @@ watchdog_src = files(
     'watchdog_handler.cpp',
     'watchdog_common.cpp',
     'watchdog_main.cpp',
+    'temporary_file.cpp',
+    'ffdc_file.cpp',
 )
 
 # Library dependencies

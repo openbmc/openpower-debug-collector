@@ -35,6 +35,48 @@ void triggerHostbootDump(const uint32_t timeout)
     transitionHost(HOST_STATE_QUIESCE_TGT);
 }
 
+/**
+ * @brief get SBE special callout information
+ *
+ *        This function adds the special sbe callout in the user provided
+ *        json callout list. includes BMC0002 procedure callout with
+ *        high priority and processor callout with medium priority.
+ *
+ * @param[in] procTarget - pdbg processor target
+ * @param[out] jsonCalloutDataList - reference to json callout list
+ */
+static void getSBECallout(struct pdbg_target* procTarget,
+                          json& jsonCalloutDataList)
+{
+    using namespace openpower::phal::pdbg;
+    json jsonProcedCallout;
+
+    // Add procedure callout
+    jsonProcedCallout["Procedure"] = "BMC0002";
+    jsonProcedCallout["Priority"] = "H";
+    jsonCalloutDataList.emplace_back(jsonProcedCallout);
+    try
+    {
+        ATTR_LOCATION_CODE_Type locationCode;
+        // Initialize with default data.
+        memset(&locationCode, '\0', sizeof(locationCode));
+        // Get location code information
+        openpower::phal::pdbg::getLocationCode(procTarget, locationCode);
+        json jsonProcCallout;
+        jsonProcCallout["LocationCode"] = locationCode;
+        jsonProcCallout["Deconfigured"] = false;
+        jsonProcCallout["Guarded"] = false;
+        jsonProcCallout["Priority"] = "M";
+        jsonCalloutDataList.emplace_back(jsonProcCallout);
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(fmt::format("getLocationCode({}): Exception({})",
+                                    pdbg_target_path(procTarget), e.what())
+                            .c_str());
+    }
+}
+
 void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
 {
     using namespace openpower::phal;
@@ -82,6 +124,7 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     auto ffdc = std::vector<FFDCTuple>{};
     // get SBE ffdc file descriptor
     auto fd = sbeError.getFd();
+    uint32_t pelId;
 
     // Log error with additional ffdc if fd is valid
     if (fd > 0)
@@ -93,7 +136,28 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
                             static_cast<uint8_t>(0x01), sbeError.getFd()));
     }
 
-    auto pelId = createPel(event, additionalData, ffdc);
+    try
+    {
+        json jsonCalloutDataList;
+        jsonCalloutDataList = json::array();
+        getSBECallout(procTarget, jsonCalloutDataList);
+        FFDCFile ffdcFile(jsonCalloutDataList);
+        ffdc.push_back(std::make_tuple(
+            sdbusplus::xyz::openbmc_project::Logging::server::Create::
+                FFDCFormat::JSON,
+            static_cast<uint8_t>(0xCA), static_cast<uint8_t>(0x01),
+            ffdcFile.getFileDescriptor()));
+
+        pelId = createPel(event, additionalData, ffdc);
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(fmt::format("Exception {} occurred", e.what()).c_str());
+
+        // Create PEL with either empty FFDC or SBE captured FFDC even though
+        // we encountered an issue creating FFDC file with json callout data
+        pelId = createPel(event, additionalData, ffdc);
+    }
 
     if (dumpIsRequired)
     {
