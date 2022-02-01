@@ -1,6 +1,7 @@
 #pragma once
-
 #include <stdint.h>
+
+#include <nlohmann/json.hpp>
 
 /**
  * @brief Main function to initiate Hostboot dump
@@ -11,6 +12,7 @@ namespace watchdog
 {
 namespace dump
 {
+using json = nlohmann::json;
 
 /**
  * @brief Initiate Hostboot dump collection
