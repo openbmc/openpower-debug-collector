@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "446a7524_bf53d46a",
+        "filename": "watchdog/ffdc_file.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-02-02T15:41:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7413dee_b9619ad1",
+      "revId": "ca1f455a7a9dbfca6234c7263efc347422806fd1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ef88a65_4bd0a6bc",
@@ -41,6 +59,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a2d34ce_f55df5b1",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-02-02T15:41:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef88a65_4bd0a6bc",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "ca1f455a7a9dbfca6234c7263efc347422806fd1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79f165c0_a55dd244",
@@ -54,6 +96,24 @@
       "writtenOn": "2022-02-02T06:04:06Z",
       "side": 1,
       "message": "Better way is to move createPel out of try catch block. Limitaion with ths approch is you need to ffdcFile and unique pointe other wise d-bus call is going to fail. you can refer openpower-proc-control code implementation.",
+      "revId": "ca1f455a7a9dbfca6234c7263efc347422806fd1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2151c8d8_a398dc3c",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-02-02T15:41:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79f165c0_a55dd244",
       "revId": "ca1f455a7a9dbfca6234c7263efc347422806fd1",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
