@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90e3e6a9_9fcf7e45",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2022-02-03T13:02:31Z",
+      "side": 1,
+      "message": "Most of the code added is repository specific common code used to add additional callout part, . Major code is tempory file managment, which is commonly used in all the repos. This is sort of workaround added till the ebe_extrct_rc based hw callout is in.",
+      "parentUuid": "516ea486_21119727",
+      "revId": "f492aa5aefbd1945cf7b0a6f751d1da390aa9138",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9eabd17c_a26415ba",
