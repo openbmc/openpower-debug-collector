@@ -16,6 +16,424 @@
       "message": "Forgot add updated meson.build in the previous patch set",
       "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e474d2a5_2e5cac56",
+        "filename": "watchdog/ffdc_file.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "why create three different private methods, why can\u0027t the code be here in one place. we create private methods if code is used in multiple places, here do not see the case.\n\nor else every thing can be moved to constructor too",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 23
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97c5e867_af59c2d2",
+        "filename": "watchdog/ffdc_file.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "this code can be simply placed in destructor, why create another private method. People will assume that this method will be used in multiple places.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 22
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22ccc967_6749001d",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "not used in this file, please check other header files too",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 56
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10a2b7f9_3273f4e5",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "not required here",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c63d4314_2dabc7a0",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "not used in this file",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 35
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a350de2a_bfe81928",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "not used in this header file",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 74
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b45a8f08_ea33354c",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "prefer \n\nusing ::nlohman::json;",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 28
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ec2fd85_7d1aa274",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "do not see this being used",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f6bc710_174cea60",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "@brief constructor",
+      "range": {
+        "startLine": 48,
+        "startChar": 3,
+        "endLine": 48,
+        "endChar": 19
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99669b42_d384e6d8",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "@detail",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82bf0771_50f76bcf",
+        "filename": "watchdog/ffdc_file.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "@brief\n\nplease follow doxygen documentation",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "006f5863_f1fb2fbf",
+        "filename": "watchdog/file_descriptor.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "@brief",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "581044f0_9db1e8cd",
+        "filename": "watchdog/file_descriptor.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "follow doxygen documentation",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7f36c81_669e4e0a",
+        "filename": "watchdog/file_descriptor.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "@brief",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1818efd5_10f5caa0",
+        "filename": "watchdog/file_descriptor.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "return value of close is ignored",
+      "range": {
+        "startLine": 126,
+        "startChar": 3,
+        "endLine": 126,
+        "endChar": 16
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d3f5c06_d9963d0a",
+        "filename": "watchdog/utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "Suggestoin\nrather than writing this kind of position depended code and when we expect constructor to throw exception we could as well follow fstream::opne as in https://www.cplusplus.com/reference/fstream/fstream/open/\n\nTemporaryFile tempfile;\ntry\n{\n  tempfile.create();\n}\ncatch(const std::exception\u0026 ex)\n{ \n   //log error\n}\n\nTemporaryFile::~TemporaryFile()\n{\n   if(fd !\u003d -1)\n   {\n       close(fd);\n   }\n   remove();\n}",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 0
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0dffa21_d8dc29f6",
+        "filename": "watchdog/utils.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "can we log trace here",
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8b1fcfe_85cc2977",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "this gap is not as per doxygen standard",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c05f9e7_7ebe1e9d",
+        "filename": "watchdog/watchdog_main.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "not used in this file",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 28
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60b4cbd9_6915da29",
+        "filename": "watchdog/watchdog_main.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-02-08T10:19:33Z",
+      "side": 1,
+      "message": "do not included uses in header file rather define where ever it is used.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 28
+      },
+      "revId": "49a3d2f8a08c67231cbf9568563d6bac8d62ab7f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
