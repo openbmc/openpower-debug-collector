@@ -1,3 +1,4 @@
+#include <fmt/format.h>
 #include <unistd.h>
 
 #include <phosphor-logging/log.hpp>
@@ -127,6 +128,46 @@ uint32_t createPel(const std::string& eventType,
     }
 
     return plid; // platform log id or 0
+}
+
+bool isHostStateRunning()
+{
+    constexpr auto path = "/xyz/openbmc_project/state/host0";
+    constexpr auto interface = "xyz.openbmc_project.State.Host";
+    constexpr auto extended = "org.freedesktop.DBus.Properties";
+    constexpr auto function = "Get";
+
+    sdbusplus::message::message method;
+    bool hostState = false;
+
+    if (0 == dbusMethod(path, interface, function, method, extended))
+    {
+        try
+        {
+            method.append(interface, "CurrentHostState");
+            auto bus = sdbusplus::bus::new_system();
+            auto response = bus.call(method);
+            std::variant<std::string> reply;
+
+            response.read(reply);
+            std::string currentHostState(std::get<std::string>(reply));
+
+            if (currentHostState ==
+                "xyz.openbmc_project.State.Host.HostState.Running")
+            {
+                hostState = true;
+            }
+        }
+        catch (const sdbusplus::exception::SdBusError& e)
+        {
+            log<level::ERR>(
+                fmt::format("Failed to read CurrentHostState property ({})",
+                            e.what())
+                    .c_str());
+        }
+    }
+
+    return hostState;
 }
 
 } // namespace dump

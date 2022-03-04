@@ -51,5 +51,12 @@ uint32_t createPel(const std::string& eventType,
                    std::map<std::string, std::string>& additional,
                    const std::vector<FFDCTuple>& ffdc);
 
+/**
+ * @brief Query host state
+ *
+ * @return true if the CurrentHostState is 'Running'
+ */
+bool isHostStateRunning();
+
 } // namespace dump
 } // namespace watchdog
