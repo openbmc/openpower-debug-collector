@@ -55,6 +55,15 @@ int main(int argc, char* argv[])
         bool primaryIplDone = sbe::isPrimaryIplDone();
         if (primaryIplDone)
         {
+            // Collect hostboot dump only if the host is in 'Running' state
+            if (!isHostStateRunning())
+            {
+                log<level::INFO>(
+                    "CurrentHostState is not in 'Running' state. Dump maybe "
+                    "already occurring, skipping this dump request...");
+                return EXIT_SUCCESS;
+            }
+
             // SBE boot done, Need to collect hostboot dump
             log<level::INFO>("Handle Hostboot boot failure");
             triggerHostbootDump(timeout);
