@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56129de8_ed849cc6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-03-08T16:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "333f30cb_b87b23cc",
+      "revId": "330e6c5027aa63dd580d49e5bde6da43fb2deb7e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0404d20_2fe5fd6d",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-03-08T08:04:59Z",
       "side": 1,
       "message": "return true;",
+      "range": {
+        "startLine": 158,
+        "startChar": 16,
+        "endLine": 158,
+        "endChar": 33
+      },
+      "revId": "330e6c5027aa63dd580d49e5bde6da43fb2deb7e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6284df01_7c3be853",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-03-08T16:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0404d20_2fe5fd6d",
       "range": {
         "startLine": 158,
         "startChar": 16,
@@ -64,6 +106,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a17c2b00_f2f3498a",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-03-08T16:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "882ae9df_6343bdbd",
+      "range": {
+        "startLine": 161,
+        "startChar": 14,
+        "endLine": 161,
+        "endChar": 56
+      },
+      "revId": "330e6c5027aa63dd580d49e5bde6da43fb2deb7e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19244f2e_069af36e",
@@ -77,6 +143,30 @@
       "writtenOn": "2022-03-08T08:04:59Z",
       "side": 1,
       "message": "return false;\n\nno need to create a new variable.",
+      "range": {
+        "startLine": 170,
+        "startChar": 3,
+        "endLine": 170,
+        "endChar": 21
+      },
+      "revId": "330e6c5027aa63dd580d49e5bde6da43fb2deb7e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36cf796a_73baf945",
+        "filename": "watchdog/watchdog_dbus.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-03-08T16:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19244f2e_069af36e",
       "range": {
         "startLine": 170,
         "startChar": 3,
