@@ -78,7 +78,7 @@ sdbusplus::message::object_path Manager::createDumpEntry(DumpParams& dparams)
                 .c_str());
         if (e.name() == ERROR_DUMP_DISABLED)
         {
-            elog<dbusplus::xyz::openbmc_project::Dump::Create::Error::
+            elog<sdbusplus::xyz::openbmc_project::Dump::Create::Error::
                      Disabled>();
         }
         if (e.name() == ERROR_DUMP_QUOTA_EXCEEDED)
@@ -306,6 +306,8 @@ sdbusplus::message::object_path
                                       "xyz.openbmc_project.Common.Progress."
                                       "OperationStatus.Failed"));
             }
+            // Initiating a BMC dump
+            openpower::dump::util::requestBMCDump();
         };
         try
         {
