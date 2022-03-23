@@ -104,6 +104,12 @@ void prepareCollection(const std::filesystem::path& dumpPath,
  */
 void requestSBEDump(const uint32_t failingUnit, const uint32_t eid);
 
+/**
+ * Request BMC dump from dump manager
+ *
+ */
+void requestBMCDump();
+
 } // namespace util
 } // namespace dump
 } // namespace openpower
