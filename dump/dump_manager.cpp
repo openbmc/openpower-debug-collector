@@ -260,6 +260,12 @@ sdbusplus::message::object_path
 
     auto dumpEntry = createDumpEntry(dumpParams);
 
+    // Initiating a BMC dump
+    log<level::INFO>(fmt::format("Initiating a BMC dump for host dump({})",
+                                 std::string(dumpEntry))
+                         .c_str());
+    openpower::dump::util::requestBMCDump();
+
     pid_t pid = fork();
     if (pid == 0)
     {
