@@ -101,6 +101,32 @@ void monitorDump(const std::string& path, const uint32_t timeout)
     }
 }
 
+void requestBMCDump()
+{
+    constexpr auto path = "/xyz/openbmc_project/dump/bmc";
+    constexpr auto interface = "xyz.openbmc_project.Dump.Create";
+    constexpr auto function = "CreateDump";
+
+    log<level::INFO>("Initiating BMC dump");
+    auto bus = sdbusplus::bus::new_default();
+    try
+    {
+        auto service = getService(bus, interface, path);
+        auto method =
+            bus.new_method_call(service.c_str(), path, interface, function);
+        std::map<std::string, std::variant<std::string, uint64_t>> createParams;
+        method.append(createParams);
+
+        bus.call_noreply(method);
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>(
+            fmt::format("BMC dump creation reqest failed, error({})", e.what())
+                .c_str());
+    }
+}
+
 void requestSBEDump(const uint32_t failingUnit, const uint32_t eid)
 {
     log<level::INFO>(fmt::format("Requesting Dump PEL({}) chip position({})",
