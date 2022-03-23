@@ -140,7 +140,7 @@ sdbusplus::message::object_path Manager::createDumpEntry(DumpParams& dparams)
                 .c_str());
         if (e.name() == ERROR_DUMP_DISABLED)
         {
-            elog<dbusplus::xyz::openbmc_project::Dump::Create::Error::
+            elog<sdbusplus::xyz::openbmc_project::Dump::Create::Error::
                      Disabled>();
         }
         if (e.name() == ERROR_DUMP_QUOTA_EXCEEDED)
@@ -312,6 +312,12 @@ sdbusplus::message::object_path
             .c_str());
 
     auto dumpEntry = createDumpEntry(dumpParams);
+
+    // Initiating a BMC dump
+    log<level::INFO>(fmt::format("Initiating a BMC dump for host dump({})",
+                                 std::string(dumpEntry))
+                         .c_str());
+    openpower::dump::util::requestBMCDump();
 
     pid_t pid = fork();
     if (pid == 0)
