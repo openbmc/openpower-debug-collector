@@ -140,7 +140,7 @@ sdbusplus::message::object_path Manager::createDumpEntry(DumpParams& dparams)
                 .c_str());
         if (e.name() == ERROR_DUMP_DISABLED)
         {
-            elog<dbusplus::xyz::openbmc_project::Dump::Create::Error::
+            elog<sdbusplus::xyz::openbmc_project::Dump::Create::Error::
                      Disabled>();
         }
         if (e.name() == ERROR_DUMP_QUOTA_EXCEEDED)
@@ -310,6 +310,9 @@ sdbusplus::message::object_path
             "Request to collect dump type({}), eid({}), failingUnit({})",
             dumpParams.dumpType, dumpParams.eid, dumpParams.failingUnit)
             .c_str());
+
+    // Initiating a BMC dump
+    openpower::dump::util::requestBMCDump();
 
     auto dumpEntry = createDumpEntry(dumpParams);
 
