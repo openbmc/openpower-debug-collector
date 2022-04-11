@@ -22,6 +22,23 @@
       },
       "revId": "6d387fe5ebc2df88b6987a18598a07152a928b18",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cdf9d4e_fd24a8d4",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-04-11T13:35:42Z",
+      "side": 1,
+      "message": "we are storing the same event pointer in 2 unique_ptrs, one is here and second one is at \nhttps://gerrit.openbmc-project.xyz/c/openbmc/openpower-debug-collector/+/52749/2/dump/dump_manager_main.cpp#29\n\nthis will lead to undefined behavior better would be to still use the old way but call     sd_event_unref(loop); at the end of https://gerrit.openbmc-project.xyz/c/openbmc/openpower-debug-collector/+/52749/2/dump/dump_manager_main.cpp#65\n\n\nlike this https://github.ibm.com/openbmc/phosphor-bmc-code-mgmt/blob/58e18979f54272cea7af1834011cd249902665c5/sync_manager_main.cpp#L41",
+      "revId": "6d387fe5ebc2df88b6987a18598a07152a928b18",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
