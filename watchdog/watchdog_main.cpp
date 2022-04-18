@@ -138,15 +138,21 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     std::unique_ptr<FFDCFile> ffdcFilePtr;
     try
     {
-        json jsonCalloutDataList;
-        jsonCalloutDataList = json::array();
-        getSBECallout(procTarget, jsonCalloutDataList);
-        ffdcFilePtr = std::make_unique<FFDCFile>(jsonCalloutDataList);
-        ffdc.push_back(std::make_tuple(
-            sdbusplus::xyz::openbmc_project::Logging::server::Create::
-                FFDCFormat::JSON,
-            static_cast<uint8_t>(0xCA), static_cast<uint8_t>(0x01),
-            ffdcFilePtr->getFileDescriptor()));
+        if (dumpIsRequired)
+        {
+            // Additional callout is required for SBE timeout case
+            // In this case no SBE FFDC information available and
+            // required to add default callouts.
+            json jsonCalloutDataList;
+            jsonCalloutDataList = json::array();
+            getSBECallout(procTarget, jsonCalloutDataList);
+            ffdcFilePtr = std::make_unique<FFDCFile>(jsonCalloutDataList);
+            ffdc.push_back(std::make_tuple(
+                sdbusplus::xyz::openbmc_project::Logging::server::Create::
+                    FFDCFormat::JSON,
+                static_cast<uint8_t>(0xCA), static_cast<uint8_t>(0x01),
+                ffdcFilePtr->getFileDescriptor()));
+        }
     }
     catch (const std::exception& e)
     {
