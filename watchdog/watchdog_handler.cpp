@@ -22,7 +22,7 @@ using namespace phosphor::logging;
  * @param progressStatus - dump progress status
  * @return Always non-zero indicating no error, no cascading callbacks
  */
-uint dumpStatusChanged(sdbusplus::message::message& msg, std::string path,
+uint dumpStatusChanged(sdbusplus::message_t& msg, std::string path,
                        DumpProgressStatus& progressStatus)
 {
     // reply (msg) will be a property change message
@@ -125,7 +125,7 @@ void requestDump(const DumpParameters& dumpParameters)
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
     constexpr auto function = "CreateDump";
 
-    sdbusplus::message::message method;
+    sdbusplus::message_t method;
 
     if (0 == dbusMethod(path, interface, function, method))
     {
@@ -165,7 +165,7 @@ void requestDump(const DumpParameters& dumpParameters)
             // monitor dump progress
             monitorDump(reply, dumpParameters.timeout);
         }
-        catch (const sdbusplus::exception::exception& e)
+        catch (const sdbusplus::exception_t& e)
         {
             constexpr auto ERROR_DUMP_DISABLED =
                 "xyz.openbmc_project.Dump.Create.Error.Disabled";
