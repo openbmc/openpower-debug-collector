@@ -33,7 +33,7 @@ enum ReturnCodes
  *
  **/
 int dbusMethod(const std::string& path, const std::string& interface,
-               const std::string& function, sdbusplus::message::message& method,
+               const std::string& function, sdbusplus::message_t& method,
                const std::string& extended = "");
 
 /**

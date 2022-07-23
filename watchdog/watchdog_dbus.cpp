@@ -15,7 +15,7 @@ namespace dump
 using namespace phosphor::logging;
 
 int dbusMethod(const std::string& path, const std::string& interface,
-               const std::string& function, sdbusplus::message::message& method,
+               const std::string& function, sdbusplus::message_t& method,
                const std::string& extended)
 {
     int rc = RC_DBUS_ERROR; // assume error
@@ -77,7 +77,7 @@ int dbusMethod(const std::string& path, const std::string& interface,
             log<level::INFO>(traceMsgIface.c_str());
         }
     }
-    catch (const sdbusplus::exception::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         log<level::ERR>("Error in dbusMethod", entry("ERROR=%s", e.what()));
     }
@@ -99,7 +99,7 @@ uint32_t createPel(const std::string& eventType,
     constexpr auto interface = "org.open_power.Logging.PEL";
     constexpr auto function = "CreatePELWithFFDCFiles";
 
-    sdbusplus::message::message method;
+    sdbusplus::message_t method;
 
     if (0 == dbusMethod(pathLogging, interface, function, method))
     {
@@ -119,7 +119,7 @@ uint32_t createPel(const std::string& eventType,
             response.read(reply);
             plid = std::get<1>(reply); // platform log id is tuple "second"
         }
-        catch (const sdbusplus::exception::exception& e)
+        catch (const sdbusplus::exception_t& e)
         {
             log<level::ERR>("Error in createPel CreatePELWithFFDCFiles",
                             entry("ERROR=%s", e.what()));
