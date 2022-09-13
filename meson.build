@@ -13,15 +13,13 @@ project(
 
 systemd = dependency('systemd', required : true)
 
-sdbusplus = dependency(
-    'sdbusplus',
-    fallback: [
-        'sdbusplus',
-        'sdbusplus_dep'
-    ]
-)
-sdbusplusplus_prog = find_program('sdbus++', required : true)
-sdbuspp_gen_meson_prog = find_program('sdbus++-gen-meson', required : true)
+sdbusplus_dep = dependency('sdbusplus')
+sdbusplusplus_prog = find_program('sdbus++')
+sdbuspp_gen_meson_prog = find_program('sdbus++-gen-meson')
+sdbusplusplus_depfiles = files()
+if sdbusplus_dep.type_name() == 'internal'
+    sdbusplusplus_depfiles = subproject('sdbusplus').get_variable('sdbusplusplus_depfiles')
+endif
 
 phosphorlogging = dependency(
     'phosphor-logging',
@@ -100,7 +98,7 @@ endif
 
 deps = [
     systemd,
-    sdbusplus,
+    sdbusplus_dep,
     phosphorlogging,
     fmt_dep,
     extra_deps
