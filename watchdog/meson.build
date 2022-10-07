@@ -11,7 +11,7 @@ watchdog_src = files(
 
 # Library dependencies
 watchdog_deps = [
-    sdbusplus
+    sdbusplus_dep
 ]
 
 # Create static library
