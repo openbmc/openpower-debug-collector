@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5e9ff12_4f870319",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001084
+      },
+      "writtenOn": "2022-10-07T17:55:33Z",
+      "side": 1,
+      "message": "Fixes the issue reported in the following gerrit review:\nhttps://gerrit.openbmc.org/c/openbmc/openbmc/+/57178\n",
+      "revId": "7f3e906b4c80a7c3080f09b92c6e2842b2d58a1d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
