@@ -190,6 +190,26 @@ class SbeDumpCollector
     {
         return SBETypes::PROC;
     }
+
+    /**
+     * @brief Executes thread stop on a processor target
+     *
+     * If the Self Boot Engine (SBE) is not ready to accept chip operations
+     * (chip-ops), it logs the condition and excludes the processor from the
+     * dump collection process. For critical errors, such as a timeout during
+     * the stop operation, it logs the error and again excludes the processor.
+     * In case of SBE command failure or non-critical errors, it continues with
+     * the dump collection process.
+     *
+     * @param target Pointer to the pdbg target structure representing the
+     *               processor to perform the thread stop on.
+     * @return true If the thread stop was successful or in case of non-critical
+     *              errors where dump collection can proceed.
+     * @return false If the SBE is not ready for chip-ops or in case of critical
+     *               errors like timeouts, indicating the processor should be
+     *               excluded from the dump collection.
+     */
+    bool executeThreadStop(struct pdbg_target* target);
 };
 
 } // namespace openpower::dump::sbe_chipop

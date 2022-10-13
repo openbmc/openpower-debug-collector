@@ -53,7 +53,16 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
             continue;
         }
 
-        targets.push_back(target);
+        bool includeTarget = true;
+        // if the dump type is hostboot then call stop instructions
+        if (type == SBE_DUMP_TYPE_HOSTBOOT)
+        {
+            includeTarget = executeThreadStop(target);
+        }
+        if (includeTarget)
+        {
+            targets.push_back(target);
+        }
     }
 
     std::vector<uint8_t> clockStates = {SBE_CLOCK_ON, SBE_CLOCK_OFF};
@@ -287,6 +296,44 @@ void SbeDumpCollector::writeDumpFile(
         // Just return here so dumps collected from other SBEs can be
         // packaged.
     }
+}
+
+bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
+{
+    try
+    {
+        openpower::phal::sbe::threadStopProc(target);
+        return true;
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        uint64_t chipPos = pdbg_target_index(target);
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            lg2::info("SBE is not ready to accept chip-op: Skipping "
+                      "stop instruction on proc-({POSITION}) error({ERROR}) ",
+                      "POSITION", chipPos, "ERROR", sbeError);
+            return false; // Do not include the target for dump collection
+        }
+
+        lg2::error("Stop instructions failed on "
+                   "proc-({POSITION}) error({ERROR}) ",
+                   "POSITION", chipPos, "ERROR", sbeError);
+
+        logErrorAndCreatePEL(sbeError, chipPos, SBETypes::PROC,
+                             SBEFIFO_CMD_CLASS_INSTRUCTION,
+                             SBEFIFO_CMD_CONTROL_INSN);
+        // For TIMEOUT, log the error and skip adding the processor for dump
+        // collection
+        if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
+        {
+            return false;
+        }
+    }
+    // Include the target for dump collection for SBE_CMD_FAILED or any other
+    // non-critical errors
+    return true;
 }
 
 } // namespace openpower::dump::sbe_chipop
