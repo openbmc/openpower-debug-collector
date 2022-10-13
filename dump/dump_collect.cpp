@@ -208,26 +208,84 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
     bool failed = false;
     // Initialize PDBG
     openpower::phal::pdbg::init();
+
+    std::vector<struct pdbg_target*> procList;
+
+    pdbg_for_each_class_target("proc", target)
+    {
+        if (pdbg_target_probe(target) != PDBG_TARGET_ENABLED)
+        {
+            continue;
+        }
+        if (!openpower::phal::pdbg::isTgtFunctional(target))
+        {
+            if (openpower::phal::pdbg::isPrimaryProc(target))
+            {
+                // Primary processor is not functional
+                log<level::INFO>("Primary Processor is not functional");
+            }
+            continue;
+        }
+        procList.push_back(std::move(target));
+    }
+
+    // if the dump type is hostboot then call stop instructions
+    if (type == openpower::dump::SBE::SBE_DUMP_TYPE_HOSTBOOT)
+    {
+        for (auto it = procList.begin(); it != procList.end(); ++it)
+        {
+            try
+            {
+                openpower::phal::sbe::threadStopProc(*it);
+            }
+            catch (const openpower::phal::sbeError_t& sbeError)
+            {
+                // Remove failed from the list
+                procList.erase(it);
+                auto errType = sbeError.errType();
+                // Create PEL only for  valid SBE reported failures
+                if (errType == openpower::phal::exception::SBE_CMD_FAILED)
+                {
+                    constexpr auto SBEFIFO_CMD_CLASS_INSTRUCTION = 0xA700;
+                    constexpr auto SBEFIFO_CMD_CONTROL_INSN = 0x01;
+                    uint32_t cmd = SBEFIFO_CMD_CLASS_INSTRUCTION |
+                                   SBEFIFO_CMD_CONTROL_INSN;
+                    uint32_t index = pdbg_target_index(*it);
+                    log<level::ERR>(
+                        fmt::format("threadStopAll failed({}) on proc({})",
+                                    errType, index)
+                            .c_str());
+                    // To store additional data about ffdc.
+                    openpower::dump::pel::FFDCData pelAdditionalData;
+                    // SRC6 : [0:15] chip position
+                    //        [16:23] command class,  [24:31] Type
+                    pelAdditionalData.emplace_back(
+                        "SRC6", std::to_string((index << 16) | cmd));
+
+                    // Create informational error log.
+                    openpower::dump::pel::createSbeErrorPEL(
+                        "org.open_power.Processor.Error.SbeChipOpFailure",
+                        sbeError, pelAdditionalData);
+                }
+                else
+                {
+                    // SBE is not ready to accept chip-ops,
+                    // Skip the request, no additional error handling required.
+                    log<level::INFO>(
+                        fmt::format("threadStopAll: Skipping ({}) on proc({})",
+                                    sbeError.what(), pdbg_target_index(*it))
+                            .c_str());
+                }
+            }
+        }
+    }
     std::vector<uint8_t> clockStates = {SBE::SBE_CLOCK_ON, SBE::SBE_CLOCK_OFF};
     for (auto cstate : clockStates)
     {
         std::vector<pid_t> pidList;
-        pdbg_for_each_class_target("proc", target)
-        {
-            if (pdbg_target_probe(target) != PDBG_TARGET_ENABLED)
-            {
-                continue;
-            }
-            if (!openpower::phal::pdbg::isTgtFunctional(target))
-            {
-                if (openpower::phal::pdbg::isPrimaryProc(target))
-                {
-                    // Primary processor is not functional
-                    log<level::INFO>("Primary Processor is not functional");
-                }
-                continue;
-            }
 
+        for (pdbg_target* procTarget : procList)
+        {
             pid_t pid = fork();
             if (pid < 0)
             {
@@ -240,7 +298,7 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
             {
                 try
                 {
-                    collectDumpFromSBE(target, path, id, type, cstate,
+                    collectDumpFromSBE(procTarget, path, id, type, cstate,
                                        failingUnit);
                 }
                 catch (const std::runtime_error& error)
