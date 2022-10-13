@@ -150,6 +150,7 @@ class SbeDumpCollector
                               uint32_t cmdClass, uint32_t cmdType);
 
     SBETypes getSBEType(struct pdbg_target* chip);
+    bool executeThreadStop(struct pdbg_target* target);
 };
 
 } // namespace sbe_chipop
