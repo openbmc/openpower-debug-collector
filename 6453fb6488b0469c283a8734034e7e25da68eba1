@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5fa35ab_c2ee040e",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:15:56Z",
+      "side": 1,
+      "message": "removing content of vector in for loop will result in undefined behavior for the iterator.\nhttps://stackoverflow.com/questions/10360461/removing-item-from-vector-while-in-c11-range-for-loop",
+      "range": {
+        "startLine": 243,
+        "startChar": 0,
+        "endLine": 244,
+        "endChar": 35
+      },
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd0505a7_9d1c3c2e",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:15:56Z",
+      "side": 1,
+      "message": "this iterator is removed above and it is accessed here",
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d613edf_d64c0ed5",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:15:56Z",
+      "side": 1,
+      "message": "you get the index before it is deleted",
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
