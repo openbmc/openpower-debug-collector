@@ -35,7 +35,7 @@ constexpr auto loggingInterface = "xyz.openbmc_project.Logging.Create";
 constexpr auto opLoggingInterface = "org.open_power.Logging.PEL";
 
 uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
-                           const FFDCData& ffdcData)
+                           const FFDCData& ffdcData, const Severity& severity)
 {
     uint32_t plid = 0;
     std::unordered_map<std::string, std::string> additionalData = {
@@ -81,8 +81,7 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
                                 opLoggingInterface, "CreatePELWithFFDCFiles");
         auto level =
             sdbusplus::xyz::openbmc_project::Logging::server::convertForMessage(
-                sdbusplus::xyz::openbmc_project::Logging::server::Entry::Level::
-                    Error);
+                severity);
         method.append(event, level, additionalData, pelFFDCInfo);
         auto response = bus.call(method);
 
