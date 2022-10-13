@@ -24,6 +24,12 @@ constexpr auto SBEFIFO_CMD_CLASS_DUMP = 0xAA00;
 
 // Get dump method
 constexpr auto SBEFIFO_CMD_GET_DUMP = 0x01;
+
+// Stop instruction command class
+constexpr auto SBEFIFO_CMD_CLASS_INSTRUCTION = 0xA700;
+
+// Stop instruction method
+constexpr auto SBEFIFO_CMD_CONTROL_INSN = 0x01;
 } // namespace SBE
 } // namespace dump
 } // namespace openpower
