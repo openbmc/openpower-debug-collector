@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "000c751a_65d7c2fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-10-13T21:16:38Z",
+      "side": 1,
+      "message": "The behavior tested using HW and hostboot dump",
+      "parentUuid": "1936c211_93716343",
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ad818c9_63cd0238",
