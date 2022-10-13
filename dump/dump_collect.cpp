@@ -55,7 +55,16 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
             continue;
         }
 
-        targets.push_back(target);
+        bool includeTarget = true;
+        // if the dump type is hostboot then call stop instructions
+        if (type == SBE_DUMP_TYPE_HOSTBOOT)
+        {
+            includeTarget = executeThreadStop(target);
+        }
+        if (includeTarget)
+        {
+            targets.push_back(target);
+        }
     }
 
     std::vector<uint8_t> clockStates = {SBE_CLOCK_ON, SBE_CLOCK_OFF};
@@ -143,15 +152,18 @@ void SbeDumpCollector::logErrorAndCreatePEL(
     std::string event = sbeTypeAttributes[sbeType].chipOpFailure;
     auto dumpIsRequired = false;
 
+    // Determine the event and whether a dump is required based on sbeError type
     if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
     {
         event = sbeTypeAttributes[sbeType].chipOpTimeout;
         dumpIsRequired = true;
     }
 
+    // Prepare additional data for PEL creation
     openpower::dump::pel::FFDCData pelAdditionalData = {
         {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
 
+    // Create PEL
     auto logId = openpower::dump::pel::createSbeErrorPEL(event, sbeError,
                                                          pelAdditionalData);
 
@@ -289,6 +301,64 @@ void SbeDumpCollector::writeDumpFile(
         // Just return here so dumps collected from other SBEs can be
         // packaged.
     }
+}
+
+/**
+ * @brief Executes thread stop on a processor target
+ *
+ * If the Self Boot Engine (SBE) is not ready to accept chip operations
+ * (chip-ops), it logs the condition and excludes the processor from the
+ * dump collection process. For critical errors, such as a timeout during
+ * the stop operation, it logs the error and again excludes the processor.
+ * In case of SBE command failure or non-critical errors, it continues with
+ * the dump collection process.
+ *
+ * @param target Pointer to the pdbg target structure representing the
+ *               processor to perform the thread stop on.
+ * @return true If the thread stop was successful or in case of non-critical
+ *              errors where dump collection can proceed.
+ * @return false If the SBE is not ready for chip-ops or in case of critical
+ *               errors like timeouts, indicating the processor should be
+ *               excluded from the dump collection.
+ */
+bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
+{
+    try
+    {
+        openpower::phal::sbe::threadStopProc(target);
+        return true;
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        uint64_t chipPos = pdbg_target_index(target);
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            log<level::INFO>(std::format("SBE is not ready to accept chip-op: "
+                                         "Skipping stop instruction on "
+                                         "proc-({}) error({}) ",
+                                         chipPos, sbeError.what())
+                                 .c_str());
+            return false; // Do not include the target for dump collection
+        }
+
+        log<level::INFO>(std::format("Stop instructions failed on "
+                                     "proc-({}) error({}) ",
+                                     chipPos, sbeError.what())
+                             .c_str());
+
+        logErrorAndCreatePEL(sbeError, chipPos, SBEFIFO_CMD_CLASS_INSTRUCTION,
+                             SBEFIFO_CMD_CONTROL_INSN);
+        // For TIMEOUT, log the error and skip adding the processor for dump
+        // collection
+        if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
+        {
+            return false;
+        }
+    }
+    // Include the target for dump collection for SBE_CMD_FAILED or any other
+    // non-critical errors
+    return true;
 }
 
 } // namespace sbe_chipop

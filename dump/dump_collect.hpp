@@ -191,6 +191,10 @@ class SbeDumpCollector
     {
         return SBETypes::PROC;
     }
+
+    SBETypes getSBEType(struct pdbg_target* chip);
+
+    bool executeThreadStop(struct pdbg_target* target);
 };
 
 } // namespace sbe_chipop
