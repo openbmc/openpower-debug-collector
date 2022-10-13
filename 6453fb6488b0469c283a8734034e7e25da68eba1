@@ -3,6 +3,80 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1936c211_93716343",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:28:12Z",
+      "side": 1,
+      "message": "if possible fake the behavior and test",
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ad818c9_63cd0238",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:28:12Z",
+      "side": 1,
+      "message": "fake it and test this method",
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84466418_9431493a",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:28:12Z",
+      "side": 1,
+      "message": "is this log required? if so add proc target to the log",
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dcc05a0_1fa6602f",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2022-10-13T15:28:12Z",
+      "side": 1,
+      "message": "it is just a pointer so no need to use move, it might work though",
+      "range": {
+        "startLine": 229,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 46
+      },
+      "revId": "6453fb6488b0469c283a8734034e7e25da68eba1",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a5fa35ab_c2ee040e",
         "filename": "dump/dump_collect.cpp",
         "patchSetId": 2
