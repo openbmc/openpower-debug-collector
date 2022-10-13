@@ -137,12 +137,13 @@ class SbeDumpCollector
                        util::DumpDataPtr& dataPtr, const uint32_t len);
 
     void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
-                              uint32_t id, uint8_t type, uint8_t clockState,
-                              uint64_t chipPos);
+                              uint64_t chipPos, uint32_t cmdClass,
+                              uint32_t cmdType);
     uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
                                            const uint8_t type,
                                            uint64_t failingUnit,
                                            const uint8_t chipPos);
+    bool executeThreadStop(struct pdbg_target* target);
 };
 
 } // namespace sbe_chipop

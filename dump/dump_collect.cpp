@@ -55,7 +55,16 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
             continue;
         }
 
-        targets.push_back(target);
+        bool includeTarget = true;
+        // if the dump type is hostboot then call stop instructions
+        if (type == SBE_DUMP_TYPE_HOSTBOOT)
+        {
+            includeTarget = executeThreadStop(target);
+        }
+        if (includeTarget)
+        {
+            targets.push_back(target);
+        }
     }
 
     std::vector<uint8_t> clockStates = {SBE_CLOCK_ON, SBE_CLOCK_OFF};
@@ -137,48 +146,41 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
 }
 
 void SbeDumpCollector::logErrorAndCreatePEL(
-    const openpower::phal::sbeError_t& sbeError, uint32_t id, uint8_t type,
-    uint8_t clockState, uint64_t chipPos)
+    const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
+    uint32_t cmdClass, uint32_t cmdType)
 {
-    if (sbeError.errType() ==
-        openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
-    {
-        // SBE is not ready to accept chip-ops,
-        // Skip the request, no additional error handling required.
-        log<level::INFO>(
-            std::format("Collect dump id({}): Skipping ({}) dump({}) "
-                        "on proc({}) clock state({})",
-                        id, sbeError.what(), type, chipPos, clockState)
-                .c_str());
-        return;
-    }
-
-    log<level::ERR>(
-        std::format(
-            "Error in collecting dump id({}) type({}), clockstate({}), proc "
-            "position({}), error({})",
-            id, type, clockState, chipPos, sbeError.what())
-            .c_str());
-
-    std::string event = "org.open_power.Processor.Error.SbeChipOpFailure";
-    auto dumpIsRequired = false;
-
+    // Determine the event and whether a dump is required based on sbeError type
+    std::string event;
+    bool dumpIsRequired = false;
     if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
     {
         event = "org.open_power.Processor.Error.SbeChipOpTimeout";
         dumpIsRequired = true;
     }
+    else
+    {
+        // Log the received error but do not mark as dump required
+        event = "org.open_power.Processor.Error.SbeChipOpFailure";
+    }
 
+    // Log the error with relevant details
+    log<level::ERR>(
+        std::format("SBE operation error, chip position({}), error({}), "
+                    "command class({:X}), command type({:X}), event({})",
+                    chipPos, sbeError.what(), cmdClass, cmdType, event)
+            .c_str());
+
+    // Prepare additional data for PEL creation
     openpower::dump::pel::FFDCData pelAdditionalData = {
-        {"SRC6", std::to_string((chipPos << 16) | (SBEFIFO_CMD_CLASS_DUMP |
-                                                   SBEFIFO_CMD_GET_DUMP))}};
+        {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
 
+    // Create PEL
     auto logId = openpower::dump::pel::createSbeErrorPEL(event, sbeError,
                                                          pelAdditionalData);
 
+    // Request SBE Dump if required
     if (dumpIsRequired)
     {
-        // Request SBE Dump
         try
         {
             util::requestSBEDump(chipPos, logId);
@@ -186,8 +188,9 @@ void SbeDumpCollector::logErrorAndCreatePEL(
         catch (const std::exception& e)
         {
             log<level::ERR>(
-                std::format("SBE Dump request failed, proc({}) error({})",
-                            chipPos, e.what())
+                std::format(
+                    "SBE Dump request failed, chip position({}), Error: {}",
+                    chipPos, e.what())
                     .c_str());
         }
     }
@@ -218,7 +221,26 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* proc,
     }
     catch (const openpower::phal::sbeError_t& sbeError)
     {
-        logErrorAndCreatePEL(sbeError, id, type, clockState, chipPos);
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            // SBE is not ready to accept chip-ops,
+            // Skip the request, no additional error handling required.
+            log<level::INFO>(
+                std::format("Collect dump id({}): Skipping ({}) dump({}) "
+                            "on proc({}) clock state({})",
+                            id, sbeError.what(), type, chipPos, clockState)
+                    .c_str());
+            return;
+        }
+        log<level::ERR>(
+            std::format(
+                "Error in collecting dump id({}) type({}), clockstate({}), proc "
+                "position({}), error({})",
+                id, type, clockState, chipPos, sbeError.what())
+                .c_str());
+        logErrorAndCreatePEL(sbeError, chipPos, SBEFIFO_CMD_CLASS_DUMP,
+                             SBEFIFO_CMD_GET_DUMP);
         return;
     }
     writeDumpFile(path, id, clockState, chipPos, dataPtr, len);
@@ -266,9 +288,10 @@ void SbeDumpCollector::writeDumpFile(const std::filesystem::path& path,
     try
     {
         outfile.write(reinterpret_cast<const char*>(dataPtr.getData()), len);
-        log<level::INFO>("Successfully wrote dump file",
-                         entry("PATH=%s", dumpPath.c_str()),
-                         entry("SIZE=%u", len));
+        log<level::INFO>(std::format("Successfully wrote dump file "
+                                     "path=({}) size=({})",
+                                     dumpPath.string(), len)
+                             .c_str());
     }
     catch (const std::ofstream::failure& oe)
     {
@@ -295,6 +318,39 @@ uint8_t SbeDumpCollector::checkFastarrayCollectionNeeded(
              (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
                ? 1
                : 0;
+}
+
+bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
+{
+    try
+    {
+        openpower::phal::sbe::threadStopProc(target);
+        return true;
+    }
+    catch (const openpower::phal::sbeError_t& sbeError)
+    {
+        uint64_t chipPos = pdbg_target_index(target);
+        if (sbeError.errType() ==
+            openpower::phal::exception::SBE_CHIPOP_NOT_ALLOWED)
+        {
+            log<level::INFO>(std::format("SBE is not ready to accept chip-op: "
+                                         "Skipping proc-({}) error({}) ",
+                                         chipPos, sbeError.what())
+                                 .c_str());
+            return false; // Do not include the target for dump collection
+        }
+        logErrorAndCreatePEL(sbeError, chipPos, SBEFIFO_CMD_CLASS_INSTRUCTION,
+                             SBEFIFO_CMD_CONTROL_INSN);
+        // For TIMEOUT, log the error and skip adding the processor for dump
+        // collection
+        if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
+        {
+            return false;
+        }
+    }
+    // Include the target for dump collection for SBE_CMD_FAILED or any other
+    // non-critical errors
+    return true;
 }
 
 } // namespace sbe_chipop
