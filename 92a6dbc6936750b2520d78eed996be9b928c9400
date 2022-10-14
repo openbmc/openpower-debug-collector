@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87a68318_f0f7eaac",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-10-14T04:52:16Z",
+      "side": 1,
+      "message": "This is INFO, added error log and a error trace if it really error, or will set log level based on error type",
+      "parentUuid": "90c3342b_8faece8e",
+      "range": {
+        "startLine": 246,
+        "startChar": 26,
+        "endLine": 246,
+        "endChar": 32
+      },
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1126d683_3147742f",
@@ -43,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f7e7e0f9_6b8d4471",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-10-14T04:52:16Z",
+      "side": 1,
+      "message": "Will make informational if dump can be collected from this SBE otherwise it is function break",
+      "parentUuid": "1126d683_3147742f",
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26eb4a5d_87c8dedd",
         "filename": "dump/dump_collect.cpp",
         "patchSetId": 5
@@ -54,6 +96,24 @@
       "writtenOn": "2022-10-14T04:31:16Z",
       "side": 1,
       "message": "Incase chip-op cmd failures ( SBE is ready to accept chip-ops) , should we attempt to collect hostboot dumps? Need to check with SBE team any side effect with this?.",
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "687b01bd_64756513",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-10-14T04:52:16Z",
+      "side": 1,
+      "message": "Checking",
+      "parentUuid": "26eb4a5d_87c8dedd",
       "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
