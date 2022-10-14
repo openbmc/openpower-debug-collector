@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90c3342b_8faece8e",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2022-10-14T04:31:16Z",
+      "side": 1,
+      "message": "ERROR?",
+      "range": {
+        "startLine": 246,
+        "startChar": 26,
+        "endLine": 246,
+        "endChar": 32
+      },
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1126d683_3147742f",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2022-10-14T04:31:16Z",
+      "side": 1,
+      "message": "This should be marked as informational",
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26eb4a5d_87c8dedd",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2022-10-14T04:31:16Z",
+      "side": 1,
+      "message": "Incase chip-op cmd failures ( SBE is ready to accept chip-ops) , should we attempt to collect hostboot dumps? Need to check with SBE team any side effect with this?.",
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
