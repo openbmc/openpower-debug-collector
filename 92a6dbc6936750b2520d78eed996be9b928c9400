@@ -83,6 +83,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "931817ab_43fb49b0",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-10-14T05:25:23Z",
+      "side": 1,
+      "message": "need to collect the dump on failed proces also so changing to informational",
+      "parentUuid": "f7e7e0f9_6b8d4471",
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26eb4a5d_87c8dedd",
@@ -114,6 +132,24 @@
       "side": 1,
       "message": "Checking",
       "parentUuid": "26eb4a5d_87c8dedd",
+      "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28bffa21_b04d58a3",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-10-14T05:25:23Z",
+      "side": 1,
+      "message": "Need o attempt the collection",
+      "parentUuid": "687b01bd_64756513",
       "revId": "92a6dbc6936750b2520d78eed996be9b928c9400",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
