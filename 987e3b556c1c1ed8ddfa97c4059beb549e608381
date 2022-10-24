@@ -48,6 +48,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "349a774d_97f07ff2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2022-10-24T19:00:02Z",
+      "side": 1,
+      "message": "Yeah, there was a window of time where a host TI or crash can occur and PRD put system into Quiesce state but has not run the host-stop target to cause the host watchdog service to stop. Both the watchdog and TI paths put system in Quiesce state so we can\u0027t stop the watchdog on that (or it would be stopping itself before done) so we need a check like this to prevent the watchdog from requesting a dump in parallel with PRD.",
+      "parentUuid": "04fbe7a3_09775e37",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "987e3b556c1c1ed8ddfa97c4059beb549e608381",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3b670b53_6999fe58",
