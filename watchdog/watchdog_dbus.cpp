@@ -137,7 +137,7 @@ bool isHostStateRunning()
     constexpr auto extended = "org.freedesktop.DBus.Properties";
     constexpr auto function = "Get";
 
-    sdbusplus::message::message method;
+    sdbusplus::message_t method;
 
     if (0 == dbusMethod(path, interface, function, method, extended))
     {
@@ -157,7 +157,7 @@ bool isHostStateRunning()
                 return true;
             }
         }
-        catch (const sdbusplus::exception::exception& e)
+        catch (const sdbusplus::exception_t& e)
         {
             log<level::ERR>(
                 fmt::format("Failed to read CurrentHostState property ({})",
