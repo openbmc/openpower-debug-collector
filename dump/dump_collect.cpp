@@ -283,6 +283,12 @@ void collectDump(uint8_t type, uint32_t id, const uint64_t failingUnit,
     std::vector<uint8_t> clockStates = {SBE::SBE_CLOCK_ON, SBE::SBE_CLOCK_OFF};
     for (auto cstate : clockStates)
     {
+        // Performace dump need to collect only when clocks are ON
+        if ((type == SBE::SBE_DUMP_TYPE_PERFORMANCE) && (cstate != SBE::SBE_CLOCK_ON))
+        {
+            continue;
+        }
+
         std::vector<pid_t> pidList;
 
         for (pdbg_target* procTarget : procList)
