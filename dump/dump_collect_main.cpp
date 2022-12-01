@@ -31,7 +31,7 @@ int main(int argc, char** argv)
     app.add_option("--type, -t", type, "Type of the dump")
         ->required()
         ->check(CLI::IsMember({SBE_DUMP_TYPE_HARDWARE, SBE_DUMP_TYPE_HOSTBOOT,
-                               SBE_DUMP_TYPE_SBE}));
+                               SBE_DUMP_TYPE_SBE, SBE_DUMP_TYPE_PERFORMANCE}));
 
     app.add_option("--id, -i", id, "ID of the dump")->required();
 
