@@ -74,8 +74,8 @@ void ArgumentParser::usage(const std::string& programName)
     std::cerr << "Options:\n";
     std::cerr << "    --help            Print this menu\n";
     std::cerr << "    --type            Type of the dump\n";
-    std::cerr
-        << "                      Valid types: 0 - Hardware, 5 - Hostboot\n";
+    std::cerr << "                      Valid types: 0 - Hardware, "
+                 "3 Performance 5 - Hostboot 10 - SBE \n";
     std::cerr << "    --id              ID of the dump\n";
     std::cerr << "    --path            Path to store dump\n";
     std::cerr << "    --failingunit     ID of the failing unit\n";
