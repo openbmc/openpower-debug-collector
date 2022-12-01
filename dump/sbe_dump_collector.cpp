@@ -68,6 +68,11 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
     std::vector<uint8_t> clockStates = {SBE_CLOCK_ON, SBE_CLOCK_OFF};
     for (auto cstate : clockStates)
     {
+        // Skip collection for performance dump if clock state is not ON
+        if (type == SBE_DUMP_TYPE_PERFORMANCE && cstate != SBE_CLOCK_ON)
+        {
+            continue;
+        }
         auto futures = spawnDumpCollectionProcesses(type, id, path, failingUnit,
                                                     cstate, targets);
 
