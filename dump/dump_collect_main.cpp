@@ -30,6 +30,7 @@ int main(int argc, char** argv)
     auto type = std::stoi(typeStr);
     if (!((type == openpower::dump::SBE::SBE_DUMP_TYPE_HOSTBOOT) ||
           (type == openpower::dump::SBE::SBE_DUMP_TYPE_HARDWARE) ||
+          (type == openpower::dump::SBE::SBE_DUMP_TYPE_PERFORMANCE) ||
           (type == openpower::dump::SBE::SBE_DUMP_TYPE_SBE)))
     {
         ExitWithError("type specified is invalid.", argv);
