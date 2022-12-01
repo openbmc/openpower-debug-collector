@@ -8,6 +8,7 @@ namespace SBE
 // Dump type to the sbe_dump chipop
 constexpr auto SBE_DUMP_TYPE_HOSTBOOT = 0x5;
 constexpr auto SBE_DUMP_TYPE_HARDWARE = 0x1;
+constexpr auto SBE_DUMP_TYPE_PERFORMANCE = 0x3;
 
 // SBE dump type
 constexpr auto SBE_DUMP_TYPE_SBE = 0xA;
