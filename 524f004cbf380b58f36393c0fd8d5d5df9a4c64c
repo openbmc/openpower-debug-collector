@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "bf220edc_383e28a2",
         "filename": "dump/org.open_power.Dump.Manager.service",
@@ -20,10 +21,10 @@
         "endChar": 26
       },
       "revId": "524f004cbf380b58f36393c0fd8d5d5df9a4c64c",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "8964d95b_92942b44",
         "filename": "dump/org.open_power.Dump.Manager.service",
@@ -44,8 +45,31 @@
         "endChar": 26
       },
       "revId": "524f004cbf380b58f36393c0fd8d5d5df9a4c64c",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d89b1d10_d735d2d1",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 19
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-03T12:31:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8964d95b_92942b44",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 26
+      },
+      "revId": "524f004cbf380b58f36393c0fd8d5d5df9a4c64c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
