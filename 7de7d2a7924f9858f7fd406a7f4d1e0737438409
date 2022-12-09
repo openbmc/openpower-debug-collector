@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "5c154fc1_c118e51d",
         "filename": "dump/dump_collect.cpp",
@@ -20,10 +21,10 @@
         "endChar": 9
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "41d44685_b775c939",
         "filename": "dump/dump_collect.cpp",
@@ -44,10 +45,34 @@
         "endChar": 9
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d43e5606_673c8f2c",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:06:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "41d44685_b775c939",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 9
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "63e118e2_6bf02e43",
         "filename": "dump/dump_collect.cpp",
@@ -67,10 +92,10 @@
         "endChar": 9
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "0218ec89_f08c32a7",
         "filename": "dump/dump_collect.cpp",
@@ -91,10 +116,34 @@
         "endChar": 9
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4fa4241_aa51ae61",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:06:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0218ec89_f08c32a7",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 61,
+        "endChar": 9
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "eb846495_79249506",
         "filename": "dump/dump_collect.cpp",
@@ -108,10 +157,10 @@
       "side": 1,
       "message": "libphal supports API to check valid SBE state for chip-op . you can enabe this support in separate commit",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "bfb3318c_7acda686",
         "filename": "dump/dump_collect.cpp",
@@ -126,10 +175,28 @@
       "message": "the commit is already in review",
       "parentUuid": "eb846495_79249506",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab7d92b8_abd6c65d",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:06:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bfb3318c_7acda686",
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "e8b88def_ca101951",
         "filename": "dump/dump_collect.cpp",
@@ -149,10 +216,10 @@
         "endChar": 33
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "203bdd76_b69aa5e2",
         "filename": "dump/dump_collect.cpp",
@@ -173,10 +240,10 @@
         "endChar": 33
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5433c81f_ff3e6839",
         "filename": "dump/dump_collect.cpp",
@@ -197,10 +264,34 @@
         "endChar": 33
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2716d479_84a24073",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:06:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5433c81f_ff3e6839",
+      "range": {
+        "startLine": 194,
+        "startChar": 3,
+        "endLine": 199,
+        "endChar": 33
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "7f274376_7deb64d2",
         "filename": "dump/dump_collect.cpp",
@@ -220,10 +311,10 @@
         "endChar": 42
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1d9b1b93_d7446a0c",
         "filename": "dump/dump_collect.cpp",
@@ -244,10 +335,10 @@
         "endChar": 42
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "46fefdad_e5fc7669",
         "filename": "dump/dump_collect.cpp",
@@ -268,10 +359,10 @@
         "endChar": 42
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "c68bc4b4_5740fb28",
         "filename": "dump/dump_collect.cpp",
@@ -292,10 +383,34 @@
         "endChar": 42
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60213a2a_74a4580f",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:06:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c68bc4b4_5740fb28",
+      "range": {
+        "startLine": 256,
+        "startChar": 16,
+        "endLine": 256,
+        "endChar": 42
+      },
+      "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "1a28f6aa_c04537e1",
         "filename": "dump/dump_collect.hpp",
@@ -309,10 +424,10 @@
       "side": 1,
       "message": "Add extern \"C\"",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "59e517b0_d1a7f2b7",
         "filename": "dump/dump_collect.hpp",
@@ -327,10 +442,10 @@
       "message": "Done",
       "parentUuid": "1a28f6aa_c04537e1",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "71f4f5f6_0954ed70",
         "filename": "dump/dump_collect.hpp",
@@ -344,10 +459,10 @@
       "side": 1,
       "message": "Any issue in making innput varibale const? like any back-end dependencies?",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "5e7e0f61_e87ee598",
         "filename": "dump/dump_collect.hpp",
@@ -362,10 +477,10 @@
       "message": "Done",
       "parentUuid": "71f4f5f6_0954ed70",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "b3f50fc6_641259d9",
         "filename": "dump/dump_collect.hpp",
@@ -385,10 +500,10 @@
         "endChar": 52
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "9a0a73a5_892ab0cb",
         "filename": "dump/dump_collect.hpp",
@@ -409,10 +524,10 @@
         "endChar": 52
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "de1ed4f0_027d4051",
         "filename": "dump/dump_collect.hpp",
@@ -432,10 +547,10 @@
         "endChar": 54
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "f64a922d_1aca2d55",
         "filename": "dump/dump_collect.hpp",
@@ -456,10 +571,10 @@
         "endChar": 54
       },
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "3c67ce2f_0719f7e7",
         "filename": "dump/dump_collect.hpp",
@@ -473,10 +588,10 @@
       "side": 1,
       "message": "same comment as line 21",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "1b7fc4a4_0f63f106",
         "filename": "dump/dump_collect.hpp",
@@ -491,8 +606,7 @@
       "message": "Done",
       "parentUuid": "3c67ce2f_0719f7e7",
       "revId": "7de7d2a7924f9858f7fd406a7f4d1e0737438409",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
