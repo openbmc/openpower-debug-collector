@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "f71c0b4a_be0c1ce2",
         "filename": "dump/dump_collect.cpp",
@@ -20,10 +21,34 @@
         "endChar": 5
       },
       "revId": "39208c4714354c36fb7847cda351fbb15f87fa3d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ba408b9_44178b29",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f71c0b4a_be0c1ce2",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 5
+      },
+      "revId": "39208c4714354c36fb7847cda351fbb15f87fa3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "c2d5fc82_3d52207a",
         "filename": "dump/dump_collect.cpp",
@@ -43,8 +68,31 @@
         "endChar": 13
       },
       "revId": "39208c4714354c36fb7847cda351fbb15f87fa3d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bb72a1c_661ecad1",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2d5fc82_3d52207a",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 13
+      },
+      "revId": "39208c4714354c36fb7847cda351fbb15f87fa3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
