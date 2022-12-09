@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "5321c151_f529c8fb",
         "filename": "dump/dump_collect.cpp",
@@ -20,8 +21,31 @@
         "endChar": 55
       },
       "revId": "3857213b225d8d7270622a7c5fa130fffd9f06f9",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3a771b7_102dcdc9",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:08:57Z",
+      "side": 1,
+      "message": "Looking whether content of path is empty",
+      "parentUuid": "5321c151_f529c8fb",
+      "range": {
+        "startLine": 323,
+        "startChar": 51,
+        "endLine": 323,
+        "endChar": 55
+      },
+      "revId": "3857213b225d8d7270622a7c5fa130fffd9f06f9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
