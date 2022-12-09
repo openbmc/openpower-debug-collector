@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "47559565_9ceeff99",
         "filename": "README.md",
@@ -20,10 +21,10 @@
         "endChar": 8
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "c761fa80_abb82c3d",
         "filename": "README.md",
@@ -44,10 +45,10 @@
         "endChar": 8
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "05001a12_b278ac17",
         "filename": "dump/dump_manager.cpp",
@@ -61,10 +62,10 @@
       "side": 1,
       "message": "I like to know how we arrived this? and How you are going correlate this with BMC inventory and PHAL device tree if both are involved either in this application or consumer of this interface side.",
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "e9e12cf1_10e9c749",
         "filename": "dump/dump_manager.cpp",
@@ -79,10 +80,28 @@
       "message": "maximum 4 sockets x 2(if DCM) x max nodes(4) \u003d 32",
       "parentUuid": "05001a12_b278ac17",
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac615ebf_99eedbbf",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:04:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9e12cf1_10e9c749",
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "775a690e_8e9ce328",
         "filename": "dump/dump_manager.cpp",
@@ -96,10 +115,10 @@
       "side": 1,
       "message": "Just question: Do we need to set collectFastArray as \"1\" if clock is OFF? What is the role behind this?",
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f22c2e59_e5ff2b6a",
         "filename": "dump/dump_manager.cpp",
@@ -114,10 +133,28 @@
       "message": "collect the fast arrays only if clocks are off.. a requirement from SBE",
       "parentUuid": "775a690e_8e9ce328",
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76b481bb_7477ecd5",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:04:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f22c2e59_e5ff2b6a",
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "8f96e744_28e7a6c2",
         "filename": "dump/dump_manager.cpp",
@@ -137,10 +174,10 @@
         "endChar": 28
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "fc999dbe_a7b74f5e",
         "filename": "dump/dump_manager.cpp",
@@ -161,10 +198,34 @@
         "endChar": 28
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18340015_e05c6133",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:04:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fc999dbe_a7b74f5e",
+      "range": {
+        "startLine": 333,
+        "startChar": 21,
+        "endLine": 333,
+        "endChar": 28
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "37edc9f3_bfba65b6",
         "filename": "dump/dump_manager.cpp",
@@ -184,10 +245,10 @@
         "endChar": 17
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "07d8e3c6_79f2f3e3",
         "filename": "dump/dump_manager.cpp",
@@ -208,10 +269,10 @@
         "endChar": 17
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "73565adc_a681280a",
         "filename": "dump/dump_manager.cpp",
@@ -231,10 +292,10 @@
         "endChar": 43
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "155a3ead_5a696b40",
         "filename": "dump/dump_manager.cpp",
@@ -255,10 +316,34 @@
         "endChar": 43
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bce32a5_e2fc10a1",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2022-12-09T07:04:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "155a3ead_5a696b40",
+      "range": {
+        "startLine": 498,
+        "startChar": 35,
+        "endLine": 498,
+        "endChar": 43
+      },
+      "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "bbabe832_d4c0ccb6",
         "filename": "dump/dump_manager.cpp",
@@ -278,10 +363,10 @@
         "endChar": 55
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "07e170a5_0370d488",
         "filename": "dump/dump_manager.cpp",
@@ -302,10 +387,10 @@
         "endChar": 55
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1aabcdcd_b7f2270d",
         "filename": "dump/sbe_consts.hpp",
@@ -319,10 +404,10 @@
       "side": 1,
       "message": "Is is documented somewhere? If so, can you add that link here?",
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "be9090da_6f60598b",
         "filename": "dump/sbe_consts.hpp",
@@ -337,10 +422,10 @@
       "message": "Done",
       "parentUuid": "1aabcdcd_b7f2270d",
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "248c5196_b6101e40",
         "filename": "meson_options.txt",
@@ -360,10 +445,10 @@
         "endChar": 28
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "e2ff5a7b_82eeebca",
         "filename": "meson_options.txt",
@@ -384,10 +469,10 @@
         "endChar": 28
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "864535a1_486de283",
         "filename": "meson_options.txt",
@@ -408,8 +493,7 @@
         "endChar": 28
       },
       "revId": "a96b6df8480a7762cd88b6257be8b0c379fc574e",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
