@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0bbfdf4_fbbf4cbc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-16T07:14:36Z",
+      "side": 1,
+      "message": "A few comments/observations ",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb5cb430_0c991751",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-16T07:14:36Z",
+      "side": 1,
+      "message": "Use of directives in header files is not so much preferred I believe due to namespace pollution. We can rather use those in cpp files itself for ease of coding.",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed1d9e01_b9a9a2f9",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-16T07:14:36Z",
+      "side": 1,
+      "message": "Can the I/P params be made constant? Also instead of const char* can we have const std::string\u0026 (less scary than pointer looks, also more of C++ type)?",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67d3929a_56683952",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-16T07:14:36Z",
+      "side": 1,
+      "message": "const DumpCreateParams\u0026 ?",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ba61375_f6488eb5",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-16T07:14:36Z",
+      "side": 1,
+      "message": "As we are taking references here so if these members aren\u0027t going to be changed later on then it is better to make them as const ones",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2aa54c2_9646c395",
+        "filename": "dump/dump_manager_main.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-16T07:14:36Z",
+      "side": 1,
+      "message": "return event.loop(); and delete line no 18",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
