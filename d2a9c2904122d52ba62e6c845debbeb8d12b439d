@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cfe6ef42_b0a39be8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001496
+      },
+      "writtenOn": "2022-12-22T16:22:05Z",
+      "side": 1,
+      "message": "Could you modify title mentioning what function and to get \"dump\" parameters?",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5cb63662_684c4e4e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 11
@@ -54,6 +71,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09ec3171_b0596c79",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001496
+      },
+      "writtenOn": "2022-12-22T16:22:05Z",
+      "side": 1,
+      "message": "nit: instead of \"not passed\", use \"missing\"",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "be864e7b_ffc10ba8",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 11
@@ -65,6 +99,40 @@
       "writtenOn": "2022-12-22T10:02:30Z",
       "side": 1,
       "message": "auto dumpType \u003d std::get\u003cstd::string\u003e(iter-\u003esecond);",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a4d687f_23e9b72c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1001496
+      },
+      "writtenOn": "2022-12-22T16:22:05Z",
+      "side": 1,
+      "message": "why do you mean by \"setting\" at the end?",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c75ce02_37a3a931",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1001496
+      },
+      "writtenOn": "2022-12-22T16:22:05Z",
+      "side": 1,
+      "message": "nit: \"ivalid\" to \"invalid\"",
       "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
