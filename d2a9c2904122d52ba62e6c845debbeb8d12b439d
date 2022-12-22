@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cb63662_684c4e4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-22T10:02:30Z",
+      "side": 1,
+      "message": "***parameters are missing or invalid***",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eca261d8_b5d288cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-22T10:02:30Z",
+      "side": 1,
+      "message": "Some observations",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a350cf5a_895d36f4",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-22T10:02:30Z",
+      "side": 1,
+      "message": "We can use an unordered map here as the sorting of the map elements are not that important. Advantage will be more faster access and less overhead",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be864e7b_ffc10ba8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-22T10:02:30Z",
+      "side": 1,
+      "message": "auto dumpType \u003d std::get\u003cstd::string\u003e(iter-\u003esecond);",
+      "revId": "d2a9c2904122d52ba62e6c845debbeb8d12b439d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
