@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a6ed4e3_9a613033",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-27T04:45:38Z",
+      "side": 1,
+      "message": "A minor suggestion",
+      "revId": "7b91e7663a05c80f3a27495653c3021af9e26537",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b4eaf25_0ce4e875",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2022-12-27T04:45:38Z",
+      "side": 1,
+      "message": "use static_cast\u003cchar*\u003e(0)--\u003eMore of C++ coding style than C style",
+      "revId": "7b91e7663a05c80f3a27495653c3021af9e26537",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
