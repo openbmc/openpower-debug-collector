@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a37bed34_93508a4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:39:00Z",
+      "side": 1,
+      "message": "Collects...",
+      "revId": "577457bfa77e9641dcf390dc52e47b8cc4426bbd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed6a8060_7e1aca7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:39:00Z",
+      "side": 1,
+      "message": "2 minor comments only",
+      "revId": "577457bfa77e9641dcf390dc52e47b8cc4426bbd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1177d175_8102bb34",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:39:00Z",
+      "side": 1,
+      "message": "either auto dumpIsRequired \u003d false; or bool dumpIsRequired;",
+      "revId": "577457bfa77e9641dcf390dc52e47b8cc4426bbd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
