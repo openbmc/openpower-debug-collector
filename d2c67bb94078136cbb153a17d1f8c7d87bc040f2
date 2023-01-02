@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83533f3e_de51683f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:52:20Z",
+      "side": 1,
+      "message": "...dumps are...\nAlso the description is not clear about what it means.",
+      "revId": "d2c67bb94078136cbb153a17d1f8c7d87bc040f2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "342be050_a802ac92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:52:20Z",
+      "side": 1,
+      "message": "Some confusion",
+      "revId": "d2c67bb94078136cbb153a17d1f8c7d87bc040f2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
