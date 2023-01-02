@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8734813f_b9ffa9d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:08:36Z",
+      "side": 1,
+      "message": "Why do we need an RAII container at all here? Can\u0027t this be achieved by using a smart pointer as member of the targeted class/structure?",
+      "revId": "080a156f540411442d35647f9de9da7b429a3546",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed12bf33_6f9f9a2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:08:36Z",
+      "side": 1,
+      "message": "A suggestion and a query?",
+      "revId": "080a156f540411442d35647f9de9da7b429a3546",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d00b8907_da464191",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:08:36Z",
+      "side": 1,
+      "message": "nullptr in place of NULL. Better to use an unique pointer to be free of all manual allocation-deallocation",
+      "revId": "080a156f540411442d35647f9de9da7b429a3546",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
