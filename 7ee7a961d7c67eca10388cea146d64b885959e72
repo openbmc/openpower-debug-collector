@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a56d1b5_dff294f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:03:51Z",
+      "side": 1,
+      "message": "Some minor observations",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7548f9b_5c265e9d",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:03:51Z",
+      "side": 1,
+      "message": "nullptr in place of NULL?",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80c9c230_34b487ff",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:03:51Z",
+      "side": 1,
+      "message": "any meaningful name of the variable i is more nicer",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a350ca9_eb8d8642",
+        "filename": "dump/argument.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:03:51Z",
+      "side": 1,
+      "message": "Class member variables in public scope isn\u0027t recommended. Can we take those out of class scope or apply some other tricks?",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
