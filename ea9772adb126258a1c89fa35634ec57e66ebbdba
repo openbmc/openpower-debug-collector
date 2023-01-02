@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2d1a36b_1ab2ff54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "...to initialize the booting procedure. It also acts as a secure channel...",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65b62cee_a8a5f391",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "This data may include",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b151d1de_0c21a81d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "to be called as SBE dump",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48c2a76d_b91249e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "...executing...",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3501436b_54efa646",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "...adds...",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb91caed_1d8b371c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "Some observations",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ae62fad_4e1c680c",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "While there is an inclusion of a header file I don\u0027t see any related changes for that newly included header file. Please check and confirm",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6d87f75_47063f84",
+        "filename": "meson_options.txt",
+        "patchSetId": 25
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T10:17:40Z",
+      "side": 1,
+      "message": "...the collected...",
+      "revId": "ea9772adb126258a1c89fa35634ec57e66ebbdba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
