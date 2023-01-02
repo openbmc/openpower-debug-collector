@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cebcc6fc_a815e049",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:01:45Z",
+      "side": 1,
+      "message": "Some suggestions and observations",
+      "revId": "9458f62aab06fbf9d54be9f623d3eaf4c40007bc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "504c0523_d88bd8a2",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:01:45Z",
+      "side": 1,
+      "message": "struct pdbg_target* target \u003d nullptr; better to use an unique pointer",
+      "revId": "9458f62aab06fbf9d54be9f623d3eaf4c40007bc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5eeef589_f4214e54",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:01:45Z",
+      "side": 1,
+      "message": "either use auto failed \u003d false; or bool failed;",
+      "revId": "9458f62aab06fbf9d54be9f623d3eaf4c40007bc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09ab1b8b_27451f01",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:01:45Z",
+      "side": 1,
+      "message": "Better to use std::vector\u003cpid_t\u003e pidList(1); as it is going to have only one element",
+      "revId": "9458f62aab06fbf9d54be9f623d3eaf4c40007bc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6d8d689_dc85cbd9",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:01:45Z",
+      "side": 1,
+      "message": "auto status \u003d 0;",
+      "revId": "9458f62aab06fbf9d54be9f623d3eaf4c40007bc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
