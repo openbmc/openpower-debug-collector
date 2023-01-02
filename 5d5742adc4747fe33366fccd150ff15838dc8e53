@@ -88,6 +88,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5ba4dcb_0216a5f8",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-02T07:36:40Z",
+      "side": 1,
+      "message": "The parent is accepting like this so keeping it like this",
+      "parentUuid": "be221c16_be1205ef",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67d3929a_56683952",
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "67d3929a_56683952",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba97e8c2_1561b7b3",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-02T07:36:40Z",
+      "side": 1,
+      "message": "this is the base definition \nvirtual sdbusplus::message::object_path createDump(\n            std::map\u003cstd::string, std::variant\u003cstd::string, uint64_t\u003e\u003e additionalData) \u003d 0;",
+      "parentUuid": "9dc8febf_d821c4a7",
       "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
