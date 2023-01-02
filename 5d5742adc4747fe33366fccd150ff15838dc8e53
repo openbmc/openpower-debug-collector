@@ -194,6 +194,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fae9555c_0098a0ee",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-02T07:44:58Z",
+      "side": 1,
+      "message": "bus cant be cont due to bus.new_method_call",
+      "parentUuid": "2298f307_c84245fe",
+      "revId": "5d5742adc4747fe33366fccd150ff15838dc8e53",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2aa54c2_9646c395",
