@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0a169ba_723f7dcb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "Some suggestions and observations",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbd459c9_d9791579",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "Why not the first 2 params are constant as well? Those are used in this function as read only",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3538e649_ba5396d8",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "auto typeStr \u003d std::move((options)[\"type\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "030a9a74_91d640db",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "Just a suggestion, instead of using stoi function can we have something enumToString and stringToEnum for the respective enums? That would look more C++ type of coding. Just a suggestion.",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "441994d6_546b07ec",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "auto idStr \u003d std::move((options)[\"id\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c88e5963_26d96a35",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "auto path \u003d std::move((options)[\"path\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f79baee2_2ae6553b",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T13:49:50Z",
+      "side": 1,
+      "message": "auto failingUnitStr \u003d std::move((options)[\"failingunit\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
