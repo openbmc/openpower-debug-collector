@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d754313_145d5c7d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:26:39Z",
+      "side": 1,
+      "message": "A few comments to attain",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca735623_ab56bd49",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:26:39Z",
+      "side": 1,
+      "message": "use unordered_map if possible and also LN 44 \u0026 45 can be initialized while declaring the map at LN 41",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc997cb6_c40cd4c9",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:26:39Z",
+      "side": 1,
+      "message": "If it is only going to hold a single element then declare it as pelFFDCInfo(1)",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e05c216a_3533401c",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:26:39Z",
+      "side": 1,
+      "message": "emplace_back would be much preferred here as we are making in place object while inserting.",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b8af37c_683585aa",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:26:39Z",
+      "side": 1,
+      "message": "auto service \u003d ...",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6561fb8_3721f373",
+        "filename": "dump/create_pel.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-02T14:26:39Z",
+      "side": 1,
+      "message": "I guess we should avoid using \"using namespace\" directives in the header files. That\u0027s what best C++ practice says",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
