@@ -366,6 +366,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69d7932a_5edf7a65",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:40:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "34015b48_c39dee3c",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5bbedf5_177ca185",
@@ -1181,6 +1199,24 @@
       "side": 1,
       "message": "I was looking for the spec, looks like it is not available in public",
       "parentUuid": "2bfee39d_39a36a09",
+      "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d1404e5_7e9cc7c5",
+        "filename": "sbe_consts.hpp",
+        "patchSetId": 22
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:40:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "62c617ee_0f9aaf80",
       "revId": "0cc8d89c0b51477aa018293fc1de0b466b080309",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
