@@ -35,6 +35,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76d6dbb1_bd668123",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca735623_ab56bd49",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc997cb6_c40cd4c9",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-01-02T14:26:39Z",
       "side": 1,
       "message": "If it is only going to hold a single element then declare it as pelFFDCInfo(1)",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6743a4f0_faa3f18c",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:33Z",
+      "side": 1,
+      "message": "This can hold more than",
+      "parentUuid": "bc997cb6_c40cd4c9",
       "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -69,6 +105,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e777555_a86e2088",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e05c216a_3533401c",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b8af37c_683585aa",
@@ -86,6 +140,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46eabb46_1a4bddf5",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b8af37c_683585aa",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6561fb8_3721f373",
@@ -99,6 +171,24 @@
       "writtenOn": "2023-01-02T14:26:39Z",
       "side": 1,
       "message": "I guess we should avoid using \"using namespace\" directives in the header files. That\u0027s what best C++ practice says",
+      "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04c47d18_c0b620b7",
+        "filename": "dump/create_pel.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:33Z",
+      "side": 1,
+      "message": "There was a suggestion in openbmc to keep all these long ones as short with using, we can discuss on this",
+      "parentUuid": "c6561fb8_3721f373",
       "revId": "1f7c4f6767eee969be80fd005a0b5dc8bb1fce3d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
