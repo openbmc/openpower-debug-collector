@@ -33,6 +33,24 @@
       "message": "use static_cast\u003cchar*\u003e(0)--\u003eMore of C++ coding style than C style",
       "revId": "7b91e7663a05c80f3a27495653c3021af9e26537",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20e31227_1fe96ddc",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b4eaf25_0ce4e875",
+      "revId": "7b91e7663a05c80f3a27495653c3021af9e26537",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
