@@ -35,6 +35,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e1cb83a_1750abe4",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbd459c9_d9791579",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3538e649_ba5396d8",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-01-02T13:49:50Z",
       "side": 1,
       "message": "auto typeStr \u003d std::move((options)[\"type\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b9e9bca_fbf6d051",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3538e649_ba5396d8",
       "revId": "80fad4202d477981b750242c61099997284ca931",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -69,6 +105,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b166ba0_838cd7c0",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:18:09Z",
+      "side": 1,
+      "message": "These are direct conversions of the number given as text to number so a text to enum is not needed",
+      "parentUuid": "030a9a74_91d640db",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "441994d6_546b07ec",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-01-02T13:49:50Z",
       "side": 1,
       "message": "auto idStr \u003d std::move((options)[\"id\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfdb5736_d1ba36a2",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "441994d6_546b07ec",
       "revId": "80fad4202d477981b750242c61099997284ca931",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -103,6 +175,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c30cce06_517b6db6",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c88e5963_26d96a35",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f79baee2_2ae6553b",
@@ -116,6 +206,24 @@
       "writtenOn": "2023-01-02T13:49:50Z",
       "side": 1,
       "message": "auto failingUnitStr \u003d std::move((options)[\"failingunit\"]);",
+      "revId": "80fad4202d477981b750242c61099997284ca931",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d0ffb3a_c6fc1efd",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f79baee2_2ae6553b",
       "revId": "80fad4202d477981b750242c61099997284ca931",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
