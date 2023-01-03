@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "4693d63b_a6580359",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:49Z",
+      "side": 1,
+      "message": "TBD",
+      "parentUuid": "8734813f_b9ffa9d0",
+      "revId": "080a156f540411442d35647f9de9da7b429a3546",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "ed12bf33_6f9f9a2f",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-01-02T10:08:36Z",
       "side": 1,
       "message": "nullptr in place of NULL. Better to use an unique pointer to be free of all manual allocation-deallocation",
+      "revId": "080a156f540411442d35647f9de9da7b429a3546",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2f28475_283c0500",
+        "filename": "dump/dump_utils.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:17:49Z",
+      "side": 1,
+      "message": "NULL \u003e\u003e nullptr",
+      "parentUuid": "d00b8907_da464191",
       "revId": "080a156f540411442d35647f9de9da7b429a3546",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
