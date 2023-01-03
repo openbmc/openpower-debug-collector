@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "1f46b9e2_01be5633",
         "filename": "/COMMIT_MSG",
@@ -14,10 +15,10 @@
       "side": 1,
       "message": "Need to fix CI failure.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1ad525e1_76bec687",
         "filename": "/COMMIT_MSG",
@@ -32,10 +33,10 @@
       "message": "doing",
       "parentUuid": "1f46b9e2_01be5633",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "a0301dff_e03ee5e5",
         "filename": "/COMMIT_MSG",
@@ -55,10 +56,10 @@
         "endChar": 31
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "70b926a8_50109302",
         "filename": "/COMMIT_MSG",
@@ -79,10 +80,10 @@
         "endChar": 31
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "8fa4b32b_1b328d57",
         "filename": "/COMMIT_MSG",
@@ -102,10 +103,10 @@
         "endChar": 18
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "67da4df8_960db204",
         "filename": "/COMMIT_MSG",
@@ -126,10 +127,10 @@
         "endChar": 18
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5129b29c_5773cd48",
         "filename": "/COMMIT_MSG",
@@ -149,10 +150,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "371e597c_e0368d99",
         "filename": "/COMMIT_MSG",
@@ -173,10 +174,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "07045c5c_f23ac0f3",
         "filename": "/COMMIT_MSG",
@@ -196,10 +197,10 @@
         "endChar": 10
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "61f8da45_bc7e20c4",
         "filename": "/COMMIT_MSG",
@@ -219,10 +220,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "1b403b40_4c73946a",
         "filename": "/COMMIT_MSG",
@@ -243,10 +244,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "fda2d1ae_bc7d8bf0",
         "filename": "/COMMIT_MSG",
@@ -267,10 +268,10 @@
         "endChar": 10
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "2f32a2ea_0963f44c",
         "filename": "/COMMIT_MSG",
@@ -290,10 +291,10 @@
         "endChar": 13
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f457f2a9_e5038a85",
         "filename": "/COMMIT_MSG",
@@ -314,10 +315,10 @@
         "endChar": 13
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f0af8e28_8d5b378d",
         "filename": "/COMMIT_MSG",
@@ -337,10 +338,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "2380ce6c_a2184865",
         "filename": "/COMMIT_MSG",
@@ -361,10 +362,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4090eebd_40881795",
         "filename": "/COMMIT_MSG",
@@ -385,10 +386,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1ef21629_93e4b840",
         "filename": "Makefile.am",
@@ -402,10 +403,10 @@
       "side": 1,
       "message": "remove this empty line.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "7f1000a8_0ab9efd7",
         "filename": "Makefile.am",
@@ -420,10 +421,10 @@
       "message": "Done",
       "parentUuid": "1ef21629_93e4b840",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "bca89b27_3c9e5f08",
         "filename": "configure.ac",
@@ -443,10 +444,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "207ff735_ef82841e",
         "filename": "configure.ac",
@@ -467,10 +468,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "aeda18a4_992270d5",
         "filename": "dump/dump.mk",
@@ -484,10 +485,10 @@
       "side": 1,
       "message": "it is better to follow the directory structure  /dumpextensions/\u003cdump type\u003e . this will help future features addition cleanly.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4e2dd7bb_6a459485",
         "filename": "dump/dump.mk",
@@ -502,10 +503,10 @@
       "message": "There wont be separate files per types",
       "parentUuid": "aeda18a4_992270d5",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "26c23cc2_d7382533",
         "filename": "dump/dump.mk",
@@ -519,10 +520,10 @@
       "side": 1,
       "message": "Use tab consistently.  Not sure my browser issue or not some line tab is missing.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "d108b78f_29c98dda",
         "filename": "dump/dump.mk",
@@ -537,10 +538,10 @@
       "message": "Done",
       "parentUuid": "26c23cc2_d7382533",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "451a3708_17fc52b7",
         "filename": "dump/dump.mk",
@@ -560,10 +561,10 @@
         "endChar": 22
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "0b2a228e_3ae71a87",
         "filename": "dump/dump.mk",
@@ -584,10 +585,10 @@
         "endChar": 22
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f6fb5975_de0017e0",
         "filename": "dump/dump_manager.cpp",
@@ -601,10 +602,10 @@
       "side": 1,
       "message": "Missing definition.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "c27bd54d_8ade2639",
         "filename": "dump/dump_manager.cpp",
@@ -619,10 +620,10 @@
       "message": "Done",
       "parentUuid": "f6fb5975_de0017e0",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "fc4692b1_dc26bcd4",
         "filename": "dump/dump_manager.cpp",
@@ -642,10 +643,10 @@
         "endChar": 38
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "0f337ce9_0ea26b96",
         "filename": "dump/dump_manager.cpp",
@@ -666,10 +667,10 @@
         "endChar": 38
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "57525951_d50ef96e",
         "filename": "dump/dump_manager.cpp",
@@ -689,10 +690,10 @@
         "endChar": 47
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "38ee87e7_0cc71e5e",
         "filename": "dump/dump_manager.cpp",
@@ -713,10 +714,10 @@
         "endChar": 47
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5a191eff_444d1f70",
         "filename": "dump/dump_manager.cpp",
@@ -736,10 +737,10 @@
         "endChar": 47
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "bc1dffa2_990dbfe1",
         "filename": "dump/dump_manager.cpp",
@@ -760,10 +761,10 @@
         "endChar": 47
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "65d07899_71075b2d",
         "filename": "dump/dump_manager.cpp",
@@ -783,10 +784,10 @@
         "endChar": 51
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "eab4a0ea_076fc6cc",
         "filename": "dump/dump_manager.cpp",
@@ -807,10 +808,10 @@
         "endChar": 51
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "7f210332_1a052a67",
         "filename": "dump/dump_manager.cpp",
@@ -824,10 +825,10 @@
       "side": 1,
       "message": "Move this definition in common place. Multiple function using the same.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "86059749_07531137",
         "filename": "dump/dump_manager.cpp",
@@ -842,10 +843,10 @@
       "message": "Done",
       "parentUuid": "7f210332_1a052a67",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "abcba6fd_c2f0b027",
         "filename": "dump/dump_manager.cpp",
@@ -859,10 +860,10 @@
       "side": 1,
       "message": "Please add comment- dump file name format",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "a6d493af_76fa28b7",
         "filename": "dump/dump_manager.cpp",
@@ -877,10 +878,10 @@
       "message": "Done",
       "parentUuid": "abcba6fd_c2f0b027",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "6aa03239_bef3e80a",
         "filename": "dump/dump_manager.cpp",
@@ -894,10 +895,10 @@
       "side": 1,
       "message": "Max size of data is in the range 80mb . pdbg maintain any timeout? \nOr where is the data transfer ( full size) timeout handles.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "a4954de8_e1008651",
         "filename": "dump/dump_manager.cpp",
@@ -912,10 +913,10 @@
       "message": "That should be handled in the lower levels",
       "parentUuid": "6aa03239_bef3e80a",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4b95d2c1_e2b238f0",
         "filename": "dump/dump_manager.cpp",
@@ -930,10 +931,10 @@
       "message": "Can you confirm , pdbg/driver layer backend support long running sbe chip-op timeout correctly.",
       "parentUuid": "a4954de8_e1008651",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "2b3ff56e_7aa0e6b4",
         "filename": "dump/dump_manager.cpp",
@@ -948,10 +949,10 @@
       "message": "As per pdbg developer it supports, if there is anything missing it is defect on that side.",
       "parentUuid": "4b95d2c1_e2b238f0",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "26d03180_5cfac6ed",
         "filename": "dump/dump_manager.cpp",
@@ -966,10 +967,10 @@
       "message": "Key point need to look here is . if the Hostbootdump triggerd in re-ipl path , state manager should wait dump collection completion before issuing reset request.  Need to make sure the timeout related error couldn\u0027t creating any issue with state management flow.",
       "parentUuid": "2b3ff56e_7aa0e6b4",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "470d24c7_4f046881",
         "filename": "dump/dump_manager.cpp",
@@ -984,10 +985,10 @@
       "message": "there should not be, if the time exceeds, it will be updated as error in the case of master proc and ignored in other cases. after that point attn(or any caller) can take a call on the transition.",
       "parentUuid": "26d03180_5cfac6ed",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "922bc850_2d8b33ae",
         "filename": "dump/dump_manager.cpp",
@@ -1002,10 +1003,10 @@
       "message": "@andrew can you comment on State management behavior in case hostboot dump is talking more time . I think the design direction should be reboot  shouldn\u0027t be fail incase hostboot dump fail to collect data due to timeout.",
       "parentUuid": "470d24c7_4f046881",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "efef7abe_336a2b7a",
         "filename": "dump/dump_manager.cpp",
@@ -1020,10 +1021,28 @@
       "message": "It will be up to the calling app to control the timeout. It will probably be whatever you guys tell us. Ben will do the PRD path and I\u0027ll be doing the host watchdog path. We\u0027ll wait a certain amount of time, and then yeah, either way, we will continue the reboot (just log an error if we never see the new dump event). There is no state management timers in this path.",
       "parentUuid": "922bc850_2d8b33ae",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55f7bee8_66ed6838",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efef7abe_336a2b7a",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "be67f4c2_37e27bda",
         "filename": "dump/dump_manager.cpp",
@@ -1037,10 +1056,10 @@
       "side": 1,
       "message": "Function scope : As per pdbg documentaion , should relase the memory by use. need to handle this.  all fail /exit uuse case.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "0f2d12ec_134f6f20",
         "filename": "dump/dump_manager.cpp",
@@ -1055,10 +1074,10 @@
       "message": "Done",
       "parentUuid": "be67f4c2_37e27bda",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "ef184031_f1a621e7",
         "filename": "dump/dump_manager.cpp",
@@ -1072,10 +1091,10 @@
       "side": 1,
       "message": "Please make sure that data is good for parser tool. Basically BMC is little endia and host is big endian. . just want to make sure endianess mismatch is not causing any data packing issues.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "22db6f26_7658066e",
         "filename": "dump/dump_manager.cpp",
@@ -1090,10 +1109,10 @@
       "message": "as we are writing byte by byte that should be good",
       "parentUuid": "ef184031_f1a621e7",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "a3095407_dcdf1e7f",
         "filename": "dump/dump_manager.cpp",
@@ -1108,10 +1127,10 @@
       "message": "is this part is verified using tool?",
       "parentUuid": "22db6f26_7658066e",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "326064db_9adab95b",
         "filename": "dump/dump_manager.cpp",
@@ -1126,10 +1145,28 @@
       "message": "BMC doesnt check or validate the data from the SBE",
       "parentUuid": "a3095407_dcdf1e7f",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c9246b4_aaa0bf46",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "326064db_9adab95b",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "745447fe_0a50b819",
         "filename": "dump/dump_manager.cpp",
@@ -1143,10 +1180,10 @@
       "side": 1,
       "message": "Move this definition in common place. Multiple function using the same.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "75fa5276_09c0874e",
         "filename": "dump/dump_manager.cpp",
@@ -1161,10 +1198,10 @@
       "message": "Done",
       "parentUuid": "745447fe_0a50b819",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "17289e6f_31a941e1",
         "filename": "dump/dump_manager.cpp",
@@ -1184,10 +1221,10 @@
         "endChar": 45
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "98652211_2750f4de",
         "filename": "dump/dump_manager.cpp",
@@ -1208,10 +1245,10 @@
         "endChar": 45
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "c6373483_a00ebd64",
         "filename": "dump/dump_manager.cpp",
@@ -1225,10 +1262,10 @@
       "side": 1,
       "message": "It will be good to add informational log and collect dump for master processor non-functional case . This  state mess-up can happen due to some attribute sync or the crash durng attribute sync . In this case to debug the problem need  hostboot dump.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "2b0c47ab_6da7670c",
         "filename": "dump/dump_manager.cpp",
@@ -1243,10 +1280,10 @@
       "message": "Done",
       "parentUuid": "c6373483_a00ebd64",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "8e6e0f57_61aa6e1d",
         "filename": "dump/dump_manager.cpp",
@@ -1260,10 +1297,10 @@
       "side": 1,
       "message": "How the timeout related failure handled?",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "953bd4c6_a381ea8d",
         "filename": "dump/dump_manager.cpp",
@@ -1278,10 +1315,28 @@
       "message": "Timeout will come as an error in chip-op",
       "parentUuid": "8e6e0f57_61aa6e1d",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfd483a7_009f06f9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "handled in SBE timeout handling",
+      "parentUuid": "953bd4c6_a381ea8d",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d57a4566_ecd0effc",
         "filename": "dump/dump_manager.cpp",
@@ -1295,10 +1350,10 @@
       "side": 1,
       "message": "Is there any policy check required to block new hostbootdump request incase data collection in progress. Like  dump request from  watchdog app and same time attn triggers dump due to hw issue .",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "29d609ec_0c315543",
         "filename": "dump/dump_manager.cpp",
@@ -1313,10 +1368,28 @@
       "message": "Adding a lock here can be error prone.. need to look how to make DBus call exclusive",
       "parentUuid": "d57a4566_ecd0effc",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55cc2af0_526a11bb",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "29d609ec_0c315543",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "e5c27768_89804acc",
         "filename": "dump/dump_manager.cpp",
@@ -1330,10 +1403,10 @@
       "side": 1,
       "message": "Move this definition in common place. Multiple function using the same.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "3a10f006_6fee9d63",
         "filename": "dump/dump_manager.cpp",
@@ -1348,10 +1421,10 @@
       "message": "Done",
       "parentUuid": "e5c27768_89804acc",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f7fe5514_02345638",
         "filename": "dump/dump_manager.cpp",
@@ -1371,10 +1444,10 @@
         "endChar": 71
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "742da411_213dfbb3",
         "filename": "dump/dump_manager.cpp",
@@ -1395,10 +1468,10 @@
         "endChar": 71
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "e0f241ad_05b52bf1",
         "filename": "dump/dump_manager.cpp",
@@ -1412,10 +1485,10 @@
       "side": 1,
       "message": "General comment -- Need to revisit the error strategy. this error is going to trigger another dump. and is it really required here . also make sure the d-bu interface definition got this error added.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f03bd71e_d547999f",
         "filename": "dump/dump_manager.cpp",
@@ -1430,10 +1503,28 @@
       "message": "It will trigger a BMC dump, that should be useful in debugging this internal issue.",
       "parentUuid": "e0f241ad_05b52bf1",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d37570a9_991ce249",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f03bd71e_d547999f",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "eae0f635_d9062aac",
         "filename": "dump/dump_manager.cpp",
@@ -1447,10 +1538,10 @@
       "side": 1,
       "message": "Add comments related to the path format. This will help reviewers.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "80032826_65db89b4",
         "filename": "dump/dump_manager.cpp",
@@ -1465,10 +1556,10 @@
       "message": "Done",
       "parentUuid": "eae0f635_d9062aac",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "222c0b9c_b4a643d6",
         "filename": "dump/dump_manager.cpp",
@@ -1482,10 +1573,10 @@
       "side": 1,
       "message": "If the collectdump failed , who will be updating the dump entry object status with failing status or removing the entry itself?",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "7dbf46a0_cf1732d1",
         "filename": "dump/dump_manager.cpp",
@@ -1500,10 +1591,28 @@
       "message": "will add here",
       "parentUuid": "222c0b9c_b4a643d6",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f6706b2_10db997c",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7dbf46a0_cf1732d1",
+      "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "56604c4c_c3ffe257",
         "filename": "dump/dump_manager.hpp",
@@ -1523,10 +1632,10 @@
         "endChar": 47
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "132e4c9f_6100b469",
         "filename": "dump/dump_manager.hpp",
@@ -1547,10 +1656,10 @@
         "endChar": 47
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f60491f1_74478b7d",
         "filename": "dump/dump_manager.hpp",
@@ -1564,10 +1673,10 @@
       "side": 1,
       "message": "Missing event parameter. description.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "ea125f86_6e42dc60",
         "filename": "dump/dump_manager.hpp",
@@ -1582,10 +1691,10 @@
       "message": "Done",
       "parentUuid": "f60491f1_74478b7d",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "afab609f_b6b9265c",
         "filename": "dump/dump_manager.hpp",
@@ -1605,10 +1714,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "c3caa9f0_4d5e0f99",
         "filename": "dump/dump_manager.hpp",
@@ -1629,10 +1738,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "65bbcff1_7c05febf",
         "filename": "dump/dump_manager.hpp",
@@ -1653,10 +1762,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1e72f596_b9e3dc55",
         "filename": "dump/dump_manager.hpp",
@@ -1670,10 +1779,10 @@
       "side": 1,
       "message": "Missing description.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "41951ced_71d74c60",
         "filename": "dump/dump_manager.hpp",
@@ -1688,10 +1797,10 @@
       "message": "Done",
       "parentUuid": "1e72f596_b9e3dc55",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "e30ac6ac_d90b7f0d",
         "filename": "dump/dump_manager_main.cpp",
@@ -1711,10 +1820,10 @@
         "endChar": 60
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "6af45532_f5c6074a",
         "filename": "dump/dump_manager_main.cpp",
@@ -1735,10 +1844,10 @@
         "endChar": 60
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "7ec9cc15_6ceffbd5",
         "filename": "dump/dump_manager_main.cpp",
@@ -1758,10 +1867,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "3d8baf7f_66b8fb3f",
         "filename": "dump/dump_manager_main.cpp",
@@ -1782,10 +1891,10 @@
         "endChar": 6
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "940a4b18_d28fe35c",
         "filename": "dump/dump_utils.cpp",
@@ -1799,10 +1908,10 @@
       "side": 1,
       "message": "Need to restructure code with sdbusplus::exception::SdBusError\u0026 based exception handling.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "fc7f18a7_edd5ff4c",
         "filename": "dump/dump_utils.cpp",
@@ -1817,10 +1926,10 @@
       "message": "Done",
       "parentUuid": "940a4b18_d28fe35c",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "a44821a0_527fa3fa",
         "filename": "dump/dump_utils.cpp",
@@ -1840,10 +1949,10 @@
         "endChar": 52
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "5bd52513_68a802fa",
         "filename": "dump/dump_utils.cpp",
@@ -1864,10 +1973,10 @@
         "endChar": 52
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "7289d1ce_c2b9f91e",
         "filename": "dump/dump_utils.cpp",
@@ -1887,10 +1996,10 @@
         "endChar": 36
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "9727cb7c_d822f644",
         "filename": "dump/dump_utils.cpp",
@@ -1911,10 +2020,10 @@
         "endChar": 36
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "db667625_4a073605",
         "filename": "dump/dump_utils.cpp",
@@ -1934,10 +2043,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "750c5e27_68df967d",
         "filename": "dump/dump_utils.cpp",
@@ -1958,10 +2067,10 @@
         "endChar": 37
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "052f4d62_c70a6d1b",
         "filename": "dump/dump_utils.hpp",
@@ -1981,10 +2090,10 @@
         "endChar": 7
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5d7d933a_7153b2bd",
         "filename": "dump/dump_utils.hpp",
@@ -2005,10 +2114,10 @@
         "endChar": 7
       },
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "646ba78d_4c9a88a2",
         "filename": "sbe_consts.hpp",
@@ -2022,10 +2131,10 @@
       "side": 1,
       "message": "add SBE speciic name space. will help for tracjking sbe specific consts.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "1be64af1_19284bce",
         "filename": "sbe_consts.hpp",
@@ -2040,10 +2149,10 @@
       "message": "Done",
       "parentUuid": "646ba78d_4c9a88a2",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "a7e9fc3e_6c595b76",
         "filename": "sbe_consts.hpp",
@@ -2057,10 +2166,10 @@
       "side": 1,
       "message": "Add refernce point to SBE spec / code for these definition.",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "acea2609_bda334a3",
         "filename": "sbe_consts.hpp",
@@ -2075,8 +2184,7 @@
       "message": "Done",
       "parentUuid": "a7e9fc3e_6c595b76",
       "revId": "30c38299a10b30689aa1cbb1da04597bff1dec2d",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

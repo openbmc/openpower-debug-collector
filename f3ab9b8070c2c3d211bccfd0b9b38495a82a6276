@@ -35,6 +35,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b48a373b_5d80a294",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 59
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb13b341_1a040424",
+      "revId": "f3ab9b8070c2c3d211bccfd0b9b38495a82a6276",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e09642b_bb87e98d",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-01-02T08:17:44Z",
       "side": 1,
       "message": "This can be an unordered map",
+      "revId": "f3ab9b8070c2c3d211bccfd0b9b38495a82a6276",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e06459b_b526757d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 59
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e09642b_bb87e98d",
       "revId": "f3ab9b8070c2c3d211bccfd0b9b38495a82a6276",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }

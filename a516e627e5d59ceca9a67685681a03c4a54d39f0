@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "5037e00f_46926900",
         "filename": "dump/dump_manager.cpp",
@@ -14,10 +15,10 @@
       "side": 1,
       "message": "this can move to 255. based on the new code structure varible scope is limeited to for loop right?",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "fb44ff94_eabeb4a8",
         "filename": "dump/dump_manager.cpp",
@@ -32,10 +33,10 @@
       "message": "Done",
       "parentUuid": "5037e00f_46926900",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "35c5da91_e1ee0be0",
         "filename": "dump/dump_manager.cpp",
@@ -49,10 +50,10 @@
       "side": 1,
       "message": "Pdbg supports only one FFDC data at a time , like maintains last FFDC . This paralleisation will miss the FFDC data incase mutipls SBE reports failure.",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "8c251906_f3b43e15",
         "filename": "dump/dump_manager.cpp",
@@ -67,10 +68,28 @@
       "message": "PDBG maintains one FFDC per SBE or maintain one for all SBEs?\nif it is maintaining only one FFDC across SBEs why such a limitation?",
       "parentUuid": "35c5da91_e1ee0be0",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d420847e_73c296bf",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8c251906_f3b43e15",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "9e3c2ac1_cadac073",
         "filename": "dump/dump_manager.cpp",
@@ -84,10 +103,10 @@
       "side": 1,
       "message": "what is the max size memory allocates for each chi-op requests. other reveiw i noticed primary processor 80MB and alt primary less. since the interfcae deisn\u0027t take any size parameter. memory allocation is going to be 4 proc config - 4*2*max size and also consider the more processor config systems. Need to look the impact on this memory allocation. \nGod test is that  cerate hostboot dump after step 16 ( that is time Host collects max size data) and see the any impcat is there or not.\nAlso same fsi bus is used for clock on/off path dump data collection am not sure you are really getting any performace boot here ( am not fsi expert). Considering devender\u0027s comments. am not sure processor level parlleisation really helps here until you have strong reason to implement this and solving other issues mentioned above. @devender.",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "9f34e7a6_54703a63",
         "filename": "dump/dump_manager.cpp",
@@ -102,10 +121,10 @@
       "message": "now there is no parallelization across clock on and clock off, first all clock on will complete then only the clock off will start. \nI have tested multiple times after step16\nWe will change this call once the pdbg updates the API",
       "parentUuid": "9e3c2ac1_cadac073",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "9c7c6571_ac6c2772",
         "filename": "dump/dump_manager.cpp",
@@ -120,10 +139,10 @@
       "message": "Did you check with Kernel team, whether fsi supports parallel transaction?  Sice BMC supports only one fsi bus , this will add performance advantage only if kernel supports.",
       "parentUuid": "9f34e7a6_54703a63",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "0ae8d62b_e7e0585e",
         "filename": "dump/dump_manager.cpp",
@@ -138,10 +157,28 @@
       "message": "we had a discussion on this during mpipl chip-ops, the conclusion was the commands will  get pushed over FSI bus, that is why the wait part worked in enter mpipl",
       "parentUuid": "9c7c6571_ac6c2772",
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "820c330c_bbb69584",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0ae8d62b_e7e0585e",
+      "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "064aba39_78bc3995",
         "filename": "dump/dump_manager.cpp",
@@ -161,10 +198,10 @@
         "endChar": 58
       },
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "88337647_60de59ab",
         "filename": "dump/dump_manager.cpp",
@@ -185,10 +222,10 @@
         "endChar": 58
       },
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "94925f13_d87a6519",
         "filename": "dump/dump_manager.cpp",
@@ -208,10 +245,10 @@
         "endChar": 27
       },
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "77ff844f_b0080d8b",
         "filename": "dump/dump_manager.cpp",
@@ -232,8 +269,7 @@
         "endChar": 27
       },
       "revId": "a516e627e5d59ceca9a67685681a03c4a54d39f0",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

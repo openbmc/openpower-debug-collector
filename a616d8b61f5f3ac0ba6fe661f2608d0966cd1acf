@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "8107e7aa_36a88abc",
         "filename": "/COMMIT_MSG",
@@ -20,10 +21,10 @@
         "endChar": 31
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "dcba6434_1259d32f",
         "filename": "/COMMIT_MSG",
@@ -44,10 +45,10 @@
         "endChar": 31
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1564d421_1e34ac97",
         "filename": "/COMMIT_MSG",
@@ -67,10 +68,10 @@
         "endChar": 28
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "ee93bc38_e7c937b9",
         "filename": "/COMMIT_MSG",
@@ -91,10 +92,10 @@
         "endChar": 28
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "03edd93b_9cf0727f",
         "filename": "/COMMIT_MSG",
@@ -115,10 +116,10 @@
         "endChar": 28
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "d11a4d21_a329af7a",
         "filename": "/COMMIT_MSG",
@@ -139,10 +140,10 @@
         "endChar": 28
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5a93fdb8_d674fbb6",
         "filename": "/COMMIT_MSG",
@@ -162,10 +163,10 @@
         "endChar": 36
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "ac9cf874_50aa1937",
         "filename": "/COMMIT_MSG",
@@ -186,10 +187,10 @@
         "endChar": 36
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "932e2644_2297c341",
         "filename": "/COMMIT_MSG",
@@ -209,10 +210,10 @@
         "endChar": 18
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "6ad83011_27e711ca",
         "filename": "/COMMIT_MSG",
@@ -233,10 +234,10 @@
         "endChar": 18
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "391e3f7a_e1e94a76",
         "filename": "/COMMIT_MSG",
@@ -256,10 +257,10 @@
         "endChar": 14
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "2f04b37d_2814de9f",
         "filename": "/COMMIT_MSG",
@@ -280,10 +281,10 @@
         "endChar": 14
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "c1ebac00_28428beb",
         "filename": "/COMMIT_MSG",
@@ -303,10 +304,10 @@
         "endChar": 39
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "f61b9afd_943e4e86",
         "filename": "/COMMIT_MSG",
@@ -327,10 +328,10 @@
         "endChar": 39
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4e1ac7f3_e0f58f54",
         "filename": "/COMMIT_MSG",
@@ -350,10 +351,10 @@
         "endChar": 21
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "0841c0af_7280f8cc",
         "filename": "/COMMIT_MSG",
@@ -374,10 +375,10 @@
         "endChar": 21
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "6c4d36d0_fa12a348",
         "filename": "configure.ac",
@@ -397,10 +398,10 @@
         "endChar": 20
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "81a72cfb_55a9a81d",
         "filename": "configure.ac",
@@ -421,10 +422,10 @@
         "endChar": 20
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "3f26950d_6ce8b8ef",
         "filename": "dump/dump_manager.cpp",
@@ -438,10 +439,10 @@
       "side": 1,
       "message": "There is already HWP to check SBE state , refer https://github.ibm.com/phal/ipl/blob/master/libipl/p10/common.C#L114.",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f36de7d5_0cfc243f",
         "filename": "dump/dump_manager.cpp",
@@ -456,10 +457,10 @@
       "message": "There are issues when calling the HWP directly, will look at whether the IPL function to check whether sbe booted can be used",
       "parentUuid": "3f26950d_6ce8b8ef",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "7aae276f_56616ee3",
         "filename": "dump/dump_manager.cpp",
@@ -474,10 +475,28 @@
       "message": "better to move this function libpdbg. This will be commonly used by other app also.",
       "parentUuid": "f36de7d5_0cfc243f",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b631dbe_fe2e8de9",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7aae276f_56616ee3",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "f91d1076_f0751e2c",
         "filename": "dump/dump_manager.cpp",
@@ -497,10 +516,10 @@
         "endChar": 69
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "b8b6ffb5_fec3008b",
         "filename": "dump/dump_manager.cpp",
@@ -521,10 +540,10 @@
         "endChar": 69
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "d4d0da7f_1d6a477b",
         "filename": "dump/dump_manager.cpp",
@@ -544,10 +563,34 @@
         "endChar": 54
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63f231bc_43a52448",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d4d0da7f_1d6a477b",
+      "range": {
+        "startLine": 110,
+        "startChar": 49,
+        "endLine": 110,
+        "endChar": 54
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d804ce82_299fcb9c",
         "filename": "dump/dump_manager.cpp",
@@ -567,10 +610,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "0730fc59_2d172df2",
         "filename": "dump/dump_manager.cpp",
@@ -591,10 +634,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "e8d39d60_a14e1d50",
         "filename": "dump/dump_manager.cpp",
@@ -615,10 +658,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "29b400ea_8eccf659",
         "filename": "dump/dump_manager.cpp",
@@ -639,10 +682,34 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80bf12d4_2f7ed574",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "29b400ea_8eccf659",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d5771f8f_feb3f066",
         "filename": "dump/dump_manager.cpp",
@@ -662,10 +729,10 @@
         "endChar": 51
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "622fc58a_8a8f00cb",
         "filename": "dump/dump_manager.cpp",
@@ -686,10 +753,10 @@
         "endChar": 51
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "d2365bcb_dfd4b53a",
         "filename": "dump/dump_manager.cpp",
@@ -709,10 +776,10 @@
         "endChar": 69
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "27cc3680_e56a9249",
         "filename": "dump/dump_manager.cpp",
@@ -733,10 +800,10 @@
         "endChar": 69
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1db3b62c_dfb64c20",
         "filename": "dump/dump_manager.cpp",
@@ -756,10 +823,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "ab55916f_acd7ceb5",
         "filename": "dump/dump_manager.cpp",
@@ -780,10 +847,34 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdbe1c72_59fa0b8b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ab55916f_acd7ceb5",
+      "range": {
+        "startLine": 142,
+        "startChar": 8,
+        "endLine": 142,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "8b72186e_084ca50c",
         "filename": "dump/dump_manager.cpp",
@@ -803,10 +894,10 @@
         "endChar": 34
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "c4ca938a_662c53e3",
         "filename": "dump/dump_manager.cpp",
@@ -827,10 +918,10 @@
         "endChar": 34
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "2d1f8768_b048031b",
         "filename": "dump/dump_manager.cpp",
@@ -850,10 +941,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "d5c092af_525c82b4",
         "filename": "dump/dump_manager.cpp",
@@ -874,10 +965,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f6e71ddc_c4b1f9c2",
         "filename": "dump/dump_manager.cpp",
@@ -898,10 +989,10 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "865d670a_a2676ab8",
         "filename": "dump/dump_manager.cpp",
@@ -922,10 +1013,34 @@
         "endChar": 32
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a17b2833_ffa417aa",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "865d670a_a2676ab8",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 32
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "a8d383cf_052df2d3",
         "filename": "dump/dump_manager.cpp",
@@ -945,10 +1060,10 @@
         "endChar": 13
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "c20c4540_235c6f99",
         "filename": "dump/dump_manager.cpp",
@@ -969,10 +1084,10 @@
         "endChar": 13
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "aadf9180_b0be9681",
         "filename": "dump/dump_manager.cpp",
@@ -993,10 +1108,10 @@
         "endChar": 13
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "2372495b_42e8923c",
         "filename": "dump/dump_manager.cpp",
@@ -1017,10 +1132,10 @@
         "endChar": 13
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "6482362c_b31d9860",
         "filename": "dump/dump_manager.cpp",
@@ -1034,10 +1149,10 @@
       "side": 1,
       "message": "refer the commnets related attribute read.",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "10f405b6_017b0b34",
         "filename": "dump/dump_manager.cpp",
@@ -1052,10 +1167,10 @@
       "message": "Done",
       "parentUuid": "6482362c_b31d9860",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4469d1be_887c466f",
         "filename": "dump/dump_manager.cpp",
@@ -1069,10 +1184,10 @@
       "side": 1,
       "message": "do you want to check present or functional here? In the slave processor error path Hostboot triggerd dumpafter decconfigure is valid case ?",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "637dd490_c62748d3",
         "filename": "dump/dump_manager.cpp",
@@ -1087,10 +1202,28 @@
       "message": "In no case a processor will get deconfigured after a poweron, so this is safe",
       "parentUuid": "4469d1be_887c466f",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4aa92c9_dd242879",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "637dd490_c62748d3",
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "65d41482_adb1dad9",
         "filename": "dump/dump_manager.cpp",
@@ -1110,10 +1243,10 @@
         "endChar": 18
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "a29a065b_38efaccf",
         "filename": "dump/dump_manager.cpp",
@@ -1134,10 +1267,34 @@
         "endChar": 18
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8559b005_6d2c9e14",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a29a065b_38efaccf",
+      "range": {
+        "startLine": 265,
+        "startChar": 12,
+        "endLine": 272,
+        "endChar": 18
+      },
+      "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "409f0a81_583d17d2",
         "filename": "dump/dump_manager.cpp",
@@ -1151,10 +1308,10 @@
       "side": 1,
       "message": "Address  patchset 7 review comments",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "e0522c42_37291c4f",
         "filename": "dump/dump_manager.cpp",
@@ -1169,10 +1326,10 @@
       "message": "Done",
       "parentUuid": "409f0a81_583d17d2",
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "b116f18a_6a72c042",
         "filename": "dump/dump_manager.hpp",
@@ -1192,10 +1349,10 @@
         "endChar": 37
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "e76cdeaf_278a63b1",
         "filename": "dump/dump_manager.hpp",
@@ -1216,10 +1373,10 @@
         "endChar": 37
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1c8a0d60_4a47f08e",
         "filename": "dump/dump_manager.hpp",
@@ -1239,10 +1396,10 @@
         "endChar": 47
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "52e296b1_6589e8bb",
         "filename": "dump/dump_manager.hpp",
@@ -1263,10 +1420,10 @@
         "endChar": 47
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "5dfd421b_6b9e3d29",
         "filename": "dump/dump_manager.hpp",
@@ -1287,8 +1444,7 @@
         "endChar": 47
       },
       "revId": "a616d8b61f5f3ac0ba6fe661f2608d0966cd1acf",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

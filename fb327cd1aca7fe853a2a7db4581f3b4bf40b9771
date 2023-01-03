@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "b29374ad_b43cf9b8",
         "filename": "dump/dump_manager.cpp",
@@ -14,10 +15,10 @@
       "side": 1,
       "message": "this looks wrong to me, now every thing will go in serial. \nfor loop\n{\nfork process\npush to vector\nwaitpid\n}\n\nthe waitpid will block and will not go the next item in the loop, also it will waitpid again and again on the processes that are already completed",
       "revId": "fb327cd1aca7fe853a2a7db4581f3b4bf40b9771",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "2dc10eb3_944af5df",
         "filename": "dump/dump_manager.cpp",
@@ -32,8 +33,25 @@
       "message": "no it is like this\n\n for lopp for clock state\n    for loop for procs\n        fork process\n    end lopp for procs\n    wait pid\n  end loop for clock state",
       "parentUuid": "b29374ad_b43cf9b8",
       "revId": "fb327cd1aca7fe853a2a7db4581f3b4bf40b9771",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fef37e8b_d2a840f0",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T05:36:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2dc10eb3_944af5df",
+      "revId": "fb327cd1aca7fe853a2a7db4581f3b4bf40b9771",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
