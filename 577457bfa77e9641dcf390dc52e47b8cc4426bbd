@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "c8f31afd_6e1b97ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:16:32Z",
+      "side": 1,
+      "message": "Collect SBE dump during chip-op time-outs",
+      "parentUuid": "a37bed34_93508a4d",
+      "revId": "577457bfa77e9641dcf390dc52e47b8cc4426bbd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ed6a8060_7e1aca7b",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 19
@@ -48,6 +66,24 @@
       "writtenOn": "2023-01-02T13:39:00Z",
       "side": 1,
       "message": "either auto dumpIsRequired \u003d false; or bool dumpIsRequired;",
+      "revId": "577457bfa77e9641dcf390dc52e47b8cc4426bbd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43a8f2a9_35857abb",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:16:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1177d175_8102bb34",
       "revId": "577457bfa77e9641dcf390dc52e47b8cc4426bbd",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
