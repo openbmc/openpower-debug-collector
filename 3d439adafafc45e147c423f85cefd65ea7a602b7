@@ -86,6 +86,24 @@
       "parentUuid": "4c6380a7_1f6d52ad",
       "revId": "3d439adafafc45e147c423f85cefd65ea7a602b7",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fe6dd44_ae120f0a",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-03T12:54:42Z",
+      "side": 1,
+      "message": "What I meant here is we can do like this\nmethod.append(std::map\u003cstd::string, std::variant\u003cstd::string, uint64_t\u003e\u003e()); or\n\nclass TestClass\n    {\n        public:\n            void append(std::map\u003cstd::string, std::variant\u003cstd::string, uint64_t\u003e\u003e\u0026\u0026 mapParam)\n            {\n                std::variant\u003cstd::string, uint64_t\u003e variantVal;\n                variantVal \u003d \"Swarnendu\";\n                auto name \u003d std::get\u003cstd::string\u003e(variantVal);\n                std::string empCode(\"0044IT\");\n                mapParam.emplace(empCode, variantVal);\n                for (const auto\u0026 itr : mapParam)\n                {\n                    std::cout \u003c\u003c \"EmpCode \u003d \" \u003c\u003c itr.first \u003c\u003c std::endl;\n                    std::cout \u003c\u003c \"EmpName \u003d \" \u003c\u003c std::get\u003cstd::string\u003e(itr.second) \u003c\u003c std::endl;\n                }\n            }\n    };\n\n    TestClass testObj;\n    std::map\u003cstd::string, std::variant\u003cstd::string, uint64_t\u003e\u003e myMap;\n    testObj.append(std::map\u003cstd::string, std::variant\u003cstd::string, uint64_t\u003e\u003e());\n\nif you have method append(arg\u0026\u0026 somearg) like. But I noticed that append takes a reference to the map so you need a l-value here.",
+      "parentUuid": "e0e73082_d0140cf4",
+      "revId": "3d439adafafc45e147c423f85cefd65ea7a602b7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
