@@ -71,6 +71,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a4e7da6_a91451d9",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T13:56:47Z",
+      "side": 1,
+      "message": "We need to use smart pointers when the memory is allocated in the local scop right? here we get a pointer to an existing global stack, so allocation and deallocation are not the responsibility of this function.",
+      "parentUuid": "ed44c6d4_aa5fe9ad",
+      "revId": "9458f62aab06fbf9d54be9f623d3eaf4c40007bc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5eeef589_f4214e54",
