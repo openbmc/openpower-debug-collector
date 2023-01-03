@@ -35,6 +35,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3f4efa0_bbd99ac4",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T04:06:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7548f9b_5c265e9d",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80c9c230_34b487ff",
@@ -52,6 +70,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b0536a5_0ee3a4e3",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T04:06:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80c9c230_34b487ff",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a350ca9_eb8d8642",
@@ -65,6 +101,24 @@
       "writtenOn": "2023-01-02T10:03:51Z",
       "side": 1,
       "message": "Class member variables in public scope isn\u0027t recommended. Can we take those out of class scope or apply some other tricks?",
+      "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f89b8a67_24fa2790",
+        "filename": "dump/argument.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T04:06:14Z",
+      "side": 1,
+      "message": "I think we should not be complicating here, you can see other examples of argument parser",
+      "parentUuid": "4a350ca9_eb8d8642",
       "revId": "7ee7a961d7c67eca10388cea146d64b885959e72",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
