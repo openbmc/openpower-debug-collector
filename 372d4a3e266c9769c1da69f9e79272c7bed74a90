@@ -37,6 +37,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "35117b82_c5a4b25d",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cba561f0_2a8699b6",
+      "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "50349a97_d73c3141",
         "filename": "dump/create_pel.cpp",
         "patchSetId": 11
@@ -69,6 +87,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b1826bf_7e00a91b",
+        "filename": "dump/create_pel.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0db41552_4be7db9f",
+      "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25d94302_95c1a884",
@@ -82,6 +118,24 @@
       "writtenOn": "2022-12-15T13:16:54Z",
       "side": 1,
       "message": "If proclist is only used for insertion purposes at line no 280 then declare it as std::vector\u003cstruct pdbg_target*\u003e procList(1). Reason, unnecessary space reservation by the initial default size of vector is avoided",
+      "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d95abaed_d6148e03",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:15:54Z",
+      "side": 1,
+      "message": "but there will be more than one element",
+      "parentUuid": "25d94302_95c1a884",
       "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -103,6 +157,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aee1822d_83fd952d",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0032c348_15f971c4",
+      "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6480df62_f4b784e1",
@@ -116,6 +188,24 @@
       "writtenOn": "2022-12-15T13:16:54Z",
       "side": 1,
       "message": "If we know for sure that the procList vector only holds a single element then rather than using a for loop use direct indexes like auto procTarget \u003d procList[0] (it would be of less CPU cycles than of for loop). In case of multiple elements also we can write the for loop as for \"(auto procTarget : procList)\" no need to mention the data type explicitly although we can put a \u0027p\u0027 in front of procTarget to indicate it is a pointer, i.e.; pProcTarget",
+      "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fcbc8d1_9ea1efab",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-03T06:15:54Z",
+      "side": 1,
+      "message": "Proclist holds the list of all procs not just one",
+      "parentUuid": "6480df62_f4b784e1",
       "revId": "372d4a3e266c9769c1da69f9e79272c7bed74a90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
