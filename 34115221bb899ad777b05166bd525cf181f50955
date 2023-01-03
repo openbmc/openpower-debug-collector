@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb41f1c1_714519d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-01-03T13:16:17Z",
+      "side": 1,
+      "message": "Just a query about using the raw pointer instead of unique pointer",
+      "revId": "34115221bb899ad777b05166bd525cf181f50955",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
