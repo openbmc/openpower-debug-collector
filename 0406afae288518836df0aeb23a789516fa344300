@@ -34,6 +34,24 @@
       "parentUuid": "2baa783c_561d1194",
       "revId": "0406afae288518836df0aeb23a789516fa344300",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d86ea42b_980a7cea",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 23
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T07:48:42Z",
+      "side": 1,
+      "message": "root@xxxx:/# systemctl show org.open_power.Dump.Manager.service\nType\u003ddbus\nBusName\u003dorg.open_power.Dump.Manager\n\nI do see it is set properly so guess we are good here.",
+      "parentUuid": "8d240354_9d291926",
+      "revId": "0406afae288518836df0aeb23a789516fa344300",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

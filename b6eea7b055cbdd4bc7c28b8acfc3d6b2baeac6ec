@@ -33,6 +33,23 @@
       "message": "Okay for me. Attention required for the BUSCOMD portion which Andrew mentioned",
       "revId": "b6eea7b055cbdd4bc7c28b8acfc3d6b2baeac6ec",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8119cc22_c0ebb81b",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 33
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T07:48:42Z",
+      "side": 1,
+      "message": "do not see this target being created so not sure if this is required also we are doing mapper wait on itself in other places we wait on other services.\n\n@andrew do we need this line?",
+      "revId": "b6eea7b055cbdd4bc7c28b8acfc3d6b2baeac6ec",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
