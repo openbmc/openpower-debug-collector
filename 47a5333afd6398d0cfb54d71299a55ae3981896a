@@ -16,6 +16,98 @@
       "message": "One suggestion is yet to be implemented",
       "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73af526e_1d946193",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T08:50:53Z",
+      "side": 1,
+      "message": "As found from the header files in SDK\n```\nstruct Disabled final :public sdbusplus::exception::generated_exception\nstruct generated_exception : public exception\n\nclass SdBusError final : public internal_exception\n```\n\nthis is the hierarchy I see so any Disabled/QuotaExceeded exception will not come in this path it will go into std::exception path",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 44
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "641366a4_60cb2ef8",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T08:50:53Z",
+      "side": 1,
+      "message": "Do not see any exception called DumpDisabled",
+      "range": {
+        "startLine": 73,
+        "startChar": 17,
+        "endLine": 73,
+        "endChar": 29
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0db5ea3f_95b47d6e",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T08:50:53Z",
+      "side": 1,
+      "message": "why does SdBusError encode \"xyz.openbmc_project.Dump.Create.Error.Disabled\" exception, should this code go into the next catch statement and also why do we need\n\u0027\u0027\u0027\nif (e.name() \u003d\u003d ERROR_DUMP_DISABLED)\n{\n   elog\u003cDumpDisabled\u003e();\n}\n\u0027\u0027\u0027\n\nDo not see any exception called DumpDisabled in phosphor-dbus-interfaces Create.Errors.yaml it is Disabled.\n\nalso we could simply it to simply do this, alread ex is pointing to Disabled so no need to create another Disabled exception.\nif (e.name() \u003d\u003d ERROR_DUMP_DISABLED)\n{\n   throw;\n}",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 9
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce9e7710_6388a63f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T08:50:53Z",
+      "side": 1,
+      "message": "assuming stoi fails and ends up here, we rethrow that exception and caller will crash as this is not a D-Bus exception is this expected? probably ok as it rarely happens.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 5
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
