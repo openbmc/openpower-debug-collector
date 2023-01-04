@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "970a08a6_542782f8",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-04T12:33:10Z",
+      "side": 1,
+      "message": "why do we need this check and log? we are not collecting dump anyway as the target is not functional.",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 13
+      },
+      "revId": "4abaa971280e7a69bb94f210083593ce136dad3f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
