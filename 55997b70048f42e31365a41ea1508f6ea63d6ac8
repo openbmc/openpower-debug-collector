@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bfb134c_b04bb07f",
+        "filename": "dump/meson.build",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-05T05:58:35Z",
+      "side": 1,
+      "message": "shouldn\u0027t we add phosphorlogging wrap file to build locally?",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "55997b70048f42e31365a41ea1508f6ea63d6ac8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
