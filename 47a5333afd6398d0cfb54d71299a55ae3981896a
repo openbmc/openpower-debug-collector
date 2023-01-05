@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1c1b47db_7a792e48",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-01-05T05:25:03Z",
+      "side": 1,
+      "message": "Also this is wrong way of handling exceptions ideally it needs to be\ncatch(const Disabled\u0026 ex)\n{\n}\ncatch(const SdBusError\u0026 ex)\n{\n}\ncatch(const std::exception\u0026 ex)\n{\n}\n\n\nDervicd classes first and then base classes.",
+      "parentUuid": "73af526e_1d946193",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 44
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "641366a4_60cb2ef8",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 13
