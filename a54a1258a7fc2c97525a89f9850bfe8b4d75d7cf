@@ -16,6 +16,24 @@
       "message": "this being a D-Bus method throwing runtime_error in the parent process will crash the application is that ok? We do not have InternalFailure in the interface so could not throw that. \n\nwe got to throw one of this exception if we do not want the application to crash\n- xyz.openbmc_project.Common.File.Error.Write\n- xyz.openbmc_project.Dump.Create.Error.Disabled\n- xyz.openbmc_project.Dump.Create.Error.QuotaExceeded\n- xyz.openbmc_project.Common.Error.NotAllowed\n- xyz.openbmc_project.Common.Error.InvalidArgument\n- xyz.openbmc_project.Common.Error.Unavailable",
       "revId": "a54a1258a7fc2c97525a89f9850bfe8b4d75d7cf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "071ad7f4_80152b8d",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:58:24Z",
+      "side": 1,
+      "message": "Fork failure is some serious issue in the system, so it is ok to crash and restart the application",
+      "parentUuid": "97d1d295_e301b04b",
+      "revId": "a54a1258a7fc2c97525a89f9850bfe8b4d75d7cf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
