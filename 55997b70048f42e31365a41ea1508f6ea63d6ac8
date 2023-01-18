@@ -22,6 +22,30 @@
       },
       "revId": "55997b70048f42e31365a41ea1508f6ea63d6ac8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a86ef16b_2de9cd1b",
+        "filename": "dump/meson.build",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:56:24Z",
+      "side": 1,
+      "message": "phosphorloggin is already defined like that here\nhttps://github.com/openbmc/openpower-debug-collector/blob/eebcf900a23b41df24d0985240a4da83bffa8a54/meson.build#L24",
+      "parentUuid": "0bfb134c_b04bb07f",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "55997b70048f42e31365a41ea1508f6ea63d6ac8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
