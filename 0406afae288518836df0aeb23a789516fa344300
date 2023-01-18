@@ -52,6 +52,24 @@
       "parentUuid": "8d240354_9d291926",
       "revId": "0406afae288518836df0aeb23a789516fa344300",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "299980ec_7e9cf193",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 23
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:16:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d86ea42b_980a7cea",
+      "revId": "0406afae288518836df0aeb23a789516fa344300",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

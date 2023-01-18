@@ -68,6 +68,24 @@
       "parentUuid": "8119cc22_c0ebb81b",
       "revId": "b6eea7b055cbdd4bc7c28b8acfc3d6b2baeac6ec",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a6a7f45_2c8654e5",
+        "filename": "dump/org.open_power.Dump.Manager.service",
+        "patchSetId": 33
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:16:23Z",
+      "side": 1,
+      "message": "Yes this was added based on the review comments",
+      "parentUuid": "e24b3c53_17decc3e",
+      "revId": "b6eea7b055cbdd4bc7c28b8acfc3d6b2baeac6ec",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
