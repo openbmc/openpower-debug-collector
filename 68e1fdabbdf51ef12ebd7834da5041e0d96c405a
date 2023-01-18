@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0b99496_b21290c3",
+        "filename": "dump/dump_manager.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:27:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3dde26cc_aa62a03c",
+      "revId": "68e1fdabbdf51ef12ebd7834da5041e0d96c405a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67ea1a42_d781d7d6",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-04T07:58:53Z",
       "side": 1,
       "message": "we can use sdeventplus_dep",
+      "revId": "68e1fdabbdf51ef12ebd7834da5041e0d96c405a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "077871db_8f2e95f6",
+        "filename": "dump/meson.build",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:27:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ea1a42_d781d7d6",
       "revId": "68e1fdabbdf51ef12ebd7834da5041e0d96c405a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
