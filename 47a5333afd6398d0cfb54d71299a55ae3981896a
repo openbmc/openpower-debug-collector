@@ -91,6 +91,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4d427c9c_de1e1d05",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:47:26Z",
+      "side": 1,
+      "message": "I see it is implemented like this in other repos too, from DBus we are getting a dbus exception and inside the actual exception is coming as a message, I have tested it and found",
+      "parentUuid": "f1c97144_64bc1d16",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 44
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "641366a4_60cb2ef8",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 13
@@ -102,6 +126,30 @@
       "writtenOn": "2023-01-04T08:50:53Z",
       "side": 1,
       "message": "Do not see any exception called DumpDisabled",
+      "range": {
+        "startLine": 73,
+        "startChar": 17,
+        "endLine": 73,
+        "endChar": 29
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "544a56cb_e5806f5f",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:47:26Z",
+      "side": 1,
+      "message": "it is defined as part of the dump create interface\nsdbusplus::xyz::openbmc_project::Dump::Create::Error::Disabled",
+      "parentUuid": "641366a4_60cb2ef8",
       "range": {
         "startLine": 73,
         "startChar": 17,
@@ -137,6 +185,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1f59133f_2a7d1601",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:47:26Z",
+      "side": 1,
+      "message": "Then it is going as a dbus exception not the specific exception",
+      "parentUuid": "0db5ea3f_95b47d6e",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 9
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ce9e7710_6388a63f",
         "filename": "dump/dump_manager.cpp",
         "patchSetId": 13
@@ -148,6 +220,30 @@
       "writtenOn": "2023-01-04T08:50:53Z",
       "side": 1,
       "message": "assuming stoi fails and ends up here, we rethrow that exception and caller will crash as this is not a D-Bus exception is this expected? probably ok as it rarely happens.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 5
+      },
+      "revId": "47a5333afd6398d0cfb54d71299a55ae3981896a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "188a8ee1_447340ff",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-18T05:47:26Z",
+      "side": 1,
+      "message": "if a throw is here, the caller will not crash but this application will crash as it is not handled in higher levels, I dont think we have anything else to do in that case",
+      "parentUuid": "ce9e7710_6388a63f",
       "range": {
         "startLine": 83,
         "startChar": 0,
