@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "189d5959_b29def76",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-25T02:08:37Z",
+      "side": 1,
+      "message": "need to report open and write errors",
+      "parentUuid": "497ecd60_323b4551",
+      "range": {
+        "startLine": 85,
+        "startChar": 36,
+        "endLine": 85,
+        "endChar": 44
+      },
+      "revId": "31f1c04c6cbe4627b97838b213838182eab4b56a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6306b991_74505f35",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-04T09:37:06Z",
       "side": 1,
       "message": "line 98 to 111 should go into line 88 as exception to write happens there. proper scoping",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 5
+      },
+      "revId": "31f1c04c6cbe4627b97838b213838182eab4b56a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f4f0209_06c8e72a",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-25T02:08:37Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6306b991_74505f35",
       "range": {
         "startLine": 98,
         "startChar": 0,
