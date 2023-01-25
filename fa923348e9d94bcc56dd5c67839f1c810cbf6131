@@ -16,6 +16,24 @@
       "message": "why do we need to catch this InternalFailure exception? setProperty does not throw this exception?",
       "revId": "fa923348e9d94bcc56dd5c67839f1c810cbf6131",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b061771_77c4b891",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-01-25T02:09:12Z",
+      "side": 1,
+      "message": "setProperty will throw sdbusplus::exception::exception so that will be handled in next one, we need to log iternalFailure and get a BMC dump to analyse the failure",
+      "parentUuid": "ed722685_4e58c31e",
+      "revId": "fa923348e9d94bcc56dd5c67839f1c810cbf6131",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
