@@ -3,6 +3,57 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7c698ca4_2163e4e0",
+        "filename": "dump/dist/org.open_power.Dump.Manager@.service.in",
+        "patchSetId": 35
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-02-22T15:57:40Z",
+      "side": 1,
+      "message": "If this service is not really templated then don\u0027t make it templated. Just do what Drhuv mentioned and hard code the @0.",
+      "revId": "01a94427df8bd2d33b9ef52b2e89113d7446e5ce",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f90ba6a0_31fd602c",
+        "filename": "dump/dist/org.open_power.Dump.Manager@.service.in",
+        "patchSetId": 35
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-02-22T15:57:40Z",
+      "side": 1,
+      "message": "You also should add a \"Wants\u003dobmc-host-start-pre@0.target\" (i.e. need both a Wants and After)",
+      "revId": "01a94427df8bd2d33b9ef52b2e89113d7446e5ce",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5187e4aa_da48ea8b",
+        "filename": "dump/dist/org.open_power.Dump.Manager@.service.in",
+        "patchSetId": 35
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-02-22T15:57:40Z",
+      "side": 1,
+      "message": "It sounds like you want this service to start before start_host@0.service. If that\u0027s the case then you could remove this line and just do the following above:\n\nWants\u003dobmc-host-start-pre@0.target\nBefore\u003dobmc-host-start-pre@0.target\n\nThis means your service will start when we begin the power on (WantedBy\u003dobmc-host-startmin@0.target below) and will be guaranteed to run before we start the host.",
+      "revId": "01a94427df8bd2d33b9ef52b2e89113d7446e5ce",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "563dba75_b6156b8a",
         "filename": "dump/dist/org.open_power.Dump.Manager@.service.in",
         "patchSetId": 35
@@ -14,6 +65,24 @@
       "writtenOn": "2023-02-22T15:46:05Z",
       "side": 1,
       "message": "let us keep this as 0, like WantedBy\u003dobmc-host-startmin@0.target",
+      "revId": "01a94427df8bd2d33b9ef52b2e89113d7446e5ce",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baaaafd5_a6b7b5b7",
+        "filename": "dump/dist/org.open_power.Dump.Manager@.service.in",
+        "patchSetId": 35
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-02-22T15:57:40Z",
+      "side": 1,
+      "message": "And if we don\u0027t do this, it needs to be \"@%i\" to be templated properly. But I agree, just hard code the 0.",
+      "parentUuid": "563dba75_b6156b8a",
       "revId": "01a94427df8bd2d33b9ef52b2e89113d7446e5ce",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
