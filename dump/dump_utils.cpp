@@ -101,42 +101,15 @@ void monitorDump(const std::string& path, const uint32_t timeout)
     }
 }
 
-void requestBMCDump()
-{
-    constexpr auto path = "/xyz/openbmc_project/dump/bmc";
-    constexpr auto interface = "xyz.openbmc_project.Dump.Create";
-    constexpr auto function = "CreateDump";
-
-    log<level::INFO>("Initiating BMC dump");
-    auto bus = sdbusplus::bus::new_default();
-    try
-    {
-        auto service = getService(bus, interface, path);
-        auto method =
-            bus.new_method_call(service.c_str(), path, interface, function);
-        std::map<std::string, std::variant<std::string, uint64_t>> createParams;
-        method.append(createParams);
-
-        bus.call_noreply(method);
-    }
-    catch (const std::exception& e)
-    {
-        log<level::ERR>(
-            fmt::format("BMC dump creation reqest failed, error({})", e.what())
-                .c_str());
-    }
-}
-
 void requestSBEDump(const uint32_t failingUnit, const uint32_t eid)
 {
     log<level::INFO>(fmt::format("Requesting Dump PEL({}) chip position({})",
                                  eid, failingUnit)
                          .c_str());
 
-    constexpr auto path = "/org/openpower/dump";
+    constexpr auto path = "/xyz/openbmc_project/dump/sbe";
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
     constexpr auto function = "CreateDump";
-    constexpr auto sbeDump = "com.ibm.Dump.Create.DumpType.SBE";
 
     sdbusplus::message::message method;
 
@@ -153,7 +126,6 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid)
             createParams;
         createParams["com.ibm.Dump.Create.CreateParameters.ErrorLogId"] =
             uint64_t(eid);
-        createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] = sbeDump;
         createParams["com.ibm.Dump.Create.CreateParameters.FailingUnitId"] =
             uint64_t(failingUnit);
 
@@ -231,62 +203,6 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
                                     ex.what(), path, intf)
                             .c_str());
         throw;
-    }
-}
-
-void prepareCollection(const std::filesystem::path& dumpPath,
-                       const std::string& errorLogId)
-{
-    using namespace sdbusplus::xyz::openbmc_project::Common::File::Error;
-    try
-    {
-        std::filesystem::create_directories(dumpPath);
-        auto elogPath = dumpPath.parent_path();
-        elogPath /= "ErrorLog";
-        std::ofstream outfile{elogPath, std::ios::out | std::ios::binary};
-        if (!outfile.good())
-        {
-            using metadata = xyz::openbmc_project::Common::File::Open;
-            // Unable to open the file for writing
-            auto err = errno;
-            log<level::ERR>(
-                fmt::format("Error opening file to write errorlog id, "
-                            "errno({}), filepath({})",
-                            err, dumpPath.string())
-                    .c_str());
-            // Report the error and continue collection even if the error log id
-            // cannot be added
-            report<Open>(metadata::ERRNO(err),
-                         metadata::PATH(dumpPath.c_str()));
-        }
-        else
-        {
-            outfile.exceptions(std::ifstream::failbit | std::ifstream::badbit |
-                               std::ifstream::eofbit);
-            outfile << errorLogId;
-            outfile.close();
-        }
-    }
-    catch (std::filesystem::filesystem_error& e)
-    {
-        log<level::ERR>(fmt::format("Error creating dump directories, path({})",
-                                    dumpPath.string())
-                            .c_str());
-        throw;
-    }
-    catch (std::ofstream::failure& oe)
-    {
-        using metadata = xyz::openbmc_project::Common::File::Write;
-        // If there is an error commit the error and continue.
-        log<level::ERR>(fmt::format("Failed to write errorlog id to file, "
-                                    "errorMsg({}), error({}), filepath({})",
-                                    oe.what(), oe.code().value(),
-                                    dumpPath.string())
-                            .c_str());
-        // Report the error and continue with dump collection
-        // even if the error log id cannot be written to the file.
-        report<Write>(metadata::ERRNO(oe.code().value()),
-                      metadata::PATH(dumpPath.c_str()));
     }
 }
 
