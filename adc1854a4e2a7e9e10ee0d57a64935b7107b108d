@@ -16,6 +16,24 @@
       "message": "will remove",
       "revId": "adc1854a4e2a7e9e10ee0d57a64935b7107b108d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a7a6565_20fd164b",
+        "filename": "dump/dump_manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-04-05T04:42:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f1526d1_d34cb0a4",
+      "revId": "adc1854a4e2a7e9e10ee0d57a64935b7107b108d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
