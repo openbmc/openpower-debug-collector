@@ -1,0 +1,8 @@
+Code-Review+2: Jayanth Othayoth <ojayanth@in.ibm.com>
+Code-Review+1: Dhruvaraj S <dhruvaraj@gmail.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Submitted-by: Patrick Williams <patrick@stwcx.xyz>
+Submitted-at: Thu, 13 Apr 2023 10:35:17 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/62362
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
