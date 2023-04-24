@@ -33,6 +33,23 @@
       "message": "A few lines here exceed the commit msg char limit, please fix",
       "revId": "c5e18b0c4db98403ea7da4970821ae38ad177280",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18a0c79d_d34a9dc4",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-04-24T15:05:21Z",
+      "side": 1,
+      "message": "Message Registry definition still shows org.open_power.Host.Boot.Error.WatchdogTimeout\nhttps://github.com/openbmc/phosphor-logging/blob/master/extensions/openpower-pels/registry/message_registry.json#L5554\n\"Name\": \"org.open_power.Host.Boot.Error.WatchdogTimeout\",\n\nNot seeing the definition of org.open_power.Processor.Error.WatchdogTimedOut in the message Registry. \n@matt can you please comment on this,",
+      "revId": "c5e18b0c4db98403ea7da4970821ae38ad177280",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
