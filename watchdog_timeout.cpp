@@ -79,7 +79,7 @@ int main(int argc, char* argv[])
     {
         log<level::ERR>(fmt::format("Exception {} occurred", e.what()).c_str());
         std::string eventType =
-            "org.open_power.Processor.Error.WatchdogTimeout";
+            "org.open_power.Host.Boot.Error.WatchdogTimedOut";
         auto ffdc = std::vector<FFDCTuple>{};
         std::map<std::string, std::string> additionalData;
 
