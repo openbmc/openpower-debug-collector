@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "074e6689_09bccbf1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-04-24T15:07:18Z",
+      "side": 1,
+      "message": "Please ensure commit message lines fit within char limit. See https://github.com/openbmc/docs/blob/master/CONTRIBUTING.md#formatting-commit-messages",
+      "revId": "23c14e9168b8a08315c758706ba30828a025f9ca",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
