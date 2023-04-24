@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87348d21_07c6b624",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-04-24T15:04:58Z",
+      "side": 1,
+      "message": "Looks like instead of fixing this commit, a new one was generated over at https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/62814? The key to updating gerrit commits is to do a \"git commit --amend\" to fix the current review. Anyway, can probably abandon this one and we\u0027ll review the other one.",
+      "revId": "d1e949b99ef14d3f1a691f303669a2459457859a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
