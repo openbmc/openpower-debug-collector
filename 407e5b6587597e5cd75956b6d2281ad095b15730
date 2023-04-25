@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "362e5da3_55798895",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2023-04-25T14:45:08Z",
+      "side": 1,
+      "message": "Still not entirely clear to me why this change is suddenly needed, but it doesn\u0027t hurt anything.",
+      "revId": "407e5b6587597e5cd75956b6d2281ad095b15730",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
