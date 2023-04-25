@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "098c7a3b_b36ce1f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-04-25T15:08:33Z",
+      "side": 1,
+      "message": "Required https://gerrit.openbmc.org/c/openbmc/phosphor-logging/+/62807 to merge.",
+      "revId": "4f4e36d3d1f66394c829973855276e6ee0937a24",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
