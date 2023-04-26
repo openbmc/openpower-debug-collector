@@ -1,0 +1,9 @@
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+1: MARRI DEVENDER RAO <devenrao@in.ibm.com>
+Code-Review+1: Andrew Geissler <geissonator@yahoo.com>
+Code-Review+2: Jayanth Othayoth <ojayanth@in.ibm.com>
+Submitted-by: Deepakala Karthikeyan <deepakala.karthikeyan@ibm.com>
+Submitted-at: Wed, 26 Apr 2023 07:05:44 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/62814
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
