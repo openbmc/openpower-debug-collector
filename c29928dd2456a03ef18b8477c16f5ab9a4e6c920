@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c588733b_681a581a",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 36
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-04-27T15:54:03Z",
+      "side": 1,
+      "message": "The same variable \"conf_data\" is used in the top-level meson file and will be overwritten here as the scope gets extended to all subprojects. May be a better idea to prefix the folder name and name it dist_conf_data?",
+      "revId": "c29928dd2456a03ef18b8477c16f5ab9a4e6c920",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
