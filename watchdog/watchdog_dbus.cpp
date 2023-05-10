@@ -54,16 +54,16 @@ int dbusMethod(const std::string& path, const std::string& interface,
             if (extended == "")
             {
                 // return the method
-                method =
-                    bus.new_method_call(service.c_str(), path.c_str(),
-                                        interface.c_str(), function.c_str());
+                method = bus.new_method_call(service.c_str(), path.c_str(),
+                                             interface.c_str(),
+                                             function.c_str());
             }
             else
             {
                 // return extended method
-                method =
-                    bus.new_method_call(service.c_str(), path.c_str(),
-                                        extended.c_str(), function.c_str());
+                method = bus.new_method_call(service.c_str(), path.c_str(),
+                                             extended.c_str(),
+                                             function.c_str());
             }
 
             rc = RC_SUCCESS;

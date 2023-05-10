@@ -30,8 +30,7 @@ class FileDescriptor
      *
      * @param[in] fd - File descriptor
      */
-    explicit FileDescriptor(int fd) : fd(fd)
-    {}
+    explicit FileDescriptor(int fd) : fd(fd) {}
 
     /**
      * @brief Move constructor.

@@ -20,7 +20,6 @@ namespace dump
 void event(std::map<std::string, std::string>& additional,
            const uint32_t timeout)
 {
-
     std::string eventName = "org.open_power.Host.Boot.Error.WatchdogTimedOut";
 
     // CreatePELWithFFDCFiles requires a vector of FFDCTuple.

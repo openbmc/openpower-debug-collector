@@ -1,7 +1,7 @@
 #include "ffdc_file.hpp"
 
-#include <errno.h> // for errno
-#include <fcntl.h> // for open()
+#include <errno.h>     // for errno
+#include <fcntl.h>     // for open()
 #include <fmt/format.h>
 #include <string.h>    // for strerror()
 #include <sys/stat.h>  // for open()
