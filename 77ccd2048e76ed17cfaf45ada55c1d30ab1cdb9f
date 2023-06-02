@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a93a1c55_45ad9431",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-02T08:25:02Z",
+      "side": 1,
+      "message": "Please add TestedBy section \u0026 a sample API invocation section to show how the command \u0026 arguments are passed to this application.",
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17f4acdb_cffafaf0",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-02T08:25:02Z",
+      "side": 1,
+      "message": "Is there no value between 0 and 5? Are they reserved for future use?",
+      "range": {
+        "startLine": 59,
+        "startChar": 71,
+        "endLine": 59,
+        "endChar": 72
+      },
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9438ce54_28a17d69",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-02T08:25:02Z",
+      "side": 1,
+      "message": "Is this error caught by someone?\n-OR-\nShould \"failed \u003d true;\" needs to be set here to gracefully exit with failure?",
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
