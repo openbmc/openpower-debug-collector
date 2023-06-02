@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "690b1dac_00beaad1",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-02T08:32:24Z",
+      "side": 1,
+      "message": "Is this always node0? \nI think it can be a variable which is currently 0 and can be extended to the multi node systems in future.",
+      "revId": "013595a12e66efed0613c369a19cf1569961cdd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1234aba_e7e17457",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-02T08:32:24Z",
+      "side": 1,
+      "message": "This function creates the new dump file with name format \u003c...\u003e and then writes the contents into it.",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 53
+      },
+      "revId": "013595a12e66efed0613c369a19cf1569961cdd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
