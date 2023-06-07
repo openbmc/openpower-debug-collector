@@ -3,6 +3,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d5543027_6d062b55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-06-07T03:36:50Z",
+      "side": 1,
+      "message": "Since this is new code, \n- Update commit message or share link to any of this application scope/design details. \n-  Use lg2 based logging.\n- Make sure the the function Design is UT friendly.\n- Star adding some test cases , which will help better CI coverage.",
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74f4b1b4_ca69700d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-06-07T03:36:50Z",
+      "side": 1,
+      "message": "Host dump data collection application?",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a93a1c55_45ad9431",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
