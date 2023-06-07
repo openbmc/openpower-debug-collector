@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7db4d965_576819a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-06-07T12:21:30Z",
+      "side": 1,
+      "message": "- Will update the commit message\n- Lg2: will be changing\n- Unit test: Since the code already existing doesn\u0027t have unit tests or test framework available, that will be done as a separate activity",
+      "parentUuid": "d5543027_6d062b55",
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "74f4b1b4_ca69700d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
@@ -31,6 +49,30 @@
       "writtenOn": "2023-06-07T03:36:50Z",
       "side": 1,
       "message": "Host dump data collection application?",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3cc31f0_db514673",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-06-07T12:21:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74f4b1b4_ca69700d",
       "range": {
         "startLine": 7,
         "startChar": 4,
