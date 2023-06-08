@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d81af0bb_b328e1b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-08T05:14:35Z",
+      "side": 1,
+      "message": "Is there a docs section in this repo to keep the design details?\n\nFor lg2 and UT, please create github issues.",
+      "parentUuid": "7db4d965_576819a9",
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "74f4b1b4_ca69700d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 19
@@ -165,6 +183,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9db76662_b819259d",
+        "filename": "dump/argument.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-08T05:14:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "68413998_46256731",
+      "range": {
+        "startLine": 59,
+        "startChar": 71,
+        "endLine": 59,
+        "endChar": 72
+      },
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9438ce54_28a17d69",
@@ -196,6 +238,24 @@
       "side": 1,
       "message": "Main will ctach and exit failure",
       "parentUuid": "9438ce54_28a17d69",
+      "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6b1d304_02de290f",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-06-08T05:14:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ccad35ef_89c2bdea",
       "revId": "77ccd2048e76ed17cfaf45ada55c1d30ab1cdb9f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
