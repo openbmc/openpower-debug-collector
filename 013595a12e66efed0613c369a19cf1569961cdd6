@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "315665a4_daddc8ff",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-06-13T09:58:16Z",
+      "side": 1,
+      "message": "Yes now it is 0, on multinode we need to see how it will be",
+      "parentUuid": "690b1dac_00beaad1",
+      "revId": "013595a12e66efed0613c369a19cf1569961cdd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a1234aba_e7e17457",
         "filename": "dump/dump_collect.hpp",
         "patchSetId": 19
