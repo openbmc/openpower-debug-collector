@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80720dae_a624694a",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2023-06-19T11:25:10Z",
+      "side": 1,
+      "message": "is this functional check intentional, I thought we do not want to check this?",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
