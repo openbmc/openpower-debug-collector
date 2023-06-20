@@ -88,6 +88,24 @@
       "parentUuid": "3bd34b57_8a9f2ec2",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4a355b_68fa878b",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-06-20T14:47:33Z",
+      "side": 1,
+      "message": "\u003eThe host may set functional state of the processor to non-functional after a TI\nIf this is valid case BMC will fail to boot the step0 , becasue istep runs on the functional processor only.\n\n@dan \nDuring intial development time , based on hostboot team\u0027s request , BMC disbled to set non functional primary processor , to keep IPL moving. Is there design assumption chnage happend now?",
+      "parentUuid": "26643c1f_880b121b",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
