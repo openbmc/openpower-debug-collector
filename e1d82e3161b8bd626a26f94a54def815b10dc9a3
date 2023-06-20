@@ -106,6 +106,24 @@
       "parentUuid": "26643c1f_880b121b",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3061c36_cb8164d4",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-06-20T15:34:54Z",
+      "side": 1,
+      "message": "If hostboot sets non-functional after the step0, how that is stopping the boot at step0?",
+      "parentUuid": "bc4a355b_68fa878b",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
