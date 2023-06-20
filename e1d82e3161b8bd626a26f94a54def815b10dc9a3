@@ -124,6 +124,24 @@
       "parentUuid": "bc4a355b_68fa878b",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c859fd5_abe07f5a",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-06-20T15:43:28Z",
+      "side": 1,
+      "message": "TI -\u003e you said hostboot sets to non functional ( primary processor) -\u003e BMC attempt 3 reboot attempts usally in this path. Question is are we expecting fail  next boot here? That is the part i want to clear from your statement.",
+      "parentUuid": "b3061c36_cb8164d4",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
