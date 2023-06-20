@@ -70,6 +70,24 @@
       "parentUuid": "840e275a_972105fc",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26643c1f_880b121b",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-06-20T12:08:17Z",
+      "side": 1,
+      "message": "No, The host may set functional state of the processor to non-functional after a TI in such cases if the dump is attempted to collect that will be skipped even if the SBE is ready to collect the dump. This is a bug in the code.\n\nIn fact the checking for the functional state was workaround when the SBE state checking was not available, so that needs to be removed.",
+      "parentUuid": "3bd34b57_8a9f2ec2",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
