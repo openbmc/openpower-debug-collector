@@ -160,6 +160,24 @@
       "parentUuid": "2c859fd5_abe07f5a",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3d94960_a030779a",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000155
+      },
+      "writtenOn": "2023-06-20T18:24:39Z",
+      "side": 1,
+      "message": "The specific scenario we saw was that for some reason HB was unable to detect processor 0 (I think it was a vpd issue) and somehow we eventually we TIed.  As part of every shutdown path we push our version of data into the BMC\u0027s devtree.  So in this case we pushed down the fact that proc0 wasn\u0027t installed.  This is obviously a lie because HB was running on it at the time.\n\n\u003e BMC disbled to set non functional primary processor , to keep IPL moving. Is there design assumption chnage happend now?\n\nThe request to make dumps work all the time is orthogonal to the BMC behavior to change the bootproc state or not.  PHAL isn\u0027t able to intercept the state change from Hostboot since it is just a file write, so our (incorrect in this case) state wins and breaks the dump that we need to debug the mistake.",
+      "parentUuid": "12684002_005170fd",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
