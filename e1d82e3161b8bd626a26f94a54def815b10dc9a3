@@ -52,6 +52,24 @@
       "parentUuid": "840e275a_972105fc",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bd34b57_8a9f2ec2",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-06-20T03:16:57Z",
+      "side": 1,
+      "message": "By design BMC/Host never sets Primary processor functional sate to nonfunctional.  Once system booted.  Looks like this is hack to cover some under cover issues in the code.",
+      "parentUuid": "840e275a_972105fc",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
