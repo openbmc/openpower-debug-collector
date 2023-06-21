@@ -286,6 +286,24 @@
       "parentUuid": "add021a0_663f5214",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93e4b731_60cf081d",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-06-21T20:05:25Z",
+      "side": 1,
+      "message": "I don\u0027t think a hostboot dump will be requested in a reconfig loop path, if a hostboot dump is requested and the proc0 is updated as non-functional then we will end up skipping the hostboot dump collection.\n\nMore than that, since we implemented sbe states, the checking of functional state of the proc may not be necessary.",
+      "parentUuid": "c1c6d1c5_1735d730",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
