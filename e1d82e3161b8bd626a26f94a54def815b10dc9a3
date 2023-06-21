@@ -232,6 +232,24 @@
       "parentUuid": "abfffd05_a3c5016a",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f324d3c_67c0548d",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000155
+      },
+      "writtenOn": "2023-06-21T14:34:14Z",
+      "side": 1,
+      "message": "You can continue to ignore the state for proc0 in all of the current cases.",
+      "parentUuid": "c7461a6b_87b98139",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
