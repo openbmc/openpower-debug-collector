@@ -250,6 +250,24 @@
       "parentUuid": "c7461a6b_87b98139",
       "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "add021a0_663f5214",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-06-21T17:08:49Z",
+      "side": 1,
+      "message": "This seems to b breaking the design direction from Host vs BMC . BMC is setting presence based on fsi presence and able to cleanly do harwadre access here. Due to fix host side issues deviating from original design direction seems to be not reasonable here. \nWondering why host is setting primary processor non-functional here .As per design direction agreed initally , both Host/BMC is not going set primary [rocessor non-functional to keep ipl moving. am i missing something here?",
+      "parentUuid": "c7461a6b_87b98139",
+      "revId": "e1d82e3161b8bd626a26f94a54def815b10dc9a3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
