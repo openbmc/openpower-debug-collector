@@ -16,6 +16,24 @@
       "message": "Noted some of your other commits uses \"GCC  experimental version \u0027cpp_std\u003dc++2b\u0027 instead of \u0027cpp_std\u003dc++23. Can you provide some insights using different versions?",
       "revId": "704170c70d196979896852f8ce2ea2fd09157bd8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "148dfe0b_78189434",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-07-14T12:09:43Z",
+      "side": 1,
+      "message": "Repositories using `clang-tidy` I\u0027m having trouble getting to work because of missing clang/meson support.  I\u0027m still working through those.  c++2b was an attempt to trick it into working, but unsuccessful.  All of the ones which are passing CI have c++23.",
+      "parentUuid": "3a70dea0_ca2ceeba",
+      "revId": "704170c70d196979896852f8ce2ea2fd09157bd8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
