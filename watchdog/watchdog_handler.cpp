@@ -1,11 +1,11 @@
-#include <fmt/format.h>
-
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/bus/match.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_handler.hpp>
 #include <watchdog_logging.hpp>
+
+#include <format>
 
 namespace watchdog
 {
@@ -173,7 +173,7 @@ void requestDump(const DumpParameters& dumpParameters)
             {
                 // Dump is disabled, Skip the dump collection.
                 log<level::INFO>(
-                    fmt::format(
+                    std::format(
                         "Dump is disabled on({}), skipping dump collection",
                         dumpParameters.unitId)
                         .c_str());
@@ -181,7 +181,7 @@ void requestDump(const DumpParameters& dumpParameters)
             else
             {
                 log<level::ERR>(
-                    fmt::format("D-Bus call createDump exception ",
+                    std::format("D-Bus call createDump exception ",
                                 "OBJPATH={}, INTERFACE={}, EXCEPTION={}", path,
                                 interface, e.what())
                         .c_str());

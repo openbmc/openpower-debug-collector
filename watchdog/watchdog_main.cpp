@@ -1,4 +1,4 @@
-#include <fmt/format.h>
+#include <format>
 extern "C"
 {
 #include <libpdbg.h>
@@ -71,7 +71,7 @@ static void getSBECallout(struct pdbg_target* procTarget,
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>(fmt::format("getLocationCode({}): Exception({})",
+        log<level::ERR>(std::format("getLocationCode({}): Exception({})",
                                     pdbg_target_path(procTarget), e.what())
                             .c_str());
     }
@@ -93,7 +93,7 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     {
         // Failed to collect FFDC information
         log<level::ERR>(
-            fmt::format("captureFFDC: Exception{}", e.what()).c_str());
+            std::format("captureFFDC: Exception{}", e.what()).c_str());
         dumpIsRequired = true;
     }
 
@@ -157,7 +157,7 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     catch (const std::exception& e)
     {
         log<level::ERR>(
-            fmt::format("Skipping SBE special callout due to Exception({})",
+            std::format("Skipping SBE special callout due to Exception({})",
                         e.what())
                 .c_str());
     }
@@ -182,7 +182,7 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
         catch (const std::exception& e)
         {
             log<level::ERR>(
-                fmt::format("Exception {} occurred", e.what()).c_str());
+                std::format("Exception {} occurred", e.what()).c_str());
             return;
         }
 

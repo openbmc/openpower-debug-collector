@@ -1,10 +1,10 @@
-#include <fmt/format.h>
 #include <unistd.h>
 
 #include <phosphor-logging/log.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_logging.hpp>
 
+#include <format>
 #include <string>
 #include <vector>
 
@@ -160,7 +160,7 @@ bool isHostStateRunning()
         catch (const sdbusplus::exception_t& e)
         {
             log<level::ERR>(
-                fmt::format("Failed to read CurrentHostState property ({})",
+                std::format("Failed to read CurrentHostState property ({})",
                             e.what())
                     .c_str());
         }

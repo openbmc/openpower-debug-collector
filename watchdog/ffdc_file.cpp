@@ -2,13 +2,13 @@
 
 #include <errno.h>     // for errno
 #include <fcntl.h>     // for open()
-#include <fmt/format.h>
 #include <string.h>    // for strerror()
 #include <sys/stat.h>  // for open()
 #include <sys/types.h> // for open()
 
 #include <phosphor-logging/log.hpp>
 
+#include <format>
 #include <stdexcept>
 #include <string>
 
@@ -29,7 +29,7 @@ FFDCFile::~FFDCFile()
     // Close file descriptor.  Does nothing if descriptor was already closed.
     if (descriptor.close() == -1)
     {
-        log<level::ERR>(fmt::format("Unable to close FFDC file: errormsg({})",
+        log<level::ERR>(std::format("Unable to close FFDC file: errormsg({})",
                                     strerror(errno))
                             .c_str());
     }
@@ -52,7 +52,7 @@ void FFDCFile::prepareFFDCFile()
 
     if (rc == -1)
     {
-        log<level::ERR>(fmt::format("Failed to write callout info "
+        log<level::ERR>(std::format("Failed to write callout info "
                                     "in file({}), errorno({}), errormsg({})",
                                     tempFile.getPath().c_str(), errno,
                                     strerror(errno))
@@ -61,7 +61,7 @@ void FFDCFile::prepareFFDCFile()
     }
     else if (rc != static_cast<ssize_t>(calloutData.size()))
     {
-        log<level::WARNING>(fmt::format("Could not write all callout "
+        log<level::WARNING>(std::format("Could not write all callout "
                                         "info in file({}), written byte({}) "
                                         "and total byte({})",
                                         tempFile.getPath().c_str(), rc,
@@ -74,7 +74,7 @@ void FFDCFile::prepareFFDCFile()
     if (retCode == -1)
     {
         log<level::ERR>(
-            fmt::format("Failed to seek file postion to the beginning"
+            std::format("Failed to seek file postion to the beginning"
                         "in file({}), errorno({}) "
                         "and errormsg({})",
                         tempFile.getPath().c_str(), errno, strerror(errno))
