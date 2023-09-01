@@ -11,9 +11,17 @@ project(
     version: '1.0.0',
 )
 
+cxx = meson.get_compiler('cpp')
+
 systemd = dependency('systemd', required : true)
 
 sdbusplus_dep = dependency('sdbusplus')
+
+if cxx.has_header('CLI/CLI.hpp')
+    CLI11_dep = declare_dependency()
+else
+    CLI11_dep = dependency('CLI11')
+endif
 
 phosphorlogging = dependency(
     'phosphor-logging',
@@ -25,7 +33,6 @@ phosphorlogging = dependency(
 
 realpath_prog = find_program('realpath')
 
-cxx = meson.get_compiler('cpp')
 conf_data = configuration_data()
 if get_option('hostboot-dump-collection').enabled()
     conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
@@ -45,6 +52,7 @@ configure_file(output: 'config.h', configuration: conf_data)
 
 deps = [
     systemd,
+    CLI11_dep,
     sdbusplus_dep,
     phosphorlogging,
     extra_deps
