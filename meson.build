@@ -13,8 +13,6 @@ project(
 
 cxx = meson.get_compiler('cpp')
 
-systemd = dependency('systemd', required : true)
-
 sdbusplus_dep = dependency('sdbusplus')
 sdbusplusplus_prog = find_program('sdbus++')
 sdbuspp_gen_meson_prog = find_program('sdbus++-gen-meson')
@@ -57,7 +55,6 @@ endif
 configure_file(output: 'config.h', configuration: conf_data)
 
 deps = [
-    systemd,
     CLI11_dep,
     sdbusplus_dep,
     phosphorlogging,
