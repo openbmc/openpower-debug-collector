@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c6498d7_73e44d54",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "System Dump",
+      "range": {
+        "startLine": 7,
+        "startChar": 18,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98afa8ae_8d09801c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "Host",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b9988d2_201177af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "PHYP doesn\u0027t activate the watchdog timer, watchdog timer is activated if the boot is completed in a specific time",
+      "range": {
+        "startLine": 13,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c433a288_62cd6888",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "It should say something like this \"By implementing this functionality we can determine which booting subsystem is failed or stopped responding, and the dump can be extracted from the right subsystem.\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 52
+      },
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f5c8bcd_61b75c45",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "PLease add test details",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "782711cb_e8f001f2",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "Dox is not needed here",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "589240c9_a65389c8",
+        "filename": "watchdog/watchdog_main.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "triggerSystemDump",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb155e38_72460586",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "hasControlTransitionedToHost may be better",
+      "range": {
+        "startLine": 70,
+        "startChar": 39,
+        "endLine": 70,
+        "endChar": 67
+      },
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdb67059_fd270a3b",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2023-09-27T09:59:01Z",
+      "side": 1,
+      "message": "triggerSystemDump",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
