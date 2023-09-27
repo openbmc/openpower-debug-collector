@@ -26,5 +26,13 @@ void triggerHostbootDump(const uint32_t timeout);
  */
 void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout);
 
+/**
+ * @brief creates a PEL and triggers System dump
+ *
+ * @details This function creates the PEL and then triggers MPIPL
+ *
+ */
+void triggerSystemDump();
+
 } // namespace dump
 } // namespace watchdog
