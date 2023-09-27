@@ -64,9 +64,21 @@ int main(int argc, char* argv[])
                 return EXIT_SUCCESS;
             }
 
-            // SBE boot done, Need to collect hostboot dump
-            log<level::INFO>("Handle Hostboot boot failure");
-            triggerHostbootDump(timeout);
+            // If the host has transitioned to phyp, and there is a phyp failure
+            // before phyp is loaded we will hit the below piece of code,
+            // so trigger mpipl dump
+            if (openpower::phal::pdbg::hasControlTransitionedToPHYP())
+            {
+                // hostboot done, Need to collect phyp dump
+                log<level::INFO>("Handle PHYP boot failure. Trigger MPIPL");
+                triggerMPIPLDump();
+            }
+            else
+            {
+                // SBE boot done, Need to collect hostboot dump
+                log<level::INFO>("Handle Hostboot boot failure");
+                triggerHostbootDump(timeout);
+            }
         }
         else
         {

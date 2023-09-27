@@ -36,6 +36,50 @@ void triggerHostbootDump(const uint32_t timeout)
 }
 
 /**
+ * @brief creates a PEL and triggers MPIPL dump
+ *
+ * @details This function creates the PEL and then triggers MPIPL
+ *
+ */
+void triggerMPIPLDump()
+{
+    try
+    {
+        // Create a PEL may be before setting the target
+        std::string eventName =
+            "org.open_power.Host.Boot.Error.WatchdogTimedOut";
+
+        // CreatePELWithFFDCFiles requires a vector of FFDCTuple.
+        auto emptyFfdc = std::vector<FFDCTuple>{};
+
+        std::map<std::string, std::string> additionalData;
+
+        // Create PEL with empty additional data.
+        createPel(eventName, additionalData, emptyFfdc);
+
+        // We will be transitioning host by starting appropriate dbus target
+        std::string target = "obmc-host-crash@0.target";
+
+        auto bus = sdbusplus::bus::new_system();
+        auto method = bus.new_method_call(
+            "org.freedesktop.systemd1", "/org/freedesktop/systemd1",
+            "org.freedesktop.systemd1.Manager", "StartUnit");
+
+        method.append(target);    // target unit to start
+        method.append("replace"); // mode = replace conflicting queued jobs
+
+        bus.call_noreply(method); // start the service
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>(
+            std::format("triggerMPIPLDump:: D-Bus call exception, errorMsg({})",
+                        e.what())
+                .c_str());
+    }
+}
+
+/**
  * @brief get SBE special callout information
  *
  * @details This function adds the special sbe callout in the user provided
