@@ -110,6 +110,23 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56648288_96b97f23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-09-27T10:39:41Z",
+      "side": 1,
+      "message": "Some improvement suggestions",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "782711cb_e8f001f2",
@@ -123,6 +140,40 @@
       "writtenOn": "2023-09-27T09:59:01Z",
       "side": 1,
       "message": "Dox is not needed here",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "147f6146_e732eb0b",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-09-27T10:39:41Z",
+      "side": 1,
+      "message": "use constexpr auto eventName \u003d \"org.open_power.Host.Boot.Error.WatchdogTimedOut\";\nMore optimized and faster. It will be translated into a const char* datatype for the variable which can be passed to any string object thereafter",
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14e1d88b_9b15b787",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-09-27T10:39:41Z",
+      "side": 1,
+      "message": "constexpr auto target \u003d \"obmc-host-crash@0.target\";",
       "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -163,6 +214,23 @@
         "endLine": 70,
         "endChar": 67
       },
+      "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d629be8_5df1e878",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2023-09-27T10:39:41Z",
+      "side": 1,
+      "message": "Better trace message could be\n\"PHYP boot failure occured, triggering system dump instead of HB dump\"\nJust a suggestion",
       "revId": "412b207aa3b5c8b75353dc6c8dabb6fa6668658e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
