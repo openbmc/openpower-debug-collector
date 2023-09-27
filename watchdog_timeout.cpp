@@ -62,9 +62,21 @@ int main(int argc, char* argv[])
                 return EXIT_SUCCESS;
             }
 
-            // SBE boot done, Need to collect hostboot dump
-            lg2::info("Handle Hostboot boot failure");
-            triggerHostbootDump(timeout);
+            // If the hostboot has transitioned to hypervisor, and there is a failure
+            // before hypervisor is loaded we will hit the below piece of code,
+            // so trigger system dump
+            if (openpower::phal::pdbg::hasControlTransitionedToHost())
+            {
+                // hostboot done, Need to collect system dump
+                lg2::info("Failure while loading hypervisor, triggering system dump");
+                triggerSystemDump();
+            }
+            else
+            {
+                // SBE boot done, Need to collect hostboot dump
+                lg2::info("Handle Hostboot boot failure");
+                triggerHostbootDump(timeout);
+            }
         }
         else
         {
