@@ -64,9 +64,22 @@ int main(int argc, char* argv[])
                 return EXIT_SUCCESS;
             }
 
-            // SBE boot done, Need to collect hostboot dump
-            log<level::INFO>("Handle Hostboot boot failure");
-            triggerHostbootDump(timeout);
+            // If the hostboot has transitioned to host, and there is a failure
+            // before host is loaded we will hit the below piece of code,
+            // so trigger system dump
+            if (openpower::phal::pdbg::hasControlTransitionedToHost())
+            {
+                // hostboot done, Need to collect system dump
+                log<level::INFO>(
+                    "Failure while booting host, triggering system dump");
+                triggerSystemDump();
+            }
+            else
+            {
+                // SBE boot done, Need to collect hostboot dump
+                log<level::INFO>("Handle Hostboot boot failure");
+                triggerHostbootDump(timeout);
+            }
         }
         else
         {
