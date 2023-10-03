@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fabf275_781d3555",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-10-03T13:39:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9648fa0_b4fc1c16",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "d51535ad9bcc6a402ca2e28e93c37fa06c855e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a40239f_76b43809",
@@ -47,6 +71,47 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fbce7c7_d23fca17",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-10-03T13:39:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a40239f_76b43809",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "d51535ad9bcc6a402ca2e28e93c37fa06c855e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1872210_2a96542f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-10-03T13:39:56Z",
+      "side": 1,
+      "message": "Addressed the findings. Thank you",
+      "revId": "d51535ad9bcc6a402ca2e28e93c37fa06c855e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d363c33_d0255bfc",
@@ -60,6 +125,30 @@
       "writtenOn": "2023-10-03T12:48:09Z",
       "side": 1,
       "message": "Please rephrase, hostboot has completed booting and host started booting. use system dump instead of mpipl dump",
+      "range": {
+        "startLine": 67,
+        "startChar": 12,
+        "endLine": 69,
+        "endChar": 36
+      },
+      "revId": "d51535ad9bcc6a402ca2e28e93c37fa06c855e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52d63b2c_fad3f5e3",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-10-03T13:39:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d363c33_d0255bfc",
       "range": {
         "startLine": 67,
         "startChar": 12,
@@ -93,6 +182,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9104bd22_19392ea6",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-10-03T13:39:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7849b0b1_efcd6374",
+      "range": {
+        "startLine": 72,
+        "startChar": 50,
+        "endLine": 72,
+        "endChar": 54
+      },
+      "revId": "d51535ad9bcc6a402ca2e28e93c37fa06c855e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a0fb8b64_4b71380f",
@@ -106,6 +219,30 @@
       "writtenOn": "2023-10-03T12:48:09Z",
       "side": 1,
       "message": "Failure while booting host",
+      "range": {
+        "startLine": 73,
+        "startChar": 34,
+        "endLine": 73,
+        "endChar": 38
+      },
+      "revId": "d51535ad9bcc6a402ca2e28e93c37fa06c855e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06974ea2_744d45ca",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001592
+      },
+      "writtenOn": "2023-10-03T13:39:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0fb8b64_4b71380f",
       "range": {
         "startLine": 73,
         "startChar": 34,
