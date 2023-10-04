@@ -16,6 +16,98 @@
       "message": "constexpr auto eventName \u003d \"org.open_power.Host.Boot.Error.WatchdogTimedOut\";",
       "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0518a2e7_709e47d9",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-10-04T07:43:25Z",
+      "side": 1,
+      "message": "hypervisor",
+      "range": {
+        "startLine": 67,
+        "startChar": 51,
+        "endLine": 67,
+        "endChar": 55
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "363bb6a9_d45d9e0a",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-10-04T07:43:25Z",
+      "side": 1,
+      "message": "hypervisor",
+      "range": {
+        "startLine": 68,
+        "startChar": 22,
+        "endLine": 68,
+        "endChar": 26
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76298b32_a91c6c65",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-10-04T07:43:25Z",
+      "side": 1,
+      "message": "Required IPL version bump commit details , which includes this function support",
+      "range": {
+        "startLine": 70,
+        "startChar": 39,
+        "endLine": 70,
+        "endChar": 69
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8aedf5e_7710b960",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2023-10-04T07:43:25Z",
+      "side": 1,
+      "message": "loading hypervisor?",
+      "range": {
+        "startLine": 74,
+        "startChar": 35,
+        "endLine": 74,
+        "endChar": 47
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
