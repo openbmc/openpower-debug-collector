@@ -86,7 +86,7 @@ void monitorDump(const std::string& path, const uint32_t timeout)
                 path.c_str(), matchInterface.c_str()),
             [&](auto& msg) {
         return dumpStatusChanged(msg, path, progressStatus);
-            });
+    });
 
     // wait for dump status to be completed (complete == true)
     // or until timeout interval
