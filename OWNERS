@@ -32,7 +32,6 @@
 # data within them will be kept sorted.
 
 owners:
-- ojayanth@in.ibm.com
 - spinler@us.ibm.com
 
 reviewers:
@@ -41,9 +40,6 @@ reviewers:
 matchers:
 
 openbmc:
-- name: Jayanth Othayoth
-  email: ojayanth@in.ibm.com
-  discord: Jayanth
 - name: Marri Devender Rao
   email: devenrao@in.ibm.com
   discord: devender
