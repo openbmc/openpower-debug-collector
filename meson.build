@@ -32,7 +32,7 @@ phosphorlogging = dependency(
 realpath_prog = find_program('realpath')
 
 conf_data = configuration_data()
-if get_option('hostboot-dump-collection').enabled()
+if get_option('hostboot-dump-collection').allowed()
     conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
     extra_deps = [
         cxx.find_library('pdbg'),
