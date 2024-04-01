@@ -47,7 +47,8 @@ int main(int argc, char** argv)
     auto type = typeOpt.value();
     if (!((type == SBE_DUMP_TYPE_HOSTBOOT) ||
           (type == SBE_DUMP_TYPE_HARDWARE) ||
-          (type == SBE_DUMP_TYPE_PERFORMANCE) || (type == SBE_DUMP_TYPE_SBE)))
+          (type == SBE_DUMP_TYPE_PERFORMANCE) || (type == SBE_DUMP_TYPE_SBE) ||
+          (type == SBE_DUMP_TYPE_MSBE)))
     {
         ExitWithError("Type specified is invalid.", argv[0]);
     }
@@ -77,7 +78,7 @@ int main(int argc, char** argv)
 
     try
     {
-        if (type == SBE_DUMP_TYPE_SBE)
+        if ((type == SBE_DUMP_TYPE_SBE) || (type == SBE_DUMP_TYPE_MSBE))
         {
             collectSBEDump(id, failingUnit, path, type);
         }
