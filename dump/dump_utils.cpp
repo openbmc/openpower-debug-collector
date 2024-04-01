@@ -67,7 +67,7 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
     log<level::INFO>(std::format("Requesting Dump PEL({}) chip position({})",
                                  eid, failingUnit)
                          .c_str());
-    constexpr auto path = sbeTypeAttributes[sbeType].dumpPath.c_str();
+    auto path = sbeTypeAttributes[sbeType].dumpPath.c_str();
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
     constexpr auto function = "CreateDump";
 

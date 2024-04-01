@@ -141,10 +141,10 @@ class SbeDumpCollector
                        util::DumpDataPtr& dataPtr, const uint32_t len);
 
     void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
-                              uint64_t chipPos, uint32_t cmdClass,
-                              uint32_t cmdType);
+                              uint64_t chipPos, SBETypes sbeType,
+                              uint32_t cmdClass, uint32_t cmdType);
     uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
-                                           const uint8_t type,
+                                           const uint8_t type, SBETypes sbeType,
                                            uint64_t failingUnit,
                                            const uint8_t chipPos);
 
@@ -154,6 +154,7 @@ class SbeDumpCollector
 
     SBETypes getSBEType(struct pdbg_target* chip);
     bool executeThreadStop(struct pdbg_target* target);
+    SBETypes getSBEType(struct pdbg_target* chip);
 };
 
 } // namespace sbe_chipop

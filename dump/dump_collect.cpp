@@ -65,6 +65,23 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         if (includeTarget)
         {
             targets.push_back(target);
+            if (type == openpower::dump::SBE::SBE_DUMP_TYPE_HARDWARE)
+            {
+                struct pdbg_target* ocmbTarget;
+                pdbg_for_each_target("ocmb", target, ocmbTarget)
+                {
+                    if (pdbg_target_probe(ocmbTarget) != PDBG_TARGET_ENABLED)
+                    {
+                        continue;
+                    }
+
+                    if (!is_ody_ocmb_chip(ocmbTarget))
+                    {
+                        continue;
+                    }
+                    targets.push_back(ocmbTarget);
+                }
+            }
         }
     }
 
@@ -191,8 +208,8 @@ void SbeDumpCollector::logErrorAndCreatePEL(
         {
             log<level::ERR>(
                 std::format(
-                    "SBE Dump request failed, chip position({}), Error: {}",
-                    chipPos, e.what())
+                    "SBE Dump request failed, ({}) position({}), Error: {}",
+                    sbeTypeAttributes[sbeType].chipName, chipPos, e.what())
                     .c_str());
         }
     }
@@ -206,6 +223,7 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
 {
     auto chipPos = pdbg_target_index(chip);
     SBETypes sbeType = getSBEType(chip);
+
     log<level::INFO>(
         std::format("Collecting dump from ({})({}): path({}) id({}) "
                     "type({}) clockState({}) failingUnit({})",
@@ -215,8 +233,8 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
 
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;
-    uint8_t collectFastArray =
-        checkFastarrayCollectionNeeded(clockState, type, failingUnit, chipPos);
+    uint8_t collectFastArray = checkFastarrayCollectionNeeded(
+        clockState, type, sbeType, failingUnit, chipPos);
 
     try
     {
@@ -317,11 +335,11 @@ void SbeDumpCollector::writeDumpFile(
 }
 
 uint8_t SbeDumpCollector::checkFastarrayCollectionNeeded(
-    const uint8_t clockState, const uint8_t type, uint64_t failingUnit,
-    const uint8_t chipPos)
+    const uint8_t clockState, const uint8_t type, SBETypes sbeType,
+    uint64_t failingUnit, const uint8_t chipPos)
 {
     return (clockState == SBE_CLOCK_OFF &&
-            (type == SBE_DUMP_TYPE_HOSTBOOT ||
+            (type == SBE_DUMP_TYPE_HOSTBOOT || sbeType == SBETypes::OCMB ||
              (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
                ? 1
                : 0;
@@ -329,6 +347,10 @@ uint8_t SbeDumpCollector::checkFastarrayCollectionNeeded(
 
 SBETypes SbeDumpCollector::getSBEType(struct pdbg_target* chip)
 {
+    if (is_ody_ocmb_chip(chip))
+    {
+        return SBETypes::OCMB;
+    }
     return SBETypes::PROC;
 }
 
@@ -351,7 +373,8 @@ bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
                                  .c_str());
             return false; // Do not include the target for dump collection
         }
-        logErrorAndCreatePEL(sbeError, chipPos, SBEFIFO_CMD_CLASS_INSTRUCTION,
+        logErrorAndCreatePEL(sbeError, chipPos, SBETypes::PROC,
+                             SBEFIFO_CMD_CLASS_INSTRUCTION,
                              SBEFIFO_CMD_CONTROL_INSN);
         // For TIMEOUT, log the error and skip adding the processor for dump
         // collection
