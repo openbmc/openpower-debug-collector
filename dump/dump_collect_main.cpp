@@ -31,7 +31,8 @@ int main(int argc, char** argv)
     app.add_option("--type, -t", type, "Type of the dump")
         ->required()
         ->check(CLI::IsMember({SBE_DUMP_TYPE_HARDWARE, SBE_DUMP_TYPE_HOSTBOOT,
-                               SBE_DUMP_TYPE_SBE, SBE_DUMP_TYPE_PERFORMANCE}));
+                               SBE_DUMP_TYPE_SBE, SBE_DUMP_TYPE_PERFORMANCE,
+                               SBE_DUMP_TYPE_MSBE}));
 
     app.add_option("--id, -i", id, "ID of the dump")->required();
 
@@ -50,7 +51,8 @@ int main(int argc, char** argv)
         return app.exit(e);
     }
 
-    if (((type == SBE_DUMP_TYPE_HARDWARE) || (type == SBE_DUMP_TYPE_SBE)) &&
+    if (((type == SBE_DUMP_TYPE_HARDWARE) || (type == SBE_DUMP_TYPE_SBE) ||
+         (type == SBE_DUMP_TYPE_MSBE)) &&
         !failingUnit.has_value())
     {
         std::cerr
@@ -75,7 +77,7 @@ int main(int argc, char** argv)
 
     try
     {
-        if (type == SBE_DUMP_TYPE_SBE)
+        if ((type == SBE_DUMP_TYPE_SBE) || (type == SBE_DUMP_TYPE_MSBE))
         {
             collectSBEDump(id, failingUnitId, pathStr, type);
         }
