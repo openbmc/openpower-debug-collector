@@ -9,6 +9,7 @@ namespace openpower::dump
 enum class SBETypes
 {
     PROC,
+    OCMB
 };
 
 struct SBEAttributes
