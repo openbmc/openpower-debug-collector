@@ -17,6 +17,7 @@ collect_src = files(
     'dump_collect_main.cpp',
     'dump_utils.cpp',
     'create_pel.cpp',
+    'dump_utils.cpp',
     'sbe_type.cpp',
 )
 
