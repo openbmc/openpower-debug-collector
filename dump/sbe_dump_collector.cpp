@@ -42,7 +42,7 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
 
     initializePdbg();
 
-    std::vector<struct pdbg_target*> targets;
+    TargetMap targets;
 
     struct pdbg_target* target = nullptr;
     pdbg_for_each_class_target("proc", target)
@@ -61,7 +61,32 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         }
         if (includeTarget)
         {
-            targets.push_back(target);
+            targets[target] = std::vector<struct pdbg_target*>();
+
+            // Hardware dump needs OCMB data if present
+            if (type == openpower::dump::SBE::SBE_DUMP_TYPE_HARDWARE)
+            {
+                struct pdbg_target* ocmbTarget;
+                pdbg_for_each_target("ocmb", target, ocmbTarget)
+                {
+                    if (!is_ody_ocmb_chip(ocmbTarget))
+                    {
+                        continue;
+                    }
+
+                    if (pdbg_target_probe(ocmbTarget) != PDBG_TARGET_ENABLED)
+                    {
+                        continue;
+                    }
+
+                    if (!openpower::phal::pdbg::isTgtFunctional(ocmbTarget))
+                    {
+                        continue;
+                    }
+
+                    targets[target].push_back(ocmbTarget);
+                }
+            }
         }
     }
 
@@ -110,32 +135,46 @@ void SbeDumpCollector::initializePdbg()
 
 std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
     uint8_t type, uint32_t id, const std::filesystem::path& path,
-    uint64_t failingUnit, uint8_t cstate,
-    const std::vector<struct pdbg_target*>& targets)
+    uint64_t failingUnit, uint8_t cstate, const TargetMap& targetMap)
 {
     std::vector<std::future<void>> futures;
 
-    for (auto target : targets)
+    for (const auto& [procTarget, ocmbTargets] : targetMap)
     {
-        if (pdbg_target_probe(target) != PDBG_TARGET_ENABLED ||
-            !openpower::phal::pdbg::isTgtFunctional(target))
-        {
-            continue;
-        }
-
-        auto future =
-            std::async(std::launch::async,
-                       [this, target, path, id, type, cstate, failingUnit]() {
+        auto future = std::async(std::launch::async,
+                                 [this, procTarget, ocmbTargets, path, id, type,
+                                  cstate, failingUnit]() {
             try
             {
-                this->collectDumpFromSBE(target, path, id, type, cstate,
+                this->collectDumpFromSBE(procTarget, path, id, type, cstate,
                                          failingUnit);
             }
             catch (const std::exception& e)
             {
                 lg2::error(
-                    "Failed to collect dump from SBE on Proc-({PROCINDEX})",
-                    "PROCINDEX", pdbg_target_index(target));
+                    "Failed to collect dump from SBE on Proc-({PROCINDEX}) {ERROR}",
+                    "PROCINDEX", pdbg_target_index(procTarget), "ERROR", e);
+            }
+
+            // Collect OCMBs only with clock on
+            if (cstate == SBE_CLOCK_ON)
+            {
+                // Handle OCMBs serially after handling the proc
+                for (auto ocmbTarget : ocmbTargets)
+                {
+                    try
+                    {
+                        this->collectDumpFromSBE(ocmbTarget, path, id, type,
+                                                 cstate, failingUnit);
+                    }
+                    catch (const std::exception& e)
+                    {
+                        lg2::error(
+                            "Failed to collect dump from OCMB -({OCMBINDEX}) {ERROR}",
+                            "OCMBINDEX", pdbg_target_index(ocmbTarget), "ERROR",
+                            e);
+                    }
+                }
             }
         });
 
@@ -149,8 +188,10 @@ void SbeDumpCollector::logErrorAndCreatePEL(
     const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
     SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType)
 {
+    std::string chipName;
     try
     {
+        chipName = sbeTypeAttributes.at(sbeType).chipName;
         std::string event = sbeTypeAttributes.at(sbeType).chipOpFailure;
         auto dumpIsRequired = false;
 
@@ -181,9 +222,9 @@ void SbeDumpCollector::logErrorAndCreatePEL(
     }
     catch (const std::exception& e)
     {
-        lg2::error("SBE Dump request failed, chip position({CHIPPOS}), "
-                   "Error: {ERROR}",
-                   "CHIPPOS", chipPos, "ERROR", e);
+        lg2::error("SBE Dump request failed, chip type({CHIPTYPE}) "
+                   "position({CHIPPOS}), Error: {ERROR}",
+                   "CHIPTYPE", chipName, "CHIPPOS", chipPos, "ERROR", e);
     }
 }
 
@@ -197,10 +238,10 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
     SBETypes sbeType = getSBEType(chip);
     auto chipName = sbeTypeAttributes.at(sbeType).chipName;
     lg2::info(
-        "Collecting dump from proc({PROC}): path({PATH}) id({ID}) "
-        "type({TYPE}) clockState({CLOCKSTATE}) failingUnit({FAILINGUNIT})",
-        "PROC", chipPos, "PATH", path.string(), "ID", id, "TYPE", type,
-        "CLOCKSTATE", clockState, "FAILINGUNIT", failingUnit);
+        "Collecting dump from ({CHIPTYPE}) ({POSITION}): path({PATH}) id({ID}) "
+        "type({TYPE})  clockState({CLOCKSTATE}) failingUnit({FAILINGUNIT})",
+        "CHIPTYPE", chipName, "POSITION", chipPos, "PATH", path.string(), "ID",
+        id, "TYPE", type, "CLOCKSTATE", clockState, "FAILINGUNIT", failingUnit);
 
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;

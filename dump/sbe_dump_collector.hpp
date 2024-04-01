@@ -20,6 +20,9 @@ extern "C"
 namespace openpower::dump::sbe_chipop
 {
 
+using TargetMap =
+    std::map<struct pdbg_target*, std::vector<struct pdbg_target*>>;
+
 /**
  * @class SbeDumpCollector
  * @brief Manages the collection of dumps from SBEs on failure.
@@ -105,9 +108,9 @@ class SbeDumpCollector
      * @param cstate The clock state during the dump collection. This parameter
      *               dictates whether the dump should be collected with the
      * clocks running (SBE_CLOCK_ON) or with the clocks stopped (SBE_CLOCK_OFF).
-     * @param targets A vector of `pdbg_target*` representing the targets from
-     * which dumps should be collected. Each target corresponds to a physical or
-     * logical component in the system, such as a processor or an SBE.
+     * @param targetMap A map of `pdbg_target*` representing the targets from
+     * which dumps should be collected. The key is the proc target with the
+     * list of ocmb targets associated with the proc.
      *
      * @return A vector of `std::future<void>` objects. Each future represents
      * the completion state of an asynchronous dump collection task. The caller
@@ -118,8 +121,7 @@ class SbeDumpCollector
      */
     std::vector<std::future<void>> spawnDumpCollectionProcesses(
         uint8_t type, uint32_t id, const std::filesystem::path& path,
-        uint64_t failingUnit, uint8_t cstate,
-        const std::vector<struct pdbg_target*>& targets);
+        uint64_t failingUnit, uint8_t cstate, const TargetMap& targetMap);
 
     /** @brief This function creates the new dump file in dump file name
      * format and then writes the contents into it.
@@ -188,6 +190,10 @@ class SbeDumpCollector
      */
     inline SBETypes getSBEType([[maybe_unused]] struct pdbg_target* chip)
     {
+        if (is_ody_ocmb_chip(chip))
+        {
+            return SBETypes::OCMB;
+        }
         return SBETypes::PROC;
     }
 
