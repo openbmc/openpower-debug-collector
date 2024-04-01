@@ -189,6 +189,10 @@ class SbeDumpCollector
      */
     inline SBETypes getSBEType(struct pdbg_target* chip)
     {
+        if (is_ody_ocmb_chip(chip))
+        {
+            return SBETypes::OCMB;
+        }
         return SBETypes::PROC;
     }
 

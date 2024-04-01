@@ -18,6 +18,7 @@ collect_src = files(
     'argument.cpp',
     'dump_utils.cpp',
     'create_pel.cpp',
+    'dump_utils.cpp',
     'sbe_type.cpp',
 )
 
