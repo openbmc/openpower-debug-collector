@@ -30,7 +30,9 @@ std::unordered_map<std::string, std::string> dumpTypeMap = {
      "/xyz/openbmc_project/dump/hostboot"},
     {"com.ibm.Dump.Create.DumpType.Hardware",
      "/xyz/openbmc_project/dump/hardware"},
-    {"com.ibm.Dump.Create.DumpType.SBE", "/xyz/openbmc_project/dump/sbe"}};
+    {"com.ibm.Dump.Create.DumpType.SBE", "/xyz/openbmc_project/dump/sbe"},
+    {"com.ibm.Dump.Create.DumpType.MemoryBufferSBE",
+     "/xyz/openbmc_project/dump/msbe"}};
 
 sdbusplus::message::object_path
     Manager::createDump(DumpCreateParams createParams)

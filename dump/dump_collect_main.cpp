@@ -53,7 +53,8 @@ int main(int argc, char** argv)
     auto failingUnit = std::stoi(failingUnitStr);
     try
     {
-        if (type == openpower::dump::SBE::SBE_DUMP_TYPE_SBE)
+        if ((type == openpower::dump::SBE::SBE_DUMP_TYPE_SBE) ||
+            (type == openpower::dump::SBE::SBE_DUMP_TYPE_MSBE))
         {
             openpower::phal::dump::collectSBEDump(id, failingUnit, path, type);
         }

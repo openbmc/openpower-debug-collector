@@ -10,8 +10,9 @@ constexpr auto SBE_DUMP_TYPE_HOSTBOOT = 0x5;
 constexpr auto SBE_DUMP_TYPE_HARDWARE = 0x1;
 constexpr auto SBE_DUMP_TYPE_PERFORMANCE = 0x3;
 
-// SBE dump type
+// SBE dump types
 constexpr auto SBE_DUMP_TYPE_SBE = 0xA;
+constexpr auto SBE_DUMP_TYPE_MSBE = 0xB;
 
 // Clock state requested
 // Collect the dump with clocks on
