@@ -62,6 +62,23 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         if (includeTarget)
         {
             targets.push_back(target);
+            if (type == openpower::dump::SBE::SBE_DUMP_TYPE_HARDWARE)
+            {
+                struct pdbg_target* ocmbTarget;
+                pdbg_for_each_target("ocmb", target, ocmbTarget)
+                {
+                    if (pdbg_target_probe(ocmbTarget) != PDBG_TARGET_ENABLED)
+                    {
+                        continue;
+                    }
+
+                    if (!is_ody_ocmb_chip(ocmbTarget))
+                    {
+                        continue;
+                    }
+                    targets.push_back(ocmbTarget);
+                }
+            }
         }
     }
 
@@ -149,8 +166,10 @@ void SbeDumpCollector::logErrorAndCreatePEL(
     const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
     SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType)
 {
+    std::string chipName;
     try
     {
+        chipName = sbeTypeAttributes.at(sbeType).chipName;
         std::string event = sbeTypeAttributes.at(sbeType).chipOpFailure;
         auto dumpIsRequired = false;
 
@@ -181,9 +200,9 @@ void SbeDumpCollector::logErrorAndCreatePEL(
     }
     catch (const std::exception& e)
     {
-        lg2::error("SBE Dump request failed, chip position({CHIPPOS}), "
-                   "Error: {ERROR}",
-                   "CHIPPOS", chipPos, "ERROR", e);
+        lg2::error("SBE Dump request failed, chip type({CHIPTYPE}) "
+                   "position({CHIPPOS}), Error: {ERROR}",
+                   "CHIPTYPE", chipName, "CHIPPOS", chipPos, "ERROR", e);
     }
 }
 
@@ -197,15 +216,15 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
     SBETypes sbeType = getSBEType(chip);
     auto chipName = sbeTypeAttributes.at(sbeType).chipName;
     lg2::info(
-        "Collecting dump from proc({PROC}): path({PATH}) id({ID}) "
-        "type({TYPE}) clockState({CLOCKSTATE}) failingUnit({FAILINGUNIT})",
-        "PROC", chipPos, "PATH", path.string(), "ID", id, "TYPE", type,
-        "CLOCKSTATE", clockState, "FAILINGUNIT", failingUnit);
+        "Collecting dump from ({CHIPTYPE}) ({POSITION}): path({PATH}) id({ID}) "
+        "type({TYPE})  clockState({CLOCKSTATE}) failingUnit({FAILINGUNIT})",
+        "CHIPTYPE", chipName, "POSITION", chipPos, "PATH", path.string(), "ID",
+        id, "TYPE", type, "CLOCKSTATE", clockState, "FAILINGUNIT", failingUnit);
 
     util::DumpDataPtr dataPtr;
     uint32_t len = 0;
-    uint8_t collectFastArray =
-        checkFastarrayCollectionNeeded(clockState, type, failingUnit, chipPos);
+    uint8_t collectFastArray = checkFastarrayCollectionNeeded(
+        clockState, type, sbeType, failingUnit, chipPos);
 
     try
     {

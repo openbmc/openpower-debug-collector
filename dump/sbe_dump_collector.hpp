@@ -143,6 +143,7 @@ class SbeDumpCollector
      *
      * @param clockState The current state of the clock.
      * @param type The type of the dump being collected.
+     * @param sbeType Type of the SBE
      * @param failingUnit The ID of the failing unit.
      * @param chipPos The position of the chip for which the dump is being
      * collected.
@@ -152,13 +153,14 @@ class SbeDumpCollector
      */
     inline uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
                                                   const uint8_t type,
+                                                  const SBETypes sbeType,
                                                   uint64_t failingUnit,
                                                   const uint8_t chipPos) const
     {
         using namespace openpower::dump::SBE;
 
         return (clockState == SBE_CLOCK_OFF &&
-                (type == SBE_DUMP_TYPE_HOSTBOOT ||
+                (type == SBE_DUMP_TYPE_HOSTBOOT || sbeType == SBETypes::OCMB ||
                  (type == SBE_DUMP_TYPE_HARDWARE && chipPos == failingUnit)))
                    ? 1
                    : 0;
@@ -188,6 +190,10 @@ class SbeDumpCollector
      */
     inline SBETypes getSBEType([[maybe_unused]] struct pdbg_target* chip)
     {
+        if (is_ody_ocmb_chip(chip))
+        {
+            return SBETypes::OCMB;
+        }
         return SBETypes::PROC;
     }
 
