@@ -141,7 +141,7 @@ class SbeDumpCollector
                        util::DumpDataPtr& dataPtr, const uint32_t len);
 
     uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
-                                           const uint8_t type,
+                                           const uint8_t type, SBETypes sbeType,
                                            uint64_t failingUnit,
                                            const uint8_t chipPos);
 
