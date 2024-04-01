@@ -1,6 +1,7 @@
 #pragma once
 
 #include "dump_utils.hpp"
+#include "sbe_type.hpp"
 
 #include <filesystem>
 
@@ -21,7 +22,8 @@ namespace sbe_chipop
  */
 void writeDumpFile(const std::filesystem::path& path, const uint32_t id,
                    const uint8_t clockState, const uint8_t chipPos,
-                   util::DumpDataPtr& dataPtr, const uint32_t len);
+                   std::string chipName, util::DumpDataPtr& dataPtr,
+                   const uint32_t len);
 
 /** @brief The function to orchestrate dump collection from different
  *  SBEs

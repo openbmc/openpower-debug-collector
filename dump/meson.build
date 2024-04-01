@@ -42,6 +42,7 @@ collect_src = files(
     'dump_collect_main.cpp',
     'argument.cpp',
     'create_pel.cpp',
+    'sbe_type.hpp',
 )
 
 executable('openpower-dump-manager',

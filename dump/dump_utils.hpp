@@ -1,5 +1,7 @@
 #pragma once
 
+#include "sbe_type.hpp"
+
 #include <sdbusplus/server.hpp>
 
 #include <filesystem>
@@ -96,7 +98,8 @@ void setProperty(const std::string& interface, const std::string& propertyName,
  * @param failingUnit The id of the proc containing failed SBE
  * @param eid Error log id associated with dump
  */
-void requestSBEDump(const uint32_t failingUnit, const uint32_t eid);
+void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
+                    SBETypes sbeType);
 
 } // namespace util
 } // namespace dump
