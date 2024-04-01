@@ -61,12 +61,14 @@ static void monitorDumpCreation(const std::string& path, const uint32_t timeout)
     }
 }
 
-void requestSBEDump(const uint32_t failingUnit, const uint32_t eid)
+void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
+                    SBETypes sbeType)
 {
     log<level::INFO>(std::format("Requesting Dump PEL({}) chip position({})",
                                  eid, failingUnit)
                          .c_str());
-    constexpr auto path = "/xyz/openbmc_project/dump/sbe";
+
+    auto path = sbeTypeAttributes[sbeType].dumpPath.c_str();
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
     constexpr auto function = "CreateDump";
 
