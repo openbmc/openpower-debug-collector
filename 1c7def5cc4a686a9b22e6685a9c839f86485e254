@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "243290a4_15db7e8d",
+        "filename": "dump/create_pel.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:55:52Z",
+      "side": 1,
+      "message": "oh, something I missed in the other commits.  The newer C++ versions lets you put the namespaces all on one line like: namespace openpower::dump::pel.  I think it looks a lot better.",
+      "revId": "1c7def5cc4a686a9b22e6685a9c839f86485e254",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7e7b7c8_dc860c06",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:55:52Z",
+      "side": 1,
+      "message": "so this has to match:\n\nDescription\": \"[0:15] chip position, [16:23] command class, [24:31] command type\",\n\nI\u0027ll trust this works.",
+      "revId": "1c7def5cc4a686a9b22e6685a9c839f86485e254",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e357afef_7fbf76ce",
+        "filename": "dump/sbe_type.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:55:52Z",
+      "side": 1,
+      "message": "can this be const?",
+      "revId": "1c7def5cc4a686a9b22e6685a9c839f86485e254",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
