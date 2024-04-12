@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c0d698c_ea4532ef",
+        "filename": "dump/argument.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:24:42Z",
+      "side": 1,
+      "message": "I know this  is older code, but there\u0027s actually an anti-pattern now for rolling your own argument parser as opposed to using CLI11 - https://github.com/openbmc/docs/blob/master/anti-patterns.md#custom-argumentparser-object.\n\nThere\u0027s ton\u0027s of examples in openbmc, so I think it\u0027ll be quick for you to drop this and just use that.",
+      "revId": "807b31c7241aee63e204952346fe606b4755eea3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e8d2195_0a80eace",
+        "filename": "dump/dump_collect.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:24:42Z",
+      "side": 1,
+      "message": "may as well just use lg2 here?  up to you though",
+      "revId": "807b31c7241aee63e204952346fe606b4755eea3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a398796c_e74564ea",
+        "filename": "dump/dump_collect.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:24:42Z",
+      "side": 1,
+      "message": "shouldn\u0027t this file be named after the class?  sbe_dump_collector.hpp.",
+      "revId": "807b31c7241aee63e204952346fe606b4755eea3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68b5c397_71d1a809",
+        "filename": "meson.options",
+        "patchSetId": 27
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-12T13:24:42Z",
+      "side": 1,
+      "message": "does this need to be sbe-dump-collection?  or are the other dumps going to be here too.",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 23
+      },
+      "revId": "807b31c7241aee63e204952346fe606b4755eea3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
