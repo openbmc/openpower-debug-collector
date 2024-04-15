@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e6d2421_fcd37be2",
+        "filename": ".vscode/settings.json",
+        "patchSetId": 33
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-15T14:51:50Z",
+      "side": 1,
+      "message": "what is cmath?",
+      "revId": "1be9b71b2157f7f90dfe6d442ca654574bb34de6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
