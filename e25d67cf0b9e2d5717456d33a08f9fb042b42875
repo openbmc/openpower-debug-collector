@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "448f4088_59095723",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 31
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-04-16T13:58:57Z",
+      "side": 1,
+      "message": "nit: this is just an enum, so doesn\u0027t need to be passed by reference",
+      "range": {
+        "startLine": 34,
+        "startChar": 67,
+        "endLine": 34,
+        "endChar": 68
+      },
+      "revId": "e25d67cf0b9e2d5717456d33a08f9fb042b42875",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
