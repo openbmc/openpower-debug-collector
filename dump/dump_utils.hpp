@@ -54,7 +54,7 @@ struct DumpDataPtr
  *
  * @return distinct dbus name for input interface/path
  **/
-std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
+std::string getService(sdbusplus::bus_t& bus, const std::string& intf,
                        const std::string& path);
 
 /**
@@ -69,8 +69,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
  */
 template <typename T>
 void setProperty(const std::string& interface, const std::string& propertyName,
-                 const std::string& path, sdbusplus::bus::bus& bus,
-                 const T& value)
+                 const std::string& path, sdbusplus::bus_t& bus, const T& value)
 {
     constexpr auto PROPERTY_INTF = "org.freedesktop.DBus.Properties";
 

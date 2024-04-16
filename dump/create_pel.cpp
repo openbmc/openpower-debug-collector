@@ -89,7 +89,7 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
         response.read(reply);
         plid = std::get<1>(reply); // platform log id is tuple "second"
     }
-    catch (const sdbusplus::exception::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
             "D-Bus call exception OBJPATH={OBJPATH}, INTERFACE={INTERFACE}, "

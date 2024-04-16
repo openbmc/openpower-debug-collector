@@ -14,7 +14,7 @@ namespace openpower::dump::util
 {
 using namespace phosphor::logging;
 
-std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
+std::string getService(sdbusplus::bus_t& bus, const std::string& intf,
                        const std::string& path)
 {
     constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
@@ -42,7 +42,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
         }
         return mapperResponse.begin()->first;
     }
-    catch (const sdbusplus::exception::exception& ex)
+    catch (const sdbusplus::exception_t& ex)
     {
         lg2::error(
             "Mapper call failed for GetObject errorMsg({ERROR}), path({PATH}),"
