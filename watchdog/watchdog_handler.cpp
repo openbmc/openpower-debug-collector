@@ -1,18 +1,14 @@
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/bus/match.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_handler.hpp>
 #include <watchdog_logging.hpp>
 
-#include <format>
-
 namespace watchdog
 {
 namespace dump
 {
-
-using namespace phosphor::logging;
 
 /**
  * @brief Callback for dump request properties change signal monitor
@@ -44,8 +40,8 @@ uint dumpStatusChanged(sdbusplus::message_t& msg, std::string path,
         {
             // dump is not in InProgress state, trace some info and change in
             // progress status
-            log<level::INFO>(path.c_str());
-            log<level::INFO>((*status).c_str());
+            lg2::info("{PATH}", "PATH", path);
+            lg2::info("{STATUS}", "STATUS", *status);
 
             if ("xyz.openbmc_project.Common.Progress.OperationStatus."
                 "Completed" == *status)
@@ -106,16 +102,16 @@ void monitorDump(const std::string& path, const uint32_t timeout)
 
     if (timedOut)
     {
-        log<level::ERR>("Dump progress status did not change to "
-                        "complete within the timeout interval, exiting...");
+        lg2::error("Dump progress status did not change to "
+                   "complete within the timeout interval, exiting...");
     }
     else if (DumpProgressStatus::Completed == progressStatus)
     {
-        log<level::INFO>("dump collection completed");
+        lg2::info("dump collection completed");
     }
     else
     {
-        log<level::INFO>("dump collection failed");
+        lg2::info("dump collection failed");
     }
 }
 
@@ -138,13 +134,13 @@ void requestDump(const DumpParameters& dumpParameters)
                 uint64_t(dumpParameters.logId);
             if (DumpType::Hostboot == dumpParameters.dumpType)
             {
-                log<level::INFO>("hostboot dump requested");
+                lg2::info("hostboot dump requested");
                 createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
                     "com.ibm.Dump.Create.DumpType.Hostboot";
             }
             else if (DumpType::SBE == dumpParameters.dumpType)
             {
-                log<level::INFO>("SBE dump requested");
+                lg2::info("SBE dump requested");
                 createParams["com.ibm.Dump.Create.CreateParameters.DumpType"] =
                     "com.ibm.Dump.Create.DumpType.SBE";
                 createParams
@@ -172,19 +168,15 @@ void requestDump(const DumpParameters& dumpParameters)
             if (e.name() == ERROR_DUMP_DISABLED)
             {
                 // Dump is disabled, Skip the dump collection.
-                log<level::INFO>(
-                    std::format(
-                        "Dump is disabled on({}), skipping dump collection",
-                        dumpParameters.unitId)
-                        .c_str());
+                lg2::info("Dump is disabled on({UNIT}), "
+                          "skipping dump collection",
+                          "UNIT", dumpParameters.unitId);
             }
             else
             {
-                log<level::ERR>(
-                    std::format("D-Bus call createDump exception ",
-                                "OBJPATH={}, INTERFACE={}, EXCEPTION={}", path,
-                                interface, e.what())
-                        .c_str());
+                lg2::error("D-Bus call createDump exception OBJPATH={OBJPATH}, "
+                           "INTERFACE={INTERFACE}, EXCEPTION={ERROR}",
+                           "OBJPATH", path, "INTERFACE", interface, "ERROR", e);
             }
         }
     }

@@ -11,12 +11,11 @@ extern "C"
 
 #include <libphal.H>
 
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <watchdog/watchdog_common.hpp>
 #include <watchdog/watchdog_dbus.hpp>
 #include <watchdog/watchdog_main.hpp>
 
-#include <format>
 #else
 #include <org/open_power/Host/Boot/error.hpp>
 #include <phosphor-logging/elog-errors.hpp>
@@ -37,10 +36,9 @@ int main(int argc, char* argv[])
     CLI11_PARSE(app, argc, argv);
 
 #ifdef WATCHDOG_DUMP_COLLECTION
-    using namespace phosphor::logging;
     using namespace watchdog::dump;
 
-    log<level::INFO>("Host did not respond within watchdog timeout interval");
+    lg2::info("Host did not respond within watchdog timeout interval");
     try
     {
         using namespace openpower::phal;
@@ -58,26 +56,26 @@ int main(int argc, char* argv[])
             // Collect hostboot dump only if the host is in 'Running' state
             if (!isHostStateRunning())
             {
-                log<level::INFO>(
+                lg2::info(
                     "CurrentHostState is not in 'Running' state. Dump maybe "
                     "already occurring, skipping this dump request...");
                 return EXIT_SUCCESS;
             }
 
             // SBE boot done, Need to collect hostboot dump
-            log<level::INFO>("Handle Hostboot boot failure");
+            lg2::info("Handle Hostboot boot failure");
             triggerHostbootDump(timeout);
         }
         else
         {
             // SBE boot window, handle SBE boot failure
-            log<level::INFO>("Handle SBE boot failure");
+            lg2::info("Handle SBE boot failure");
             handleSbeBootError(procTarget, timeout);
         }
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>(std::format("Exception {} occurred", e.what()).c_str());
+        lg2::error("Exception {ERROR} occurred", "ERROR", e);
         std::string eventType =
             "org.open_power.Host.Boot.Error.WatchdogTimedOut";
         auto ffdc = std::vector<FFDCTuple>{};
@@ -85,7 +83,7 @@ int main(int argc, char* argv[])
 
         if (!createPel(eventType, additionalData, ffdc))
         {
-            log<level::ERR>("Failed to create PEL");
+            lg2::error("Failed to create PEL");
         }
 
         return EXIT_SUCCESS;
