@@ -1,5 +1,6 @@
 #include <unistd.h>
 
+#include <phosphor-logging/lg2.hpp>
 #include <phosphor-logging/log.hpp>
 #include <watchdog_dbus.hpp>
 #include <watchdog_logging.hpp>
@@ -71,16 +72,16 @@ int dbusMethod(const std::string& path, const std::string& interface,
         else
         {
             // This trace will be picked up in event log
-            log<level::INFO>("dbusMethod service not found");
+            lg2::info("dbusMethod service not found");
             std::string traceMsgPath = std::string(path, maxTraceLen);
-            log<level::INFO>(traceMsgPath.c_str());
+            lg2::info(traceMsgPath.c_str());
             std::string traceMsgIface = std::string(interface, maxTraceLen);
-            log<level::INFO>(traceMsgIface.c_str());
+            lg2::info(traceMsgIface.c_str());
         }
     }
     catch (const sdbusplus::exception_t& e)
     {
-        log<level::ERR>("Error in dbusMethod", entry("ERROR=%s", e.what()));
+        lg2::error("Error in dbusMethod ({ERROR})", "ERROR", e);
     }
 
     return rc;
@@ -122,8 +123,8 @@ uint32_t createPel(const std::string& eventType,
         }
         catch (const sdbusplus::exception_t& e)
         {
-            log<level::ERR>("Error in createPel CreatePELWithFFDCFiles",
-                            entry("ERROR=%s", e.what()));
+            lg2::error("Error in createPel CreatePELWithFFDCFiles ({ERROR})",
+                       "ERROR", e);
         }
     }
 
@@ -159,10 +160,8 @@ bool isHostStateRunning()
         }
         catch (const sdbusplus::exception_t& e)
         {
-            log<level::ERR>(
-                std::format("Failed to read CurrentHostState property ({})",
-                            e.what())
-                    .c_str());
+            lg2::error("Failed to read CurrentHostState property ({ERROR})",
+                       "ERROR", e);
         }
     }
 

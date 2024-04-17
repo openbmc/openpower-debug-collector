@@ -7,6 +7,7 @@ extern "C"
 
 #include <libphal.H>
 
+#include <phosphor-logging/lg2.hpp>
 #include <phosphor-logging/log.hpp>
 #include <watchdog_common.hpp>
 #include <watchdog_dbus.hpp>
@@ -71,9 +72,8 @@ static void getSBECallout(struct pdbg_target* procTarget,
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>(std::format("getLocationCode({}): Exception({})",
-                                    pdbg_target_path(procTarget), e.what())
-                            .c_str());
+        lg2::error("getLocationCode({LOCATION}): Exception({ERROR})",
+                   "LOCATION", pdbg_target_path(procTarget), "ERROR", e);
     }
 }
 
@@ -92,8 +92,7 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     catch (const std::exception& e)
     {
         // Failed to collect FFDC information
-        log<level::ERR>(
-            std::format("captureFFDC: Exception{}", e.what()).c_str());
+        lg2::error("captureFFDC: Exception{ERROR}", "ERROR", e);
         dumpIsRequired = true;
     }
 
@@ -102,13 +101,13 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     if ((sbeError.errType() == exception::SBE_FFDC_NO_DATA) ||
         (sbeError.errType() == exception::SBE_CMD_TIMEOUT) || (dumpIsRequired))
     {
-        log<level::INFO>("No FFDC data");
+        lg2::info("No FFDC data");
         event = "org.open_power.Processor.Error.SbeBootTimeout";
         dumpIsRequired = true;
     }
     else
     {
-        log<level::ERR>("SBE Boot failure");
+        lg2::error("SBE Boot failure");
         event = "org.open_power.Processor.Error.SbeBootFailure";
     }
 
@@ -156,10 +155,8 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>(
-            std::format("Skipping SBE special callout due to Exception({})",
-                        e.what())
-                .c_str());
+        lg2::error("Skipping SBE special callout due to Exception({ERROR})",
+                   "ERROR", e);
     }
     auto pelId = createPel(event, additionalData, ffdc);
 
@@ -174,15 +171,14 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
             if (!dumpAllowed)
             {
                 // Possibly another collection in progress, skip dump collection
-                log<level::INFO>("Another collection is in progress, skipping "
-                                 "dump collection");
+                lg2::error("Another collection is in progress, skipping "
+                           "dump collection");
                 return;
             }
         }
         catch (const std::exception& e)
         {
-            log<level::ERR>(
-                std::format("Exception {} occurred", e.what()).c_str());
+            lg2::error("Exception {ERROR} occurred", "ERROR", e);
             return;
         }
 

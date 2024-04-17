@@ -6,6 +6,7 @@
 #include <sys/stat.h>  // for open()
 #include <sys/types.h> // for open()
 
+#include <phosphor-logging/lg2.hpp>
 #include <phosphor-logging/log.hpp>
 
 #include <format>
@@ -29,9 +30,8 @@ FFDCFile::~FFDCFile()
     // Close file descriptor.  Does nothing if descriptor was already closed.
     if (descriptor.close() == -1)
     {
-        log<level::ERR>(std::format("Unable to close FFDC file: errormsg({})",
-                                    strerror(errno))
-                            .c_str());
+        lg2::error("Unable to close FFDC file: errormsg({ERRORMSG})",
+                   "ERRORMSG", strerror(errno));
     }
 
     // Delete temporary file.  Does nothing if file was already deleted.
@@ -52,33 +52,30 @@ void FFDCFile::prepareFFDCFile()
 
     if (rc == -1)
     {
-        log<level::ERR>(std::format("Failed to write callout info "
-                                    "in file({}), errorno({}), errormsg({})",
-                                    tempFile.getPath().c_str(), errno,
-                                    strerror(errno))
-                            .c_str());
+        lg2::error("Failed to write callout info in file({FILE}), "
+                   "errorno({ERRNO}), errormsg({ERRORMSG})",
+                   "FILE", tempFile.getPath(), "ERRNO", errno, "ERRORMSG",
+                   strerror(errno));
+
         throw std::runtime_error("Failed to write phalPELCallouts info");
     }
     else if (rc != static_cast<ssize_t>(calloutData.size()))
     {
-        log<level::WARNING>(std::format("Could not write all callout "
-                                        "info in file({}), written byte({}) "
-                                        "and total byte({})",
-                                        tempFile.getPath().c_str(), rc,
-                                        calloutData.size())
-                                .c_str());
+        lg2::warning("Could not write all callout info in file({FILE}), "
+                     "written byte({WRITTEN}), total byte({TOTAL})",
+                     "FILE", tempFile.getPath(), "WRITTEN", rc, "TOTAL",
+                     calloutData.size());
     }
 
     int retCode = lseek(fd, 0, SEEK_SET);
 
     if (retCode == -1)
     {
-        log<level::ERR>(
-            std::format("Failed to seek file postion to the beginning"
-                        "in file({}), errorno({}) "
-                        "and errormsg({})",
-                        tempFile.getPath().c_str(), errno, strerror(errno))
-                .c_str());
+        lg2::error("Failed to seek file position to the beginning in "
+                   "file({FILE}), errorno({ERRNO}), errormsg({ERRORMSG})",
+                   "FILE", tempFile.getPath(), "ERRNO", errno, "ERRORMSG",
+                   strerror(errno));
+
         throw std::runtime_error(
             "Failed to seek file postion to the beginning of the file");
     }
