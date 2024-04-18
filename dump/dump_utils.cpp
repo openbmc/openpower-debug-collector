@@ -18,11 +18,11 @@ static void monitorDumpCreation(const std::string& path, const uint32_t timeout)
 {
     bool inProgress = true;
     auto bus = sdbusplus::bus::new_system();
-    auto match = sdbusplus::bus::match::match(
+    auto match = sdbusplus::bus::match_t(
         bus,
         sdbusplus::bus::match::rules::propertiesChanged(
             path, "xyz.openbmc_project.Common.Progress"),
-        [&](sdbusplus::message::message& msg) {
+        [&](sdbusplus::message_t& msg) {
         std::string interface;
         std::map<std::string, std::variant<std::string, uint8_t>> property;
         msg.read(interface, property);
@@ -87,7 +87,7 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
 
         monitorDumpCreation(reply.str, SBE_DUMP_TIMEOUT);
     }
-    catch (const sdbusplus::exception::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         lg2::error("D-Bus call createDump exception OBJPATH={OBJPATH}, "
                    "INTERFACE={INTERFACE}, EXCEPTION={ERROR}",
@@ -112,7 +112,7 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
     }
 }
 
-std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
+std::string getService(sdbusplus::bus_t& bus, const std::string& intf,
                        const std::string& path)
 {
     constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
@@ -140,7 +140,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& intf,
         }
         return mapperResponse.begin()->first;
     }
-    catch (const sdbusplus::exception::exception& ex)
+    catch (const sdbusplus::exception_t& ex)
     {
         lg2::error(
             "Mapper call failed for GetObject errorMsg({ERROR}), path({PATH}),"
