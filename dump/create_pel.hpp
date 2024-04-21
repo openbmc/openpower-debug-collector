@@ -5,9 +5,13 @@
 #include <phal_exception.H>
 
 #include <nlohmann/json.hpp>
+#include <xyz/openbmc_project/Logging/Create/server.hpp>
 
+#include <optional>
 #include <string>
+#include <tuple>
 #include <vector>
+
 namespace openpower::dump::pel
 {
 
@@ -19,6 +23,10 @@ using json = nlohmann::json;
 
 using namespace openpower::phal;
 
+using PELFFDCInfo = std::vector<std::tuple<
+    sdbusplus::xyz::openbmc_project::Logging::server::Create::FFDCFormat,
+    uint8_t, uint8_t, sdbusplus::message::unix_fd>>;
+
 /**
  * @brief Create SBE boot error PEL and return id
  *
@@ -28,9 +36,16 @@ using namespace openpower::phal;
  * @param[in] severity - severity of the log
  * @return Platform log id
  */
-uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
-                           const FFDCData& ffdcData,
-                           const Severity severity = Severity::Error);
+uint32_t createSbeErrorPEL(
+    const std::string& event, const sbeError_t& sbeError,
+    const FFDCData& ffdcData, const Severity severity = Severity::Error,
+    const std::optional<PELFFDCInfo>& pelFFDCInfoOpt = std::nullopt);
+
+openpower::dump::pel::Severity convertSeverityToEnum(uint8_t severity);
+
+void processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
+                        const std::string& event,
+                        openpower::dump::pel::FFDCData& pelAdditionalData);
 
 /**
  * @class FFDCFile

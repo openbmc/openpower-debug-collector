@@ -1,6 +1,7 @@
 #include "create_pel.hpp"
 
 #include "dump_utils.hpp"
+#include "sbe_consts.hpp"
 
 #include <fcntl.h>
 #include <libekb.H>
@@ -26,12 +27,14 @@ namespace openpower::dump::pel
 {
 
 using namespace phosphor::logging;
+using namespace openpower::dump::SBE;
 constexpr auto loggingObjectPath = "/xyz/openbmc_project/logging";
 constexpr auto loggingInterface = "xyz.openbmc_project.Logging.Create";
 constexpr auto opLoggingInterface = "org.open_power.Logging.PEL";
 
 uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
-                           const FFDCData& ffdcData, const Severity severity)
+                           const FFDCData& ffdcData, const Severity severity,
+                           const std::optional<PELFFDCInfo>& pelFFDCInfoOpt)
 {
     uint32_t plid = 0;
     std::unordered_map<std::string, std::string> additionalData = {
@@ -46,27 +49,24 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
         additionalData.emplace(data);
     }
 
-    std::vector<std::tuple<
-        sdbusplus::xyz::openbmc_project::Logging::server::Create::FFDCFormat,
-        uint8_t, uint8_t, sdbusplus::message::unix_fd>>
-        pelFFDCInfo;
-
-    // get SBE ffdc file descriptor
-    auto fd = sbeError.getFd();
+    PELFFDCInfo pelFFDCInfo;
+    if (pelFFDCInfoOpt)
+    {
+        pelFFDCInfo = *pelFFDCInfoOpt;
+    }
 
     // Negative fd value indicates error case or invalid file
     // No need of special processing , just log error with additional ffdc.
-    if (fd > 0)
+    else if (sbeError.getFd() > 0)
     {
         // Refer phosphor-logging/extensions/openpower-pels/README.md section
         // "Self Boot Engine(SBE) First Failure Data Capture(FFDC) Support"
         // for details of related to createPEL with SBE FFDC information
         // usin g CreateWithFFDCFiles api.
-        pelFFDCInfo.emplace_back(
-            std::make_tuple(sdbusplus::xyz::openbmc_project::Logging::server::
-                                Create::FFDCFormat::Custom,
-                            static_cast<uint8_t>(0xCB),
-                            static_cast<uint8_t>(0x01), sbeError.getFd()));
+        pelFFDCInfo.emplace_back(std::make_tuple(
+            sdbusplus::xyz::openbmc_project::Logging::server::Create::
+                FFDCFormat::Custom,
+            FFDC_FORMAT_SUBTYPE, FFDC_FORMAT_VERSION, sbeError.getFd()));
     }
     try
     {
@@ -104,6 +104,48 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
     }
 
     return plid;
+}
+
+openpower::dump::pel::Severity convertSeverityToEnum(uint8_t severity)
+{
+    switch (severity)
+    {
+        case openpower::phal::FAPI2_ERRL_SEV_RECOVERED:
+            return openpower::dump::pel::Severity::Informational;
+        case openpower::phal::FAPI2_ERRL_SEV_PREDICTIVE:
+            return openpower::dump::pel::Severity::Warning;
+        case openpower::phal::FAPI2_ERRL_SEV_UNRECOVERABLE:
+            return openpower::dump::pel::Severity::Error;
+        default:
+            return openpower::dump::pel::Severity::Error;
+    }
+}
+
+void processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
+                        const std::string& event,
+                        openpower::dump::pel::FFDCData& pelAdditionalData)
+{
+    const auto& ffdcFileList = sbeError.getFfdcFileList();
+    for (const auto& [slid, ffdcTuple] : ffdcFileList)
+    {
+        uint8_t severity;
+        int fd;
+        std::filesystem::path path;
+        std::tie(severity, fd, path) = ffdcTuple;
+
+        Severity logSeverity = convertSeverityToEnum(severity);
+
+        PELFFDCInfo pelFFDCInfo;
+        pelFFDCInfo.emplace_back(
+            std::make_tuple(sdbusplus::xyz::openbmc_project::Logging::server::
+                                Create::FFDCFormat::Custom,
+                            FFDC_FORMAT_SUBTYPE, FFDC_FORMAT_VERSION, fd));
+
+        auto logId = openpower::dump::pel::createSbeErrorPEL(
+            event, sbeError, pelAdditionalData, logSeverity);
+        lg2::info("Logged PEL {PELID} for SLID {SLID}", "PELID", logId, "SLID",
+                  slid);
+    }
 }
 
 FFDCFile::FFDCFile(const json& pHALCalloutData) :

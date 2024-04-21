@@ -18,6 +18,8 @@ struct SBEAttributes
     std::string dumpPath;
     std::string chipOpTimeout;
     std::string chipOpFailure;
+    std::string noFfdc;
+    std::string sbeInternalFFDCData;
 };
 
 extern const std::map<SBETypes, SBEAttributes> sbeTypeAttributes;
