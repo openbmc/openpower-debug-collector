@@ -9,6 +9,7 @@ extern "C"
 #include "sbe_dump_collector.hpp"
 #include "sbe_type.hpp"
 
+#include <ekb/hwpf/fapi2/include/target_types.H>
 #include <libphal.H>
 #include <phal_exception.H>
 
@@ -30,6 +31,7 @@ namespace openpower::dump::sbe_chipop
 
 using namespace phosphor::logging;
 using namespace openpower::dump::SBE;
+using Severity = sdbusplus::xyz::openbmc_project::Logging::server::Entry::Level;
 
 void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
                                    uint64_t failingUnit,
@@ -83,7 +85,6 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
                     {
                         continue;
                     }
-
                     targets[target].push_back(ocmbTarget);
                 }
             }
@@ -184,34 +185,76 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
     return futures;
 }
 
-void SbeDumpCollector::logErrorAndCreatePEL(
+bool SbeDumpCollector::logErrorAndCreatePEL(
     const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
     SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType)
 {
+    namespace fs = std::filesystem;
+
     std::string chipName;
+    std::string event;
+    bool dumpIsRequired = false;
+    bool isDumpFailure = true;
     try
     {
         chipName = sbeTypeAttributes.at(sbeType).chipName;
-        std::string event = sbeTypeAttributes.at(sbeType).chipOpFailure;
-        auto dumpIsRequired = false;
+        event = sbeTypeAttributes.at(sbeType).chipOpFailure;
 
+        lg2::info("log error {CHIP} {POSITION}", "CHIP", chipName, "POSITION",
+                  chipPos);
+
+        // Common FFDC data
+        openpower::dump::pel::FFDCData pelAdditionalData = {
+            {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
+
+        if (sbeType == SBETypes::OCMB)
+        {
+            pelAdditionalData.emplace_back(
+                "CHIP_TYPE", std::to_string(fapi2::TARGET_TYPE_OCMB_CHIP));
+        }
+
+        // Check the error type
         if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
         {
             event = sbeTypeAttributes.at(sbeType).chipOpTimeout;
             dumpIsRequired = true;
+            // For timeout, we do not expect any FFDC packets
+        }
+        else if (sbeError.errType() ==
+                 openpower::phal::exception::SBE_FFDC_NO_DATA)
+        {
+            // We will create a PEL without FFDC with the common information we
+            // added
+            lg2::error("No FFDC data after a chip-op failure {CHIP} {POSITION}",
+                       "CHIP", chipName, "POSITION", chipPos);
+            event = sbeTypeAttributes.at(sbeType).noFfdc;
+        }
+        else
+        {
+            if (sbeError.errType() ==
+                openpower::phal::exception::SBE_INTERNAL_FFDC_DATA)
+            {
+                lg2::info(
+                    "FFDC Not related to chip-op present {CHIP} {POSITION}",
+                    "CHIP", chipName, "POSITION", chipPos);
+                event = sbeTypeAttributes.at(sbeType).sbeInternalFFDCData;
+                isDumpFailure = false;
+            }
+            else
+            {
+                lg2::error("Process FFDC {CHIP} {POSITION}", "CHIP", chipName,
+                           "POSITION", chipPos);
+            }
+            // Processor FFDC Packets
+            openpower::dump::pel::processFFDCPackets(sbeError, event,
+                                                     pelAdditionalData);
         }
 
-        openpower::dump::pel::FFDCData pelAdditionalData = {
-            {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
-
-        openpower::dump::pel::createSbeErrorPEL(event, sbeError,
-                                                pelAdditionalData);
-        auto logId = openpower::dump::pel::createSbeErrorPEL(event, sbeError,
-                                                             pelAdditionalData);
-
-        // Request SBE Dump if required
+        // If dump is required, request it
         if (dumpIsRequired)
         {
+            auto logId = openpower::dump::pel::createSbeErrorPEL(
+                event, sbeError, pelAdditionalData);
             util::requestSBEDump(chipPos, logId, sbeType);
         }
     }
@@ -226,6 +269,8 @@ void SbeDumpCollector::logErrorAndCreatePEL(
                    "position({CHIPPOS}), Error: {ERROR}",
                    "CHIPTYPE", chipName, "CHIPPOS", chipPos, "ERROR", e);
     }
+
+    return isDumpFailure;
 }
 
 void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
@@ -267,16 +312,22 @@ void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
             return;
         }
 
-        lg2::error("Error in collecting dump dump type({TYPE}), "
-                   "clockstate({CLOCKSTATE}), chip type({CHIPTYPE}) "
-                   "position({POSITION}), "
-                   "collectFastArray({COLLECTFASTARRAY}) error({ERROR})",
-                   "TYPE", type, "CLOCKSTATE", clockState, "CHIPTYPE", chipName,
-                   "POSITION", chipPos, "COLLECTFASTARRAY", collectFastArray,
-                   "ERROR", sbeError);
-        logErrorAndCreatePEL(sbeError, chipPos, sbeType, SBEFIFO_CMD_CLASS_DUMP,
-                             SBEFIFO_CMD_GET_DUMP);
-        return;
+        // If the FFDC is from actual chip-op failure this function will
+        // return true, if the chip-op is not failed but FFDC is present
+        // then create PELs with FFDC but write the dump contents to the
+        // file.
+        if (logErrorAndCreatePEL(sbeError, chipPos, sbeType,
+                                 SBEFIFO_CMD_CLASS_DUMP, SBEFIFO_CMD_GET_DUMP))
+        {
+            lg2::error("Error in collecting dump dump type({TYPE}), "
+                       "clockstate({CLOCKSTATE}), chip type({CHIPTYPE}) "
+                       "position({POSITION}), "
+                       "collectFastArray({COLLECTFASTARRAY}) error({ERROR})",
+                       "TYPE", type, "CLOCKSTATE", clockState, "CHIPTYPE",
+                       chipName, "POSITION", chipPos, "COLLECTFASTARRAY",
+                       collectFastArray, "ERROR", sbeError);
+            return;
+        }
     }
     writeDumpFile(path, id, clockState, 0, chipName, chipPos, dataPtr, len);
 }

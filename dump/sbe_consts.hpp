@@ -1,4 +1,6 @@
 #pragma once
+#include <cstdint>
+
 namespace openpower::dump::SBE
 {
 // Dump type to the sbe_dump chipop
@@ -28,4 +30,8 @@ constexpr auto SBEFIFO_CMD_CLASS_INSTRUCTION = 0xA700;
 
 // Stop instruction method
 constexpr auto SBEFIFO_CMD_CONTROL_INSN = 0x01;
+
+// FFDC Format details
+constexpr uint8_t FFDC_FORMAT_SUBTYPE = 0xCB;
+constexpr uint8_t FFDC_FORMAT_VERSION = 0x01;
 } // namespace openpower::dump::SBE

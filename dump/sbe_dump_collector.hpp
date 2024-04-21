@@ -178,7 +178,7 @@ class SbeDumpCollector
      * @param cmdType - The specific type of command within the command class.
      *
      */
-    void logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
+    bool logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
                               uint64_t chipPos, SBETypes sbeType,
                               uint32_t cmdClass, uint32_t cmdType);
 
