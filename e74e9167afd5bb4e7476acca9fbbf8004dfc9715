@@ -16,6 +16,24 @@
       "message": "Is it possible to collect the OCMB dumps with their own futures, or is there something where they cannot run in parallel?",
       "revId": "e74e9167afd5bb4e7476acca9fbbf8004dfc9715",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9f222c5_354f6142",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-04-24T17:58:43Z",
+      "side": 1,
+      "message": "It was collected like that earlier, but it looks like only one line per processor, so that is creating contention. Suggestion was to call each OCMB serially",
+      "parentUuid": "46eae4e2_2afbd2af",
+      "revId": "e74e9167afd5bb4e7476acca9fbbf8004dfc9715",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
