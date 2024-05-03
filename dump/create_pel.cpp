@@ -135,6 +135,15 @@ void processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
 
         Severity logSeverity = convertSeverityToEnum(severity);
 
+        if (logSeverity != openpower::dump::pel::Severity::Informational)
+        {
+            lg2::info(
+                "Changing severity from {SEV_ORIG} to informational in the "
+                "dumping path",
+                "SEV_ORIG", logSeverity);
+            logSeverity = openpower::dump::pel::Severity::Informational;
+        }
+
         PELFFDCInfo pelFFDCInfo;
         pelFFDCInfo.emplace_back(
             std::make_tuple(sdbusplus::xyz::openbmc_project::Logging::server::
