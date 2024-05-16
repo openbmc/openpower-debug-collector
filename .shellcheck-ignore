@@ -1,3 +1,14 @@
+dump/tools/bmcdump/plugins/badpel
+dump/tools/bmcdump/plugins/cfam
+dump/tools/bmcdump/plugins/dumpfilelist
+dump/tools/bmcdump/plugins/guardlist
+dump/tools/bmcdump/plugins/obmcconsole1
+dump/tools/bmcdump/plugins/occ
+dump/tools/bmcdump/plugins/pels
+dump/tools/bmcdump/plugins/phal_devtree
+dump/tools/bmcdump/plugins/vpd_data
+dump/tools/bmcdump/scripts/package
 dump/tools/common/include/gendumpheader
-dump/tools/opdump/opdreport
 dump/tools/common/include/gendumpinfo
+dump/tools/common/include/opfunctions
+dump/tools/opdump/opdreport
