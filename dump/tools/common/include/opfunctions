@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# @brief fetch serial number
+# @param serial number
+function fetch_serial_number() {
+    serialNo=$(busctl get-property xyz.openbmc_project.Inventory.Manager \
+            /xyz/openbmc_project/inventory/system xyz.openbmc_project.Inventory.Decorator.Asset \
+        SerialNumber | cut -d " " -f 2 | sed "s/^\(\"\)\(.*\)\1\$/\2/g")
+
+    if [ -z "$serialNo" ]; then
+        serialNo="0000000"
+    fi
+}
+
+# @brief Add BMC dump File Name
+# @param BMC Dump File Name
+function get_bmc_dump_filename() {
+    fetch_serial_number
+    dump_id=$(printf %07d $dump_id)
+    if [ $dump_type = "$TYPE_FAULTDATA" ]; then
+        header_dump_name="FLTDUMP"
+        name="NAGDUMP.${serialNo}.${dump_id}.${dDay}"
+    else
+        header_dump_name="BMCDUMP"
+        name="BMCDUMP.${serialNo}.${dump_id}.${dDay}"
+    fi
+}

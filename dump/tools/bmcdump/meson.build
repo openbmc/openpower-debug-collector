@@ -1,0 +1,2 @@
+subdir('plugins')
+subdir('scripts')
