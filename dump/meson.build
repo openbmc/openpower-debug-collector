@@ -27,3 +27,17 @@ executable('dump-collect',
     implicit_include_directories: true,
     install: true
 )
+
+bindir = get_option('bindir')
+
+scripts_to_install = [] 
+
+subdir('tools')
+# Install collected files if any
+if scripts_to_install.length() > 0
+    install_data(scripts_to_install,
+        install_dir: get_option('bindir'),
+        install_mode: 'rwxr-xr-x'
+    )
+endif
+
