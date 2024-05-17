@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenPOWER Dump Monitor
+Wants=obmc-host-start-pre@0.target
+Before=obmc-host-start-pre@0.target
+After=xyz.openbmc_project.Dump.Manager.service
+
+[Service]
+ExecStart=/usr/bin/openpower-dump-monitor
+Restart=always
+Type=simple
+
+[Install]
+# WantedBy=obmc-host-startmin@0.target
