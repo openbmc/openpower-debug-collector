@@ -29,8 +29,10 @@ executable('dump-collect',
 )
 
 bindir = get_option('bindir')
+dreport_include_dir = join_paths(get_option('datadir'), 'dreport.d/include.d')
 
-scripts_to_install = [] 
+scripts_to_install = []
+include_scripts = []
 
 subdir('tools')
 # Install collected files if any
@@ -40,4 +42,13 @@ if scripts_to_install.length() > 0
         install_mode: 'rwxr-xr-x'
     )
 endif
+
+# Install collected include scripts if any
+if include_scripts.length() > 0
+    install_data(include_scripts,
+        install_dir: dreport_include_dir,
+        install_mode: 'rwxr-xr-x'
+    )
+endif
+
 
