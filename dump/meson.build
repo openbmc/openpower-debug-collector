@@ -80,3 +80,6 @@ if include_scripts.length() > 0
         install_mode: 'rwxr-xr-x'
     )
 endif
+
+subdir('dist')
+
