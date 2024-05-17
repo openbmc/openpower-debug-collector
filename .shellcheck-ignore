@@ -1,2 +1,3 @@
 dump/tools/common/include/gendumpheader
 dump/tools/opdump/opdreport
+dump/tools/common/include/gendumpinfo
