@@ -2,12 +2,20 @@
 
 cxx = meson.get_compiler('cpp')
 
+sdeventplus_dep = dependency('sdeventplus')
+
 collect_deps = [
    CLI11_dep,
    phosphorlogging,
    cxx.find_library('pdbg'),
    cxx.find_library('libdt-api'),
    cxx.find_library('phal'),
+]
+
+monitor_deps = [
+    sdbusplus_dep,
+    sdeventplus_dep,
+    phosphorlogging,
 ]
 
 # source files
@@ -21,9 +29,22 @@ collect_src = files(
     'sbe_type.cpp',
 )
 
+monitor_src = files(
+    'dump_monitor.cpp',
+    'dump_monitor_main.cpp',
+    'dump_utils.cpp',
+)
+
 executable('dump-collect',
     collect_src,
     dependencies: collect_deps,
+    implicit_include_directories: true,
+    install: true
+)
+
+executable('openpower-dump-monitor',
+    monitor_src,
+    dependencies: monitor_deps,
     implicit_include_directories: true,
     install: true
 )
