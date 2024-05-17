@@ -71,4 +71,6 @@ if include_scripts.length() > 0
     )
 endif
 
+subdir('dist')
+
 
