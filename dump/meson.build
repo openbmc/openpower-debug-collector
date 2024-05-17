@@ -55,6 +55,8 @@ dreport_include_dir = join_paths(get_option('datadir'), 'dreport.d/include.d')
 scripts_to_install = []
 include_scripts = []
 
+create_link_script = ''
+
 subdir('tools')
 # Install collected files if any
 if scripts_to_install.length() > 0
@@ -73,5 +75,7 @@ if include_scripts.length() > 0
 endif
 
 subdir('dist')
+
+
 
 
