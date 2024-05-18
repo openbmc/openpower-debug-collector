@@ -343,11 +343,11 @@ void SbeDumpCollector::writeDumpFile(
 
     // Construct the filename
     std::ostringstream filenameBuilder;
-    filenameBuilder << std::setw(8) << std::setfill('0') << id
-                    << ".SbeDataClocks"
-                    << (clockState == SBE_CLOCK_ON ? "On" : "Off") << ".node"
-                    << static_cast<int>(nodeNum) << "." << chipName
-                    << static_cast<int>(chipPos);
+    filenameBuilder << std::hex << std::setw(8) << std::setfill('0') << id
+                << ".SbeDataClocks"
+                << (clockState == SBE_CLOCK_ON ? "On" : "Off") << ".node"
+                << std::dec << static_cast<int>(nodeNum) << "." << chipName
+                << static_cast<int>(chipPos);
 
     auto dumpPath = path / filenameBuilder.str();
 
