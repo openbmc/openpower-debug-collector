@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8716b788_826c7201",
+        "filename": ".shellcheck-ignore",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T16:20:17Z",
+      "side": 1,
+      "message": "why don\u0027t you want these shellchecked?",
+      "revId": "0ad198284e06906ef42fdd2a8875c06be140b745",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
