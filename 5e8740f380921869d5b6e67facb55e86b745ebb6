@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e57d84f_1afe7d4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "Does it not update status if the dump succeeds?",
+      "range": {
+        "startLine": 12,
+        "startChar": 38,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3cfe14b_396df6bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "This is all \"what\" you did type stuff. That\u0027s obvious by reviewing the code and in general isn\u0027t really needed in a commit msg. Focus on the \"why\" and high level summary of the commit (paragraph above).",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fde6d618_91aa1d4c",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "nit: I\u0027m not a big fan of mixing code in headers and cpp files. Some one-liners are fine in hpp but in general, lets keep it all in the cpp.",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5eb18257_4e8858f3",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "This logic confuses me a bit. If a dump is in progress, don\u0027t we want to wait?",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af899e3c_430988c9",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "Looks like next line actually creates the dump so maybe this is something more like \"Starting creation of new dump entry ...\"?",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76e20bc0_620c7d8b",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "I\u0027m a bit confused on why the xyz.openbmc_project.Dump.Manager InterfacesAdded d-bus event from PDC would have \"InProgress\". Doesn\u0027t the code you have here actually start the dump (i.e. updateProgressStatus())?",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ff2ba4f_905414aa",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:19:03Z",
+      "side": 1,
+      "message": "Do we want a log of some sort indicating we went down this default path? Is it a good path or bad path if we can\u0027t fund the dump ID?",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
