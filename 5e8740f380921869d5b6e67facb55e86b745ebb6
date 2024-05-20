@@ -43,6 +43,126 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c44ea8d3_dead589e",
+        "filename": "dump/dump_monitor.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "I don\u0027t see uses of all of these... or is more functionality being added in a newer commit?",
+      "range": {
+        "startLine": 6,
+        "startChar": 1,
+        "endLine": 15,
+        "endChar": 1
+      },
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fae9ac9_d19010f6",
+        "filename": "dump/dump_monitor.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "can do on one line like in the other files.",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "894ffd57_a1a44974",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "Would this ever get deleted?  If not, and I don\u0027t think I see anything in this commit that deletes it, it doesn\u0027t have to be a unique_ptr.",
+      "range": {
+        "startLine": 34,
+        "startChar": 14,
+        "endLine": 34,
+        "endChar": 30
+      },
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55580641_4b736bae",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "suggestion: Using the sdbusplus rules helpers like https://github.com/openbmc/sdbusplus/blob/1a39b64fafa18f03c62e5cbc6cd0d2da2cc6ed6d/include/sdbusplus/bus/match.hpp#L130 would simpify some of this.  There\u0027s lots of examples around.",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab19defd_4e53f023",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "can remove.",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 28
+      },
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b90e0ec0_ab0d42fc",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "Can do this on line 66, or in the initializer list above.",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fde6d618_91aa1d4c",
         "filename": "dump/dump_monitor.hpp",
         "patchSetId": 7
@@ -111,6 +231,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76a6472e_8e9a4ee3",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "the object_path class also has a filename() function in it which appears to do about the same thing.",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2ff2ba4f_905414aa",
         "filename": "dump/dump_monitor.hpp",
         "patchSetId": 7
@@ -122,6 +259,29 @@
       "writtenOn": "2024-05-20T18:19:03Z",
       "side": 1,
       "message": "Do we want a log of some sort indicating we went down this default path? Is it a good path or bad path if we can\u0027t fund the dump ID?",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75614a1f_d63391b9",
+        "filename": "dump/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-20T19:07:21Z",
+      "side": 1,
+      "message": "did it use sdeventplus?  or is that being added in the future",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 20
+      },
       "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
