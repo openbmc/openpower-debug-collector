@@ -205,7 +205,7 @@ bool SbeDumpCollector::logErrorAndCreatePEL(
 
         // Common FFDC data
         openpower::dump::pel::FFDCData pelAdditionalData = {
-            {"SRC6", std::format("{:X}{:X}", chipPos, (cmdClass | cmdType))}};
+            {"SRC6", std::format("0x{:X}{:X}", chipPos, (cmdClass | cmdType))}};
 
         if (sbeType == SBETypes::OCMB)
         {
