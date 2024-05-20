@@ -48,7 +48,7 @@ endif
 
 configure_file(output: 'config.h', configuration: conf_data)
 
-if get_option('dump-collection').enabled()
+if get_option('dump-collection').allowed()
      subdir('dump')
 endif
 
