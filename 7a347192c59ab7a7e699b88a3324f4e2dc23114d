@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a1fc111_ab60bd8e",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-05-20T18:59:22Z",
+      "side": 1,
+      "message": "I see many other services in dist, I thought that is a convention",
+      "parentUuid": "817cb220_bc1b50b3",
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "4301b376_8c65ea5c",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-05-20T18:44:25Z",
       "side": 1,
       "message": "Where is this service?",
+      "range": {
+        "startLine": 22,
+        "startChar": 9,
+        "endLine": 22,
+        "endChar": 44
+      },
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e97786c_2d2cb76d",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-05-20T18:59:22Z",
+      "side": 1,
+      "message": "The name is wrong, but the service was loaded when I started installed  image, fixing",
+      "parentUuid": "f99765b0_cbd22fb3",
       "range": {
         "startLine": 22,
         "startChar": 9,
