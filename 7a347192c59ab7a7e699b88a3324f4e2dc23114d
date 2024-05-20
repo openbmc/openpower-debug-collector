@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "817cb220_bc1b50b3",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:44:25Z",
+      "side": 1,
+      "message": "What does the subdir \"dist\" stand for? I\u0027d expect something more like \"systemd\" or \"services\"?",
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4301b376_8c65ea5c",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:44:25Z",
+      "side": 1,
+      "message": "We\u0027ve tended to do this in the bitbake recipes. But it\u0027s kind of nice just having it in the local repo.",
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f99765b0_cbd22fb3",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-05-20T18:44:25Z",
+      "side": 1,
+      "message": "Where is this service?",
+      "range": {
+        "startLine": 22,
+        "startChar": 9,
+        "endLine": 22,
+        "endChar": 44
+      },
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
