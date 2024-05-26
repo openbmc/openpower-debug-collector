@@ -116,9 +116,14 @@ void DumpMonitor::handleDBusSignal(sdbusplus::message::message& msg)
             auto it = interfaces.find(interfaceName);
             if (it != interfaces.end())
             {
-                lg2::info("An entry created, collecting a new dump {DUMP}",
-                          "DUMP", interfaceName);
-                executeCollectionScript(objectPath, it->second);
+                auto it = interfaces.find(interfaceName);
+                if (it != interfaces.end())
+                {
+                    lg2::info("An entry created, collecting a new dump {DUMP}",
+                              "DUMP", interfaceName);
+                    initiateDumpCollection(objectPath, interfaceName,
+                                           it->second);
+                }
             }
         }
     }
@@ -144,6 +149,30 @@ void DumpMonitor::updateProgressStatus(const std::string& path,
     {
         lg2::error("Failed to update status {STATUS} {PATH} {ERROR}", "STATUS",
                    status, "PATH", path, "ERROR", e);
+    }
+}
+
+void DumpMonitor::startMpReboot(
+    const sdbusplus::message::object_path& objectPath)
+{
+    constexpr auto SYSTEMD_SERVICE = "org.freedesktop.systemd1";
+    constexpr auto SYSTEMD_OBJ_PATH = "/org/freedesktop/systemd1";
+    constexpr auto SYSTEMD_INTERFACE = "org.freedesktop.systemd1.Manager";
+    constexpr auto DIAG_MOD_TARGET = "obmc-host-crash@0.target";
+
+    try
+    {
+        auto b = sdbusplus::bus::new_default();
+        auto method = b.new_method_call(SYSTEMD_SERVICE, SYSTEMD_OBJ_PATH,
+                                        SYSTEMD_INTERFACE, "StartUnit");
+        method.append(DIAG_MOD_TARGET); // unit to activate
+        method.append("replace");
+        b.call_noreply(method);
+    }
+    catch (const sdbusplus::exception_t& e)
+    {
+        lg2::error("Failed to strat memory preserving reboot");
+        updateProgressStatus(objectPath, dumpStatusFailed);
     }
 }
 

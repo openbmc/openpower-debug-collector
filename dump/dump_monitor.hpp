@@ -19,6 +19,7 @@ namespace openpower::dump
 
 using PropertyMap = std::map<std::string, std::variant<uint32_t, std::string>>;
 using InterfaceMap = std::map<std::string, PropertyMap>;
+
 /**
  * @class DumpMonitor
  * @brief Monitors DBus signals for dump creation and handles them.
@@ -61,8 +62,11 @@ class DumpMonitor
   private:
     sdbusplus::bus::bus bus;
     std::vector<std::string> monitoredInterfaces = {
-        "com.ibm.Dump.Entry.Hardware", "com.ibm.Dump.Entry.Hostboot",
-        "com.ibm.Dump.Entry.SBE"};
+        "com.ibm.Dump.Entry.Hardware",
+        "com.ibm.Dump.Entry.Hostboot",
+        "com.ibm.Dump.Entry.SBE",
+        "xyz.openbmc_project.Dump.Entry.System",
+    };
     std::unique_ptr<sdbusplus::bus::match::match> match;
 
     /**
@@ -132,6 +136,37 @@ class DumpMonitor
         }
         return 0;
     }
+
+    inline void initiateDumpCollection(const std::string& path,
+                                       const std::string& intf,
+                                       const PropertyMap& properties)
+    {
+        if (intf == "xyz.openbmc_project.Dump.Entry.System")
+        {
+            // Find the SystemImpact property, if this property is not available
+            // assume disruptive.
+            auto systemImpactIt = properties.find("SystemImpact");
+            if (systemImpactIt != properties.end() &&
+                std::get<std::string>(systemImpactIt->second) !=
+                    "xyz.openbmc_project.Dump.Entry.System.SystemImpact.Disruptive")
+            {
+                lg2::info("Ignoring non-disruptive system dump {PATH}", "PATH",
+                          path);
+                return;
+            }
+            startMpReboot(path);
+        }
+        else
+        {
+            executeCollectionScript(path, properties);
+        }
+    }
+
+    /**
+     * @brief Initiates a memory-preserving reboot by starting the
+     *        appropriate systemd unit.
+     */
+    void startMpReboot(const sdbusplus::message::object_path& objectPath);
 };
 
 } // namespace openpower::dump
