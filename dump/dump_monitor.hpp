@@ -10,6 +10,7 @@
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/bus/match.hpp>
 #include <xyz/openbmc_project/Common/Progress/common.hpp>
+#include <xyz/openbmc_project/Dump/Entry/System/common.hpp>
 
 #include <iostream>
 #include <string>
@@ -20,6 +21,7 @@ namespace openpower::dump
 
 using PropertyMap = std::map<std::string, std::variant<uint32_t, std::string>>;
 using InterfaceMap = std::map<std::string, PropertyMap>;
+
 /**
  * @class DumpMonitor
  * @brief Monitors DBus signals for dump creation and handles them.
@@ -57,7 +59,7 @@ class DumpMonitor
     /* @brief Monitores dump interfaces */
     const std::vector<std::string> monitoredInterfaces = {
         "com.ibm.Dump.Entry.Hardware", "com.ibm.Dump.Entry.Hostboot",
-        "com.ibm.Dump.Entry.SBE"};
+        "com.ibm.Dump.Entry.SBE", "xyz.openbmc_project.Dump.Entry.System"};
 
     /* @brief InterfaceAdded match */
     sdbusplus::bus::match_t match;
@@ -129,6 +131,24 @@ class DumpMonitor
         }
         return 0;
     }
+
+    /**
+     * @brief Initiates the dump collection process based on the given interface
+     *        and properties.
+     *
+     * @param[in] path The object path of the dump entry.
+     * @param[in] intf The interface type of the dump entry.
+     * @param[in] properties The properties of the dump entry.
+     */
+    void initiateDumpCollection(const std::string& path,
+                                const std::string& intf,
+                                const PropertyMap& properties);
+
+    /**
+     * @brief Initiates a memory-preserving reboot by starting the
+     *        appropriate systemd unit.
+     */
+    void startMpReboot(const sdbusplus::message::object_path& objectPath);
 };
 
 } // namespace openpower::dump
