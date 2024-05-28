@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "687dd022_b2f96619",
+        "filename": "dump/dump_monitor.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-28T21:44:47Z",
+      "side": 1,
+      "message": "may as well make these camelCase like in updateProgressStatus() above to make things consistent.",
+      "revId": "a435e5e12ad7494bf1082e8bcfbfa9e110d6d71a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61cae5f6_0591d40b",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-05-28T21:44:47Z",
+      "side": 1,
+      "message": "there\u0027s constants for these if you want in the sdbusplus header xyz/openbmc_project/DumpEntry/System/common.hpp\n\nnamespace sdbusplus::common::xyz::openbmc_project::dump::entry\n{\n\nstruct System\n{\n    static constexpr auto interface \u003d \"xyz.openbmc_project.Dump.Entry.System\";\n    \n    \nyou could also use the convertSystemImpactFromString() to get the actual enum value as well below if you wanted.",
+      "range": {
+        "startLine": 144,
+        "startChar": 21,
+        "endLine": 144,
+        "endChar": 59
+      },
+      "revId": "a435e5e12ad7494bf1082e8bcfbfa9e110d6d71a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
