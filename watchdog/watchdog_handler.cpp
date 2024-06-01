@@ -117,7 +117,7 @@ void monitorDump(const std::string& path, const uint32_t timeout)
 
 void requestDump(const DumpParameters& dumpParameters)
 {
-    constexpr auto path = "/org/openpower/dump";
+    constexpr auto path = "/xyz/openbmc_project/dump/system";
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
     constexpr auto function = "CreateDump";
 
