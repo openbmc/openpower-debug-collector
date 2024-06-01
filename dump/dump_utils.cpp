@@ -65,7 +65,8 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
         "EID", eid, "CHIPTYPE", sbeTypeAttributes.at(sbeType).chipName,
         "FAILINGUNIT", failingUnit);
 
-    auto path = sbeTypeAttributes.at(sbeType).dumpPath.c_str();
+    constexpr auto path = "/xyz/openbmc_project/dump/system";
+    auto dumpRequestType = sbeTypeAttributes.at(sbeType).dumpType.c_str();
     constexpr auto interface = "xyz.openbmc_project.Dump.Create";
     constexpr auto function = "CreateDump";
 
@@ -78,6 +79,8 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
 
         std::unordered_map<std::string, std::variant<std::string, uint64_t>>
             createParams = {
+                {"com.ibm.Dump.Create.CreateParameters.DumpType",
+                 std::string(dumpRequestType)},
                 {"com.ibm.Dump.Create.CreateParameters.ErrorLogId",
                  uint64_t(eid)},
                 {"com.ibm.Dump.Create.CreateParameters.FailingUnitId",

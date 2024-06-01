@@ -15,7 +15,7 @@ enum class SBETypes
 struct SBEAttributes
 {
     std::string chipName;
-    std::string dumpPath;
+    std::string dumpType;
     std::string chipOpTimeout;
     std::string chipOpFailure;
     std::string noFfdc;
