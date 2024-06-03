@@ -555,6 +555,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ec8e325_8ca55aa4",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-03T21:12:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e87a2540_619866a4",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af899e3c_430988c9",
@@ -639,6 +657,24 @@
       "side": 1,
       "message": "The idea is for the dump entries to be created with InProgress status in PDC, and this monitor app will pick such entries and collect the dump.\nif dump collection fails, this service will update the status as failed.\nif not, the packaged file will be loaded in the dump storage space, which will be picked up by PDC and fill in other details like size and status as completed.",
       "parentUuid": "76e20bc0_620c7d8b",
+      "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c890e5e0_47c68536",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-03T21:12:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "02d3f3f9_b465c800",
       "revId": "5e8740f380921869d5b6e67facb55e86b745ebb6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
