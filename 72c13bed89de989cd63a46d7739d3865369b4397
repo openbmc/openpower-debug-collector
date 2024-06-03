@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e2ef1ba_d664b39d",
+        "filename": "dump/dump_monitor.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-03T21:36:09Z",
+      "side": 1,
+      "message": "How is this different then line 116?",
+      "revId": "72c13bed89de989cd63a46d7739d3865369b4397",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ab9c06c_13692f35",
+        "filename": "dump/dump_monitor.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-03T21:36:09Z",
+      "side": 1,
+      "message": "nit: spelling",
+      "range": {
+        "startLine": 174,
+        "startChar": 30,
+        "endLine": 174,
+        "endChar": 36
+      },
+      "revId": "72c13bed89de989cd63a46d7739d3865369b4397",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92dfbcc6_05b65c29",
+        "filename": "dump/dump_monitor.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-03T21:36:09Z",
+      "side": 1,
+      "message": "nit: another non-simple function in a header file. Would prefer anything that\u0027s not a fairly simple if/else to be in the cpp file so I don\u0027t have to look all over the place for code.",
+      "revId": "72c13bed89de989cd63a46d7739d3865369b4397",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
