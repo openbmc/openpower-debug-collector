@@ -1,0 +1,18 @@
+[Unit]
+Description=Remove resource dump entries during poweroff
+Wants=obmc-host-stop-pre@0.target
+After=obmc-host-stop-pre@0.target
+Wants=obmc-host-stopping@0.target
+Before=obmc-host-stopping@0.target
+Conflicts=obmc-host-startmin@0.target
+ConditionPathExists=!/run/openbmc/host@0-on
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dumpdelete com.ibm.Dump.Entry.Resource
+
+RemainAfterExit=yes
+
+[Install]
+#WantedBy=obmc-host-stop@0.target
+
