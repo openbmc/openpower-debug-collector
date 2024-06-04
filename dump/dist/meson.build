@@ -17,6 +17,14 @@ configure_file(
   install_dir: systemd_system_unit_dir
 )
 
+configure_file(
+  input: 'clear_hostdumps_poweroff.service',
+  output: 'clear_hostdumps_poweroff.service',
+  configuration: dist_conf_data,
+  install: true,
+  install_dir: systemd_system_unit_dir
+)
+
 # Symlinks for services
 systemd_alias = [
     ['../openpower-dump-monitor.service',
