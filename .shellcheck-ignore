@@ -14,3 +14,4 @@ dump/tools/common/include/gendumpheader
 dump/tools/common/include/gendumpinfo
 dump/tools/common/include/opfunctions
 dump/tools/opdump/opdreport
+dump/dist/meson.build
