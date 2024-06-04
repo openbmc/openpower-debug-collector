@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Check if the interface parameter is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <interface>"
+    echo "Example: $0 xyz.openbmc_project.Dump.Entry.BMC"
+    exit 1
+fi
+
+INTERFACE=$1
+
+# Run the busctl command with verbose output and capture the output
+output=$(busctl --verbose call xyz.openbmc_project.Dump.Manager \
+        /xyz/openbmc_project/dump \
+        org.freedesktop.DBus.ObjectManager \
+    GetManagedObjects)
+
+# Parse the output and print object paths containing the specified interface
+declare -A seen_paths
+
+echo "$output" | awk -v interface="$INTERFACE" '
+  /OBJECT_PATH/ {
+    path = $2;
+    gsub(/;/, "", path);
+    gsub(/"/, "", path);
+  }
+  $0 ~ interface {
+    print path;
+  }
+' | while read -r path; do
+    if [ -z "${seen_paths[$path]}" ]; then
+        echo "Deleting: $path"
+        busctl call xyz.openbmc_project.Dump.Manager "${path}" \
+            xyz.openbmc_project.Object.Delete Delete
+        seen_paths["$path"]=1
+    fi
+done
