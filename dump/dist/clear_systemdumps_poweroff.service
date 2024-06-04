@@ -1,0 +1,20 @@
+[Unit]
+Description=Remove system dump entries during poweroff
+Wants=obmc-host-stop-pre@0.target
+After=obmc-host-stop-pre@0.target
+Wants=obmc-host-stopping@0.target
+Before=obmc-host-stopping@0.target
+After=op-enter-mpreboot@0.service
+Conflicts=obmc-host-startmin@0.target
+ConditionPathExists=!/run/openbmc/host@0-on
+ConditionPathExists=!/run/openbmc/mpreboot@0
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dumpdelete xyz.openbmc_project.Dump.Entry.System
+
+RemainAfterExit=yes
+
+[Install]
+#WantedBy=obmc-host-stop@0.target
+
