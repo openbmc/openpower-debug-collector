@@ -17,6 +17,22 @@ configure_file(
     install_dir: systemd_system_unit_dir,
 )
 
+configure_file(
+  input: 'clear_systemdumps_poweroff.service',
+  output: 'clear_systemdumps_poweroff.service',
+  configuration: dist_conf_data,
+  install: true,
+  install_dir: systemd_system_unit_dir
+)
+
+configure_file(
+  input: 'clear_resourcedumps_poweroff.service',
+  output: 'clear_resourcedumps_poweroff.service',
+  configuration: dist_conf_data,
+  install: true,
+  install_dir: systemd_system_unit_dir
+)
+
 # Symlinks for services
 systemd_alias = [
     [
@@ -25,7 +41,17 @@ systemd_alias = [
     ],
 ]
 
-foreach service : systemd_alias
+systemd_alias += [
+    ['../clear_systemdumps_poweroff.service',
+     'obmc-host-stop@0.target.wants/clear_systemdumps_poweroff.service']
+]
+
+systemd_alias += [
+    ['../clear_resourcedumps_poweroff.service',
+     'obmc-host-stop@0.target.wants/clear_resourcedumps_poweroff.service']
+]
+
+foreach service: systemd_alias
     meson.add_install_script(
         'sh',
         '-c',
