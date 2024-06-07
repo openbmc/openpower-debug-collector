@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "463564e8_1bd2283e",
+        "filename": "dump/dump_utils.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2024-06-07T17:46:10Z",
+      "side": 1,
+      "message": "You seem to be converting  this from a string to a char* and then back to a string again?",
+      "range": {
+        "startLine": 69,
+        "startChar": 9,
+        "endLine": 69,
+        "endChar": 25
+      },
+      "revId": "5ff06502a11ae1295d7c087b58d286dd854d2e5a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
