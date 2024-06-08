@@ -98,7 +98,7 @@ void DumpMonitor::executeCollectionScript(
     }
 }
 
-void DumpMonitor::handleDBusSignal(sdbusplus::message::message& msg)
+void DumpMonitor::handleDBusSignal(sdbusplus::message_t& msg)
 {
     sdbusplus::message::object_path objectPath;
     InterfaceMap interfaces;

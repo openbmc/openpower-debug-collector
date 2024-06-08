@@ -66,7 +66,7 @@ class DumpMonitor
      * @brief Handles the received DBus signal for dump creation.
      * @param[in] msg - The DBus message received.
      */
-    void handleDBusSignal(sdbusplus::message::message& msg);
+    void handleDBusSignal(sdbusplus::message_t& msg);
 
     /**
      * @brief Checks if the dump creation is in progress.
