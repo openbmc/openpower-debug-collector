@@ -3,10 +3,18 @@
 #CONSTANTS
 declare -rx HEADER_EXTENSION="$DREPORT_INCLUDE/gendumpheader"
 
+#Source opfunctions
+. $DREPORT_INCLUDE/opfunctions
+
 # @brief Packaging the dump, applying the header
 # and transferring to dump location.
 function custom_package()
 {
+    #fetch customized dump name and rename
+    get_bmc_dump_filename
+    mv "$name_dir" "$TMP_DIR/$name"
+    name_dir="$TMP_DIR/$name"
+
     FILE="/tmp/dumpheader_${dump_id}_${EPOCHTIME}"
     echo "performing dump compression $name_dir"
     if [ "$dump_type" = "$TYPE_FAULTDATA" ]; then
