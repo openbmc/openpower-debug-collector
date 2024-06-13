@@ -16,6 +16,29 @@
       "message": "Kindly review the changes",
       "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51318658_758c7518",
+        "filename": "dump/tools/common/include/gendumpheader",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2024-06-13T19:05:56Z",
+      "side": 1,
+      "message": "since these two functions are doing the exact same thing, can we make it a single function and pass two parameters (ORIGINATOR_ID/ORIGINATOR_TYPE),(SIZE_32/ SIZE_4) and use the parameters $1, $2 instead to make this generic.",
+      "range": {
+        "startLine": 53,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 0
+      },
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
