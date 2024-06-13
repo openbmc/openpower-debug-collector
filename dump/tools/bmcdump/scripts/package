@@ -31,6 +31,8 @@ function custom_package()
         return "$INTERNAL_FAILURE"
     fi
 
+    get_originator_details
+
     echo "Adding Dump Header :"$HEADER_EXTENSION
     ("$HEADER_EXTENSION")
 
