@@ -73,6 +73,9 @@ dDay=$(date -d @"$EPOCHTIME" +'%Y%m%d%H%M%S')
 declare -x dump_content_type=""
 declare -x FILE=""
 
+#Source opdreport common functions
+. $DREPORT_INCLUDE/opfunctions
+
 # @brief Get serial number property from inventory
 function fetch_serial_number() {
     serialNo=$(busctl get-property "$INVENTORY_MANAGER" "$INVENTORY_PATH" \
@@ -108,6 +111,8 @@ function initialize() {
     else
         dump_size=$UNLIMITED
     fi
+
+    get_originator_details
 
     return "$SUCCESS"
 }
