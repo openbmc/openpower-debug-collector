@@ -87,6 +87,87 @@
       },
       "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "962d5d85_a700e2a9",
+        "filename": "dump/tools/common/include/gendumpheader",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-14T11:32:17Z",
+      "side": 1,
+      "message": "I think it is better to have a function as gopi suggested to avoid the code duplication",
+      "parentUuid": "f3d5c84a_dba59141",
+      "range": {
+        "startLine": 53,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 0
+      },
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3be19b02_9bd6344c",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-14T11:32:17Z",
+      "side": 1,
+      "message": "this method is not reliable, this will break if the path changed, better get id and dump type passed from main script",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 54
+      },
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83017051_64556625",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-14T11:32:17Z",
+      "side": 1,
+      "message": "keep lines less than 80",
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca1468a8_53c53e36",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-14T11:32:17Z",
+      "side": 1,
+      "message": "less than 80",
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
