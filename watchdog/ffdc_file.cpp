@@ -74,7 +74,7 @@ void FFDCFile::prepareFFDCFile()
                    strerror(errno));
 
         throw std::runtime_error(
-            "Failed to seek file postion to the beginning of the file");
+            "Failed to seek file position to the beginning of the file");
     }
 
     // Store file descriptor in FileDescriptor object

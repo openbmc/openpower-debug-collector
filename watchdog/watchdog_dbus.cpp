@@ -103,7 +103,7 @@ uint32_t createPel(const std::string& eventType,
     {
         try
         {
-            // append additional dbus call paramaters
+            // append additional dbus call parameters
             method.append(eventType, levelPelError, additional, ffdc);
 
             // using system dbus

@@ -62,7 +62,7 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
         // Refer phosphor-logging/extensions/openpower-pels/README.md section
         // "Self Boot Engine(SBE) First Failure Data Capture(FFDC) Support"
         // for details of related to createPEL with SBE FFDC information
-        // usin g CreateWithFFDCFiles api.
+        // using CreateWithFFDCFiles api.
         pelFFDCInfo.emplace_back(std::make_tuple(
             sdbusplus::xyz::openbmc_project::Logging::server::Create::
                 FFDCFormat::Custom,

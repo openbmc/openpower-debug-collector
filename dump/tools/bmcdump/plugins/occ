@@ -20,7 +20,7 @@ command="busctl call --verbose --no-pager \
 add_cmd_output "$command" "$file_name" "$desc"
 
 #fetch occ control host data
-desc="occ conrol host"
+desc="occ control host"
 command="busctl call --verbose --no-pager \
                 org.open_power.OCC.Control \
                 /xyz/openbmc_project/control \

@@ -131,7 +131,7 @@ class FFDCFile
     void writeCalloutData();
 
     /**
-     * Used set ffdc file seek position begining to consume by PEL
+     * Used set ffdc file seek position beginning to consume by PEL
      *
      * @return NULL
      */

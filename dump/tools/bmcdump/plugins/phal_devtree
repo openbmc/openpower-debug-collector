@@ -32,7 +32,7 @@ if [ -e "$file_name" ]; then
     add_copy_file "$file_name" "$desc"
 fi
 
-#copy attribues info db to dump
+#copy attributes info db to dump
 file_name="$PDATA_INFODB"
 desc="Attribute info db"
 if [ -e "$file_name" ]; then

@@ -327,7 +327,7 @@ function dump_section_entry() {
 #Name              Size(bytes)  Value
 #Dump type         8            BMC/NAG DUMP
 #Dump Request time 8            Dump request time stamp (in BCD)
-#Dump Identifier   4            Dump identifer fetched from dump
+#Dump Identifier   4            Dump identifier fetched from dump
 #Dump version      2            0x0210
 #Dump header       2            0x200
 #Total dump size   8            Dump size + dump header
@@ -348,7 +348,7 @@ function dump_section_entry() {
 #PLID
 #SRC size
 #SRC dump
-#Dump requestor type
+#Dump requester type
 #Dump Req ID
 #Dump Req user ID
 function dump_header() {
@@ -464,7 +464,7 @@ function mainstore_dump_section() {
 #Dump Creator BMC        1
 #eventLogId              4
 #fileHeaderSize          2
-####################DATA NOT AVAIABLE##########
+####################DATA NOT AVAILABLE##########
 #srcSize                 2
 #dumpSrc                 332
 #toolType                4
