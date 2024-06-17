@@ -113,6 +113,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d54f1af6_db791dda",
+        "filename": "dump/tools/common/include/gendumpheader",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2024-06-17T14:20:23Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "962d5d85_a700e2a9",
+      "range": {
+        "startLine": 53,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 0
+      },
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3be19b02_9bd6344c",
@@ -126,6 +150,30 @@
       "writtenOn": "2024-06-14T11:32:17Z",
       "side": 1,
       "message": "this method is not reliable, this will break if the path changed, better get id and dump type passed from main script",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 54
+      },
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3bba73_f3afed6d",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2024-06-17T14:20:23Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3be19b02_9bd6344c",
       "range": {
         "startLine": 40,
         "startChar": 0,
@@ -155,6 +203,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "45e84ad2_17692da5",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2024-06-17T14:20:23Z",
+      "side": 1,
+      "message": "Can\u0027t figure out how to break a line which assigns a variable with some dir path string into multiple lines. Also for other existing cases it is also exceeding 80 col width in case of assignment",
+      "parentUuid": "83017051_64556625",
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ca1468a8_53c53e36",
         "filename": "dump/tools/common/include/opfunctions",
         "patchSetId": 1
@@ -166,6 +232,24 @@
       "writtenOn": "2024-06-14T11:32:17Z",
       "side": 1,
       "message": "less than 80",
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34cf45f4_3ea6dc43",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2024-06-17T14:20:23Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ca1468a8_53c53e36",
       "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }

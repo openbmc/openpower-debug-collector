@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbac5003_0f4697b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001591
+      },
+      "writtenOn": "2024-06-17T14:20:23Z",
+      "side": 1,
+      "message": "Review comments addressed as much as possible. Kindle re review",
+      "revId": "a999e7b26c8cea8fcf6157c3456d0bc92899d048",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
