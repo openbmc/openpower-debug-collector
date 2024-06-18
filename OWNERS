@@ -36,6 +36,7 @@ owners:
 
 reviewers:
 - devenrao@in.ibm.com
+- dhruvaraj@in.ibm.com
 
 matchers:
 
@@ -46,3 +47,6 @@ openbmc:
 - name: Matt Spinler
   email: spinler@us.ibm.com
   discord: mspinler
+- name: Dhruvaraj Subhashchandran
+  email: dhruvaraj@in.ibm.com
+  discord: dhruvibm
