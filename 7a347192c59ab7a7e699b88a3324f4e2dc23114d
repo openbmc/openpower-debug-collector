@@ -38,6 +38,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "36a60c98_eb98a36d",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-19T15:56:52Z",
+      "side": 1,
+      "message": "Seems to be a precedent set mostly by one particular maintainer but oh well, I\u0027m sure it means something relevant.",
+      "parentUuid": "8a1fc111_ab60bd8e",
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "4301b376_8c65ea5c",
         "filename": "dump/dist/meson.build",
         "patchSetId": 7
@@ -49,6 +67,24 @@
       "writtenOn": "2024-05-20T18:44:25Z",
       "side": 1,
       "message": "We\u0027ve tended to do this in the bitbake recipes. But it\u0027s kind of nice just having it in the local repo.",
+      "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6247ce41_d95681fe",
+        "filename": "dump/dist/meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-06-19T15:56:52Z",
+      "side": 1,
+      "message": "I did think of why we tend to do this in the bitbake layer. If another system were to come along that had multi-host support, then this would not work as this hard codes an assumption of a single host. That\u0027s not an issue with openpower (currently) but I\u0027m not sure we want this precedent set.\n\nWithin bitbake we have variables that define the maximum number of chassis and hosts in the system and we dynamically create the systemd target dependencies based on that.\n\nWe should define the service file in this repository but the installation of it should happen in the bitbake recipe.\n\nBut with that said we\u0027ve already got a service in here so it\u0027s probably best to come back around to this and fix it all together.",
+      "parentUuid": "4301b376_8c65ea5c",
       "revId": "7a347192c59ab7a7e699b88a3324f4e2dc23114d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
