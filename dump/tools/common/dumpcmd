@@ -1,0 +1,175 @@
+#!/bin/python3
+
+import subprocess
+import json
+import argparse
+from datetime import datetime
+
+def call_busctl(command):
+    try:
+        result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, check=True)
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        print(f"Error calling busctl: {e}")
+        return None
+
+def parse_busctl_output(output):
+    data = json.loads(output)["data"]
+    dumps = []
+
+    status_mapping = {
+        "xyz.openbmc_project.Common.Progress.OperationStatus.InProgress": "InProgress",
+        "xyz.openbmc_project.Common.Progress.OperationStatus.Failed": "Failed",
+        "xyz.openbmc_project.Common.Progress.OperationStatus.Completed": "Completed"
+    }
+
+    for obj in data:
+        for path, interfaces in obj.items():
+            if '/entry/' not in path:
+                continue
+            dump_entry = {
+                "id": path.split('/')[-1],
+                "type": "",
+                "size": 0,
+                "start_time": "",
+                "end_time": "",
+                "status": ""
+            }
+            for interface, properties in interfaces.items():
+                if interface == "xyz.openbmc_project.Dump.Entry.BMC":
+                    dump_entry["type"] = "BMC"
+                elif interface == "xyz.openbmc_project.Dump.Entry.Resource":
+                    dump_entry["type"] = "Resource"
+                for prop, prop_data in properties.items():
+                    if prop == "Size":
+                        dump_entry["size"] = convert_to_mb(prop_data["data"])
+                    elif prop == "StartTime":
+                        dump_entry["start_time"] = epoch_to_human(prop_data["data"])
+                    elif prop == "CompletedTime":
+                        dump_entry["end_time"] = epoch_to_human(prop_data["data"])
+                    elif prop == "Status":
+                        dump_entry["status"] = status_mapping.get(prop_data["data"], prop_data["data"])
+
+            dumps.append(dump_entry)
+
+    return dumps
+
+def convert_to_mb(size_bytes):
+    return size_bytes / (1024 * 1024)
+
+def epoch_to_human(epoch_time):
+    if epoch_time == 0:
+        return "N/A"
+    return datetime.fromtimestamp(epoch_time / 1_000_000).strftime('%Y/%m/%d %H:%M:%S')
+
+def list_dumps():
+    output = call_busctl(['busctl', '--json=pretty', 'call', 'xyz.openbmc_project.Dump.Manager',
+                          '/xyz/openbmc_project/dump', 'org.freedesktop.DBus.ObjectManager',
+                          'GetManagedObjects'])
+    if output:
+        dumps = parse_busctl_output(output)
+        print(f"{'dump id':<10} | {'type':<10} | {'size (MB)':<10} | {'start time':<20} | {'end time':<20} | {'status':<20}")
+        print("-" * 100)
+        for dump in dumps:
+            print(f"{dump['id']:<10} | {dump['type']:<10} | {dump['size']:<10.2f} | {dump['start_time']:<20} | {dump['end_time']:<20} | {dump['status']:<20}")
+
+def create_non_disruptive_dump(password):
+    command = [
+        'busctl', '--verbose', 'call', 'xyz.openbmc_project.Dump.Manager',
+        '/xyz/openbmc_project/dump/system', 'xyz.openbmc_project.Dump.Create',
+        'CreateDump', 'a{sv}', '3',
+        '"com.ibm.Dump.Create.CreateParameters.DumpType"', 's', '"com.ibm.Dump.Create.DumpType.Resource"',
+        '"com.ibm.Dump.Create.CreateParameters.Password"', 's', f'"{password}"',
+        '"com.ibm.Dump.Create.CreateParameters.VSPString"', 's', '"system"'
+    ]
+    output = call_busctl(command)
+    print(output)
+
+def create_disruptive_dump():
+    command = [
+        'busctl', '--verbose', 'call', 'xyz.openbmc_project.Dump.Manager',
+        '/xyz/openbmc_project/dump/system', 'xyz.openbmc_project.Dump.Create',
+        'CreateDump', 'a{sv}', '1',
+        '"com.ibm.Dump.Create.CreateParameters.DumpType"', 's', '"com.ibm.Dump.Create.DumpType.System"'
+    ]
+    output = call_busctl(command)
+    print(output)
+
+def create_resource_dump(password, vsp_string):
+    command = [
+        'busctl', '--verbose', 'call', 'xyz.openbmc_project.Dump.Manager',
+        '/xyz/openbmc_project/dump/system', 'xyz.openbmc_project.Dump.Create',
+        'CreateDump', 'a{sv}', '3',
+        '"com.ibm.Dump.Create.CreateParameters.DumpType"', 's', '"com.ibm.Dump.Create.DumpType.Resource"',
+        '"com.ibm.Dump.Create.CreateParameters.Password"', 's', f'"{password}"',
+        '"com.ibm.Dump.Create.CreateParameters.VSPString"', 's', f'"{vsp_string}"'
+    ]
+    output = call_busctl(command)
+    print(output)
+
+def create_bmc_dump():
+    command = [
+        'busctl', '--verbose', 'call', 'xyz.openbmc_project.Dump.Manager',
+        '/xyz/openbmc_project/dump/bmc', 'xyz.openbmc_project.Dump.Create',
+        'CreateDump', 'a{sv}', '0'
+    ]
+    output = call_busctl(command)
+    print(output)
+
+def delete_dump(dump_id, dump_type):
+    if dump_type == 'bmc':
+        path = f'/xyz/openbmc_project/dump/bmc/entry/{dump_id}'
+    else:
+        path = f'/xyz/openbmc_project/dump/system/entry/{dump_id}'
+
+    command = [
+        'busctl', 'call', 'xyz.openbmc_project.Dump.Manager',
+        path, 'xyz.openbmc_project.Object.Delete', 'Delete'
+    ]
+    output = call_busctl(command)
+    print(output)
+
+def main():
+    parser = argparse.ArgumentParser(description="OpenBMC Dump Management Tool")
+    subparsers = parser.add_subparsers(dest='command')
+
+    # List dumps
+    subparsers.add_parser('list', help="List all dumps")
+
+    # Create dumps
+    create_parser = subparsers.add_parser('create', help="Create a new dump")
+    create_parser.add_argument('type', choices=['non-disruptive', 'disruptive', 'resource', 'bmc'], help="Type of dump to create")
+    create_parser.add_argument('--password', help="Password for non-disruptive and resource dumps")
+    create_parser.add_argument('--vsp_string', help="VSP string for resource dumps")
+
+    # Delete dumps
+    delete_parser = subparsers.add_parser('delete', help="Delete a dump")
+    delete_parser.add_argument('id', help="ID of the dump to delete")
+    delete_parser.add_argument('type', choices=['bmc', 'system'], help="Type of dump to delete")
+
+    args = parser.parse_args()
+
+    if args.command == 'list':
+        list_dumps()
+    elif args.command == 'create':
+        if args.type == 'non-disruptive':
+            if not args.password:
+                print("Password is required for non-disruptive dump")
+            else:
+                create_non_disruptive_dump(args.password)
+        elif args.type == 'disruptive':
+            create_disruptive_dump()
+        elif args.type == 'resource':
+            if not args.password or not args.vsp_string:
+                print("Password and VSP string are required for resource dump")
+            else:
+                create_resource_dump(args.password, args.vsp_string)
+        elif args.type == 'bmc':
+            create_bmc_dump()
+    elif args.command == 'delete':
+        delete_dump(args.id, args.type)
+    else:
+        parser.print_help()
+
+if __name__ == "__main__":
+    main()
