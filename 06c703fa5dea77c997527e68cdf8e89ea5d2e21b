@@ -221,6 +221,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aaaef222_1ed8939d",
+        "filename": "dump/tools/common/include/opfunctions",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2024-06-19T10:06:42Z",
+      "side": 1,
+      "message": "you can add newer variables with smaller strings and concatenate,\nor use the concatenate operator (+\u003d) directly.",
+      "parentUuid": "45e84ad2_17692da5",
+      "revId": "06c703fa5dea77c997527e68cdf8e89ea5d2e21b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ca1468a8_53c53e36",
         "filename": "dump/tools/common/include/opfunctions",
         "patchSetId": 1
