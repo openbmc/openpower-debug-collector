@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66f252b6_fa09c451",
+        "filename": "dump/tools/bmcdump/scripts/package",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-19T09:02:40Z",
+      "side": 1,
+      "message": "can we keep this less than 80?",
+      "revId": "3438a984dd9a7fb5d2095e9d548ae8d7244b0b2c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6c70408_e20806f9",
+        "filename": "dump/tools/bmcdump/scripts/package",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-19T09:02:40Z",
+      "side": 1,
+      "message": "this line too",
+      "revId": "3438a984dd9a7fb5d2095e9d548ae8d7244b0b2c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
