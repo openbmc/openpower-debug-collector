@@ -1,0 +1,9 @@
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+2: Matt Spinler <spinler@us.ibm.com>
+Code-Review+1: Andrew Geissler <geissonator@yahoo.com>
+Submitted-by: Dhruvaraj S <dhruvaraj@gmail.com>
+Submitted-at: Mon, 24 Jun 2024 18:53:58 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/71516
+Comments-Total: 9
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
