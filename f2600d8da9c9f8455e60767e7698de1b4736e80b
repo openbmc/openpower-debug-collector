@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8bc57ce_bc7008fd",
+        "filename": "dump/tools/bmcdump/scripts/package",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-30T16:47:01Z",
+      "side": 1,
+      "message": "you can address \u003e80 here",
+      "revId": "f2600d8da9c9f8455e60767e7698de1b4736e80b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
