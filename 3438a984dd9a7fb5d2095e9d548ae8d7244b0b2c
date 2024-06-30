@@ -105,6 +105,24 @@
       "parentUuid": "2f0ff566_8265024d",
       "revId": "3438a984dd9a7fb5d2095e9d548ae8d7244b0b2c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "143e14e3_d64818ca",
+        "filename": "dump/tools/bmcdump/scripts/package",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2024-06-30T16:46:39Z",
+      "side": 1,
+      "message": "my mistake, this should be in earlier commit",
+      "parentUuid": "72398474_1df48d5e",
+      "revId": "3438a984dd9a7fb5d2095e9d548ae8d7244b0b2c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
