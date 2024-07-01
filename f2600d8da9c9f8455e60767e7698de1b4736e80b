@@ -16,6 +16,24 @@
       "message": "you can address \u003e80 here",
       "revId": "f2600d8da9c9f8455e60767e7698de1b4736e80b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f0372ab_7c2cd840",
+        "filename": "dump/tools/bmcdump/scripts/package",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2024-07-01T09:23:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8bc57ce_bc7008fd",
+      "revId": "f2600d8da9c9f8455e60767e7698de1b4736e80b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
