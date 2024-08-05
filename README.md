@@ -2,7 +2,7 @@
 
 ## Building the Code
 
-```
+```text
 To build this package, do the following steps:
 
     1. meson build
