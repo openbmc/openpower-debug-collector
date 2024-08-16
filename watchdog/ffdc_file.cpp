@@ -41,8 +41,8 @@ void FFDCFile::prepareFFDCFile()
     int fd = open(tempFile.getPath().c_str(), O_RDWR);
     if (fd == -1)
     {
-        throw std::runtime_error{std::string{"Unable to open FFDC file: "} +
-                                 strerror(errno)};
+        throw std::runtime_error{
+            std::string{"Unable to open FFDC file: "} + strerror(errno)};
     }
 
     ssize_t rc = write(fd, calloutData.c_str(), calloutData.size());

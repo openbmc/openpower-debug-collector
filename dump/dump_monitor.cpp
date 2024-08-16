@@ -28,8 +28,8 @@ void DumpMonitor::executeCollectionScript(
 
     uint32_t dumpId = std::strtoul(dumpIdStr.c_str(), nullptr, 16);
     int dumpType = getDumpTypeFromId(dumpId);
-    std::filesystem::path dumpPath = std::filesystem::path(dumpOutPath) /
-                                     dumpIdStr;
+    std::filesystem::path dumpPath =
+        std::filesystem::path(dumpOutPath) / dumpIdStr;
 
     // Add type, ID, and dump path to args
     args.push_back("-t");

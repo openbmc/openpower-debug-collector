@@ -23,25 +23,25 @@ static void monitorDumpCreation(const std::string& path, const uint32_t timeout)
         sdbusplus::bus::match::rules::propertiesChanged(
             path, "xyz.openbmc_project.Common.Progress"),
         [&](sdbusplus::message_t& msg) {
-        std::string interface;
-        std::map<std::string, std::variant<std::string, uint8_t>> property;
-        msg.read(interface, property);
+            std::string interface;
+            std::map<std::string, std::variant<std::string, uint8_t>> property;
+            msg.read(interface, property);
 
-        const auto dumpStatus = property.find("Status");
-        if (dumpStatus != property.end())
-        {
-            const std::string* status =
-                std::get_if<std::string>(&(dumpStatus->second));
-            if (status &&
-                *status !=
-                    "xyz.openbmc_project.Common.Progress.OperationStatus.InProgress")
+            const auto dumpStatus = property.find("Status");
+            if (dumpStatus != property.end())
             {
-                lg2::info("Dump status({STATUS}) : path={PATH}", "STATUS",
-                          status->c_str(), "PATH", path.c_str());
-                inProgress = false;
+                const std::string* status =
+                    std::get_if<std::string>(&(dumpStatus->second));
+                if (status &&
+                    *status !=
+                        "xyz.openbmc_project.Common.Progress.OperationStatus.InProgress")
+                {
+                    lg2::info("Dump status({STATUS}) : path={PATH}", "STATUS",
+                              status->c_str(), "PATH", path.c_str());
+                    inProgress = false;
+                }
             }
-        }
-    });
+        });
 
     // Timeout management
     for (uint32_t secondsCount = 0; inProgress && secondsCount < timeout;
@@ -74,8 +74,8 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
     {
         auto bus = sdbusplus::bus::new_default();
         auto service = getService(bus, interface, path);
-        auto method = bus.new_method_call(service.c_str(), path, interface,
-                                          function);
+        auto method =
+            bus.new_method_call(service.c_str(), path, interface, function);
 
         std::unordered_map<std::string, std::variant<std::string, uint64_t>>
             createParams = {

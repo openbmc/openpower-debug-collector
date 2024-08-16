@@ -152,10 +152,9 @@ class SbeDumpCollector
      * @return uint8_t - Returns 1 if fastarray collection is needed, 0
      * otherwise.
      */
-    inline uint8_t checkFastarrayCollectionNeeded(const uint8_t clockState,
-                                                  const uint8_t type,
-                                                  uint64_t failingUnit,
-                                                  const uint8_t chipPos) const
+    inline uint8_t checkFastarrayCollectionNeeded(
+        const uint8_t clockState, const uint8_t type, uint64_t failingUnit,
+        const uint8_t chipPos) const
     {
         using namespace openpower::dump::SBE;
 

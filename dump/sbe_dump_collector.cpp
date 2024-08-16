@@ -142,9 +142,10 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
 
     for (const auto& [procTarget, ocmbTargets] : targetMap)
     {
-        auto future = std::async(std::launch::async,
-                                 [this, procTarget, ocmbTargets, path, id, type,
-                                  cstate, failingUnit]() {
+        auto future = std::async(std::launch::async, [this, procTarget,
+                                                      ocmbTargets, path, id,
+                                                      type, cstate,
+                                                      failingUnit]() {
             try
             {
                 this->collectDumpFromSBE(procTarget, path, id, type, cstate,
@@ -273,11 +274,9 @@ bool SbeDumpCollector::logErrorAndCreatePEL(
     return isDumpFailure;
 }
 
-void SbeDumpCollector::collectDumpFromSBE(struct pdbg_target* chip,
-                                          const std::filesystem::path& path,
-                                          uint32_t id, uint8_t type,
-                                          uint8_t clockState,
-                                          uint64_t failingUnit)
+void SbeDumpCollector::collectDumpFromSBE(
+    struct pdbg_target* chip, const std::filesystem::path& path, uint32_t id,
+    uint8_t type, uint8_t clockState, uint64_t failingUnit)
 {
     auto chipPos = pdbg_target_index(chip);
     SBETypes sbeType = getSBEType(chip);

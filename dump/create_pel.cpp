@@ -70,11 +70,11 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
     }
     try
     {
-        auto service = util::getService(bus, opLoggingInterface,
-                                        loggingObjectPath);
-        auto method = bus.new_method_call(service.c_str(), loggingObjectPath,
-                                          opLoggingInterface,
-                                          "CreatePELWithFFDCFiles");
+        auto service =
+            util::getService(bus, opLoggingInterface, loggingObjectPath);
+        auto method =
+            bus.new_method_call(service.c_str(), loggingObjectPath,
+                                opLoggingInterface, "CreatePELWithFFDCFiles");
         auto level =
             sdbusplus::xyz::openbmc_project::Logging::server::convertForMessage(
                 severity);
