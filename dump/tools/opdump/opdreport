@@ -135,7 +135,7 @@ function package() {
 
     cd "$content_path" || exit "$INTERNAL_FAILURE"
 
-    dump_content_type=${id:0:2}
+    dump_content_type=${dump_id:0:2}
     "$FILE_SCRIPT"
     elog_id=$eid
 
