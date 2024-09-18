@@ -92,6 +92,7 @@ function initialize() {
     fi
     fetch_serial_number
     # shellcheck disable=SC2154 # dump_id comes from elsewhere
+    id=$(printf %08d $dump_id)
     name="${name}.${serialNo}.${dump_id}.${dDay}"
 
     if [ -z "$dump_sbe_type" ]; then
