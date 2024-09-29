@@ -1,0 +1,10 @@
+Code-Review+1: <smriti.ayushi@linux.intel.com>
+Code-Review+1: Dhruvaraj S <dhruvaraj@gmail.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+2: Matt Spinler <spinler@us.ibm.com>
+Submitted-by: Dhruvaraj S <dhruvaraj@gmail.com>
+Submitted-at: Sun, 29 Sep 2024 12:48:41 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/74614
+Comments-Total: 1
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
