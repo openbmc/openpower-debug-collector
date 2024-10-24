@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+declare -rx TYPE_FAULTDATA="faultdata"
+
 # @brief fetch serial number
 # @param serial number
 function fetch_serial_number() {
