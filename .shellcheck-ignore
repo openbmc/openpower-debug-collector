@@ -7,6 +7,7 @@ dump/tools/bmcdump/plugins/occ
 dump/tools/bmcdump/plugins/pels
 dump/tools/bmcdump/plugins/phal_devtree
 dump/tools/bmcdump/plugins/vpd_data
+dump/tools/bmcdump/plugins/faultlog
 dump/tools/bmcdump/scripts/package
 dump/tools/common/include/gendumpheader
 dump/tools/common/include/gendumpinfo
