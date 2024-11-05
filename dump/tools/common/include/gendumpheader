@@ -33,16 +33,19 @@ declare -rx PEL_ID_PROP='PlatformLogID'
 declare -x modelNo
 modelNo=$(busctl get-property $INVENTORY_MANAGER $INVENTORY_PATH \
     $INVENTORY_ASSET_INT Model | cut -d " " -f 2 | sed "s/^\(\"\)\(.*\)\1\$/\2/g")
+
 #Variables
-declare -x serialNo
-serialNo=$(busctl get-property $INVENTORY_MANAGER $INVENTORY_PATH \
-    $INVENTORY_ASSET_INT SerialNumber | cut -d " " -f 2 | sed "s/^\(\"\)\(.*\)\1\$/\2/g")
+declare -x serialNo="0000000"
+
 declare -x dDay
 dDay=$(date -d @"$EPOCHTIME" +'%Y%m%d%H%M%S')
 declare -x bmcSerialNo
 bmcSerialNo=$(busctl call $INVENTORY_MANAGER $INVENTORY_BMC_BOARD \
         org.freedesktop.DBus.Properties Get ss $INVENTORY_ASSET_INT \
     SerialNumber | cut -d " " -f 3 | sed "s/^\(\"\)\(.*\)\1\$/\2/g")
+
+#Source common functions
+. $DREPORT_INCLUDE/opfunctions
 
 #Function to add NULL
 function add_null() {
@@ -558,6 +561,7 @@ function plat_dump_header() {
 
 #main function
 function gen_header_package() {
+    fetch_serial_number
     dump_file_entry
     dump_section_entry
     if [ "$dump_type" = "$OP_DUMP" ]; then
