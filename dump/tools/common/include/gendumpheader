@@ -531,6 +531,10 @@ function plat_dump_header() {
 
 #main function
 function gen_header_package() {
+    if [ -z "$serialNo" ]; then
+        serialNo="0000000"
+    fi
+
     dump_file_entry
     dump_section_entry
     if [ "$dump_type" = "$OP_DUMP" ]; then
