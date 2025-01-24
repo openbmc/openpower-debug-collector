@@ -31,6 +31,8 @@ using namespace openpower::dump::SBE;
 constexpr auto loggingObjectPath = "/xyz/openbmc_project/logging";
 constexpr auto loggingInterface = "xyz.openbmc_project.Logging.Create";
 constexpr auto opLoggingInterface = "org.open_power.Logging.PEL";
+constexpr auto entryInterface = "xyz.openbmc_project.Logging.Entry";
+constexpr auto opEntryInterface = "org.open_power.Logging.PEL.Entry";
 
 uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
                            const FFDCData& ffdcData, const Severity severity,
@@ -86,7 +88,7 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
 
         // parse dbus response into reply
         response.read(reply);
-        plid = std::get<1>(reply); // platform log id is tuple "second"
+        plid = std::get<0>(reply); // dbus entry id is tuple "first"
     }
     catch (const sdbusplus::exception_t& e)
     {
@@ -121,11 +123,13 @@ openpower::dump::pel::Severity convertSeverityToEnum(uint8_t severity)
     }
 }
 
-void processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
-                        const std::string& event,
-                        openpower::dump::pel::FFDCData& pelAdditionalData)
+std::vector<uint32_t>
+    processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
+                       const std::string& event,
+                       openpower::dump::pel::FFDCData& pelAdditionalData)
 {
     const auto& ffdcFileList = sbeError.getFfdcFileList();
+    std::vector<uint32_t> logIdList;
     for (const auto& [slid, ffdcTuple] : ffdcFileList)
     {
         uint8_t severity;
@@ -154,7 +158,54 @@ void processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
             event, sbeError, pelAdditionalData, logSeverity);
         lg2::info("Logged PEL {PELID} for SLID {SLID}", "PELID", logId, "SLID",
                   slid);
+        logIdList.push_back(logId);
     }
+    return logIdList;
+}
+
+std::tuple<uint32_t, std::string> getLogInfo(uint32_t logId)
+{
+    uint32_t pelId;
+    std::string src;
+    try
+    {
+        auto bus = sdbusplus::bus::new_default();
+        const auto loggingEntryObjectPath = std::string(loggingObjectPath) +
+                                            "/entry/" + std::to_string(logId);
+        auto service = util::getService(bus, entryInterface,
+                                        loggingEntryObjectPath);
+        auto method =
+            bus.new_method_call(service.c_str(), loggingEntryObjectPath.c_str(),
+                                "org.freedesktop.DBus.Properties", "Get");
+        method.append(opEntryInterface);
+        method.append("PlatformLogID");
+        auto response = bus.call(method);
+        std::variant<uint32_t, std::string> v;
+        response.read(v);
+        pelId = std::get<uint32_t>(v);
+        method = bus.new_method_call(service.c_str(),
+                                     loggingEntryObjectPath.c_str(),
+                                     "org.freedesktop.DBus.Properties", "Get");
+        method.append(entryInterface);
+        method.append("EventId");
+        response = bus.call(method);
+        response.read(v);
+        std::istringstream iss(std::get<std::string>(v));
+        iss >> src;
+    }
+    catch (const sdbusplus::exception::exception& e)
+    {
+        lg2::error("D-Bus call exception "
+                   "EXCEPTION={ERROR}",
+                   "ERROR", e);
+        throw;
+    }
+    catch (const std::exception& e)
+    {
+        throw;
+    }
+
+    return std::tuple<uint32_t, std::string>(pelId, src);
 }
 
 FFDCFile::FFDCFile(const json& pHALCalloutData) :

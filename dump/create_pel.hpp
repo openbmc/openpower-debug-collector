@@ -56,10 +56,21 @@ openpower::dump::pel::Severity convertSeverityToEnum(uint8_t severity);
  * @param[in] event - The event identifier associated with the PELs.
  * @param[out] pelAdditionalData - A reference to additional PEL data to be
  *                                 included in the PEL.
+ * @return logIdList - List of Errors created
  */
-void processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
-                        const std::string& event,
-                        openpower::dump::pel::FFDCData& pelAdditionalData);
+std::vector<uint32_t>
+    processFFDCPackets(const openpower::phal::sbeError_t& sbeError,
+                       const std::string& event,
+                       openpower::dump::pel::FFDCData& pelAdditionalData);
+
+/**
+ * @brief Get PEL Id and Reason Code for a given logEntry
+ *
+ * @param[in] logId - dbus entry id.
+ *
+ * @return Platform Event Log Id, Reason Code
+ */
+std::tuple<uint32_t, std::string> getLogInfo(uint32_t logId);
 
 /**
  * @class FFDCFile
