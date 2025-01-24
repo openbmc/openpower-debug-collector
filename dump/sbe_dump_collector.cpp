@@ -59,7 +59,7 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         // if the dump type is hostboot then call stop instructions
         if (type == SBE_DUMP_TYPE_HOSTBOOT)
         {
-            includeTarget = executeThreadStop(target);
+            includeTarget = executeThreadStop(target, path);
         }
         if (includeTarget)
         {
@@ -188,7 +188,8 @@ std::vector<std::future<void>> SbeDumpCollector::spawnDumpCollectionProcesses(
 
 bool SbeDumpCollector::logErrorAndCreatePEL(
     const openpower::phal::sbeError_t& sbeError, uint64_t chipPos,
-    SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType)
+    SBETypes sbeType, uint32_t cmdClass, uint32_t cmdType,
+    const std::filesystem::path& path)
 {
     namespace fs = std::filesystem;
 
@@ -247,8 +248,22 @@ bool SbeDumpCollector::logErrorAndCreatePEL(
                            "POSITION", chipPos);
             }
             // Processor FFDC Packets
-            openpower::dump::pel::processFFDCPackets(sbeError, event,
-                                                     pelAdditionalData);
+            std::vector<uint32_t> logIdList =
+                openpower::dump::pel::processFFDCPackets(sbeError, event,
+                                                         pelAdditionalData);
+            for (auto logId : logIdList)
+            {
+                try
+                {
+                    auto logInfo = openpower::dump::pel::getLogInfo(logId);
+                    addLogDataToDump(std::get<0>(logInfo), std::get<1>(logInfo),
+                                     chipName, chipPos, path.parent_path());
+                }
+                catch (const std::exception& e)
+                {
+                    lg2::error("Failed to get error Info");
+                }
+            }
         }
 
         // If dump is required, request it
@@ -256,7 +271,18 @@ bool SbeDumpCollector::logErrorAndCreatePEL(
         {
             auto logId = openpower::dump::pel::createSbeErrorPEL(
                 event, sbeError, pelAdditionalData);
-            util::requestSBEDump(chipPos, logId, sbeType);
+            try
+            {
+                auto logInfo = openpower::dump::pel::getLogInfo(logId);
+                addLogDataToDump(std::get<0>(logInfo), std::get<1>(logInfo),
+                                 chipName, chipPos, path.parent_path());
+                util::requestSBEDump(chipPos, std::get<0>(logInfo), sbeType);
+            }
+            catch (const std::exception& e)
+            {
+                lg2::error(
+                    "Failed to get error Info, failed to create sbe dump");
+            }
         }
     }
     catch (const std::out_of_range& e)
@@ -316,7 +342,8 @@ void SbeDumpCollector::collectDumpFromSBE(
         // then create PELs with FFDC but write the dump contents to the
         // file.
         if (logErrorAndCreatePEL(sbeError, chipPos, sbeType,
-                                 SBEFIFO_CMD_CLASS_DUMP, SBEFIFO_CMD_GET_DUMP))
+                                 SBEFIFO_CMD_CLASS_DUMP, SBEFIFO_CMD_GET_DUMP,
+                                 path))
         {
             lg2::error("Error in collecting dump dump type({TYPE}), "
                        "clockstate({CLOCKSTATE}), chip type({CHIPTYPE}) "
@@ -394,7 +421,8 @@ void SbeDumpCollector::writeDumpFile(
     }
 }
 
-bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
+bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target,
+                                         const std::filesystem::path& path)
 {
     try
     {
@@ -419,7 +447,7 @@ bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
 
         logErrorAndCreatePEL(sbeError, chipPos, SBETypes::PROC,
                              SBEFIFO_CMD_CLASS_INSTRUCTION,
-                             SBEFIFO_CMD_CONTROL_INSN);
+                             SBEFIFO_CMD_CONTROL_INSN, path);
         // For TIMEOUT, log the error and skip adding the processor for dump
         // collection
         if (sbeError.errType() == openpower::phal::exception::SBE_CMD_TIMEOUT)
@@ -430,6 +458,31 @@ bool SbeDumpCollector::executeThreadStop(struct pdbg_target* target)
     // Include the target for dump collection for SBE_CMD_FAILED or any other
     // non-critical errors
     return true;
+}
+
+void SbeDumpCollector::addLogDataToDump(uint32_t pelId, std::string src,
+                                        std::string chipName, uint64_t chipPos,
+                                        const std::filesystem::path& path)
+{
+    std::filesystem::path info = path / "errorInfo";
+    auto fileExists = std::filesystem::exists(info);
+    std::ofstream fout;
+    fout.open(info, std::ios::app);
+    if (!fout)
+    {
+        lg2::error("Error: Failed to open the file! {FILE}", "FILE", info);
+        lg2::error("No error Info is added to dump file");
+        return;
+    }
+    if (!fileExists)
+    {
+        fout << "ErrorInfo:" << std::endl;
+    }
+    auto pel = " " + std::format("{:08x}", pelId) + ":";
+    fout << pel << std::endl;
+    fout << "  src: " << src << std::endl;
+    auto resource = chipName + " " + std::to_string(chipPos);
+    fout << "  Resource: " << resource << std::endl;
 }
 
 } // namespace openpower::dump::sbe_chipop
