@@ -65,6 +65,7 @@ function write_to_info_file() {
     } >> "$YAML_FILE"
     dump_time_details
     get_addl_data
+    cat "$content_path/errorInfo" >> "$YAML_FILE"
 }
 
 # Run main

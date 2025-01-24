@@ -175,11 +175,13 @@ class SbeDumpCollector
      * message.
      * @param cmdClass - The command class associated with the SBE operation.
      * @param cmdType - The specific type of command within the command class.
+     * @param path - Dump collection path.
      *
      */
     bool logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
                               uint64_t chipPos, SBETypes sbeType,
-                              uint32_t cmdClass, uint32_t cmdType);
+                              uint32_t cmdClass, uint32_t cmdType,
+                              const std::filesystem::path& path);
 
     /**
      * Determines the type of SBE for a given chip target.
@@ -208,13 +210,26 @@ class SbeDumpCollector
      *
      * @param target Pointer to the pdbg target structure representing the
      *               processor to perform the thread stop on.
+     * @param path Dump collection path
      * @return true If the thread stop was successful or in case of non-critical
      *              errors where dump collection can proceed.
      * @return false If the SBE is not ready for chip-ops or in case of critical
      *               errors like timeouts, indicating the processor should be
      *               excluded from the dump collection.
      */
-    bool executeThreadStop(struct pdbg_target* target);
+    bool executeThreadStop(struct pdbg_target* target,
+                           const std::filesystem::path& path);
+
+    /**
+     * @brief Add Failure log information to info.yaml file
+     * @param logId - Error Log Id
+     * @param src - Reason Code of PEL
+     * @param chipName - Resource Name
+     * @param chipPos - Resource number
+     * @param path - Dump collection path
+     */
+    void addLogDataToDump(uint32_t logId, std::string src, std::string chipName,
+                          uint64_t chipPos, const std::filesystem::path& path);
 };
 
 } // namespace openpower::dump::sbe_chipop
