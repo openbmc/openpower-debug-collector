@@ -2,11 +2,7 @@ project(
     'openpower-debug-collector',
     'cpp',
     meson_version: '>=1.1.1',
-    default_options: [
-        'warning_level=3',
-        'werror=true',
-        'cpp_std=c++23'
-    ],
+    default_options: ['warning_level=3', 'werror=true', 'cpp_std=c++23'],
     license: 'Apache-2.0',
     version: '1.0.0',
 )
@@ -23,10 +19,7 @@ endif
 
 phosphorlogging = dependency(
     'phosphor-logging',
-    fallback: [
-        'phosphor-logging',
-        'phosphor_logging_dep'
-    ]
+    fallback: ['phosphor-logging', 'phosphor_logging_dep'],
 )
 
 realpath_prog = find_program('realpath')
@@ -37,7 +30,7 @@ if get_option('hostboot-dump-collection').allowed()
     extra_deps = [
         cxx.find_library('pdbg'),
         cxx.find_library('libdt-api'),
-        cxx.find_library('phal')
+        cxx.find_library('phal'),
     ]
     subdir('watchdog')
 else
@@ -49,27 +42,24 @@ endif
 configure_file(output: 'config.h', configuration: conf_data)
 
 if get_option('dump-collection').allowed()
-     subdir('dump')
+    subdir('dump')
 endif
 
-deps = [
-    CLI11_dep,
-    sdbusplus_dep,
-    phosphorlogging,
-    extra_deps
-]
+deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, extra_deps]
 
-executable('watchdog_timeout',
+executable(
+    'watchdog_timeout',
     'watchdog_timeout.cpp',
     dependencies: deps,
     link_with: watchdog_lib,
     implicit_include_directories: true,
-    install: true
+    install: true,
 )
 
-executable('checkstop_app',
+executable(
+    'checkstop_app',
     'checkstop_app.cpp',
     dependencies: deps,
     implicit_include_directories: true,
-    install: true
+    install: true,
 )
