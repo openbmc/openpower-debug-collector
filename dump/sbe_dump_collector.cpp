@@ -464,19 +464,25 @@ void SbeDumpCollector::addLogDataToDump(uint32_t pelId, std::string src,
                                         std::string chipName, uint64_t chipPos,
                                         const std::filesystem::path& path)
 {
-    std::filesystem::path info = path / "info.yaml";
-    std::ofstream fout(info);
+    std::filesystem::path info = path / "errorInfo";
+    auto fileExists = std::filesystem::exists(info);
+    std::ofstream fout;
+    fout.open(info, std::ios::app);
     if (!fout)
     {
         lg2::error("Error: Failed to open the file! {FILE}", "FILE", info);
         lg2::error("No error Info is added to dump file");
         return;
     }
-    fout << "ErrorInfo:" << std::endl;
-    fout << " PELId: " << pelId << std::endl;
-    fout << " src: " << src << std::endl;
+    if (!fileExists)
+    {
+        fout << "ErrorInfo:" << std::endl;
+    }
+    auto pel = " " + std::format("{:08x}", pelId) + ":";
+    fout << pel << std::endl;
+    fout << "  src: " << src << std::endl;
     auto resource = chipName + " " + std::to_string(chipPos);
-    fout << " Resource: " << resource << std::endl;
+    fout << "  Resource: " << resource << std::endl;
 }
 
 } // namespace openpower::dump::sbe_chipop
