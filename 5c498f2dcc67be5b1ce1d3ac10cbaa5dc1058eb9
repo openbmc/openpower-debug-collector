@@ -59,6 +59,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61f7670b_04f42c68",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2025-03-25T15:31:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0518a2e7_709e47d9",
+      "range": {
+        "startLine": 67,
+        "startChar": 51,
+        "endLine": 67,
+        "endChar": 55
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "363bb6a9_d45d9e0a",
@@ -72,6 +96,30 @@
       "writtenOn": "2023-10-04T07:43:25Z",
       "side": 1,
       "message": "hypervisor",
+      "range": {
+        "startLine": 68,
+        "startChar": 22,
+        "endLine": 68,
+        "endChar": 26
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a717da9_793cc5e7",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2025-03-25T15:31:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "363bb6a9_d45d9e0a",
       "range": {
         "startLine": 68,
         "startChar": 22,
@@ -105,6 +153,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45b5501c_fdd8ae60",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2025-03-25T15:31:53Z",
+      "side": 1,
+      "message": "https://github.com/open-power/ipl/commit/c62363cdc13fae0a224741fcc201f8861694ffba",
+      "parentUuid": "76298b32_a91c6c65",
+      "range": {
+        "startLine": 70,
+        "startChar": 39,
+        "endLine": 70,
+        "endChar": 69
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8aedf5e_7710b960",
@@ -118,6 +190,30 @@
       "writtenOn": "2023-10-04T07:43:25Z",
       "side": 1,
       "message": "loading hypervisor?",
+      "range": {
+        "startLine": 74,
+        "startChar": 35,
+        "endLine": 74,
+        "endChar": 47
+      },
+      "revId": "5c498f2dcc67be5b1ce1d3ac10cbaa5dc1058eb9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd83a3d6_aac520ea",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2025-03-25T15:31:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8aedf5e_7710b960",
       "range": {
         "startLine": 74,
         "startChar": 35,
