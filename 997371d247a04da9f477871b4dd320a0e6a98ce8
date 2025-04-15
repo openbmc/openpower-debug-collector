@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c2130601_f9251913",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2025-04-15T19:38:09Z",
+      "side": 1,
+      "message": "i have captured this now in sbe_dump_collector.cpp in the catch of the caller function.",
+      "parentUuid": "68f9d550_0e20d9f7",
+      "revId": "997371d247a04da9f477871b4dd320a0e6a98ce8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b76d810b_2914563f",
         "filename": "dump/sbe_dump_collector.cpp",
         "patchSetId": 7
@@ -48,6 +66,24 @@
       "writtenOn": "2025-04-11T14:20:50Z",
       "side": 1,
       "message": "exception traced anywhere?",
+      "revId": "997371d247a04da9f477871b4dd320a0e6a98ce8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dfd7dbc_17d6d4ae",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2025-04-15T19:38:09Z",
+      "side": 1,
+      "message": "captured the exception trace now.",
+      "parentUuid": "b76d810b_2914563f",
       "revId": "997371d247a04da9f477871b4dd320a0e6a98ce8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
