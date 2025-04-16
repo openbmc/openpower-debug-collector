@@ -192,7 +192,7 @@ std::tuple<uint32_t, std::string> getLogInfo(uint32_t logId)
         std::istringstream iss(std::get<std::string>(v));
         iss >> src;
     }
-    catch (const sdbusplus::exception::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         lg2::error("D-Bus call exception "
                    "EXCEPTION={ERROR}",
