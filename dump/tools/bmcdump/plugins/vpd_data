@@ -14,12 +14,3 @@ if [ -d "$file_name" ]; then
 else
     log_info "No $desc data"
 fi
-
-desc="Bad VPD"
-dir_name="/tmp/bad-vpd"
-
-if [ -f $dir_name ]; then
-    add_copy_file "$dir_name" "$desc"
-else
-    log_info "No $desc data"
-fi
