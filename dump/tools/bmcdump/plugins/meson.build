@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 plugins_to_install += meson.current_source_dir() / 'badpel'
+plugins_to_install += meson.current_source_dir() / 'bmcweb'
 plugins_to_install += meson.current_source_dir() / 'cfam'
 plugins_to_install += meson.current_source_dir() / 'dumpfilelist'
 plugins_to_install += meson.current_source_dir() / 'guardlist'
