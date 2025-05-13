@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "382aff78_c9075ffe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000503
+      },
+      "writtenOn": "2025-05-13T06:46:08Z",
+      "side": 1,
+      "message": "My bad - you are deprecating the unused dir. Looks good to me.",
+      "revId": "a9eaf20194fbfa3621d4f1dccf43a0ba8cce427b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
