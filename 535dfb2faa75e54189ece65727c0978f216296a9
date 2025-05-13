@@ -16,6 +16,24 @@
       "message": "Is it a file or directory? \n- If \"file\", please change the variable name to reflect correctly\n- If \"dir\", please modify flag to -d\n\nAlso, please detail how big this dir can grow in size, the ~number of sub dirs \u0026 files it can contain",
       "revId": "535dfb2faa75e54189ece65727c0978f216296a9",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb0a0677_b3b6183d",
+        "filename": "dump/tools/bmcdump/plugins/vpd_data",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1002186
+      },
+      "writtenOn": "2025-05-13T07:12:24Z",
+      "side": 0,
+      "message": "\u003e Is it a file or directory?\nThis is a directory. Ya, the flag should have be -d. But since we are removing this plugin entry, it no longer matters now.\n\n\u003e Also, please detail how big this dir can grow in size, the ~number of sub dirs \u0026 files it can contain\n\nThere won\u0027t be any subdirectories here. The /var/lib/vpd/dumps directory will have binary files corresponding to FRUs for which vpd-manager has encountered invalid VPD while parsing the FRU\u0027s VPD (from EEPROM). This will differ from system to system as different systems have different FRUs. In worst case, this directory will have the copies of EEPROMs of all the FRUs.\n\nAs an example if a system has 56 FRUs and assuming EEPROM of all the FRUs is 8192 bytes in size, worst case, this directory will have 56 files each of size 8192 bytes.\n\nIf you want the exact data for different systems, I can analyze and collect this data.",
+      "parentUuid": "217aa675_cc1da33e",
+      "revId": "535dfb2faa75e54189ece65727c0978f216296a9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
