@@ -34,6 +34,24 @@
       "parentUuid": "217aa675_cc1da33e",
       "revId": "535dfb2faa75e54189ece65727c0978f216296a9",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fc6a594_c9082152",
+        "filename": "dump/tools/bmcdump/plugins/vpd_data",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2025-05-14T14:19:57Z",
+      "side": 0,
+      "message": "This commit is only removing some existing code.  I presume any size questions have been addressed when this originally went in.",
+      "parentUuid": "bb0a0677_b3b6183d",
+      "revId": "535dfb2faa75e54189ece65727c0978f216296a9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
