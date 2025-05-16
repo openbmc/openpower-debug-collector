@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "154172fc_78c27088",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2025-05-16T14:24:28Z",
+      "side": 1,
+      "message": "Probably shouldn\u0027t reference IBM internal branches or downstream repos.",
+      "range": {
+        "startLine": 10,
+        "startChar": 1,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "52d34973860ea2eaa97caa7d7516a99925269667",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
