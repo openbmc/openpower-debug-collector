@@ -76,17 +76,6 @@ declare -x FILE=""
 #Source opdreport common functions
 . $DREPORT_INCLUDE/opfunctions
 
-# @brief Get serial number property from inventory
-function fetch_serial_number() {
-    serialNo=$(busctl get-property "$INVENTORY_MANAGER" "$INVENTORY_PATH" \
-            "$INVENTORY_ASSET_INT" SerialNumber | cut -d " " -f 2 | \
-        sed 's/^"\(.*\)"$/\1/')
-
-    if [ -z "$serialNo" ]; then
-        serialNo="0000000"
-    fi
-}
-
 # @brief Check the validity of user inputs and initialize global variables
 function initialize() {
     # shellcheck disable=SC2154 # name comes from elsewhere
