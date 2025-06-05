@@ -35,13 +35,13 @@ EOF
 )
 
 # Constants
+declare -rx DREPORT_SOURCE="/usr/share/dreport.d"
+declare -rx DREPORT_INCLUDE="$DREPORT_SOURCE/include.d"
 readonly OP_DUMP="opdump"
-readonly DREPORT_SOURCE="/usr/share/dreport.d"
 readonly TRUE=1
 readonly FALSE=0
 readonly TIME_STAMP="date -u"
 readonly UNLIMITED="unlimited"
-readonly DREPORT_INCLUDE="$DREPORT_SOURCE/include.d"
 readonly INVENTORY_MANAGER='xyz.openbmc_project.Inventory.Manager'
 readonly INVENTORY_PATH='/xyz/openbmc_project/inventory/system'
 readonly INVENTORY_ASSET_INT='xyz.openbmc_project.Inventory.Decorator.Asset'
