@@ -1,8 +1,10 @@
+#include "watchdog_dbus.hpp"
+
+#include "watchdog_logging.hpp"
+
 #include <unistd.h>
 
 #include <phosphor-logging/lg2.hpp>
-#include <watchdog_dbus.hpp>
-#include <watchdog_logging.hpp>
 
 #include <string>
 #include <vector>

@@ -1,9 +1,11 @@
+#include "watchdog_handler.hpp"
+
+#include "watchdog_dbus.hpp"
+#include "watchdog_logging.hpp"
+
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/bus/match.hpp>
-#include <watchdog_dbus.hpp>
-#include <watchdog_handler.hpp>
-#include <watchdog_logging.hpp>
 
 namespace watchdog
 {

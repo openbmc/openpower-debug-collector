@@ -1,7 +1,9 @@
+#include "watchdog_common.hpp"
+
+#include "watchdog_logging.hpp"
+
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/bus.hpp>
-#include <watchdog_common.hpp>
-#include <watchdog_logging.hpp>
 
 #include <map>
 

@@ -1,10 +1,12 @@
+#include "watchdog_logging.hpp"
+
+#include "watchdog_common.hpp"
+#include "watchdog_dbus.hpp"
+#include "watchdog_handler.hpp"
+
 #include <unistd.h>
 
 #include <phosphor-logging/log.hpp>
-#include <watchdog_common.hpp>
-#include <watchdog_dbus.hpp>
-#include <watchdog_handler.hpp>
-#include <watchdog_logging.hpp>
 
 namespace watchdog
 {
