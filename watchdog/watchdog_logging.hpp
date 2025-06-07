@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef> // for size_t
+#include <cstdint>
 #include <map>
 #include <string>
 #include <vector>
