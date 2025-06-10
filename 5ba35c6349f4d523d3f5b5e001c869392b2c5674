@@ -1,0 +1,7 @@
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+2: Matt Spinler <spinler@us.ibm.com>
+Submitted-by: Jayanth Othayoth <ojayanth@gmail.com>
+Submitted-at: Tue, 10 Jun 2025 09:36:07 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/80909
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
