@@ -3,7 +3,7 @@
 systemd_dep = dependency('systemd', required: true)
 
 systemd_system_unit_dir = systemd_dep.get_variable(
-    pkgconfig: 'systemdsystemunitdir',
+    pkgconfig: 'systemd_system_unit_dir',
 )
 dist_conf_data = configuration_data()
 dist_conf_data.set('bindir', get_option('prefix') / get_option('bindir'))
