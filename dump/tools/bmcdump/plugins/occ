@@ -7,6 +7,10 @@
 # shellcheck disable=SC1091
 . "$DREPORT_INCLUDE"/functions
 
+if [ ! -e "/usr/bin/openpower-occ-control" ]; then
+    exit 0
+fi
+
 #fetch occ control data
 file_name="occ.log"
 
@@ -37,7 +41,26 @@ command="busctl call --verbose --no-pager \
                 GetManagedObjects"
 add_cmd_output "$command" "$file_name" "$desc"
 
+#save occ-control persisted data
 occ_dir="/var/lib/openpower-occ-control"
 if [ -d "$occ_dir" ]; then
     add_copy_file "$occ_dir" "$desc"
 fi
+
+#collect occ-control data
+file_name="/tmp/occ_control_dump.json"
+rm -f $file_name
+killall -s SIGUSR1 openpower-occ-control
+#wait up to 5 seconds for file to be created
+seconds=0
+while [ ! -e "$file_name" ]; do
+    seconds=$(( seconds + 1 ))
+    if [ $seconds -eq 5 ]; then
+        echo "Timed out waiting for occ-control data dump"
+        exit 0
+    fi
+    sleep 1
+done
+desc="occ-control data dump"
+add_copy_file "$file_name" "$desc"
+rm -rf "$file_name"
