@@ -45,6 +45,19 @@ class SbeDumpCollector
     ~SbeDumpCollector() = default;
 
     /**
+     * @brief Commences the SBE dump collection process.
+     *
+     * @param type The type of dump which needs to be collected.
+     * @param id ID of the collected dump. 
+     * @param failingUnit ID of the failing unit from which the dump is
+     * collected.
+     * @param path Path where the collected dump will be stored.
+     */
+    void collectDump(uint8_t type, uint32_t id, uint32_t failingUnit,
+                     const std::filesystem::path& path);
+
+  private:
+    /**
      * @brief Orchestrates the collection of dumps from all available SBEs.
      *
      * Initiates the process of collecting diagnostic dumps from SBEs. This
@@ -57,10 +70,23 @@ class SbeDumpCollector
      * collection.
      * @param path The filesystem path where collected dumps should be stored.
      */
-    void collectDump(uint8_t type, uint32_t id, uint64_t failingUnit,
+    void collectHWHBDump(uint8_t type, uint32_t id, uint64_t failingUnit,
                      const std::filesystem::path& path);
+    
+    /**
+     * @brief Execute HWPs to collect SBE dump.
+     * 
+     * @param[in] id Id of the dump.
+     * @param[in] failingUnit Id of proc containing failing SBE.
+     * @param[in] dumpPath Path to stored the dump files.
+     * @param[in] sbeTypeId ID for SBE type i.e.; Odyssey or normal memory chip
+     *                                             0xA-->Normal SBE type,
+     * 0xB-->Odyssey SBE type Exceptions: PDBG_INIT_FAIL for any pdbg init related
+     * failure.
+     */
+    void collectSBEDump(uint32_t id, uint32_t failingUnit,
+		    const std::filesystem::path& dumpPath, const int sbeTypeId);  
 
-  private:
     /**
      * @brief Collects a dump from a single SBE.
      *
@@ -230,6 +256,5 @@ class SbeDumpCollector
      */
     void addLogDataToDump(uint32_t logId, std::string src, std::string chipName,
                           uint64_t chipPos, const std::filesystem::path& path);
-};
-
+    };
 } // namespace openpower::dump::sbe_chipop
