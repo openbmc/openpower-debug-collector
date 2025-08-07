@@ -38,6 +38,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6cd84885_fbbf15ce",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1002518
+      },
+      "writtenOn": "2025-08-07T12:52:40Z",
+      "side": 1,
+      "message": "you can add return statement within if block and get rid of the else.",
+      "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e02688d6_55019a21",
         "filename": "dump/sbe_dump_collector.cpp",
         "patchSetId": 5
@@ -108,6 +125,30 @@
       "side": 1,
       "message": "Yes, consider a case where PROC SBE dump is happening and probeTarget for fsi fails in the try block. For PROC SBE dump, we need to call probeTarget for pib only. So, for the proper error handling(to reach till call finalizeCollection in catch block) without probeTarget for fsi throwing error in the catch block again, we need this if-else condition. I\u0027ve kept this check as probeTarget function doesn\u0027t have its own error handling.",
       "parentUuid": "4d7dcacd_3ed254fb",
+      "range": {
+        "startLine": 206,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 13
+      },
+      "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0af9f9f_00a23970",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1002518
+      },
+      "writtenOn": "2025-08-07T12:52:40Z",
+      "side": 1,
+      "message": "Isn\u0027t this cleaner? may be you can try this ...\n\nif(proc_ody \u0026\u0026 (sbetypeid \u003d\u003d PROC_SBE_DUMP || sbetypeid \u003d\u003d ODYSSEY_SBE_DUMP))\n{\n      std::string keystr \u003d (sbetypeid \u003d\u003d PROC_SBE_DUMP)? \"pib\" : \"fsi\";\n      pibFsiMap[keystr] \u003d probeTarget(proc_ody, keystr, sbeTypeId);\n}",
+      "parentUuid": "e1294700_f589343b",
       "range": {
         "startLine": 206,
         "startChar": 0,
