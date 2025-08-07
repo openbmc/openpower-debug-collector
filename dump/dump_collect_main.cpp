@@ -77,14 +77,7 @@ int main(int argc, char** argv)
 
     try
     {
-        if ((type == SBE_DUMP_TYPE_SBE) || (type == SBE_DUMP_TYPE_MSBE))
-        {
-            collectSBEDump(id, failingUnitId, pathStr, type);
-        }
-        else
-        {
-            dumpCollector.collectDump(type, id, failingUnitId, pathStr);
-        }
+        dumpCollector.collectDump(type, id, failingUnitId, pathStr);
     }
     catch (const std::exception& e)
     {

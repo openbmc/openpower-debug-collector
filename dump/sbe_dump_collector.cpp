@@ -24,6 +24,7 @@ extern "C"
 #include <filesystem>
 #include <format>
 #include <fstream>
+#include <map>
 #include <stdexcept>
 
 namespace openpower::dump::sbe_chipop
@@ -31,11 +32,24 @@ namespace openpower::dump::sbe_chipop
 
 using namespace phosphor::logging;
 using namespace openpower::dump::SBE;
+using namespace openpower::phal::dump;
 using Severity = sdbusplus::xyz::openbmc_project::Logging::server::Entry::Level;
 
 void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
-                                   uint64_t failingUnit,
+                                   uint32_t failingUnit,
                                    const std::filesystem::path& path)
+{
+    if ((type == SBE_DUMP_TYPE_SBE) || (type == SBE_DUMP_TYPE_MSBE))
+    {
+        collectSBEDump(id, failingUnit, path, type);
+        return;
+    }
+    collectHWHBDump(type, id, failingUnit, path);
+}
+
+void SbeDumpCollector::collectHWHBDump(uint8_t type, uint32_t id,
+                                       uint64_t failingUnit,
+                                       const std::filesystem::path& path)
 {
     lg2::error("Starting dump collection: type:{TYPE} id:{ID} "
                "failingUnit:{FAILINGUNIT}, path:{PATH}",
@@ -127,6 +141,78 @@ void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
         throw std::runtime_error("Failed to collect the dump");
     }
     lg2::info("Dump collection completed");
+}
+
+void SbeDumpCollector::collectSBEDump(uint32_t id, uint32_t failingUnit,
+                                      const std::filesystem::path& dumpPath,
+                                      const int sbeTypeId)
+{
+    lg2::info("Collecting SBE dump: path={PATH}, id={ID}, "
+              "chip position={FAILINGUNIT}",
+              "PATH", dumpPath.string().c_str(), "ID", id, "FAILINGUNIT",
+              failingUnit);
+
+    struct pdbg_target* proc_ody = nullptr;
+    struct pdbg_target* pibFsiTarget = nullptr;
+    std::string sbeChipType;
+
+    try
+    {
+        // Execute pre-collection steps and get the proc target
+        initializePdbgLibEkb();
+
+        proc_ody = getTargetFromFailingId(failingUnit, sbeTypeId);
+        if (PROC_SBE_DUMP == sbeTypeId)
+        {
+            pibFsiTarget = probeTarget(proc_ody, "pib", sbeTypeId);
+            sbeChipType = "_p10_";
+        }
+        else
+        {
+            pibFsiTarget = probeTarget(proc_ody, "fsi", sbeTypeId);
+            sbeChipType = "_ody_";
+        }
+    }
+    catch (const std::exception& e)
+    {
+        lg2::error("Failed to collect the SBE dump: {ERROR}", "ERROR",
+                   e.what());
+        throw;
+    }
+
+    std::stringstream ss;
+    ss << std::setw(8) << std::setfill('0') << id;
+
+    std::string baseFilename = ss.str() + ".0_" + std::to_string(failingUnit) +
+                               "_SbeData" + sbeChipType;
+
+    try
+    {
+        checkSbeState(pibFsiTarget, sbeTypeId);
+
+        executeSbeExtractRc(proc_ody, dumpPath, sbeTypeId);
+
+        // Collect various dumps
+        collectLocalRegDump(proc_ody, dumpPath, baseFilename, sbeTypeId);
+        collectPIBMSRegDump(proc_ody, dumpPath, baseFilename, sbeTypeId);
+        collectPIBMEMDump(proc_ody, dumpPath, baseFilename, sbeTypeId);
+        collectPPEState(proc_ody, dumpPath, baseFilename, sbeTypeId);
+
+        // Finalize the collection process and indicate successful completion
+        finalizeCollection(pibFsiTarget, dumpPath, true, sbeTypeId);
+
+        lg2::info("SBE dump collection completed successfully");
+    }
+    catch (const std::exception& e)
+    {
+        lg2::error("Failed to collect the SBE dump: {ERROR}", "ERROR",
+                   e.what());
+        // In case of any exception, attempt to finalize with a failure
+        // state
+        if (proc_ody)
+            finalizeCollection(pibFsiTarget, dumpPath, false, sbeTypeId);
+        throw;
+    }
 }
 
 void SbeDumpCollector::initializePdbg()
