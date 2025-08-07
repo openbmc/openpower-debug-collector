@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "831de4d0_d11f4161",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1002015
+      },
+      "writtenOn": "2025-08-07T12:17:45Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "c5d56365_7fe2fe9e",
+      "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e02688d6_55019a21",
         "filename": "dump/sbe_dump_collector.cpp",
         "patchSetId": 5
@@ -31,6 +49,24 @@
       "writtenOn": "2025-08-07T10:41:32Z",
       "side": 1,
       "message": "keep all lines under 80 char limit",
+      "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aca3160_fc4e7548",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1002015
+      },
+      "writtenOn": "2025-08-07T12:17:45Z",
+      "side": 1,
+      "message": "Sure",
+      "parentUuid": "e02688d6_55019a21",
       "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -60,6 +96,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e1294700_f589343b",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1002015
+      },
+      "writtenOn": "2025-08-07T12:17:45Z",
+      "side": 1,
+      "message": "Yes, consider a case where PROC SBE dump is happening and probeTarget for fsi fails in the try block. For PROC SBE dump, we need to call probeTarget for pib only. So, for the proper error handling(to reach till call finalizeCollection in catch block) without probeTarget for fsi throwing error in the catch block again, we need this if-else condition. I\u0027ve kept this check as probeTarget function doesn\u0027t have its own error handling.",
+      "parentUuid": "4d7dcacd_3ed254fb",
+      "range": {
+        "startLine": 206,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 13
+      },
+      "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ade5676e_18341231",
         "filename": "dump/sbe_dump_collector.hpp",
         "patchSetId": 5
@@ -71,6 +131,24 @@
       "writtenOn": "2025-08-07T10:41:32Z",
       "side": 1,
       "message": "This handle all types of dumps right? please update dox",
+      "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d273d895_57b6157b",
+        "filename": "dump/sbe_dump_collector.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1002015
+      },
+      "writtenOn": "2025-08-07T12:17:45Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "ade5676e_18341231",
       "revId": "febb6ac9827c5715859dd79e5cd0189cb7eaf76a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
