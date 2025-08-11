@@ -1,0 +1,9 @@
+Code-Review+2: Matt Spinler <spinler@us.ibm.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Submitted-by: <nabilmanjeri@gmail.com>
+Submitted-at: Mon, 11 Aug 2025 13:58:02 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/openpower-debug-collector/+/82617
+Comments-Total: 22
+Comments-Unresolved: 2
+Project: openbmc/openpower-debug-collector
+Branch: refs/heads/master
