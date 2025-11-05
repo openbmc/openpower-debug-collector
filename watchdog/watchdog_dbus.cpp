@@ -39,8 +39,8 @@ int dbusMethod(const std::string& path, const std::string& interface,
         auto reply = bus.call(newMethod);
 
         // dbus call results
-        std::map<std::string, std::vector<std::string>> responseFindService;
-        reply.read(responseFindService);
+        auto responseFindService =
+            reply.unpack<std::map<std::string, std::vector<std::string>>>();
 
         // If we successfully found the service associated with the dbus object
         // path and interface then create a method for the specified interface
@@ -145,9 +145,8 @@ bool isHostStateRunning()
             method.append(interface, "CurrentHostState");
             auto bus = sdbusplus::bus::new_system();
             auto response = bus.call(method);
-            std::variant<std::string> reply;
+            auto reply = response.unpack<std::variant<std::string>>();
 
-            response.read(reply);
             std::string currentHostState(std::get<std::string>(reply));
 
             if (currentHostState ==
