@@ -28,10 +28,10 @@ echo "$output" | awk -v interface="$INTERFACE" '
     print path;
   }
 ' | while read -r path; do
-    if [ -z "${seen_paths[$path]}" ]; then
-        echo "Deleting: $path"
-        busctl call xyz.openbmc_project.Dump.Manager "${path}" \
-            xyz.openbmc_project.Object.Delete Delete
-        seen_paths["$path"]=1
-    fi
+if [ -z "${seen_paths[$path]}" ]; then
+    echo "Deleting: $path"
+    busctl call xyz.openbmc_project.Dump.Manager "${path}" \
+        xyz.openbmc_project.Object.Delete Delete
+    seen_paths["$path"]=1
+fi
 done
