@@ -87,8 +87,7 @@ void requestSBEDump(const uint32_t failingUnit, const uint32_t eid,
                  uint64_t(failingUnit)}};
 
         method.append(createParams);
-        sdbusplus::message::object_path reply;
-        bus.call(method).read(reply);
+        auto reply = bus.call(method).unpack<sdbusplus::message::object_path>();
 
         monitorDumpCreation(reply.str, SBE_DUMP_TIMEOUT);
     }
@@ -131,8 +130,9 @@ std::string getService(sdbusplus::bus_t& bus, const std::string& intf,
         mapper.append(path, std::vector<std::string>({intf}));
 
         auto mapperResponseMsg = bus.call(mapper);
-        std::map<std::string, std::vector<std::string>> mapperResponse;
-        mapperResponseMsg.read(mapperResponse);
+        auto mapperResponse =
+            mapperResponseMsg
+                .unpack<std::map<std::string, std::vector<std::string>>>();
 
         if (mapperResponse.empty())
         {

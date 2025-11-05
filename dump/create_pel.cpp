@@ -179,8 +179,8 @@ std::tuple<uint32_t, std::string> getLogInfo(uint32_t logId)
         method.append(opEntryInterface);
         method.append("PlatformLogID");
         auto response = bus.call(method);
-        std::variant<uint32_t, std::string> v;
-        response.read(v);
+        auto v = response.unpack<std::variant<uint32_t, std::string>>();
+
         pelId = std::get<uint32_t>(v);
         method =
             bus.new_method_call(service.c_str(), loggingEntryObjectPath.c_str(),
