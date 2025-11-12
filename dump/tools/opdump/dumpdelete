@@ -18,20 +18,22 @@ output=$(busctl --verbose call xyz.openbmc_project.Dump.Manager \
 # Parse the output and print object paths containing the specified interface
 declare -A seen_paths
 
-echo "$output" | awk -v interface="$INTERFACE" '
+paths=$(echo "$output" | awk -v interface="$INTERFACE" '
   /OBJECT_PATH/ {
-    path = $2;
-    gsub(/;/, "", path);
-    gsub(/"/, "", path);
+    path = $2
+    gsub(/;/, "", path)
+    gsub(/"/, "", path)
   }
   $0 ~ interface {
-    print path;
+    print path
   }
-' | while read -r path; do
+')
+
+while read -r path; do
     if [ -z "${seen_paths[$path]}" ]; then
         echo "Deleting: $path"
         busctl call xyz.openbmc_project.Dump.Manager "${path}" \
             xyz.openbmc_project.Object.Delete Delete
         seen_paths["$path"]=1
     fi
-done
+done <<< "$paths"
