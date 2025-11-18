@@ -12,8 +12,11 @@ function fetch_serial_number() {
             /xyz/openbmc_project/inventory/system xyz.openbmc_project.Inventory.Decorator.Asset \
         SerialNumber | cut -d " " -f 2 | sed "s/^\(\"\)\(.*\)\1\$/\2/g")
 
-    if [ -z "$serialNo" ]; then
+    if [ [ -z "$serialNo" || ! $serialNo =~ ^[A-Za-z0-9]+$ ] ]; then
         serialNo="0000000"
+    else
+        # Pad to 7 characters with leading zeros
+        serialNo=$(printf "%07s" "$serialNo" | tr ' ' '0')
     fi
 }
 
