@@ -16,6 +16,24 @@
       "message": "minor comment: please use description of the issue in the first line which acts as summary. \"bmcdump: Fix fetch serial number function in shell script\" is an example, instead of using \"fix in first line\"",
       "revId": "f1db8b4d2144115062198c1c47da085641d7c642",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1c71798_b32b7dbf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2025-12-03T13:39:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3efe7f08_28c97ebb",
+      "revId": "f1db8b4d2144115062198c1c47da085641d7c642",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
