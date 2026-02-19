@@ -2,7 +2,9 @@
 
 #include "xyz/openbmc_project/Logging/Entry/server.hpp"
 
+#ifdef LEGACY_PHAL
 #include <phal_exception.H>
+#endif
 
 #include <nlohmann/json.hpp>
 #include <xyz/openbmc_project/Logging/Create/server.hpp>
