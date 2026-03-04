@@ -4,7 +4,11 @@
 #include "sbe_consts.hpp"
 
 #include <fcntl.h>
+
+#ifdef LEGACY_PHAL
 #include <libekb.H>
+#endif
+
 #include <unistd.h>
 
 #include <phosphor-logging/elog.hpp>

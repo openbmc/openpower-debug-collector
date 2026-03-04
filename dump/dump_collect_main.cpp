@@ -1,7 +1,9 @@
 #include "sbe_consts.hpp"
 #include "sbe_dump_collector.hpp"
 
+#ifdef LEGACY_PHAL
 #include <libphal.H>
+#endif
 
 #include <CLI/App.hpp>
 #include <CLI/Config.hpp>
