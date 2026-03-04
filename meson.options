@@ -15,3 +15,11 @@ option(
     value: 'disabled',
     description: 'Enables dump collection',
 )
+
+option(
+    'phal_backend',
+    type: 'combo',
+    choices: ['legacy', 'next', 'none'],
+    value: 'none',
+    description: 'Select PHAL backend',
+)

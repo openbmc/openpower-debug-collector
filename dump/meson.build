@@ -4,13 +4,15 @@ cxx = meson.get_compiler('cpp')
 
 sdeventplus_dep = dependency('sdeventplus')
 
-collect_deps = [
-    CLI11_dep,
-    phosphorlogging,
-    cxx.find_library('pdbg'),
-    cxx.find_library('libdt-api'),
-    cxx.find_library('phal'),
-]
+phal_backend = get_option('phal_backend')
+
+collect_deps = [CLI11_dep, phosphorlogging]
+
+if phal_backend == 'legacy'
+    collect_deps += cxx.find_library('pdbg')
+    collect_deps += cxx.find_library('libdt-api')
+    collect_deps += cxx.find_library('phal')
+endif
 
 monitor_deps = [sdbusplus_dep, phosphorlogging]
 

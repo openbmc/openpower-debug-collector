@@ -9,9 +9,11 @@ extern "C"
 #include "sbe_dump_collector.hpp"
 #include "sbe_type.hpp"
 
+#ifdef LEGACY_PHAL
 #include <ekb/hwpf/fapi2/include/target_types.H>
 #include <libphal.H>
 #include <phal_exception.H>
+#endif 
 
 #include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/lg2.hpp>

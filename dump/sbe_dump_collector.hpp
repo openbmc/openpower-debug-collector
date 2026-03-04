@@ -10,7 +10,9 @@ extern "C"
 #include "sbe_consts.hpp"
 #include "sbe_type.hpp"
 
+#ifdef LEGACY_PHAL
 #include <phal_exception.H>
+#endif
 
 #include <cstdint>
 #include <filesystem>
