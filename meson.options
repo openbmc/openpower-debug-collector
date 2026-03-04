@@ -19,7 +19,7 @@ option(
 option(
     'phal_backend',
     type: 'combo',
-    choices: ['legacy', 'next', 'none'],
-    value: 'none',
-    description: 'Select PHAL backend',
+    choices: ['legacy', 'next'],
+    value: 'legacy',
+    description: 'Select PHAL backend: legacy (old pdbg/ipl/libphal) or next (hostfw/phal)',
 )

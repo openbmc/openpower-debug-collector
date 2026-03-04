@@ -4,6 +4,8 @@
 #include "sbe_consts.hpp"
 
 #include <fcntl.h>
+
+#ifdef USE_PHAL_OLD
 #include <libekb.H>
 #include <unistd.h>
 
@@ -18,9 +20,11 @@
 #include <cstring>
 #include <format>
 #include <map>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <tuple>
+#include <unordered_map>
 #include <vector>
 
 namespace openpower::dump::pel
@@ -34,7 +38,8 @@ constexpr auto opLoggingInterface = "org.open_power.Logging.PEL";
 constexpr auto entryInterface = "xyz.openbmc_project.Logging.Entry";
 constexpr auto opEntryInterface = "org.open_power.Logging.PEL.Entry";
 
-uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
+#ifdef USE_PHAL_OLD
+uint32_t createSbeErrorPEL(const std::string& event, const phal::sbeError_t& sbeError,
                            const FFDCData& ffdcData, const Severity severity,
                            const std::optional<PELFFDCInfo>& pelFFDCInfoOpt)
 {
@@ -107,24 +112,35 @@ uint32_t createSbeErrorPEL(const std::string& event, const sbeError_t& sbeError,
 
     return plid;
 }
+#endif // USE_PHAL_OLD
 
 openpower::dump::pel::Severity convertSeverityToEnum(uint8_t severity)
 {
+    // FAPI2 severity constants (from fapi2/error_info_defs.H):
+    //   FAPI2_ERRL_SEV_RECOVERED    = 0x10
+    //   FAPI2_ERRL_SEV_PREDICTIVE   = 0x20
+    //   FAPI2_ERRL_SEV_UNRECOVERABLE = 0x40
+    // Use numeric values to avoid dependency on old PHAL headers
+    constexpr uint8_t FAPI2_ERRL_SEV_RECOVERED    = 0x10;
+    constexpr uint8_t FAPI2_ERRL_SEV_PREDICTIVE   = 0x20;
+    constexpr uint8_t FAPI2_ERRL_SEV_UNRECOVERABLE = 0x40;
+
     switch (severity)
     {
-        case openpower::phal::FAPI2_ERRL_SEV_RECOVERED:
+        case FAPI2_ERRL_SEV_RECOVERED:
             return openpower::dump::pel::Severity::Informational;
-        case openpower::phal::FAPI2_ERRL_SEV_PREDICTIVE:
+        case FAPI2_ERRL_SEV_PREDICTIVE:
             return openpower::dump::pel::Severity::Warning;
-        case openpower::phal::FAPI2_ERRL_SEV_UNRECOVERABLE:
+        case FAPI2_ERRL_SEV_UNRECOVERABLE:
             return openpower::dump::pel::Severity::Error;
         default:
             return openpower::dump::pel::Severity::Error;
     }
 }
 
+#ifdef USE_PHAL_OLD
 std::vector<uint32_t> processFFDCPackets(
-    const openpower::phal::sbeError_t& sbeError, const std::string& event,
+    const phal::sbeError_t& sbeError, const std::string& event,
     openpower::dump::pel::FFDCData& pelAdditionalData)
 {
     const auto& ffdcFileList = sbeError.getFfdcFileList();
@@ -161,6 +177,7 @@ std::vector<uint32_t> processFFDCPackets(
     }
     return logIdList;
 }
+#endif // USE_PHAL_OLD
 
 std::tuple<uint32_t, std::string> getLogInfo(uint32_t logId)
 {

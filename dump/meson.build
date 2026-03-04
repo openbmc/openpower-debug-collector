@@ -2,52 +2,47 @@
 
 cxx = meson.get_compiler('cpp')
 
-sdeventplus_dep = dependency('sdeventplus')
+# Use shared PHAL abstraction library
+# sdbusplus needed for dump_utils.cpp (D-Bus calls)
+collect_deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, phal_abstraction_dep]
+monitor_deps = [sdbusplus_dep, phosphorlogging]
 
+# source files
+
+collect_src = files(
+    'dump_collect_main.cpp',
+    'dump_utils.cpp',
+    'sbe_dump_collector.cpp',
+    'sbe_type.cpp',
+)
+
+# Only include create_pel for old PHAL backend
 phal_backend = get_option('phal_backend')
-
-collect_deps = [CLI11_dep, phosphorlogging]
-
 if phal_backend == 'legacy'
-    collect_deps += cxx.find_library('pdbg')
-    collect_deps += cxx.find_library('libdt-api')
-    collect_deps += cxx.find_library('phal')
-
-    monitor_deps = [sdbusplus_dep, phosphorlogging]
-
-    # source files
-
-    collect_src = files(
-        'create_pel.cpp',
-        'dump_collect_main.cpp',
-        'dump_utils.cpp',
-        'dump_utils.cpp',
-        'sbe_dump_collector.cpp',
-        'sbe_type.cpp',
-    )
-
-    monitor_src = files(
-        'dump_monitor.cpp',
-        'dump_monitor_main.cpp',
-        'dump_utils.cpp',
-    )
-
-    executable(
-        'dump-collect',
-        collect_src,
-        dependencies: collect_deps,
-        implicit_include_directories: true,
-        install: true,
-    )
-
-    executable(
-        'openpower-dump-monitor',
-        monitor_src,
-        dependencies: monitor_deps,
-        implicit_include_directories: true,
-        install: true,
-    )
+    collect_src += files('create_pel.cpp')
 endif
+
+monitor_src = files(
+    'dump_monitor.cpp',
+    'dump_monitor_main.cpp',
+    'dump_utils.cpp',
+)
+
+executable(
+    'dump-collect',
+    collect_src,
+    dependencies: collect_deps,
+    implicit_include_directories: true,
+    install: true,
+)
+
+executable(
+    'openpower-dump-monitor',
+    monitor_src,
+    dependencies: monitor_deps,
+    implicit_include_directories: true,
+    install: true,
+)
 
 bindir = get_option('bindir')
 dreport_include_dir = join_paths(get_option('datadir'), 'dreport.d/include.d')
@@ -67,7 +62,7 @@ if scripts_to_install.length() > 0
     )
 endif
 
-# Install collected include scripts if any
+# Install collected plugins if any
 if plugins_to_install.length() > 0
     install_data(
         plugins_to_install,
@@ -83,8 +78,4 @@ if include_scripts.length() > 0
         install_dir: dreport_include_dir,
         install_mode: 'rwxr-xr-x',
     )
-endif
-
-if phal_backend == 'legacy'
-    subdir('dist')
 endif
