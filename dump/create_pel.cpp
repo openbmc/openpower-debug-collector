@@ -4,7 +4,9 @@
 #include "sbe_consts.hpp"
 
 #include <fcntl.h>
+
 #include <libekb.H>
+
 #include <unistd.h>
 
 #include <phosphor-logging/elog.hpp>
