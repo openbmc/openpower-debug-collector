@@ -24,40 +24,32 @@ phosphorlogging = dependency(
 
 realpath_prog = find_program('realpath')
 
-phal_backend = get_option('phal_backend')
-
 conf_data = configuration_data()
 extra_deps = []
 watchdog_lib = []
 
+# Build PHAL abstraction library FIRST (shared by dump and watchdog)
+subdir('phal')
+
 if get_option('hostboot-dump-collection').allowed()
     conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
-    if phal_backend == 'legacy'
-        extra_deps += [
-            cxx.find_library('pdbg'),
-            cxx.find_library('libdt-api'),
-            cxx.find_library('phal'),
-        ]
-        add_project_arguments('-DLEGACY_PHAL', language: 'cpp')
-    endif
+    extra_deps += [phal_abstraction_dep]  # Use shared PHAL abstraction
     subdir('watchdog')
 else
     conf_data.set('WATCHDOG_DUMP_COLLECTION', false)
-    watchdog_lib += []
-    extra_deps += []
+    watchdog_lib = []
+    extra_deps = []
 endif
 
 configure_file(output: 'config.h', configuration: conf_data)
 
 if get_option('dump-collection').allowed()
-#todo: Support dump for phal-next 
-    if phal_backend != 'next'
-        subdir('dump')
-    endif
+    subdir('dump')
 endif
 
 deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, extra_deps]
 
+phal_backend = get_option('phal_backend')
 if phal_backend == 'legacy'
     executable(
         'watchdog_timeout',

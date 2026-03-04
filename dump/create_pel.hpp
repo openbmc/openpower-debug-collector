@@ -2,7 +2,7 @@
 
 #include "xyz/openbmc_project/Logging/Entry/server.hpp"
 
-#ifdef LEGACY_PHAL
+#ifdef USE_PHAL_OLD
 #include <phal_exception.H>
 #endif
 
@@ -23,7 +23,9 @@ using Severity = sdbusplus::xyz::openbmc_project::Logging::server::Entry::Level;
 
 using json = nlohmann::json;
 
-using namespace openpower::phal;
+#ifdef USE_PHAL_OLD
+namespace phal = openpower::phal;
+#endif
 
 using PELFFDCInfo = std::vector<std::tuple<
     sdbusplus::xyz::openbmc_project::Logging::server::Create::FFDCFormat,
@@ -38,10 +40,12 @@ using PELFFDCInfo = std::vector<std::tuple<
  * @param[in] severity - severity of the log
  * @return Platform log id
  */
+#ifdef USE_PHAL_OLD
 uint32_t createSbeErrorPEL(
-    const std::string& event, const sbeError_t& sbeError,
+    const std::string& event, const phal::sbeError_t& sbeError,
     const FFDCData& ffdcData, const Severity severity = Severity::Error,
     const std::optional<PELFFDCInfo>& pelFFDCInfoOpt = std::nullopt);
+#endif
 
 /**
  * @brief Convert a FAPI2 severity code to PEL severity.
@@ -60,9 +64,11 @@ openpower::dump::pel::Severity convertSeverityToEnum(uint8_t severity);
  *                                 included in the PEL.
  * @return logIdList - List of Errors created
  */
+#ifdef USE_PHAL_OLD
 std::vector<uint32_t> processFFDCPackets(
-    const openpower::phal::sbeError_t& sbeError, const std::string& event,
+    const phal::sbeError_t& sbeError, const std::string& event,
     openpower::dump::pel::FFDCData& pelAdditionalData);
+#endif
 
 /**
  * @brief Get PEL Id and Reason Code for a given logEntry

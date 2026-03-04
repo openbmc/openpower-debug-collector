@@ -1,4 +1,4 @@
-#ifdef LEGACY_PHAL
+#ifdef USE_PHAL_OLD
 #include <format>
 
 extern "C"
@@ -230,4 +230,4 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
 
 } // namespace dump
 } // namespace watchdog
-#endif
+#endif // USE_PHAL_OLD

@@ -1,4 +1,4 @@
-#ifdef LEGACY_PHAL
+#ifdef USE_PHAL_OLD
 #include <config.h>
 
 #include <CLI/CLI.hpp>
@@ -112,4 +112,4 @@ int main(int argc, char* argv[])
 
     return EXIT_SUCCESS;
 }
-#endif
+#endif // USE_PHAL_OLD
