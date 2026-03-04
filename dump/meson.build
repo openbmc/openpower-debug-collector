@@ -4,48 +4,50 @@ cxx = meson.get_compiler('cpp')
 
 sdeventplus_dep = dependency('sdeventplus')
 
-collect_deps = [
-    CLI11_dep,
-    phosphorlogging,
-    cxx.find_library('pdbg'),
-    cxx.find_library('libdt-api'),
-    cxx.find_library('phal'),
-]
+phal_backend = get_option('phal_backend')
 
-monitor_deps = [sdbusplus_dep, phosphorlogging]
+collect_deps = [CLI11_dep, phosphorlogging]
 
-# source files
+if phal_backend == 'legacy'
+    collect_deps += cxx.find_library('pdbg')
+    collect_deps += cxx.find_library('libdt-api')
+    collect_deps += cxx.find_library('phal')
 
-collect_src = files(
-    'create_pel.cpp',
-    'dump_collect_main.cpp',
-    'dump_utils.cpp',
-    'dump_utils.cpp',
-    'sbe_dump_collector.cpp',
-    'sbe_type.cpp',
-)
+    monitor_deps = [sdbusplus_dep, phosphorlogging]
 
-monitor_src = files(
-    'dump_monitor.cpp',
-    'dump_monitor_main.cpp',
-    'dump_utils.cpp',
-)
+    # source files
 
-executable(
-    'dump-collect',
-    collect_src,
-    dependencies: collect_deps,
-    implicit_include_directories: true,
-    install: true,
-)
+    collect_src = files(
+        'create_pel.cpp',
+        'dump_collect_main.cpp',
+        'dump_utils.cpp',
+        'dump_utils.cpp',
+        'sbe_dump_collector.cpp',
+        'sbe_type.cpp',
+    )
 
-executable(
-    'openpower-dump-monitor',
-    monitor_src,
-    dependencies: monitor_deps,
-    implicit_include_directories: true,
-    install: true,
-)
+    monitor_src = files(
+        'dump_monitor.cpp',
+        'dump_monitor_main.cpp',
+        'dump_utils.cpp',
+    )
+
+    executable(
+        'dump-collect',
+        collect_src,
+        dependencies: collect_deps,
+        implicit_include_directories: true,
+        install: true,
+    )
+
+    executable(
+        'openpower-dump-monitor',
+        monitor_src,
+        dependencies: monitor_deps,
+        implicit_include_directories: true,
+        install: true,
+    )
+endif
 
 bindir = get_option('bindir')
 dreport_include_dir = join_paths(get_option('datadir'), 'dreport.d/include.d')
@@ -83,5 +85,6 @@ if include_scripts.length() > 0
     )
 endif
 
-subdir('dist')
-
+if phal_backend == 'legacy'
+    subdir('dist')
+endif
