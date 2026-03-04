@@ -1,3 +1,4 @@
+#ifdef LEGACY_PHAL
 #include <config.h>
 
 #include <CLI/CLI.hpp>
@@ -111,3 +112,4 @@ int main(int argc, char* argv[])
 
     return EXIT_SUCCESS;
 }
+#endif
