@@ -24,19 +24,30 @@ phosphorlogging = dependency(
 
 realpath_prog = find_program('realpath')
 
+phal_backend = get_option('phal_backend')
+
 conf_data = configuration_data()
+extra_deps = []
+watchdog_lib = []
+
+if phal_backend == 'legacy'
+    add_project_arguments('-DLEGACY_PHAL', language: 'cpp')
+else
+    add_project_arguments('-DNEXT_PHAL', language: 'cpp')
+endif
+
 if get_option('hostboot-dump-collection').allowed()
     conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
-    extra_deps = [
-        cxx.find_library('pdbg'),
-        cxx.find_library('libdt-api'),
-        cxx.find_library('phal'),
-    ]
-    subdir('watchdog')
+    if phal_backend == 'legacy'
+        extra_deps += [
+            cxx.find_library('pdbg'),
+            cxx.find_library('libdt-api'),
+            cxx.find_library('phal'),
+        ]
+        subdir('watchdog')
+    endif
 else
     conf_data.set('WATCHDOG_DUMP_COLLECTION', false)
-    watchdog_lib = []
-    extra_deps = []
 endif
 
 configure_file(output: 'config.h', configuration: conf_data)
@@ -47,14 +58,16 @@ endif
 
 deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, extra_deps]
 
-executable(
-    'watchdog_timeout',
-    'watchdog_timeout.cpp',
-    dependencies: deps,
-    link_with: watchdog_lib,
-    implicit_include_directories: true,
-    install: true,
-)
+if phal_backend == 'legacy'
+    executable(
+        'watchdog_timeout',
+        'watchdog_timeout.cpp',
+        dependencies: deps,
+        link_with: watchdog_lib,
+        implicit_include_directories: true,
+        install: true,
+    )
+endif
 
 executable(
     'checkstop_app',
