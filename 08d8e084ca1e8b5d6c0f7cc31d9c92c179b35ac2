@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "027652e0_c917427a",
+        "filename": "meson.build",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000089
+      },
+      "writtenOn": "2026-03-09T08:38:49Z",
+      "side": 1,
+      "message": "don\u0027t we need these if backedn if phal-next?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 5
+      },
+      "revId": "08d8e084ca1e8b5d6c0f7cc31d9c92c179b35ac2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
