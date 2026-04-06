@@ -15,3 +15,11 @@ option(
     value: 'disabled',
     description: 'Enables dump collection',
 )
+
+option(
+    'phal_backend',
+    type: 'combo',
+    choices: ['none', 'legacy', 'next'],
+    value: 'legacy',
+    description: 'Select PHAL backend: legacy (old pdbg/ipl/libphal) or next (hostfw/phal)',
+)
