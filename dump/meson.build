@@ -2,28 +2,27 @@
 
 cxx = meson.get_compiler('cpp')
 
-sdeventplus_dep = dependency('sdeventplus')
-
-collect_deps = [
-    CLI11_dep,
-    phosphorlogging,
-    cxx.find_library('pdbg'),
-    cxx.find_library('libdt-api'),
-    cxx.find_library('phal'),
-]
-
+# Use shared PHAL abstraction library
+# sdbusplus needed for dump_utils.cpp (D-Bus calls)
+collect_deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, phal_abstraction_dep]
 monitor_deps = [sdbusplus_dep, phosphorlogging]
 
 # source files
 
 collect_src = files(
-    'create_pel.cpp',
     'dump_collect_main.cpp',
-    'dump_utils.cpp',
     'dump_utils.cpp',
     'sbe_dump_collector.cpp',
     'sbe_type.cpp',
 )
+
+phal_inc = include_directories('../phal')
+
+# Only include create_pel for old PHAL backend
+phal_backend = get_option('phal_backend')
+if phal_backend == 'legacy'
+    collect_src += files('create_pel.cpp')
+endif
 
 monitor_src = files(
     'dump_monitor.cpp',
@@ -35,6 +34,7 @@ executable(
     'dump-collect',
     collect_src,
     dependencies: collect_deps,
+    include_directories: phal_inc,
     implicit_include_directories: true,
     install: true,
 )
@@ -65,7 +65,7 @@ if scripts_to_install.length() > 0
     )
 endif
 
-# Install collected include scripts if any
+# Install collected plugins if any
 if plugins_to_install.length() > 0
     install_data(
         plugins_to_install,
@@ -84,4 +84,3 @@ if include_scripts.length() > 0
 endif
 
 subdir('dist')
-
