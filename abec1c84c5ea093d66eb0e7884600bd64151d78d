@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b61a0bc5_805aca44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "internal product names need not be mentioned. P12 would be sufficient.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9a4b2ff_ca88a3a6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "please rename from *_old to *_legacy for consistency with meson options.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9d3c53e_b2dcc338",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "create_pel files are conditionally compiled only for legacy in meson,why is this compile flag required now ?",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dff0c40e_fad131de",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "please check if this header can be removed.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fc45f5b_bbc36666",
+        "filename": "phal/meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "is fallback necessary? how does this work?",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d9b54d3_26230b8d",
+        "filename": "phal/meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "sdbusplus repeating in if and else, please move it out to be common.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4384457e_ba79aed8",
+        "filename": "phal/targeting_iface.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "Kind \u0026 NodeKind are not intuitive. May be chipType or targetType could be used? Please check what other phal libraries are using and align to the convention to maintain consistency.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd26bfcf_bed884ff",
+        "filename": "phal/targeting_next.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "stray spaces, please take care",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50e9c3cc_27d33733",
+        "filename": "phal/targeting_old.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "please run clang.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "150cacc7_f92f68b3",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-04-08T11:03:00Z",
+      "side": 1,
+      "message": "why is this not removed, isnt this required for both phal next and legacy?",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
