@@ -62,7 +62,7 @@ void triggerSystemDump()
 
         bus.call_noreply(method); // start the service
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::internal_exception& e)
     {
         lg2::error("triggerMPIPLDump:: D-Bus call exception, errorMsg({ERROR})",
                    "ERROR", e.what());
