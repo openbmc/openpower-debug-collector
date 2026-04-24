@@ -16,6 +16,24 @@
       "message": "Shouldn\u0027t this have been sdbusplus::exception_t in the first place?",
       "revId": "7a08dc68d040e72714891de457ae81693b05d954",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b63964d2_a500ff98",
+        "filename": "watchdog/watchdog_main.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-04-24T22:26:23Z",
+      "side": 1,
+      "message": "Since the method call is a `call_noreply` I\u0027m not sure what exceptions can even come from this tbh.  Maybe something in `createPel`?\n\nI\u0027m going to make sure that sd-bus calls at least return something that can be mapped to internal_exception, so there will be no effective code change here.  If you would like me to replace it with `exception_t` I\u0027m willing to do that also but I\u0027m not sure what we would do to test it.",
+      "parentUuid": "e7257287_d04e43a2",
+      "revId": "7a08dc68d040e72714891de457ae81693b05d954",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
