@@ -19,7 +19,7 @@ option(
 option(
     'phal_backend',
     type: 'combo',
-    choices: ['legacy', 'next', 'none'],
+    choices: ['none', 'legacy', 'next'],
     value: 'none',
     description: 'Select PHAL backend',
 )
