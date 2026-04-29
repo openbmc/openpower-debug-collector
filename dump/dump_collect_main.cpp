@@ -1,8 +1,6 @@
 #include "sbe_consts.hpp"
 #include "sbe_dump_collector.hpp"
 
-#include <libphal.H>
-
 #include <CLI/App.hpp>
 #include <CLI/Config.hpp>
 #include <CLI/Formatter.hpp>
@@ -15,7 +13,6 @@ int main(int argc, char** argv)
     using namespace openpower::dump::sbe_chipop;
     using std::filesystem::path;
     using namespace openpower::dump::SBE;
-    using namespace openpower::phal::dump;
 
     CLI::App app{"Dump Collector Application", "dump-collect"};
     app.description(
