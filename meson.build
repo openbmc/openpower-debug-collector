@@ -34,22 +34,18 @@ conf_data = configuration_data()
 extra_deps = []
 watchdog_lib = []
 
-if phal_backend == 'legacy'
-    add_project_arguments('-DLEGACY_PHAL', language: 'cpp')
-else
-    add_project_arguments('-DNEXT_PHAL', language: 'cpp')
+# Build PHAL abstraction library FIRST (shared by dump and watchdog)
+# Only build if a backend is selected
+if phal_backend != 'none'
+    subdir('phal')
 endif
 
 if get_option('hostboot-dump-collection').allowed()
     conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
-    if phal_backend == 'legacy'
-        extra_deps += [
-            cxx.find_library('pdbg'),
-            cxx.find_library('libdt-api'),
-            cxx.find_library('phal'),
-        ]
-        subdir('watchdog')
+    if phal_backend != 'none'
+        extra_deps += [phal_abstraction_dep]        # Use PHAL abstraction
     endif
+    subdir('watchdog')
 else
     conf_data.set('WATCHDOG_DUMP_COLLECTION', false)
 endif
@@ -62,7 +58,9 @@ endif
 
 deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, extra_deps]
 
-if phal_backend == 'legacy'
+if get_option('hostboot-dump-collection').allowed() and get_option(
+    'phal_backend',
+) == 'legacy'
     executable(
         'watchdog_timeout',
         'watchdog_timeout.cpp',
