@@ -1,3 +1,4 @@
+#ifdef LEGACY_PHAL
 #include <format>
 extern "C"
 {
@@ -228,3 +229,4 @@ void handleSbeBootError(struct pdbg_target* procTarget, const uint32_t timeout)
 
 } // namespace dump
 } // namespace watchdog
+#endif // LEGACY_PHAL
