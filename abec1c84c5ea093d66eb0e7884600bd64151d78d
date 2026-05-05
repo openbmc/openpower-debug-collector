@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6923b02_03c8f922",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b61a0bc5_805aca44",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9a4b2ff_ca88a3a6",
@@ -35,6 +53,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30452e11_2a7b3277",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9a4b2ff_ca88a3a6",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9d3c53e_b2dcc338",
@@ -48,6 +84,24 @@
       "writtenOn": "2026-04-08T11:03:00Z",
       "side": 1,
       "message": "create_pel files are conditionally compiled only for legacy in meson,why is this compile flag required now ?",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e07b59b_ce00421a",
+        "filename": "dump/create_pel.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9d3c53e_b2dcc338",
       "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -83,6 +137,24 @@
       "side": 1,
       "message": "if we remove it will break 1110 right?",
       "parentUuid": "dff0c40e_fad131de",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0541d68_10de667c",
+        "filename": "dump/dump_collect_main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a698e8cc_f5ac1934",
       "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -127,6 +199,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "602fc86a_a6020e31",
+        "filename": "phal/meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fc45f5b_bbc36666",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7d9b54d3_26230b8d",
@@ -144,6 +234,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0317d2f9_f45f0ff3",
+        "filename": "phal/meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d9b54d3_26230b8d",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4384457e_ba79aed8",
@@ -157,6 +265,24 @@
       "writtenOn": "2026-04-08T11:03:00Z",
       "side": 1,
       "message": "Kind \u0026 NodeKind are not intuitive. May be chipType or targetType could be used? Please check what other phal libraries are using and align to the convention to maintain consistency.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59e4b204_b142b74a",
+        "filename": "phal/targeting_iface.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4384457e_ba79aed8",
       "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -208,6 +334,24 @@
       "writtenOn": "2026-04-13T04:39:30Z",
       "side": 1,
       "message": "clang-format",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "019b7623_85c17e76",
+        "filename": "phal/targeting_next.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd26bfcf_bed884ff",
       "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -276,6 +420,24 @@
       "writtenOn": "2026-04-08T11:03:00Z",
       "side": 1,
       "message": "please run clang.",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08e9944f_545d9e6e",
+        "filename": "phal/targeting_old.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:58:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50e9c3cc_27d33733",
       "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
