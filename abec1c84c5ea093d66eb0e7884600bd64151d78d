@@ -457,6 +457,24 @@
       "message": "why is this not removed, isnt this required for both phal next and legacy?",
       "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b628b16b_d9f7359b",
+        "filename": "watchdog_timeout.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-05T03:59:58Z",
+      "side": 1,
+      "message": "please check",
+      "parentUuid": "150cacc7_f92f68b3",
+      "revId": "abec1c84c5ea093d66eb0e7884600bd64151d78d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
