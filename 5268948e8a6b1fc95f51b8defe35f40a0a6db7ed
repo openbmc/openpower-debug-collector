@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "755093fb_72545d14",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T14:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "615675be_23166c20",
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e247e4b1_c2215e99",
@@ -31,6 +49,30 @@
       "writtenOn": "2026-05-06T04:57:41Z",
       "side": 1,
       "message": "old is redundant.",
+      "range": {
+        "startLine": 24,
+        "startChar": 47,
+        "endLine": 24,
+        "endChar": 50
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb4f6379_275fa20d",
+        "filename": "meson.options",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T14:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e247e4b1_c2215e99",
       "range": {
         "startLine": 24,
         "startChar": 47,
@@ -64,6 +106,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9664682_812b5844",
+        "filename": "phal/chipop_iface.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T14:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c67a8396_8cae5844",
+      "range": {
+        "startLine": 154,
+        "startChar": 3,
+        "endLine": 154,
+        "endChar": 6
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "002cd9bc_6b137c99",
@@ -87,6 +153,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb37dc3a_3287eafd",
+        "filename": "phal/error_iface.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T14:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "002cd9bc_6b137c99",
+      "range": {
+        "startLine": 16,
+        "startChar": 3,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d210d4eb_872197de",
@@ -100,6 +190,30 @@
       "writtenOn": "2026-05-06T04:57:41Z",
       "side": 1,
       "message": "legacy for old references in this file also",
+      "range": {
+        "startLine": 133,
+        "startChar": 3,
+        "endLine": 133,
+        "endChar": 6
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "335b605d_44fe5417",
+        "filename": "phal/targeting_iface.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T14:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d210d4eb_872197de",
       "range": {
         "startLine": 133,
         "startChar": 3,
