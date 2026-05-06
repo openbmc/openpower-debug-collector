@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "615675be_23166c20",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T04:57:41Z",
+      "side": 1,
+      "message": "Not needed to write file names in comments. also the filename is modified.",
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e247e4b1_c2215e99",
+        "filename": "meson.options",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T04:57:41Z",
+      "side": 1,
+      "message": "old is redundant.",
+      "range": {
+        "startLine": 24,
+        "startChar": 47,
+        "endLine": 24,
+        "endChar": 50
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c67a8396_8cae5844",
+        "filename": "phal/chipop_iface.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T04:57:41Z",
+      "side": 1,
+      "message": "please refer as legacy everywhere for consistency.",
+      "range": {
+        "startLine": 154,
+        "startChar": 3,
+        "endLine": 154,
+        "endChar": 6
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "002cd9bc_6b137c99",
+        "filename": "phal/error_iface.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T04:57:41Z",
+      "side": 1,
+      "message": "legacy",
+      "range": {
+        "startLine": 16,
+        "startChar": 3,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d210d4eb_872197de",
+        "filename": "phal/targeting_iface.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001814
+      },
+      "writtenOn": "2026-05-06T04:57:41Z",
+      "side": 1,
+      "message": "legacy for old references in this file also",
+      "range": {
+        "startLine": 133,
+        "startChar": 3,
+        "endLine": 133,
+        "endChar": 6
+      },
+      "revId": "5268948e8a6b1fc95f51b8defe35f40a0a6db7ed",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
