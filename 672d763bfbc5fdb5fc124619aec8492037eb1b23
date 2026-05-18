@@ -16,6 +16,74 @@
       "message": "I got you on the CCLA and Gerrit list. Always best if you Gerrit Name (Shwetha B) matches your CCLA /signed-off name (Shwetha Bhat). \nThanks!",
       "revId": "672d763bfbc5fdb5fc124619aec8492037eb1b23",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58a59bfb_2cca7352",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2026-05-18T04:45:14Z",
+      "side": 1,
+      "message": "Please add test results with older systems\n- SBE dump\n- MSBE dump\n- HB dump\n- HW dump",
+      "revId": "672d763bfbc5fdb5fc124619aec8492037eb1b23",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f07b6f36_c784d0e2",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2026-05-18T04:45:14Z",
+      "side": 1,
+      "message": "can we put all these into abstraction layer?",
+      "revId": "672d763bfbc5fdb5fc124619aec8492037eb1b23",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8356af13_2833a1d0",
+        "filename": "dump/sbe_dump_collector.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2026-05-18T04:45:14Z",
+      "side": 1,
+      "message": "missing catch?",
+      "revId": "672d763bfbc5fdb5fc124619aec8492037eb1b23",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d293a623_895d382b",
+        "filename": "phal/error_next.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000084
+      },
+      "writtenOn": "2026-05-18T04:45:14Z",
+      "side": 1,
+      "message": "stub this file, this is not implemented for \u0027next\u0027 right?",
+      "revId": "672d763bfbc5fdb5fc124619aec8492037eb1b23",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
