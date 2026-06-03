@@ -536,11 +536,19 @@ function mainstore_dump_section() {
 #creator BMC             1
 #reservedForCreator      169
 function plat_dump_header() {
+    local generation
+    generation=$(get_generation)
+
     printf "SYS DUMP" >> "$FILE"
     dump_time
     get_dump_id "$OP_DUMP"   #Dump identifier
     printf '\x02' >> "$FILE"
-    printf '\x21' >> "$FILE" #Need to cross check
+    # Dynamic version: 0x21 for p10, 0x22 for p12 (default)
+    if [ "$generation" = "p10" ]; then
+        printf '\x21' >> "$FILE"
+    else
+        printf '\x22' >> "$FILE"
+    fi
     printf '\x04' >> "$FILE" #Dump header size 0x0400
     add_null 1
     total_size
