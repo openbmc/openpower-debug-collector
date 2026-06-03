@@ -5,6 +5,22 @@ declare -rx TYPE_FAULTDATA="faultdata"
 declare -x ORIGINATOR_TYPE=""
 declare -x ORIGINATOR_ID=""
 
+# Function to determine generation based on firmware version
+function get_generation() {
+    local fw_version
+    fw_version=$(awk -F '[=()]' '/VERSION_ID/ {print $2}' /etc/os-release)
+
+    # Check for P10 patterns (fw10xx, fw11xx, v10, v11)
+    # If not P10, default to P12 (newer generation)
+    if [[ "$fw_version" =~ fw10[0-9]{2} ]] || [[ "$fw_version" =~ fw11[0-9]{2} ]] || \
+        [[ "$fw_version" =~ v10 ]] || [[ "$fw_version" =~ v11 ]]; then
+        echo "p10"
+    else
+        # Default to p12 for newer systems or unrecognized formats
+        echo "p12"
+    fi
+}
+
 # @brief fetch serial number
 # @param serial number
 function fetch_serial_number() {
