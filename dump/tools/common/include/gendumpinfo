@@ -13,6 +13,9 @@ declare -x ADDL_DATA_PATH=""
 declare -x START_TIME=0
 declare -x END_TIME=0
 
+# Source common functions
+. "$DREPORT_INCLUDE/opfunctions"
+
 # Initialize variables
 function initialize_variables() {
     DRIVER=$(awk -F '[=()]' '/VERSION_ID/ {print $2}' /etc/os-release)
@@ -56,11 +59,13 @@ function get_addl_data() {
 
 # Function to write data to info.yaml file
 function write_to_info_file() {
+    local generation
+    generation=$(get_generation)
     {
         printf "%s\n" "# SPDX-License-Identifier: GPL-2.0"
         printf "%s\n" "%YAML 1.2"
         printf "%s\n\n" "---"
-        printf "generation: p10\n"
+        printf "generation: %s\n" "$generation"
         printf "driver: %s\n" "$DRIVER"
     } >> "$YAML_FILE"
     dump_time_details
