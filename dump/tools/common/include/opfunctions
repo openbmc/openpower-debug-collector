@@ -4,6 +4,23 @@ declare -rx TYPE_FAULTDATA="faultdata"
 #Dump originator variables
 declare -x ORIGINATOR_TYPE=""
 declare -x ORIGINATOR_ID=""
+declare -r PHAL_BACKEND="@PHAL_BACKEND@"
+
+# Function to determine the dump format generation selected for this image
+function get_generation() {
+    case "$PHAL_BACKEND" in
+        legacy)
+            printf '%s\n' 'p10'
+            ;;
+        next)
+            printf '%s\n' 'p12'
+            ;;
+        *)
+            echo "Unsupported PHAL backend: $PHAL_BACKEND" >&2
+            return 1
+            ;;
+    esac
+}
 
 # @brief fetch serial number
 # @param serial number
