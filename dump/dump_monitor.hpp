@@ -37,9 +37,9 @@ class DumpMonitor
     DumpMonitor() :
         bus(sdbusplus::bus::new_default()),
         match(bus,
-              sdbusplus::bus::match::rules::interfacesAdded(
+              sdbusplus::match_rules::interfacesAdded(
                   "/xyz/openbmc_project/dump") +
-                  sdbusplus::bus::match::rules::sender(
+                  sdbusplus::match_rules::sender(
                       "xyz.openbmc_project.Dump.Manager"),
               [this](sdbusplus::message_t& msg) { handleDBusSignal(msg); })
     {}
@@ -62,7 +62,7 @@ class DumpMonitor
         "com.ibm.Dump.Entry.SBE", "xyz.openbmc_project.Dump.Entry.System"};
 
     /* @brief InterfaceAdded match */
-    sdbusplus::bus::match_t match;
+    sdbusplus::match match;
 
     /**
      * @brief Handles the received DBus signal for dump creation.

@@ -77,11 +77,11 @@ void monitorDump(const std::string& path, const uint32_t timeout)
     std::string matchInterface = "xyz.openbmc_project.Common.Progress";
     auto bus = sdbusplus::bus::new_system();
 
-    std::unique_ptr<sdbusplus::bus::match_t> match =
-        std::make_unique<sdbusplus::bus::match_t>(
+    std::unique_ptr<sdbusplus::match> match =
+        std::make_unique<sdbusplus::match>(
             bus,
-            sdbusplus::bus::match::rules::propertiesChanged(
-                path.c_str(), matchInterface.c_str()),
+            sdbusplus::match_rules::propertiesChanged(path.c_str(),
+                                                      matchInterface.c_str()),
             [&](auto& msg) {
                 return dumpStatusChanged(msg, path, progressStatus);
             });
