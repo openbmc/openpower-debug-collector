@@ -18,7 +18,7 @@ static void monitorDumpCreation(const std::string& path, const uint32_t timeout)
 {
     bool inProgress = true;
     auto bus = sdbusplus::bus::new_system();
-    auto match = sdbusplus::bus::match_t(
+    auto match = sdbusplus::match(
         bus,
         sdbusplus::bus::match::rules::propertiesChanged(
             path, "xyz.openbmc_project.Common.Progress"),
