@@ -56,6 +56,40 @@ void DumpMonitor::executeCollectionScript(const sdbusplus::object_path& path,
         args.push_back(std::to_string(failingUnitId));
     }
 
+    // For SBE BootFailure dumps
+    auto sbeTriggerTypeIt = properties.find("SBEDumpTriggerType");
+    if (sbeTriggerTypeIt != properties.end())
+    {
+        const auto* triggerType =
+            std::get_if<std::string>(&sbeTriggerTypeIt->second);
+        if (triggerType == nullptr)
+        {
+            lg2::error("SBEDumpTriggerType has an invalid D-Bus type");
+            updateProgressStatus(path, dumpStatusFailed);
+            return;
+        }
+        args.push_back("-b");
+        args.push_back(*triggerType);
+    }
+
+    auto dumpFilesPathIt = properties.find("DumpFilesPath");
+    if (dumpFilesPathIt != properties.end())
+    {
+        const auto* filesPath =
+            std::get_if<std::string>(&dumpFilesPathIt->second);
+        if (filesPath == nullptr)
+        {
+            lg2::error("DumpFilesPath has an invalid D-Bus type");
+            updateProgressStatus(path, dumpStatusFailed);
+            return;
+        }
+        if (!filesPath->empty())
+        {
+            args.push_back("-p");
+            args.push_back(*filesPath);
+        }
+    }
+
     std::vector<char*> argv;
     for (auto& arg : args)
     {
