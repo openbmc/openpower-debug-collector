@@ -30,6 +30,15 @@ Options:
                               3  -  Performance dump
                               5  -  Hostboot dump
                               10 -  SBE Dump
+        -p, --precollected_dump_path <path>
+                              Path to pre-collected dump files.
+                              Used for boot-failure SBE dumps where
+                              pre-collected dump files exist.
+                              Optional parameter.
+        -b, --sbe-dump-subtype <type>
+                              SBE dump subtype (BootFailure, Timeout, Downstream).
+                              Determines collection method for SBE dumps.
+                              Optional parameter.
         -h, --help            Display this help and exit.
 EOF
 )
@@ -72,6 +81,8 @@ declare -x dDay
 dDay=$(date -d @"$EPOCHTIME" +'%Y%m%d%H%M%S')
 declare -x dump_content_type=""
 declare -x FILE=""
+declare -x boot_failure_path=""
+declare -x sbe_subtype=""
 
 #Source opdreport common functions
 . $DREPORT_INCLUDE/opfunctions
@@ -101,8 +112,48 @@ function initialize() {
         dump_size=$UNLIMITED
     fi
 
+    if [ "$sbe_subtype" = "BootFailure" ]; then
+        if [ -z "$boot_failure_path" ]; then
+            echo "Error: BootFailure requires pre-collected dump files."
+            return "$RESOURCE_UNAVAILABLE"
+        fi
+    elif [ -n "$boot_failure_path" ]; then
+        echo "Error: A pre-collected path is valid only for BootFailure."
+        return "$RESOURCE_UNAVAILABLE"
+    fi
+
     get_originator_details "system"
 
+    return "$SUCCESS"
+}
+
+# @brief Collect boot-failure dump from pre-collected files
+function collect_bootfail_dump() {
+    local dump_outpath="$1"
+    local source_path
+
+    if [[ "$boot_failure_path" != /* ]]; then
+        echo "Error: Pre-collected dump path must be absolute."
+        return "$INTERNAL_FAILURE"
+    fi
+
+    if ! source_path=$(realpath -e -- "$boot_failure_path"); then
+        echo "Error: Boot-failure path does not exist: $boot_failure_path"
+        return "$INTERNAL_FAILURE"
+    fi
+
+    if [ ! -d "$source_path" ] || [ "$source_path" = "/" ]; then
+        echo "Error: Invalid pre-collected dump path: $source_path"
+        return "$INTERNAL_FAILURE"
+    fi
+
+    echo "Packaging boot-failure dump from $source_path"
+    if ! cp -a -- "$source_path"/. "$dump_outpath"/; then
+        echo "Error: Failed to copy files from $source_path"
+        return "$INTERNAL_FAILURE"
+    fi
+
+    echo "Successfully copied boot-failure dump files"
     return "$SUCCESS"
 }
 
@@ -115,8 +166,14 @@ function collect() {
         return "$INTERNAL_FAILURE"
     fi
 
-    dump-collect --type "$dump_sbe_type" --id "0x$dump_id" \
-        --failingunit "$failing_unit" --path "$dump_outpath"
+    # Check if this is a boot-failure dump (pre-collected files)
+    if [ "$sbe_subtype" = "BootFailure" ]; then
+        collect_bootfail_dump "$dump_outpath"
+    else
+        # Other cases
+        dump-collect --type "$dump_sbe_type" --id "0x$dump_id" \
+            --failingunit "$failing_unit" --path "$dump_outpath"
+    fi
 }
 
 # @brief Package the dump and transfer to dump location
@@ -133,9 +190,18 @@ function package() {
     "$FILE_SCRIPT"
     elog_id=$eid
 
-    if ! tar -cvzf "$name" plat_dump/*Sbe* info.yaml; then
-        echo "$($TIME_STAMP)" "Could not create the compressed tar file"
-        return "$INTERNAL_FAILURE"
+    # For boot-failure dumps, include all files
+    if [ "$sbe_subtype" = "BootFailure" ]; then
+        if ! tar -czf "$name" plat_dump info.yaml; then
+            echo "$($TIME_STAMP)" "Could not create the compressed tar file"
+            return "$INTERNAL_FAILURE"
+        fi
+    else
+        # Other SBE dump: use *Sbe* pattern
+        if ! tar -cvzf "$name" plat_dump/*Sbe* info.yaml; then
+            echo "$($TIME_STAMP)" "Could not create the compressed tar file"
+            return "$INTERNAL_FAILURE"
+        fi
     fi
 
     size_dump=$(stat -c %s "$name")
@@ -211,8 +277,8 @@ function main() {
     return "$SUCCESS"
 }
 
-if ! TEMP=$(getopt -o n:d:i:s:t:e:f:h \
-        --long name:,dir:,dumpid:,size:,type:,eid:,failingunit:,help \
+if ! TEMP=$(getopt -o n:d:i:s:t:e:f:p:b:h \
+        --long name:,dir:,dumpid:,size:,type:,eid:,failingunit:,precollected_dump_path:,sbe-dump-subtype:,help \
         -- "$@"); then
     echo "Error: Invalid options"
     exit 1
@@ -243,6 +309,14 @@ while [[ $# -gt 1 ]]; do
             shift 2 ;;
         -t|--type)
             dump_sbe_type=$2
+            shift 2 ;;
+        -p|--precollected_dump_path)
+            boot_failure_path=$2
+            shift 2 ;;
+        -b|--sbe-dump-subtype)
+            sbe_subtype=$2
+            # Strip enum prefix if present (e.g., "com.ibm.Dump.Create.SBEDumpTriggerType.BootFailure" -> "BootFailure")
+            sbe_subtype=${sbe_subtype##*.}
             shift 2 ;;
         -h|--help)
             echo "$help"
