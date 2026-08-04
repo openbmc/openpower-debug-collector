@@ -166,13 +166,18 @@ function collect() {
         return "$INTERNAL_FAILURE"
     fi
 
-    # Check if this is a boot-failure dump (pre-collected files)
+    # BootFailure files are already present; other triggers are collected now.
     if [ "$sbe_subtype" = "BootFailure" ]; then
         collect_bootfail_dump "$dump_outpath"
     else
-        # Other cases
-        dump-collect --type "$dump_sbe_type" --id "0x$dump_id" \
-            --failingunit "$failing_unit" --path "$dump_outpath"
+        if [ -n "$sbe_subtype" ]; then
+            dump-collect --type "$dump_sbe_type" --id "0x$dump_id" \
+                --failingunit "$failing_unit" --path "$dump_outpath" \
+                --trigger-type "$sbe_subtype"
+        else
+            dump-collect --type "$dump_sbe_type" --id "0x$dump_id" \
+                --failingunit "$failing_unit" --path "$dump_outpath"
+        fi
     fi
 }
 

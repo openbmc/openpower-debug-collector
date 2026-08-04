@@ -7,6 +7,7 @@
 
 #include <filesystem>
 #include <iostream>
+#include <optional>
 
 int main(int argc, char** argv)
 {
@@ -24,6 +25,7 @@ int main(int argc, char** argv)
     uint32_t id;
     std::string pathStr;
     std::optional<uint64_t> failingUnit;
+    std::optional<std::string> triggerType;
 
     app.add_option("--type, -t", type, "Type of the dump")
         ->required()
@@ -38,6 +40,9 @@ int main(int argc, char** argv)
         ->required();
 
     app.add_option("--failingunit, -f", failingUnit, "ID of the failing unit");
+
+    app.add_option("--trigger-type", triggerType,
+                   "SBE dump trigger type (Timeout for the phal-next backend)");
 
     try
     {
@@ -74,7 +79,8 @@ int main(int argc, char** argv)
 
     try
     {
-        dumpCollector.collectDump(type, id, failingUnitId, pathStr);
+        dumpCollector.collectDump(type, id, failingUnitId, pathStr,
+                                  triggerType);
     }
     catch (const std::exception& e)
     {

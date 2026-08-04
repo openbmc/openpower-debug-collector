@@ -46,6 +46,19 @@ TargetList getPrimaryTargets()
     return result;
 }
 
+TargetHandle findPrimaryTarget(uint32_t position)
+{
+    auto hubs = TARGETING::utils::getTargets(TARGETING::TYPE_HUB_CHIP);
+    for (auto hub : hubs)
+    {
+        if (TARGETING::utils::getFapiPos(hub) == position)
+        {
+            return hub;
+        }
+    }
+    return nullptr;
+}
+
 TargetList getAssociatedTargets(TargetHandle hub)
 {
     TargetList result;

@@ -164,6 +164,21 @@ DumpData getDump(targeting::TargetHandle chip, uint8_t dumpType,
     return DumpData::fromVector(std::move(dumpData));
 }
 
+void recoverSppeAndCollectDump(uint32_t id, uint32_t failingUnit,
+                               const std::filesystem::path& path)
+{
+    auto errors =
+        hostfw::dump::recoverSppeAndCollectDump(id, failingUnit, path);
+    if (errors)
+    {
+        const auto errorType = classify(*errors);
+        auto nativeError =
+            std::make_shared<errl::ErrlHandle>(std::move(*errors));
+        throw ChipOpError(errorType, "HostFW SPPE recovery failed",
+                          std::move(nativeError));
+    }
+}
+
 void threadStopProc(targeting::TargetHandle proc)
 {
     constexpr uint32_t allCores = 0x10290000;

@@ -20,6 +20,7 @@
 #include <future>
 #include <iomanip>
 #include <map>
+#include <optional>
 #include <span>
 #include <sstream>
 #include <stdexcept>
@@ -34,19 +35,27 @@ namespace phal_tgt = openpower::dump::phal::targeting;
 namespace phal_chipop = openpower::dump::phal::chipop;
 namespace phal_err = openpower::dump::phal::error;
 
-void SbeDumpCollector::collectDump(uint8_t type, uint32_t id,
-                                   uint32_t failingUnit,
-                                   const std::filesystem::path& path)
+void SbeDumpCollector::collectDump(
+    uint8_t type, uint32_t id, uint32_t failingUnit,
+    const std::filesystem::path& path,
+    [[maybe_unused]] const std::optional<std::string>& triggerType)
 {
     if ((type == SBE_DUMP_TYPE_SBE) || (type == SBE_DUMP_TYPE_MSBE))
     {
 #ifdef LEGACY_PHAL
-        // SBE dump collection uses legacy HWPs (libipl/libphal).
-        // Not yet implemented for the next backend.
         collectSBEDump(id, failingUnit, path, static_cast<int>(type));
 #else
-        throw std::runtime_error(
-            "P11 SBE dump collection requires the phal-next trigger flow");
+        if (type != SBE_DUMP_TYPE_SBE)
+        {
+            throw std::runtime_error(
+                "Memory-buffer SBE trigger collection is not supported");
+        }
+        if (!triggerType || *triggerType != "Timeout")
+        {
+            throw std::runtime_error(
+                "P11 SBE dump collection requires the Timeout trigger");
+        }
+        collectTimeoutSBEDump(id, failingUnit, path);
 #endif
         return;
     }
@@ -146,6 +155,45 @@ void SbeDumpCollector::collectHWHBDump(uint8_t type, uint32_t id,
     }
     lg2::info("Dump collection completed");
 }
+#ifdef NEXT_PHAL
+void SbeDumpCollector::collectTimeoutSBEDump(uint32_t id, uint32_t failingUnit,
+                                             const std::filesystem::path& path)
+{
+    initializePhalAbstraction();
+
+    auto target = phal_tgt::findPrimaryTarget(failingUnit);
+    if (target == nullptr)
+    {
+        throw std::runtime_error("No Hub target found for failing unit " +
+                                 std::to_string(failingUnit));
+    }
+
+    lg2::info("Recovering SPPE and collecting timeout dump: id={ID} "
+              "failingUnit={FAILINGUNIT} path={PATH}",
+              "ID", id, "FAILINGUNIT", failingUnit, "PATH", path.string());
+
+    try
+    {
+        phal_chipop::recoverSppeAndCollectDump(id, failingUnit, path);
+    }
+    catch (const phal_chipop::ChipOpError& error)
+    {
+        logErrorAndCreatePEL(error, target, SBETypes::PROC,
+                             SBEFIFO_CMD_CLASS_DUMP, SBEFIFO_CMD_GET_DUMP,
+                             path);
+        throw;
+    }
+
+    if (std::filesystem::is_empty(path))
+    {
+        throw std::runtime_error(
+            "HostFW SPPE recovery completed without dump data");
+    }
+
+    lg2::info("SPPE timeout dump collection completed for unit {UNIT}", "UNIT",
+              failingUnit);
+}
+#endif
 
 #ifdef LEGACY_PHAL
 void SbeDumpCollector::collectSBEDump(uint32_t id, uint32_t failingUnit,

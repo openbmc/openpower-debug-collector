@@ -161,6 +161,22 @@ struct ChipOpError : public std::exception
 DumpData getDump(targeting::TargetHandle chip, uint8_t dumpType,
                  uint8_t clockState, uint8_t collectFastArray);
 
+#ifdef NEXT_PHAL
+/**
+ * @brief Recover a timed-out SPPE and collect its dump
+ *
+ * The HostFW interface performs the recovery and writes the dump files to the
+ * caller-provided directory.
+ *
+ * @param id Dump entry ID
+ * @param failingUnit FAPI position of the failing Hub
+ * @param path Directory where HostFW writes the dump files
+ * @throws ChipOpError when HostFW reports one or more errors
+ */
+void recoverSppeAndCollectDump(uint32_t id, uint32_t failingUnit,
+                               const std::filesystem::path& path);
+#endif
+
 /**
  * @brief Stop threads on processor (prepare for hostboot dump)
  *

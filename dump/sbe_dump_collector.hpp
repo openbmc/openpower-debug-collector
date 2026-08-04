@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <future>
 #include <map>
+#include <optional>
 #include <span>
 #include <vector>
 
@@ -56,9 +57,12 @@ class SbeDumpCollector
      * @param failingUnit ID of the failing unit from which the dump is
      * collected.
      * @param path Path where the collected dump will be stored.
+     * @param triggerType Optional SBE trigger selected by opdreport.
      */
-    void collectDump(uint8_t type, uint32_t id, uint32_t failingUnit,
-                     const std::filesystem::path& path);
+    void collectDump(
+        uint8_t type, uint32_t id, uint32_t failingUnit,
+        const std::filesystem::path& path,
+        const std::optional<std::string>& triggerType = std::nullopt);
 
   private:
     /**
@@ -76,6 +80,20 @@ class SbeDumpCollector
      */
     void collectHWHBDump(uint8_t type, uint32_t id, uint64_t failingUnit,
                          const std::filesystem::path& path);
+
+#ifdef NEXT_PHAL
+    /**
+     * @brief Recover a timed-out SPPE and collect its dump
+     *
+     * @param id Dump entry ID
+     * @param failingUnit FAPI position of the failing Hub
+     * @param path Directory where the dump files are written
+     * @throws std::runtime_error when the target cannot be found
+     * @throws phal::chipop::ChipOpError when recovery fails
+     */
+    void collectTimeoutSBEDump(uint32_t id, uint32_t failingUnit,
+                               const std::filesystem::path& path);
+#endif
 
     /**
      * @brief Execute HWPs to collect SBE dump.

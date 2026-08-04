@@ -56,7 +56,8 @@ void DumpMonitor::executeCollectionScript(const sdbusplus::object_path& path,
         args.push_back(std::to_string(failingUnitId));
     }
 
-    // For SBE BootFailure dumps
+    // Forward SBE dump properties to opdreport.  The monitor intentionally
+    // does not interpret a trigger or select a collection implementation.
     auto sbeTriggerTypeIt = properties.find("SBEDumpTriggerType");
     if (sbeTriggerTypeIt != properties.end())
     {

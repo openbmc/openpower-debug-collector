@@ -68,6 +68,19 @@ void init();
  */
 TargetList getPrimaryTargets();
 
+#ifdef NEXT_PHAL
+/**
+ * @brief Find a Hub target by its failing-unit position
+ *
+ * Unlike getPrimaryTargets(), this lookup includes non-functional targets so
+ * an error can still be associated with the chip that requires recovery.
+ *
+ * @param position Chip position reported in the dump request
+ * @return Matching Hub target, or nullptr when not found
+ */
+TargetHandle findPrimaryTarget(uint32_t position);
+#endif
+
 /**
  * @brief Get functional chips collected after a primary target
  *
