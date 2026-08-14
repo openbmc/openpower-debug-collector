@@ -10,10 +10,10 @@ declare -rx HEADER_EXTENSION="$DREPORT_INCLUDE/gendumpheader"
 # and transferring to dump location.
 function custom_package()
 {
-    #fetch customized dump name and rename
+    # Populate the IBM name stored in the dump header. Keep name_dir unchanged
+    # so phosphor-debug-collector can identify the completed dump by its
+    # community filename.
     get_bmc_dump_filename
-    mv "$name_dir" "$TMP_DIR/$name"
-    name_dir="$TMP_DIR/$name"
 
     FILE="/tmp/dumpheader_${dump_id}_${EPOCHTIME}"
     echo "performing dump compression $name_dir"
@@ -39,7 +39,7 @@ function custom_package()
     cat "$name_dir.bin" | tee -a "$FILE" > /dev/null
     #remove the temporary name specific directory
     rm -rf "$name_dir" "$name_dir.bin"
-    mv $FILE "$name_dir"
+    mv "$FILE" "$name_dir.bin"
 
     echo "$($TIME_STAMP)" "Report is available in $dump_dir"
     if [ "$TMP_DIR" == "$dump_dir" ] || [ "$TMP_DIR/" == "$dump_dir" ]; then
@@ -47,15 +47,14 @@ function custom_package()
     fi
 
     #copy the compressed tar file into the destination
-    cp "$name_dir" "$dump_dir"
-    if [ $? -ne 0 ]; then
-        echo "Failed to copy the $name_dir to $dump_dir"
-        rm "$name_dir"
+    if ! cp "$name_dir.bin" "$dump_dir"; then
+        echo "Failed to copy the $name_dir.bin to $dump_dir"
+        rm "$name_dir.bin"
         return "$INTERNAL_FAILURE"
     fi
 
     #Remove the temporary copy of the file
-    rm -rf "$name_dir"
+    rm -rf "$name_dir.bin"
 }
 
 # Executing function
