@@ -27,6 +27,7 @@ if phal_backend == 'legacy'
     )
 
     monitor_src = files(
+        'dump_action_monitor.cpp',
         'dump_monitor.cpp',
         'dump_monitor_main.cpp',
         'dump_utils.cpp',
