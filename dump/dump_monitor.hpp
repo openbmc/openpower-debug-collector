@@ -1,5 +1,6 @@
 #pragma once
 
+#include "dump_action_monitor.hpp"
 #include "dump_utils.hpp"
 #include "sbe_consts.hpp"
 
@@ -9,6 +10,7 @@
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/bus/match.hpp>
+#include <sdeventplus/event.hpp>
 #include <xyz/openbmc_project/Common/Progress/common.hpp>
 #include <xyz/openbmc_project/Dump/Entry/System/common.hpp>
 
@@ -35,26 +37,35 @@ class DumpMonitor
      * creation.
      */
     DumpMonitor() :
-        bus(sdbusplus::bus::new_default()),
+        event(sdeventplus::Event::get_default()),
+        bus(sdbusplus::bus::new_default()), actionMonitor(bus, event),
         match(bus,
               sdbusplus::match_rules::interfacesAdded(
                   "/xyz/openbmc_project/dump") +
                   sdbusplus::match_rules::sender(
                       "xyz.openbmc_project.Dump.Manager"),
               [this](sdbusplus::message_t& msg) { handleDBusSignal(msg); })
-    {}
+    {
+        bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
+    }
 
     /**
      * @brief Runs the monitor to continuously listen for DBus signals.
      */
     void run()
     {
-        bus.process_loop();
+        event.loop();
     }
 
   private:
+    /* @brief Event loop shared by D-Bus and lifecycle timers. */
+    sdeventplus::Event event;
+
     /* @brief sdbusplus handler for a bus to use */
     sdbusplus::bus_t bus;
+
+    /* @brief Creates IBM PELs for dump lifecycle actions. */
+    DumpActionMonitor actionMonitor;
 
     /* @brief Monitores dump interfaces */
     const std::vector<std::string> monitoredInterfaces = {

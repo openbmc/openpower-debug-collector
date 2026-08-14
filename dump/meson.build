@@ -26,6 +26,7 @@ collect_src = files(
 )
 
 monitor_src = files(
+    'dump_action_monitor.cpp',
     'dump_monitor.cpp',
     'dump_monitor_main.cpp',
     'dump_utils.cpp',
@@ -84,4 +85,3 @@ if include_scripts.length() > 0
 endif
 
 subdir('dist')
-
