@@ -1,45 +1,78 @@
 #!/bin/bash
 
-#CONSTANTS
-declare -rx HEADER_EXTENSION="$DREPORT_INCLUDE/gendumpheader"
+# Source OpenPOWER functions used by the packaging override.
+# shellcheck source=dump/tools/common/include/opfunctions
+. "$DREPORT_INCLUDE/opfunctions"
 
-#Source opfunctions
-. $DREPORT_INCLUDE/opfunctions
+# Set by dreport before this extension is sourced.
+declare -x name_dir
 
-# @brief Packaging the dump, applying the header
-# and transferring to dump location.
-function custom_package()
+# @brief Package the dump, apply the IBM header and transfer it to the
+#        requested location.
+function package()
 {
+    local archive_file="${name_dir}.bin"
+    local header_extension="$DREPORT_INCLUDE/gendumpheader"
+
+    if ! mkdir -p "$dump_dir"; then
+        log_error "Could not create the destination directory $dump_dir"
+        dump_dir=$TMP_DIR
+    fi
+
+    dDay=$(date -d @"$EPOCHTIME" +'%Y%m%d%H%M%S')
+    export dDay
+
     # Populate the IBM name stored in the dump header. Keep name_dir unchanged
     # so phosphor-debug-collector can identify the completed dump by its
     # community filename.
     get_bmc_dump_filename
+    export header_dump_name
 
     FILE="/tmp/dumpheader_${dump_id}_${EPOCHTIME}"
+    export FILE
+
     echo "performing dump compression $name_dir"
     if [ "$dump_type" = "$TYPE_FAULTDATA" ]; then
-        rm -rf $name_dir/dreport.log
-        rm -rf $name_dir/summary.log
-        tar -cf "$name_dir.bin" -C "$(dirname "$name_dir")" "$(basename "$name_dir")"
+        rm -f "$name_dir/dreport.log" "$name_dir/summary.log"
+        if ! tar -cf "$archive_file" -C "$(dirname "$name_dir")" \
+            "$(basename "$name_dir")"; then
+            echo "$($TIME_STAMP)" "Could not create the archive"
+            rm -f "$archive_file"
+            return "$INTERNAL_FAILURE"
+        fi
     else
-        tar cf - -C "$(dirname "$name_dir")" "$(basename "$name_dir")"  | zstd > "$name_dir.bin"
-    fi
-    # shellcheck disable=SC2181 # need output from `tar` in above if cond.
-    if [ $? -ne 0 ]; then
-        echo "$($TIME_STAMP)" "Could not create the compressed tar file"
-        rm -r "$name_dir.bin"
-        return "$INTERNAL_FAILURE"
+        if ! (set -o pipefail
+            tar cf - -C "$(dirname "$name_dir")" \
+                "$(basename "$name_dir")" | zstd > "$archive_file"); then
+            echo "$($TIME_STAMP)" "Could not create the compressed archive"
+            rm -f "$archive_file"
+            return "$INTERNAL_FAILURE"
+        fi
     fi
 
     get_originator_details "bmc"
 
-    echo "Adding Dump Header :"$HEADER_EXTENSION
-    ("$HEADER_EXTENSION")
+    echo "Adding Dump Header: $header_extension"
+    if ! "$header_extension"; then
+        echo "$($TIME_STAMP)" "Could not create the dump header"
+        rm -f "$archive_file" "$FILE"
+        return "$INTERNAL_FAILURE"
+    fi
 
-    cat "$name_dir.bin" | tee -a "$FILE" > /dev/null
-    #remove the temporary name specific directory
-    rm -rf "$name_dir" "$name_dir.bin"
-    mv "$FILE" "$name_dir.bin"
+    if ! tee -a "$FILE" < "$archive_file" > /dev/null; then
+        echo "$($TIME_STAMP)" "Could not append the dump archive"
+        rm -f "$archive_file" "$FILE"
+        return "$INTERNAL_FAILURE"
+    fi
+
+    # Remove the temporary collection directory and unheadered archive.
+    rm -rf "$name_dir"
+    rm -f "$archive_file"
+    if ! mv "$FILE" "$archive_file"; then
+        echo "$($TIME_STAMP)" "Could not create the packaged dump"
+        rm -f "$FILE"
+        return "$INTERNAL_FAILURE"
+    fi
 
     echo "$($TIME_STAMP)" "Report is available in $dump_dir"
     if [ "$TMP_DIR" == "$dump_dir" ] || [ "$TMP_DIR/" == "$dump_dir" ]; then
@@ -47,15 +80,13 @@ function custom_package()
     fi
 
     #copy the compressed tar file into the destination
-    if ! cp "$name_dir.bin" "$dump_dir"; then
-        echo "Failed to copy the $name_dir.bin to $dump_dir"
-        rm "$name_dir.bin"
+    if ! cp "$archive_file" "$dump_dir"; then
+        echo "Failed to copy the $archive_file to $dump_dir"
+        rm -f "$archive_file"
         return "$INTERNAL_FAILURE"
     fi
 
     #Remove the temporary copy of the file
-    rm -rf "$name_dir.bin"
+    rm -f "$archive_file"
+    return "$SUCCESS"
 }
-
-# Executing function
-custom_package
