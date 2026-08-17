@@ -129,9 +129,25 @@ uint32_t chipPos(TargetHandle target)
     }
 }
 
-uint32_t nodePos([[maybe_unused]] TargetHandle target)
+uint32_t nodePos(TargetHandle target)
 {
-    return 0;
+    if (target == nullptr)
+    {
+        throw std::invalid_argument("nodePos: null target");
+    }
+
+    auto node = TARGETING::utils::getParentTarget(target, TARGETING::TYPE_NODE);
+    if (node == nullptr)
+    {
+        throw std::runtime_error("target has no TYPE_NODE parent");
+    }
+
+    auto position = TARGETING::utils::getFapiPos(node);
+    if (position == std::numeric_limits<uint32_t>::max())
+    {
+        throw std::runtime_error("node has no ATTR_FAPI_POS");
+    }
+    return position;
 }
 
 ChipType getChipType(TargetHandle target)
