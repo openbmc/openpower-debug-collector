@@ -1,27 +1,27 @@
 #pragma once
 
-extern "C"
-{
-#include <libpdbg.h>
-#include <libpdbg_sbe.h>
-}
-
 #include "dump_utils.hpp"
 #include "sbe_consts.hpp"
 #include "sbe_type.hpp"
 
-#include <phal_exception.H>
+// Use PHAL abstraction layer instead of direct includes
+#include "chipop_iface.hpp"
+#include "error_iface.hpp"
+#include "targeting_iface.hpp"
 
 #include <cstdint>
 #include <filesystem>
 #include <future>
+#include <map>
+#include <span>
 #include <vector>
 
 namespace openpower::dump::sbe_chipop
 {
 
-using TargetMap =
-    std::map<struct pdbg_target*, std::vector<struct pdbg_target*>>;
+// Use abstraction layer's TargetHandle type
+using TargetMap = std::map<phal::targeting::TargetHandle,
+                           std::vector<phal::targeting::TargetHandle>>;
 
 /**
  * @class SbeDumpCollector
@@ -88,9 +88,11 @@ class SbeDumpCollector
      * 0xB-->Odyssey SBE type Exceptions: PDBG_INIT_FAIL for any pdbg init
      * related failure.
      */
+#ifdef LEGACY_PHAL
     void collectSBEDump(uint32_t id, uint32_t failingUnit,
                         const std::filesystem::path& dumpPath,
                         const int sbeTypeId);
+#endif
 
     /**
      * @brief Collects a dump from a single SBE.
@@ -98,25 +100,29 @@ class SbeDumpCollector
      * Executes the low-level operations required to collect a diagnostic
      * dump from the specified SBE.
      *
-     * @param chip A pointer to the pdbg_target structure representing the SBE.
+     * @param chip A target handle representing the SBE.
      * @param path The filesystem path where the dump should be stored.
      * @param id The unique identifier for this dump collection operation.
      * @param type The type of dump to collect.
      * @param clockState The clock state of the SBE during dump collection.
      * @param failingUnit The identifier of the failing unit.
      */
-    void collectDumpFromSBE(struct pdbg_target* chip,
+    void collectDumpFromSBE(phal::targeting::TargetHandle chip,
                             const std::filesystem::path& path, uint32_t id,
                             uint8_t type, uint8_t clockState,
                             uint64_t failingUnit);
 
     /**
-     * @brief Initializes the PDBG library.
+     * @brief Initializes the PHAL abstraction layer.
      *
-     * Prepares the PDBG library for interacting with processor targets. This
-     * must be called before any PDBG-related operations are performed.
+     * Prepares the hardware abstraction layer for interacting with processor
+     * targets. Calls phal::targeting::init() which delegates to:
+     * - Legacy backend: openpower::phal::pdbg::init()
+     * - P11/PST backend: TARGETING::utils::targetingInit()
+     *
+     * This must be called before any hardware operations are performed.
      */
-    void initializePdbg();
+    void initializePhalAbstraction();
 
     /**
      * @brief Launches asynchronous dump collection tasks for a set of targets.
@@ -139,9 +145,9 @@ class SbeDumpCollector
      * @param cstate The clock state during the dump collection. This parameter
      *               dictates whether the dump should be collected with the
      * clocks running (SBE_CLOCK_ON) or with the clocks stopped (SBE_CLOCK_OFF).
-     * @param targetMap A map of `pdbg_target*` representing the targets from
-     * which dumps should be collected. The key is the proc target with the
-     * list of ocmb targets associated with the proc.
+     * @param targetMap Primary dump targets and their associated chips.  On
+     * P10 these are processor/OCMB pairs; on P11/PST they are Hub/OCMB
+     * pairs.
      *
      * @return A vector of `std::future<void>` objects. Each future represents
      * the completion state of an asynchronous dump collection task. The caller
@@ -162,13 +168,12 @@ class SbeDumpCollector
      *  @param nodeNum - Node containing the chip
      *  @param chipName - Name of the chip
      *  @param chipPos - Chip position of the failing unit
-     *  @param dataPtr - Content to write to file
-     *  @param len - Length of the content
+     *  @param bytes - Byte span of dump data to write
      */
     void writeDumpFile(const std::filesystem::path& path, const uint32_t id,
-                       const uint8_t clockState, const uint8_t nodeNum,
-                       const std::string& chipName, const uint8_t chipPos,
-                       util::DumpDataPtr& dataPtr, const uint32_t len);
+                       const uint8_t clockState, const uint32_t nodeNum,
+                       const std::string& chipName, const uint32_t chipPos,
+                       std::span<const uint8_t> bytes);
 
     /**
      * @brief Determines if fastarray collection is needed based on dump type
@@ -185,7 +190,7 @@ class SbeDumpCollector
      */
     inline uint8_t checkFastarrayCollectionNeeded(
         const uint8_t clockState, const uint8_t type, uint64_t failingUnit,
-        const uint8_t chipPos) const
+        const uint32_t chipPos) const
     {
         using namespace openpower::dump::SBE;
 
@@ -199,9 +204,9 @@ class SbeDumpCollector
     /**
      * Logs an error and creates a PEL for SBE chip-op failures.
      *
-     * @param sbeError - An error object encapsulating details about the SBE
+     * @param chipOpError - An error object encapsulating details about the SBE
      * error.
-     * @param chipPos - The position of the chip where the error occurred.
+     * @param chipTarget - Target handle for the chip where the error occurred.
      * @param sbeType - The type of SBE, used to determine the event log
      * message.
      * @param cmdClass - The command class associated with the SBE operation.
@@ -209,20 +214,21 @@ class SbeDumpCollector
      * @param path - Dump collection path.
      *
      */
-    bool logErrorAndCreatePEL(const openpower::phal::sbeError_t& sbeError,
-                              uint64_t chipPos, SBETypes sbeType,
-                              uint32_t cmdClass, uint32_t cmdType,
-                              const std::filesystem::path& path);
+    bool logErrorAndCreatePEL(
+        const phal::chipop::ChipOpError& chipOpError,
+        phal::targeting::TargetHandle chipTarget, SBETypes sbeType,
+        uint32_t cmdClass, uint32_t cmdType, const std::filesystem::path& path);
 
     /**
      * Determines the type of SBE for a given chip target.
      *
-     * @param chip - A pointer to a pdbg_target structure representing the chip.
+     * @param chip - A target handle representing the chip.
      * @return The SBE type for the given chip target.
      */
-    inline SBETypes getSBEType([[maybe_unused]] struct pdbg_target* chip)
+    inline SBETypes getSBEType(phal::targeting::TargetHandle chip)
     {
-        if (is_ody_ocmb_chip(chip))
+        if (phal::targeting::getChipType(chip) ==
+            phal::targeting::ChipType::OcmbChip)
         {
             return SBETypes::OCMB;
         }
@@ -239,8 +245,8 @@ class SbeDumpCollector
      * In case of SBE command failure or non-critical errors, it continues with
      * the dump collection process.
      *
-     * @param target Pointer to the pdbg target structure representing the
-     *               processor to perform the thread stop on.
+     * @param target Target handle representing the processor to perform the
+     *               thread stop on.
      * @param path Dump collection path
      * @return true If the thread stop was successful or in case of non-critical
      *              errors where dump collection can proceed.
@@ -248,7 +254,7 @@ class SbeDumpCollector
      *               errors like timeouts, indicating the processor should be
      *               excluded from the dump collection.
      */
-    bool executeThreadStop(struct pdbg_target* target,
+    bool executeThreadStop(phal::targeting::TargetHandle target,
                            const std::filesystem::path& path);
 
     /**

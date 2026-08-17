@@ -21,5 +21,5 @@ option(
     type: 'combo',
     choices: ['legacy', 'next', 'none'],
     value: 'none',
-    description: 'Select PHAL backend',
+    description: 'Select P10 legacy or P11 phal-next backend',
 )
