@@ -29,38 +29,48 @@ phosphorlogging = dependency(
 realpath_prog = find_program('realpath')
 
 phal_backend = get_option('phal_backend')
+dump_collection_enabled = get_option('dump-collection').allowed()
+hostboot_collection_enabled = get_option(
+    'hostboot-dump-collection',
+).allowed()
+
+if dump_collection_enabled and phal_backend == 'none'
+    error(
+        'dump-collection requires -Dphal_backend=legacy or next',
+    )
+endif
+
+if hostboot_collection_enabled and phal_backend != 'legacy'
+    error(
+        'hostboot-dump-collection is supported only by the P10 legacy backend',
+    )
+endif
 
 conf_data = configuration_data()
 extra_deps = []
 watchdog_lib = []
 
-if phal_backend == 'legacy'
-    add_project_arguments('-DLEGACY_PHAL', language: 'cpp')
-else
-    add_project_arguments('-DNEXT_PHAL', language: 'cpp')
+if (
+    dump_collection_enabled or hostboot_collection_enabled
+) and phal_backend == 'legacy'
+    subdir('phal')
 endif
 
-if get_option('hostboot-dump-collection').allowed()
+if hostboot_collection_enabled
     conf_data.set('WATCHDOG_DUMP_COLLECTION', true)
-    if phal_backend == 'legacy'
-        extra_deps += [
-            cxx.find_library('pdbg'),
-            cxx.find_library('libdt-api'),
-            cxx.find_library('phal'),
-        ]
-        subdir('watchdog')
-    endif
+    extra_deps += [phal_abstraction_dep]
+    subdir('watchdog')
 else
     conf_data.set('WATCHDOG_DUMP_COLLECTION', false)
 endif
 
 configure_file(output: 'config.h', configuration: conf_data)
 
-if get_option('dump-collection').allowed()
+if dump_collection_enabled
     subdir('dump')
 endif
 
-deps = [CLI11_dep, sdbusplus_dep, phosphorlogging, extra_deps]
+deps = [CLI11_dep, sdbusplus_dep, phosphorlogging] + extra_deps
 
 if phal_backend == 'legacy'
     executable(

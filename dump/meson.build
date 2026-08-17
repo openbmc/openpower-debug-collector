@@ -4,27 +4,25 @@ cxx = meson.get_compiler('cpp')
 
 sdeventplus_dep = dependency('sdeventplus')
 
-phal_backend = get_option('phal_backend')
-
-collect_deps = [CLI11_dep, phosphorlogging]
-
 if phal_backend == 'legacy'
-    collect_deps += cxx.find_library('pdbg')
-    collect_deps += cxx.find_library('libdt-api')
-    collect_deps += cxx.find_library('phal')
-
-    monitor_deps = [sdbusplus_dep, phosphorlogging]
-
-    # source files
+    collect_deps = [
+        CLI11_dep,
+        sdbusplus_dep,
+        phosphorlogging,
+        phal_abstraction_dep,
+    ]
+    monitor_deps = [sdbusplus_dep, sdeventplus_dep, phosphorlogging]
 
     collect_src = files(
-        'create_pel.cpp',
         'dump_collect_main.cpp',
-        'dump_utils.cpp',
         'dump_utils.cpp',
         'sbe_dump_collector.cpp',
         'sbe_type.cpp',
     )
+
+    # The P10 backend retains its libphal FFDC-to-PEL implementation.
+    collect_src += files('create_pel.cpp')
+    collect_deps += cxx.find_library('ekb')
 
     monitor_src = files(
         'dump_action_monitor.cpp',
@@ -33,10 +31,13 @@ if phal_backend == 'legacy'
         'dump_utils.cpp',
     )
 
+    phal_inc = include_directories('../phal')
+
     executable(
         'dump-collect',
         collect_src,
         dependencies: collect_deps,
+        include_directories: phal_inc,
         implicit_include_directories: true,
         install: true,
     )
@@ -59,7 +60,7 @@ plugins_to_install = []
 include_scripts = []
 
 subdir('tools')
-# Install collected files if any
+
 if scripts_to_install.length() > 0
     install_data(
         scripts_to_install,
@@ -68,7 +69,6 @@ if scripts_to_install.length() > 0
     )
 endif
 
-# Install collected include scripts if any
 if plugins_to_install.length() > 0
     install_data(
         plugins_to_install,
@@ -77,7 +77,6 @@ if plugins_to_install.length() > 0
     )
 endif
 
-# Install collected include scripts if any
 if include_scripts.length() > 0
     install_data(
         include_scripts,
