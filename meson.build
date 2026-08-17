@@ -50,10 +50,7 @@ conf_data = configuration_data()
 extra_deps = []
 watchdog_lib = []
 
-if (
-    dump_collection_enabled
-    or hostboot_collection_enabled
-) and phal_backend == 'legacy'
+if dump_collection_enabled or hostboot_collection_enabled
     subdir('phal')
 endif
 

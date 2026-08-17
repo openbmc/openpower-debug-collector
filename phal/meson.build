@@ -11,7 +11,13 @@ phal_deps += [dependency('phosphor-logging')]
 phal_deps += [dependency('sdbusplus')]
 
 if phal_backend == 'next'
-    error('The phal-next implementation is provided by a follow-up change')
+    add_project_arguments('-DNEXT_PHAL', language: 'cpp')
+    phal_deps += [dependency('hostfw_phal')]
+    phal_src += files(
+        'chipop_next.cpp',
+        'error_next.cpp',
+        'targeting_next.cpp',
+    )
 elif phal_backend == 'legacy'
     add_project_arguments('-DLEGACY_PHAL', language: 'cpp')
     phal_deps += [
