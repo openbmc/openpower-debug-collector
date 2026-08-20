@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2154  # Variables are supplied by dreport.
 
 # Source OpenPOWER functions used by the packaging override.
 # shellcheck source=dump/tools/common/include/opfunctions
@@ -12,27 +13,25 @@ declare -x name_dir
 function package()
 {
     local archive_file="${name_dir}.bin"
-    local header_extension="$DREPORT_INCLUDE/gendumpheader"
+    local archive_path
+    local include_pel_path=false
+    local output_file
+    local profile="bmc"
+    local publish_dir
+    local -a packager_args
 
     if ! mkdir -p "$dump_dir"; then
         log_error "Could not create the destination directory $dump_dir"
-        dump_dir=$TMP_DIR
+        return "$INTERNAL_FAILURE"
     fi
-
-    dDay=$(date -d @"$EPOCHTIME" +'%Y%m%d%H%M%S')
-    export dDay
-
-    # Populate the IBM name stored in the dump header. Keep name_dir unchanged
-    # so phosphor-debug-collector can identify the completed dump by its
-    # community filename.
-    get_bmc_dump_filename
-    export header_dump_name
-
-    FILE="/tmp/dumpheader_${dump_id}_${EPOCHTIME}"
-    export FILE
+    if ! publish_dir=$(realpath "$dump_dir"); then
+        log_error "Could not resolve the destination directory $dump_dir"
+        return "$INTERNAL_FAILURE"
+    fi
 
     echo "performing dump compression $name_dir"
     if [ "$dump_type" = "$TYPE_FAULTDATA" ]; then
+        profile="fault"
         rm -f "$name_dir/dreport.log" "$name_dir/summary.log"
         if ! tar -cf "$archive_file" -C "$(dirname "$name_dir")" \
             "$(basename "$name_dir")"; then
@@ -50,43 +49,43 @@ function package()
         fi
     fi
 
-    get_originator_details "bmc"
+    if ! archive_path=$(realpath "$archive_file"); then
+        echo "$($TIME_STAMP)" "Could not resolve the dump archive path"
+        return "$INTERNAL_FAILURE"
+    fi
+    output_file="$publish_dir/$(basename "$archive_file")"
 
-    echo "Adding Dump Header: $header_extension"
-    if ! "$header_extension"; then
-        echo "$($TIME_STAMP)" "Could not create the dump header"
-        rm -f "$archive_file" "$FILE"
+    packager_args=(
+        op-dump-packager
+        --profile "$profile"
+        --archive "$archive_path"
+        --output "$output_file"
+        --dump-id "$dump_id"
+        --epoch "$EPOCHTIME"
+    )
+    if [ -n "${TYPE_ELOG:-}" ] && [ "$dump_type" = "$TYPE_ELOG" ]; then
+        include_pel_path=true
+    fi
+    if [ -n "${TYPE_CHECKSTOP:-}" ] && [ "$dump_type" = "$TYPE_CHECKSTOP" ]; then
+        include_pel_path=true
+    fi
+    if [ "$include_pel_path" = true ] && [ -n "${optional_path:-}" ]; then
+        packager_args+=(--pel-path "$optional_path")
+    fi
+
+    echo "Adding validated fixed dump header"
+    if ! "${packager_args[@]}"; then
+        echo "$($TIME_STAMP)" "Could not package the dump"
+        echo "Unheadered dump retained at $archive_path"
         return "$INTERNAL_FAILURE"
     fi
 
-    if ! tee -a "$FILE" < "$archive_file" > /dev/null; then
-        echo "$($TIME_STAMP)" "Could not append the dump archive"
-        rm -f "$archive_file" "$FILE"
-        return "$INTERNAL_FAILURE"
-    fi
-
-    # Remove the temporary collection directory and unheadered archive.
+    # Publication is complete. Remove the temporary collection and source.
     rm -rf "$name_dir"
-    rm -f "$archive_file"
-    if ! mv "$FILE" "$archive_file"; then
-        echo "$($TIME_STAMP)" "Could not create the packaged dump"
-        rm -f "$FILE"
-        return "$INTERNAL_FAILURE"
+    if [ "$archive_path" != "$output_file" ]; then
+        rm -f "$archive_path"
     fi
 
     echo "$($TIME_STAMP)" "Report is available in $dump_dir"
-    if [ "$TMP_DIR" == "$dump_dir" ] || [ "$TMP_DIR/" == "$dump_dir" ]; then
-        return "$SUCCESS"
-    fi
-
-    #copy the compressed tar file into the destination
-    if ! cp "$archive_file" "$dump_dir"; then
-        echo "Failed to copy the $archive_file to $dump_dir"
-        rm -f "$archive_file"
-        return "$INTERNAL_FAILURE"
-    fi
-
-    #Remove the temporary copy of the file
-    rm -f "$archive_file"
     return "$SUCCESS"
 }
