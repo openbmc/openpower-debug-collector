@@ -47,6 +47,7 @@ if hostboot_collection_enabled and phal_backend != 'legacy'
 endif
 
 conf_data = configuration_data()
+conf_data.set_quoted('PHAL_BACKEND', phal_backend)
 extra_deps = []
 watchdog_lib = []
 
