@@ -14,6 +14,7 @@ declare -x START_TIME=0
 declare -x END_TIME=0
 
 # Source common functions
+# shellcheck source=dump/tools/common/include/opfunctions
 . "$DREPORT_INCLUDE/opfunctions"
 
 # Initialize variables
@@ -50,6 +51,7 @@ function dump_time_details() {
 function get_addl_data() {
     if [ -d "$ADDL_DATA_PATH" ]; then
         for entry in "$ADDL_DATA_PATH"/*; do
+            [ -f "$entry" ] || continue
             while IFS= read -r line; do
                 echo "$line" >> "$YAML_FILE"
             done < "$entry"
@@ -70,10 +72,14 @@ function write_to_info_file() {
     } >> "$YAML_FILE"
     dump_time_details
     get_addl_data
-    cat "$content_path/errorInfo" >> "$YAML_FILE"
+    if [ -f "$content_path/plat_dump/errorInfo" ]; then
+        cat "$content_path/plat_dump/errorInfo" >> "$YAML_FILE"
+    elif [ -f "$content_path/errorInfo" ]; then
+        # Preserve compatibility with older collectors that used the root.
+        cat "$content_path/errorInfo" >> "$YAML_FILE"
+    fi
 }
 
 # Run main
 initialize_variables
 write_to_info_file
-
