@@ -4,6 +4,7 @@ dump_header_inc = include_directories('.')
 dump_header_core = static_library(
     'dump-header-core',
     'dump_header.cpp',
+    'packager.cpp',
     include_directories: dump_header_inc,
 )
 dump_header_core_dep = declare_dependency(
