@@ -23,3 +23,10 @@ option(
     value: 'none',
     description: 'Select P10 legacy or P11 phal-next backend',
 )
+
+option(
+    'tests',
+    type: 'feature',
+    value: 'disabled',
+    description: 'Build unit tests',
+)

@@ -64,6 +64,10 @@ endif
 
 configure_file(output: 'config.h', configuration: conf_data)
 
+if dump_collection_enabled or get_option('tests').allowed()
+    subdir('dump/header')
+endif
+
 if dump_collection_enabled
     subdir('dump')
 endif
