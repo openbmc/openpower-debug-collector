@@ -169,12 +169,23 @@ function package() {
     return "$SUCCESS"
 }
 
-# @brief Initiate BMC dump
 function initiate_bmc_dump() {
-    bmcDumpPath=$(busctl call xyz.openbmc_project.Dump.Manager \
+    local event_id_args=(0)
+
+    if [[ -n "$eid" && "$eid" != "0" ]]; then
+        local entry_path="/xyz/openbmc_project/logging/entry/$eid"
+        event_id_args=(1 "EventId" s "$entry_path")
+    fi
+
+    bmcDumpPath=$(busctl call \
+            xyz.openbmc_project.Dump.Manager \
             /xyz/openbmc_project/dump/bmc \
-        xyz.openbmc_project.Dump.Create CreateDump a\{sv\} 0)
-    result=$?
+            xyz.openbmc_project.Dump.Create \
+            CreateDump \
+            'a{sv}' "${event_id_args[@]}"
+    )
+    local result=$?
+
     if [[ $result -ne $SUCCESS ]]; then
         echo "Error in creating BMC dump associated with system dump"
     else
