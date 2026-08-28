@@ -171,9 +171,15 @@ function package() {
 
 # @brief Initiate BMC dump
 function initiate_bmc_dump() {
+    local file_path_arg=0
+    if [[ -n "$eid" && "$eid" != "0" ]]; then
+        local entry_path="/xyz/openbmc_project/logging/entry/$eid"
+        file_path_arg=2 "FilePath" s "$entry_path"
+    fi
     bmcDumpPath=$(busctl call xyz.openbmc_project.Dump.Manager \
-            /xyz/openbmc_project/dump/bmc \
-        xyz.openbmc_project.Dump.Create CreateDump a\{sv\} 0)
+        /xyz/openbmc_project/dump/bmc \
+        xyz.openbmc_project.Dump.Create CreateDump \
+        a{sv} $file_path_arg)
     result=$?
     if [[ $result -ne $SUCCESS ]]; then
         echo "Error in creating BMC dump associated with system dump"
