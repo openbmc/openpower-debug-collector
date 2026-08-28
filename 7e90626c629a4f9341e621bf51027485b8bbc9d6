@@ -22,6 +22,30 @@
       },
       "revId": "7e90626c629a4f9341e621bf51027485b8bbc9d6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f77a3d5e_284e9429",
+        "filename": "dump/tools/bmcdump/plugins/datasyncdump",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001993
+      },
+      "writtenOn": "2026-08-28T05:50:37Z",
+      "side": 1,
+      "message": "Got it. Testing shows that collecting the error information takes around 12 seconds when the system has 2900+ PELs, which seems expensive to me as well.\n\n\n\u003eAsking since all PELs are already captured anyway.\n\nYes Agree to this point. I\u0027ll remove this info from the dump plugin.",
+      "parentUuid": "bd8ca786_9d9af71c",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 79
+      },
+      "revId": "7e90626c629a4f9341e621bf51027485b8bbc9d6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
