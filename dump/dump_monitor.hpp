@@ -56,7 +56,7 @@ class DumpMonitor
     /* @brief sdbusplus handler for a bus to use */
     sdbusplus::bus_t bus;
 
-    /* @brief Monitores dump interfaces */
+    /* @brief Monitors dump interfaces */
     const std::vector<std::string> monitoredInterfaces = {
         "com.ibm.Dump.Entry.Hardware", "com.ibm.Dump.Entry.Hostboot",
         "com.ibm.Dump.Entry.SBE", "xyz.openbmc_project.Dump.Entry.System"};
